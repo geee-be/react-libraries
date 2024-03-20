@@ -1,0 +1,16 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "./packages/@geee-be/eslint-config/index.json",
+    "./packages/@geee-be/eslint-config/esm.json"
+  ],
+  "parserOptions": {
+    "project": true,
+    "sourceType": "module"
+  }
+}
