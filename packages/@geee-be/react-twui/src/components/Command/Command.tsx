@@ -84,7 +84,7 @@ const CommandEmpty = forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="py-4 text-center text-sm italic text-control-fg/70"
+    className="py-2 text-center text-sm italic text-control-fg/70"
     {...props}
   />
 ));
