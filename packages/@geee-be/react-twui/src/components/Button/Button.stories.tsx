@@ -34,7 +34,7 @@ const meta = {
     },
     variant: {
       control: 'select',
-      options: ['solid', 'outline', 'transparent', 'link'],
+      options: ['solid', 'outline', 'transparent', 'link', 'input'],
       defaultValue: { summary: 'solid' },
     },
   },

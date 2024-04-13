@@ -134,7 +134,7 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
         {React.isValidElement(children) &&
           isIconOnly &&
           renderIcon(children as React.ReactElement<HTMLElement>)}
-        {children && !isIconOnly && <span>{children}</span>}
+        {children && !isIconOnly && children}
         {after ? renderIcon(after) : null}
       </>
     );

@@ -25,6 +25,8 @@ export const buttonVariants = cva({
     variant: {
       solid: '',
       outline: 'dark:shadow:none border shadow-xs [--border-width:1px]',
+      input:
+        'justify-between normal-case font-normal hover:bg-control hover:scale-[1] active:scale-[1] antialiased inline-flex grow rounded-lg border px-4 py-2 text-sm leading-6 transition-colors duration-100 bg-control text-control-fg border-default hover:border-default/70 placeholder:text-control-fg/50',
       transparent: 'bg-transparent',
       link: 'p-0 underline underline-offset-3 focus-visible:text-primary focus-visible:font-bold',
     },
@@ -53,7 +55,7 @@ export const buttonVariants = cva({
     },
     {
       color: 'default',
-      variant: ['outline', 'transparent', 'link'],
+      variant: ['outline', 'transparent'],
       class: 'text-default hover:bg-default/10 dark:hover:bg-default-fg/10',
     },
     // primary
@@ -69,7 +71,7 @@ export const buttonVariants = cva({
     },
     {
       color: 'primary',
-      variant: ['outline', 'transparent', 'link'],
+      variant: ['outline', 'transparent'],
       class: 'text-primary hover:bg-primary/10 dark:hover:bg-primary-fg/10',
     },
     // secondary
@@ -85,7 +87,7 @@ export const buttonVariants = cva({
     },
     {
       color: 'secondary',
-      variant: ['outline', 'transparent', 'link'],
+      variant: ['outline', 'transparent'],
       class:
         'text-secondary hover:bg-secondary/10 dark:hover:bg-secondary-fg/20',
     },
@@ -102,7 +104,7 @@ export const buttonVariants = cva({
     },
     {
       color: 'info',
-      variant: ['outline', 'transparent', 'link'],
+      variant: ['outline', 'transparent'],
       class: 'text-info hover:bg-info/10 dark:hover:bg-info-fg/20',
     },
     // warning
@@ -118,7 +120,7 @@ export const buttonVariants = cva({
     },
     {
       color: 'warning',
-      variant: ['outline', 'transparent', 'link'],
+      variant: ['outline', 'transparent'],
       class: 'text-warning hover:bg-warning/10 dark:hover:bg-warning-fg/20',
     },
     // success
@@ -134,7 +136,7 @@ export const buttonVariants = cva({
     },
     {
       color: 'success',
-      variant: ['outline', 'transparent', 'link'],
+      variant: ['outline', 'transparent'],
       class: 'text-success hover:bg-success/10 dark:hover:bg-success-fg/20',
     },
     // error
@@ -150,13 +152,18 @@ export const buttonVariants = cva({
     },
     {
       color: 'error',
-      variant: ['outline', 'transparent', 'link'],
+      variant: ['outline', 'transparent'],
       class: 'text-error hover:bg-error/10 dark:hover:bg-error-fg/20',
     },
     // transparent
     {
-      variant: ['transparent', 'link'],
+      variant: ['transparent'],
       class: 'shadow-none',
+    },
+    // link
+    {
+      variant: 'link',
+      class: 'shadow-none hover:shadow-none',
     },
   ],
   defaultVariants: {
