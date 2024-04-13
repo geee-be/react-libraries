@@ -71,7 +71,10 @@ const CommandList = forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
-    className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)}
+    className={cn(
+      'max-h-[300px] overflow-y-auto overflow-x-hidden py-1',
+      className,
+    )}
     {...props}
   />
 ));
@@ -127,7 +130,7 @@ const CommandItem = forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-pointer leading-none select-none items-center rounded-lg px-4 py-2 text-sm h-[45px] pl-6 outline-none data-[disabled=true]:pointer-events-none',
+      'relative flex cursor-pointer leading-none select-none items-center rounded-lg mx-1 px-4 py-2 text-sm h-[45px] pl-6 outline-none data-[disabled=true]:pointer-events-none',
       // colors
       'text-control-fg data-[disabled=true]:text-control-fg/50 aria-selected:bg-control-fg/10 aria-selected:text-control-fg',
       className,
