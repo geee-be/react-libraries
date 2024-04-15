@@ -30,6 +30,7 @@ const Command = forwardRef<
     {...props}
   />
 ));
+
 Command.displayName = CommandPrimitive.displayName;
 
 interface CommandDialogProps extends DialogProps {}
@@ -94,6 +95,19 @@ const CommandEmpty = forwardRef<
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
+const CommandLoading = forwardRef<
+  ElementRef<typeof CommandPrimitive.Loading>,
+  ComponentPropsWithoutRef<typeof CommandPrimitive.Loading>
+>((props, ref) => (
+  <CommandPrimitive.Loading
+    ref={ref}
+    className="py-2 text-center text-sm italic text-control-fg/70"
+    {...props}
+  />
+));
+
+CommandLoading.displayName = CommandPrimitive.Loading.displayName;
+
 const CommandGroup = forwardRef<
   ElementRef<typeof CommandPrimitive.Group>,
   ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
@@ -116,7 +130,7 @@ const CommandSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn('-mx-1 h-px bg-control-fg/10', className)}
+    className={cn('h-[1px] bg-control-fg/10 m-1', className)}
     {...props}
   />
 ));
@@ -165,6 +179,7 @@ export {
   CommandInput,
   CommandItem,
   CommandList,
+  CommandLoading,
   CommandSeparator,
   CommandShortcut,
 };
