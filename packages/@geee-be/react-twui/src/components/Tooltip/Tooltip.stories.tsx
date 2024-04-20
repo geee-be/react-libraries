@@ -41,11 +41,11 @@ export const Default: Story = {
   },
   decorators: (Story) => (
     <span>
-      <p>Line one</p>
-      <p>Line two</p>
-      <p>
+      <div>Line one</div>
+      <div>Line two</div>
+      <div>
         Line three <Story />
-      </p>
+      </div>
     </span>
   ),
 };
