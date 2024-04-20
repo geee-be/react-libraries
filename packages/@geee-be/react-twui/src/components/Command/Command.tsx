@@ -6,6 +6,7 @@ import { Search } from 'lucide-react';
 import {
   ComponentPropsWithoutRef,
   ElementRef,
+  HTMLAttributes,
   ReactNode,
   forwardRef,
 } from 'react';
@@ -138,8 +139,8 @@ const CommandSeparator = forwardRef<
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
 const CommandItem = forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
+  ElementRef<typeof CommandPrimitive.Item>,
+  ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Item
     ref={ref}
@@ -158,7 +159,7 @@ CommandItem.displayName = CommandPrimitive.Item.displayName;
 const CommandShortcut = ({
   className,
   ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
+}: HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
       className={cn(
@@ -169,6 +170,7 @@ const CommandShortcut = ({
     />
   );
 };
+
 CommandShortcut.displayName = 'CommandShortcut';
 
 export {
