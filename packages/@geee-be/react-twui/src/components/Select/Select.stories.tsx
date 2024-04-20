@@ -56,6 +56,7 @@ const items: SelectGroupProps[] = [
 
 export const Default: Story = {
   args: {
+    className: 'w-64',
     disabled: false,
     placeholder: 'Select your value here',
     items,
