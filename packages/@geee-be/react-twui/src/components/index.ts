@@ -2,6 +2,7 @@
 export * from './Alert/index.js';
 export * from './Button/index.js';
 export * from './Card/index.js';
+export * from './Combobox/index.js';
 export * from './Command/index.js';
 export * from './Dialog/index.js';
 export * from './Input/index.js';
