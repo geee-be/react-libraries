@@ -6,3 +6,7 @@ export type {
   ComboboxProps,
 } from './Combobox.js';
 export { FormCombobox } from './FormCombobox.js';
+export type {
+  FormComboboxElement,
+  FormComboboxProps,
+} from './FormCombobox.js';
