@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.2.4
+
+### Patch Changes
+
+- a197172: Added Command, Popover, Dialog, Combobox
+
 ## 1.2.2
 
 ### Patch Changes
