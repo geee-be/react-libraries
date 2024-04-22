@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 1.2.5
+
+### Patch Changes
+
+- 7cce640: Combobox and StaticCombobox
+- 5863bd6: Theme fix
+
 ## 1.2.4
 
 ### Patch Changes
