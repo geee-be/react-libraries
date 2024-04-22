@@ -229,9 +229,10 @@ export const resolveConfig = (
       resolved.utilities[`[data-theme='dark'] .default-${colorName}`] =
         overrideDarkVariables;
     } else {
-      resolved.utilities[
-        `@media (prefers-color-scheme: dark) .default-${colorName}`
-      ] = overrideDarkVariables;
+      resolved.utilities['@media (prefers-color-scheme: dark)'] = Object.assign(
+        { [`.default-${colorName}`]: overrideDarkVariables },
+        resolved.utilities['@media (prefers-color-scheme: dark)'],
+      );
     }
   }
 
