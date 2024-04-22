@@ -13,11 +13,7 @@ import { Controller } from 'react-hook-form';
 import { fieldError } from '../../helpers/field-error.js';
 import { Label, type LabelProps } from '../Label/index.js';
 import { type LabelHelperProps } from '../types.js';
-import type {
-  ComboboxElement,
-  ComboboxGroupProps,
-  ComboboxProps,
-} from './Combobox.js';
+import type { ComboboxElement, ComboboxProps } from './Combobox.js';
 import { Combobox } from './Combobox.js';
 
 /* ---------------------------------- Types --------------------------------- */
@@ -34,7 +30,6 @@ export type FormComboboxProps<
   control?: Control<T>;
   hint?: ReactNode;
   name: Field;
-  items: ComboboxGroupProps[];
   label: ReactNode;
   placeholder?: ReactNode;
   // validation

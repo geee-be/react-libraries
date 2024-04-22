@@ -2,10 +2,10 @@ import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import type { ComboboxGroupProps } from './Combobox.js';
-import { DynamicCombobox } from './Combobox.js';
+import { Combobox } from './Combobox.js';
 
-const meta: Meta<typeof DynamicCombobox> = {
-  component: DynamicCombobox,
+const meta: Meta<typeof Combobox> = {
+  component: Combobox,
   decorators: (Story, ctx) => {
     const [, setArgs] = useArgs<typeof ctx.args>();
 
@@ -27,9 +27,9 @@ const meta: Meta<typeof DynamicCombobox> = {
   render: ({ ...args }) => {
     const [value, setValue] = useState(args.value);
 
-    return <DynamicCombobox {...args} value={value} onValueChange={setValue} />;
+    return <Combobox {...args} value={value} onValueChange={setValue} />;
   },
-} satisfies Meta<typeof DynamicCombobox>;
+} satisfies Meta<typeof Combobox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -72,8 +72,7 @@ export const Default: Story = {
     emptyHint: 'No results found.',
     inputPlaceholder: 'Search...',
     placeholder: 'Select your value here',
-    items: () => Promise.resolve(items),
-    loadingHint: 'Loading...',
+    items,
     onValueChange: (value) => console.log(value),
     className: 'w-64',
   },

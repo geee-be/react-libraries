@@ -22,10 +22,7 @@
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
   "types": "./dist/cjs/index.d.cts",
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "scripts": {
     "build": "concurrently \"npm run build:cjs\" \"npm run build:esm\"",
     "build:cjs": "tsup --format cjs --external react",
@@ -60,6 +57,7 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@uidotdev/usehooks": "2.4.1",
     "clsx": "^2.0.0",
     "cmdk": "^1.0.0",
     "color": "^4.2.3",

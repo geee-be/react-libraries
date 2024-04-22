@@ -78,21 +78,23 @@ export const Default: FC = () => {
       <FormCombobox
         control={control}
         name="foo"
-        items={items}
+        items={() => Promise.resolve(items)}
         label="Foo"
         emptyHint="No results found."
         description="This is the foo field"
         helperText="What can we call you?"
+        loadingHint="Loading..."
         placeholder="Select an option"
         required="Must have a value"
       />
       <FormCombobox
         control={control}
         name="bar"
-        items={items}
+        items={() => Promise.resolve(items)}
         label="Bar"
         emptyHint="No results found."
         helperText="Not foo"
+        loadingHint="Loading..."
         placeholder="Select an option"
         tooltip="This field is optional"
       />

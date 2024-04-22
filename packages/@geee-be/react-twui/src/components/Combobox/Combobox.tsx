@@ -1,13 +1,12 @@
 'use client';
 
-import { CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons';
+import { CheckIcon } from '@radix-ui/react-icons';
 import { Popover } from '@radix-ui/react-popover';
-import { CommandSeparator } from 'cmdk';
+import { useDebounce } from '@uidotdev/usehooks';
 import { LocateIcon } from 'lucide-react';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
-import { Fragment, forwardRef, useState } from 'react';
+import { Fragment, forwardRef, useEffect, useState } from 'react';
 import { cn } from '../../helpers/utils.js';
-import { Button } from '../Button/index.js';
 import {
   Command,
   CommandEmpty,
@@ -15,15 +14,17 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
+  CommandLoading,
+  CommandSeparator,
 } from '../Command/Command.js';
 import { PopoverContent, PopoverTrigger } from '../Popover/Popover.js';
+import { ComboboxTriggerButton } from './ComboboxTriggerButton.js';
 
 export type ComboboxElement = HTMLButtonElement;
-export type ComboboxProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ComboboxRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   destructive?: boolean;
   emptyHint?: ReactNode;
   inputPlaceholder?: string;
-  items: ComboboxGroupProps[];
   onValueChange?: (value: string | undefined) => void;
   placeholder?: ReactNode;
   readOnly?: boolean;
@@ -32,10 +33,21 @@ export type ComboboxProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   value?: string;
 };
 
+export interface StaticComboboxProps extends ComboboxRootProps {
+  items: ComboboxGroupProps[];
+}
+
+export interface ComboboxProps extends ComboboxRootProps {
+  debounceMs?: number;
+  items: (seatch: string) => Promise<ComboboxGroupProps[]>;
+  loadingHint: ReactNode;
+}
+
 export interface ComboboxGroupProps {
   key: string;
-  label?: ReactNode;
   items: ComboboxItemProps[];
+  label?: ReactNode;
+  loading?: ReactNode;
 }
 
 export interface ComboboxItemProps {
@@ -58,7 +70,75 @@ const toDisplay =
     return key;
   };
 
-export const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
+const StaticCombobox = forwardRef<ComboboxElement, StaticComboboxProps>(
+  ({ items, ...props }, ref) => {
+    const [search, setSearch] = useState('');
+
+    return (
+      <ComboboxRoot
+        {...props}
+        items={items}
+        search={search}
+        setSearch={setSearch}
+        ref={ref}
+      />
+    );
+  },
+);
+
+StaticCombobox.displayName = 'StaticCombobox';
+
+const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
+  ({ debounceMs = 250, items, loadingHint, ...props }, ref) => {
+    const [loadedItems, setLoadedItems] = useState<ComboboxGroupProps[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState('');
+
+    const debouncedSearch = useDebounce(search, debounceMs);
+
+    // biome-ignore lint/correctness/useExhaustiveDependencies: used in debounce
+    useEffect(() => {
+      setLoading(true);
+    }, [search]);
+
+    // biome-ignore lint/correctness/useExhaustiveDependencies: used in debounce
+    useEffect(() => {
+      setLoading(true);
+      items(debouncedSearch)
+        .then((results) => {
+          setLoadedItems(results);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }, [debouncedSearch]);
+
+    return (
+      <ComboboxRoot
+        {...props}
+        items={loadedItems}
+        loading={loading ? loadingHint : undefined}
+        search={search}
+        setSearch={setSearch}
+        shouldFilter={false}
+        ref={ref}
+      />
+    );
+  },
+);
+
+Combobox.displayName = 'Combobox';
+
+const ComboboxRoot = forwardRef<
+  ComboboxElement,
+  ComboboxRootProps & {
+    items: ComboboxGroupProps[];
+    loading?: ReactNode;
+    search: string;
+    setSearch: (value: string) => void;
+    shouldFilter?: boolean;
+  }
+>(
   (
     {
       'aria-label': ariaLabel,
@@ -69,6 +149,7 @@ export const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
       id,
       inputPlaceholder,
       items,
+      loading,
       name,
       onBlur,
       onValueChange,
@@ -76,6 +157,9 @@ export const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
       readOnly,
       renderValue = toDisplay(items),
       required,
+      search,
+      setSearch,
+      shouldFilter = true,
       value,
       type,
       ...props
@@ -83,10 +167,12 @@ export const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
     ref,
   ) => {
     const [open, setOpen] = useState(false);
-    // const [value, setValue] = useState<string>();
 
     return (
-      <Popover open={open} onOpenChange={setOpen}>
+      <Popover
+        open={open && !disabled}
+        onOpenChange={!disabled ? setOpen : undefined}
+      >
         <PopoverTrigger
           asChild
           {...props}
@@ -96,85 +182,74 @@ export const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
           disabled={disabled}
           onBlur={onBlur}
           ref={ref}
+          className={className}
         >
-          <Button
-            variant="input"
-            role="combobox"
-            aria-expanded={open}
-            className={cn(
-              'shadow-none hover:shadow-none focus:shadow-none',
-              disabled && 'cursor-not-allowed',
-              disabled &&
-                'bg-control text-control-fg/50 placeholder:text-control-fg/50 border-default/50 hover:border-default/50',
-              className,
-            )}
-          >
-            <div className="min-w-0">
-              {value ? (
-                <div className="truncate select-none text-control-fg">
-                  {renderValue(value)}
-                </div>
-              ) : (
-                <div className="truncate select-none text-control-fg/50">
-                  {placeholder}
-                </div>
-              )}
-            </div>
-            <div
-              className={cn(
-                'text-control-fg right-0 ml-2',
-                disabled && 'text-transparent',
-              )}
-            >
-              <ChevronDownIcon />
-            </div>
-          </Button>
+          <ComboboxTriggerButton
+            aria-expanded={open && !disabled}
+            children={value ? renderValue(value) : undefined}
+            disabled={disabled}
+            placeholder={placeholder}
+          />
         </PopoverTrigger>
         <PopoverContent
           className={cn('border-none p-0')}
           style={{ width: 'var(--radix-popper-anchor-width)' }}
         >
-          <Command>
+          <Command shouldFilter={shouldFilter}>
             <CommandInput
               icon={<LocateIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />}
               placeholder={inputPlaceholder}
+              value={search}
+              onValueChange={setSearch}
             />
             <CommandList>
-              <CommandEmpty>{emptyHint}</CommandEmpty>
-              {items.map((group, groupIndex) => (
-                <Fragment key={group.key}>
-                  {groupIndex > 0 ? (
-                    <CommandSeparator className="h-[1px] bg-control-fg/10 m-1" />
-                  ) : null}
-                  <CommandGroup heading={group.label}>
-                    {group.items.map((item) => (
-                      <CommandItem
-                        key={item.key}
-                        value={item.key}
-                        disabled={item.disabled}
-                        onSelect={(currentValue) => {
-                          onValueChange?.(
-                            currentValue === value ? undefined : currentValue,
-                          );
-                          setOpen(false);
-                        }}
-                      >
-                        {value === item.key ? (
-                          <span
-                            className={cn(
-                              'absolute left-0 w-6 inline-flex items-center justify-center',
-                              value === item.key ? 'opacity-100' : 'opacity-0',
-                            )}
-                          >
-                            <CheckIcon />
-                          </span>
-                        ) : null}
-                        {item.label}
-                      </CommandItem>
-                    ))}
-                  </CommandGroup>
-                </Fragment>
-              ))}
+              {loading ? (
+                <CommandLoading>{loading}</CommandLoading>
+              ) : (
+                <>
+                  <CommandEmpty>{emptyHint}</CommandEmpty>
+                  {items.map((group, groupIndex) => (
+                    <Fragment key={group.key}>
+                      {groupIndex > 0 ? <CommandSeparator /> : null}
+                      <CommandGroup heading={group.label}>
+                        {group.loading ? (
+                          <CommandLoading>{group.loading}</CommandLoading>
+                        ) : (
+                          group.items.map((item) => (
+                            <CommandItem
+                              key={item.key}
+                              value={item.key}
+                              disabled={item.disabled}
+                              onSelect={(currentValue) => {
+                                onValueChange?.(
+                                  currentValue === value
+                                    ? undefined
+                                    : currentValue,
+                                );
+                                setOpen(false);
+                              }}
+                            >
+                              {value === item.key ? (
+                                <span
+                                  className={cn(
+                                    'absolute left-0 w-6 inline-flex items-center justify-center',
+                                    value === item.key
+                                      ? 'opacity-100'
+                                      : 'opacity-0',
+                                  )}
+                                >
+                                  <CheckIcon />
+                                </span>
+                              ) : null}
+                              {item.label}
+                            </CommandItem>
+                          ))
+                        )}
+                      </CommandGroup>
+                    </Fragment>
+                  ))}
+                </>
+              )}
             </CommandList>
           </Command>
         </PopoverContent>
@@ -183,4 +258,6 @@ export const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
   },
 );
 
-Combobox.displayName = 'Select';
+ComboboxRoot.displayName = 'ComboboxRoot';
+
+export { StaticCombobox as Combobox, Combobox as DynamicCombobox };
