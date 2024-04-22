@@ -2,10 +2,10 @@ import { useArgs } from '@storybook/preview-api';
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import type { ComboboxGroupProps } from './Combobox.js';
-import { Combobox } from './Combobox.js';
+import { StaticCombobox } from './Combobox.js';
 
-const meta: Meta<typeof Combobox> = {
-  component: Combobox,
+const meta: Meta<typeof StaticCombobox> = {
+  component: StaticCombobox,
   decorators: (Story, ctx) => {
     const [, setArgs] = useArgs<typeof ctx.args>();
 
@@ -27,9 +27,9 @@ const meta: Meta<typeof Combobox> = {
   render: ({ ...args }) => {
     const [value, setValue] = useState(args.value);
 
-    return <Combobox {...args} value={value} onValueChange={setValue} />;
+    return <StaticCombobox {...args} value={value} onValueChange={setValue} />;
   },
-} satisfies Meta<typeof Combobox>;
+} satisfies Meta<typeof StaticCombobox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

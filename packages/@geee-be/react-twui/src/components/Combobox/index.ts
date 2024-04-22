@@ -1,4 +1,4 @@
-export { Combobox } from './Combobox.js';
+export { Combobox, StaticCombobox } from './Combobox.js';
 export type {
   ComboboxElement,
   ComboboxGroupProps,

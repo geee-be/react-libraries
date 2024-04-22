@@ -260,4 +260,4 @@ const ComboboxRoot = forwardRef<
 
 ComboboxRoot.displayName = 'ComboboxRoot';
 
-export { StaticCombobox as Combobox, Combobox as DynamicCombobox };
+export { StaticCombobox, Combobox };
