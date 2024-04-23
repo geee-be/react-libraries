@@ -1,5 +1,5 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
-import { type VariantProps } from 'cva';
+import type { VariantProps } from 'cva';
 import * as React from 'react';
 
 import { cn } from '../../helpers/utils.js';

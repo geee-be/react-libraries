@@ -1,4 +1,4 @@
-import { type ThemableColors } from '../colors/themable-colors.js';
+import type { ThemableColors } from '../colors/themable-colors.js';
 
 export type DarkMode = 'media' | 'data-theme' | undefined;
 

@@ -1,5 +1,9 @@
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-import { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react';
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ReactNode,
+} from 'react';
 import { cn } from '../../helpers/utils';
 import { Button } from '../Button';
 

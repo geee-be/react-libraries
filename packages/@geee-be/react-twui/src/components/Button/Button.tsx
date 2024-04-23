@@ -1,6 +1,6 @@
 import { createRipple } from '@geee-be/react-utils';
 import { Slot } from '@radix-ui/react-slot';
-import { type VariantProps } from 'cva';
+import type { VariantProps } from 'cva';
 import * as React from 'react';
 
 import {

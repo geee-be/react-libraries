@@ -12,7 +12,7 @@ import type {
 import { Controller } from 'react-hook-form';
 import { fieldError } from '../../helpers/field-error.js';
 import { Label, type LabelProps } from '../Label/index.js';
-import { type LabelHelperProps } from '../types.js';
+import type { LabelHelperProps } from '../types.js';
 import type { ComboboxElement, ComboboxProps } from './Combobox.js';
 import { Combobox } from './Combobox.js';
 

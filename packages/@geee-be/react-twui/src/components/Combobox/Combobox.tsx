@@ -186,6 +186,7 @@ const ComboboxRoot = forwardRef<
         >
           <ComboboxTriggerButton
             aria-expanded={open && !disabled}
+            // biome-ignore lint/correctness/noChildrenProp: <explanation>
             children={value ? renderValue(value) : undefined}
             disabled={disabled}
             placeholder={placeholder}
@@ -260,4 +261,4 @@ const ComboboxRoot = forwardRef<
 
 ComboboxRoot.displayName = 'ComboboxRoot';
 
-export { StaticCombobox, Combobox };
+export { Combobox, StaticCombobox };

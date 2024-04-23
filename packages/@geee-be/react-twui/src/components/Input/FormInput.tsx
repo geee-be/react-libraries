@@ -12,7 +12,7 @@ import {
 } from 'react-hook-form';
 import { fieldError } from '../../helpers/field-error.js';
 import { Label, type LabelProps } from '../Label/index.js';
-import { type LabelHelperProps } from '../types.js';
+import type { LabelHelperProps } from '../types.js';
 import type { InputElement, InputProps } from './Input.js';
 import { Input } from './Input.js';
 
