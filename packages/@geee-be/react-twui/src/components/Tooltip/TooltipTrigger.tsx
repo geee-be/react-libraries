@@ -45,7 +45,7 @@ const TooltipTrigger = React.forwardRef<
             }
           }}
         >
-          <InfoIcon size="1.25rem" className="scale-100" />
+          <InfoIcon size="1.25rem" className="scale-100" title="" />
         </span>
       )}
     </PrimitiveTrigger>
