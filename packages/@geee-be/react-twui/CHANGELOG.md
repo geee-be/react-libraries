@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.2.6
+
+### Patch Changes
+
+- a948c3e: Hide "Info" title on tooltip
+
 ## 1.2.5
 
 ### Patch Changes
