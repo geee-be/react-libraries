@@ -69,12 +69,13 @@ const LabelComponent = React.forwardRef<LabelElement, LabelProps>(
               disabled && 'text-paper-fg/50',
             )}
           >
+            {' '}
             {description}
           </span>
         ) : null}
 
         {required ? (
-          <span className="text-error">
+          <span className="text-error ml-1 inline-block">
             <RequiredIcon size="0.7em" />
           </span>
         ) : null}
@@ -92,7 +93,7 @@ const LabelComponent = React.forwardRef<LabelElement, LabelProps>(
           ref={ref}
           asChild={useAsChild}
           className={cn(
-            'Label-root inline-flex cursor-pointer items-center gap-1 text-sm font-medium leading-6',
+            'Label-root inline cursor-pointer items-center gap-1 text-sm font-medium leading-6',
             disabled && 'pointer-events-none text-paper-fg/50',
             className,
           )}
@@ -101,7 +102,9 @@ const LabelComponent = React.forwardRef<LabelElement, LabelProps>(
           {innerContent}
         </LabelPrimitive.Root>
 
-        {tooltip ? <Tooltip content={tooltip} side="right" /> : null}
+        {tooltip ? (
+          <Tooltip content={tooltip} side="right" className="inline-flex" />
+        ) : null}
       </div>
     );
   },
