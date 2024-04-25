@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.2.7
+
+### Patch Changes
+
+- f95775c: inline label
+
 ## 1.2.6
 
 ### Patch Changes
