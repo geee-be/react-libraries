@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.2
+
+### Patch Changes
+
+- 7c9d2da: Try to avoid hydration error
+
 ## 1.1.0
 
 ### Minor Changes
