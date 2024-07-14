@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.2.10
+
+### Patch Changes
+
+- 8dce80f: Checkbox
+
 ## 1.2.9
 
 ### Patch Changes
