@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.2.11
+
+### Patch Changes
+
+- c01a9ba: Tidy up
+
 ## 1.2.10
 
 ### Patch Changes
