@@ -38,6 +38,15 @@ const corePlugin = (
             color: 'hsl(var(--color-foreground))',
             backgroundColor: 'hsl(var(--color-background))',
           },
+
+          '::-webkit-calendar-picker-indicator:focus': {
+            color: 'hsl(var(--color-primary))',
+            backgroundColor: 'hsl(var(--color-primary) / 0.3)',
+            outlineColor: 'hsl(var(--color-primary))',
+            outlineOffset: '2px',
+            outlineWidth: '2px',
+            borderRadius: '0.5rem',
+          },
         },
       ]);
 

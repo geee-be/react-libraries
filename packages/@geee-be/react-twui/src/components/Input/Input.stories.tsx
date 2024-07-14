@@ -19,3 +19,11 @@ export const Default: Story = {
     // color: 'default',
   },
 };
+
+export const DateInput: Story = {
+  args: {
+    ...Default.args,
+    type: 'date',
+    className: 'w-96',
+  },
+};
