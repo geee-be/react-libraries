@@ -28,7 +28,6 @@ export type FormSelectProps<
 > & {
   destructive?: boolean;
   control?: Control<T>;
-  hint?: ReactNode;
   name: Field;
   items: SelectGroupProps[];
   label: ReactNode;

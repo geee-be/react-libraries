@@ -28,7 +28,6 @@ export type FormComboboxProps<
 > & {
   destructive?: boolean;
   control?: Control<T>;
-  hint?: ReactNode;
   name: Field;
   label: ReactNode;
   placeholder?: ReactNode;

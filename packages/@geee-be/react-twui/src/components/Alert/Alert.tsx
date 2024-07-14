@@ -241,7 +241,7 @@ const AlertTitle = React.forwardRef<
   React.HTMLAttributes<HTMLParagraphElement> &
     VariantProps<typeof alertTitleVariants>
 >(({ className, color, children, ...props }, ref) => {
-  const Component = isReactElement(children) ? Slot : 'p';
+  const Component = isReactElement(children) ? Slot : 'div';
 
   return (
     <Component
@@ -259,7 +259,7 @@ const AlertDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, children, ...props }, ref) => {
-  const Component = isReactElement(children) ? Slot : 'p';
+  const Component = isReactElement(children) ? Slot : 'div';
 
   return (
     <Component

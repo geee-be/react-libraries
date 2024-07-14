@@ -32,7 +32,6 @@ export type FormInputProps<
 > & {
   destructive?: boolean;
   control?: Control<T>;
-  hint?: ReactNode;
   name: Field;
   label: ReactNode;
   placeholder?: ReactNode;
