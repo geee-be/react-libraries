@@ -31,6 +31,7 @@ export type ThemableColors = {
   background: string | [string, string];
   foreground: string | [string, string];
   default: ThemableColorScale;
+  gray: ThemableColorScale;
   primary: ThemableColorScale;
   secondary: ThemableColorScale;
   info: ThemableColorScale;
@@ -49,6 +50,7 @@ export const themableColors: ThemableColors = {
   foreground: ['hsl(255 0% 10%)', 'hsl(255 0% 92%)'],
 
   default: defaultColors,
+  gray: defaultColors,
   primary,
   secondary,
   info,
