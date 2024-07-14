@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.2.9
+
+### Patch Changes
+
+- 7f91b66: Date input styling
+
 ## 1.2.8
 
 ### Patch Changes
