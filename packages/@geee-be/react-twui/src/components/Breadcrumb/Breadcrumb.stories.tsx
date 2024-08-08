@@ -1,5 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Breadcrumb } from './index.js';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from './index.js';
 
 const meta = {
   component: Breadcrumb,
@@ -12,19 +19,19 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: (
-      <Breadcrumb.List>
-        <Breadcrumb.Item>
-          <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Separator />
-        <Breadcrumb.Item>
-          <Breadcrumb.Link href="/components">Components</Breadcrumb.Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Separator />
-        <Breadcrumb.Item>
-          <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
-        </Breadcrumb.Item>
-      </Breadcrumb.List>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
     ),
   },
 };
