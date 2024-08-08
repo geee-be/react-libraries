@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.2
+
+### Patch Changes
+
+- 0bebd0d: breadcrumb color
+
 ## 1.3.1
 
 ### Patch Changes
