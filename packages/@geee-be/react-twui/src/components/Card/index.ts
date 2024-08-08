@@ -1,12 +1,5 @@
-import { Card as CardComponent } from './Card.js';
-import { default as CardContent } from './CardContent';
-import { default as CardFooter } from './CardFooter';
-import { default as CardHeader } from './CardHeader';
-
+export { Card } from './Card.js';
 export type { CardProps } from './Card.js';
-
-export const Card = Object.assign(CardComponent, {
-  Content: CardContent,
-  Footer: CardFooter,
-  Header: CardHeader,
-});
+export { CardContent } from './CardContent';
+export { CardFooter } from './CardFooter';
+export { CardHeader } from './CardHeader';

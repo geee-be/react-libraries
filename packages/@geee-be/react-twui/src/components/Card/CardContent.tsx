@@ -6,7 +6,7 @@ import { cn, isReactElement } from '../../helpers/utils.js';
 import { cardContentVariants } from './variants.js';
 
 /* Content */
-const CardContent = React.forwardRef<
+export const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> &
     VariantProps<typeof cardContentVariants>
@@ -27,4 +27,3 @@ const CardContent = React.forwardRef<
 });
 
 CardContent.displayName = 'CardContent';
-export default CardContent;

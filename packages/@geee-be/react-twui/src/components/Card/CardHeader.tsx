@@ -5,7 +5,7 @@ import type { VariantProps } from 'cva';
 import { cn, isReactElement } from '../../helpers/utils.js';
 import { cardHeaderVariants } from './variants.js';
 
-const CardHeader = React.forwardRef<
+export const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof cardHeaderVariants>
 >(({ className, children, color, gutters, ...props }, ref) => {
@@ -28,4 +28,3 @@ const CardHeader = React.forwardRef<
 });
 
 CardHeader.displayName = 'CardHeader';
-export default CardHeader;

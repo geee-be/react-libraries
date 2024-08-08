@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card } from './index.js';
+import { Card, CardContent, CardFooter, CardHeader } from './index.js';
 
-const meta: Meta<typeof Card.Header> = {
-  component: Card.Header,
+const meta: Meta<typeof CardHeader> = {
+  component: CardHeader,
   argTypes: {
     children: { control: 'object' },
     color: {
@@ -14,15 +14,15 @@ const meta: Meta<typeof Card.Header> = {
     (Story) => (
       <Card>
         <Story />
-        <Card.Content>
+        <CardContent>
           <div>Hello Alert!</div>
           <div>Line 2</div>
-        </Card.Content>
-        <Card.Footer>Footer Here</Card.Footer>
+        </CardContent>
+        <CardFooter>Footer Here</CardFooter>
       </Card>
     ),
   ],
-} satisfies Meta<typeof Card.Header>;
+} satisfies Meta<typeof CardHeader>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
