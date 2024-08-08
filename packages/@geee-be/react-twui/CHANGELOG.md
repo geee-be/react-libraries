@@ -1,5 +1,15 @@
 # @geee-be/react-twui
 
+## 1.3.0
+
+### Minor Changes
+
+- aaf0304: Change to Card exports
+
+### Patch Changes
+
+- aaf0304: Add Breadcrumb
+
 ## 1.2.11
 
 ### Patch Changes
