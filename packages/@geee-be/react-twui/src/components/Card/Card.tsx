@@ -3,16 +3,13 @@ import * as React from 'react';
 
 import clsx from 'clsx';
 import { cn } from '../../helpers/utils.js';
-import { CardContent } from './CardContent.js';
-import { CardFooter } from './CardFooter.js';
-import { CardHeader } from './CardHeader.js';
 import { cardVariants } from './variants.js';
 
 export type CardProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> &
   VariantProps<typeof cardVariants>;
 
 /* ------------------------------- Components ------------------------------- */
-const CardComponent = React.forwardRef<HTMLDivElement, CardProps>(
+export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, color, variant = 'rounded', children, ...otherProps }, ref) => {
     return (
       <CardRoot
@@ -50,11 +47,5 @@ const CardRoot = React.forwardRef<
   );
 });
 
-CardComponent.displayName = 'Card';
+Card.displayName = 'Card';
 CardRoot.displayName = 'CardRoot';
-
-export const Card = Object.assign(CardComponent, {
-  Header: CardHeader,
-  Content: CardContent,
-  Footer: CardFooter,
-});

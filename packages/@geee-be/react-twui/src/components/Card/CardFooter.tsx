@@ -5,7 +5,7 @@ import type { VariantProps } from 'cva';
 import { cn, isReactElement } from '../../helpers/utils.js';
 import { cardFooterVariants } from './variants.js';
 
-export const CardFooter = React.forwardRef<
+const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof cardFooterVariants>
 >(({ className, children, gutters, ...props }, ref) => {
@@ -24,3 +24,4 @@ export const CardFooter = React.forwardRef<
 });
 
 CardFooter.displayName = 'CardFooter';
+export default CardFooter;
