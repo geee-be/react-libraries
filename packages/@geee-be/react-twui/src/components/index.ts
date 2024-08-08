@@ -1,5 +1,6 @@
 // Components
 export * from './Alert/index.js';
+export * from './Breadcrumb/index.js';
 export * from './Button/index.js';
 export * from './Card/index.js';
 export * from './Checkbox/index.js';
