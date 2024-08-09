@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Bean, Home } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -21,7 +22,10 @@ export const Default: Story = {
     children: (
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink href="/">
+            <Home />
+            Home
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -29,7 +33,10 @@ export const Default: Story = {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>
+            <Bean />
+            Breadcrumb
+          </BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     ),
