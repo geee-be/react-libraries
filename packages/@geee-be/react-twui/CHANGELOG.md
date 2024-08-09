@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.3
+
+### Patch Changes
+
+- cc71686: Icons in breadcrumbs
+
 ## 1.3.2
 
 ### Patch Changes
