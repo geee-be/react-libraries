@@ -17,6 +17,7 @@ const BreadcrumbList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ol
     ref={ref}
+    aria-orientation="horizontal"
     className={cn(
       'flex flex-wrap items-center gap-1.5 break-words text-sm text-paper-fg/75 sm:gap-2.5',
       className,
