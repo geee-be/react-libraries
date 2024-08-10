@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.4
+
+### Patch Changes
+
+- 8e4d02e: Added Avatar
+
 ## 1.3.3
 
 ### Patch Changes
