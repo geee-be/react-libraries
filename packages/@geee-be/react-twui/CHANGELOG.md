@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.5
+
+### Patch Changes
+
+- 2cdf974: CardContent add gap variant
+
 ## 1.3.4
 
 ### Patch Changes
