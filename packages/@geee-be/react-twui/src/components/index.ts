@@ -14,6 +14,7 @@ export * from './Join/index.js';
 export * from './Label/index.js';
 export * from './Popover/index.js';
 export * from './Select/index.js';
+export * from './Skeleton/index.js';
 export * from './Tooltip/index.js';
 
 export type { LabelHelperProps } from './types.js';
