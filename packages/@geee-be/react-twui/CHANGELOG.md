@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 1.3.6
+
+### Patch Changes
+
+- f4829ef: Missed passing gap
+- b4bc94b: Card parts asChild
+
 ## 1.3.5
 
 ### Patch Changes
