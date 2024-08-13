@@ -19,8 +19,17 @@ export const cardVariants = cva({
 });
 
 export const cardContentVariants = cva({
-  base: 'text-start font-normal space-y-6',
+  base: 'text-start font-normal gap-6',
   variants: {
+    gap: {
+      none: 'gap-0',
+      xs: 'gap-1',
+      sm: 'gap-2',
+      md: 'gap-4',
+      lg: 'gap-6',
+      xl: 'gap-8',
+      '2xl': 'gap-12',
+    },
     gutters: {
       'collapse-none': 'm-6',
       'collapse-x': 'my-6 mx-0',
@@ -29,6 +38,7 @@ export const cardContentVariants = cva({
     },
   },
   defaultVariants: {
+    gap: 'lg',
     gutters: 'collapse-none',
   },
 });
