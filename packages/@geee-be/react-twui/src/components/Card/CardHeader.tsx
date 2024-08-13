@@ -7,9 +7,12 @@ import { cardHeaderVariants } from './variants.js';
 
 export const CardHeader = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof cardHeaderVariants>
->(({ className, children, color, gutters, ...props }, ref) => {
-  const Component = isReactElement(children) ? Slot : 'div';
+  React.HTMLAttributes<HTMLDivElement> &
+    VariantProps<typeof cardHeaderVariants> & {
+      asChild?: boolean;
+    }
+>(({ asChild, className, children, color, gutters, ...props }, ref) => {
+  const Component = asChild || isReactElement(children) ? Slot : 'div';
 
   return (
     <div

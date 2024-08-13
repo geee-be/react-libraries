@@ -9,9 +9,11 @@ import { cardContentVariants } from './variants.js';
 export const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> &
-    VariantProps<typeof cardContentVariants>
->(({ className, children, gap, gutters, ...props }, ref) => {
-  const Component = isReactElement(children) ? Slot : 'div';
+    VariantProps<typeof cardContentVariants> & {
+      asChild?: boolean;
+    }
+>(({ asChild, className, children, gap, gutters, ...props }, ref) => {
+  const Component = asChild || isReactElement(children) ? Slot : 'div';
 
   return (
     <div data-component="CardContent" className={className}>

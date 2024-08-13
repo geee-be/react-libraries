@@ -7,9 +7,12 @@ import { cardFooterVariants } from './variants.js';
 
 export const CardFooter = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof cardFooterVariants>
->(({ className, children, gutters, ...props }, ref) => {
-  const Component = isReactElement(children) ? Slot : 'div';
+  React.HTMLAttributes<HTMLDivElement> &
+    VariantProps<typeof cardFooterVariants> & {
+      asChild?: boolean;
+    }
+>(({ asChild, className, children, gutters, ...props }, ref) => {
+  const Component = asChild || isReactElement(children) ? Slot : 'div';
 
   return (
     <div
