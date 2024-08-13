@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.7
+
+### Patch Changes
+
+- c8ba370: Add Skeleton
+
 ## 1.3.6
 
 ### Patch Changes
