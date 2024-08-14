@@ -19,7 +19,7 @@ export const cardVariants = cva({
 });
 
 export const cardContentVariants = cva({
-  base: 'text-start font-normal gap-6',
+  base: 'text-start font-normal flex flex-col',
   variants: {
     gap: {
       none: 'gap-0',
