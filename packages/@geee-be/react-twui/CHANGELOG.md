@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.9
+
+### Patch Changes
+
+- fc5a726: CardContent flex-col
+
 ## 1.3.8
 
 ### Patch Changes
