@@ -45,11 +45,18 @@ export const FormCheckbox = <
       name={name}
       rules={{ required }}
       disabled={disabled}
-      render={({ field, fieldState: { error } }) => (
+      render={({ field, fieldState: { error }, formState }) => (
         <Checkbox
           id={elId}
           ref={field.ref}
-          disabled={disabled || field.disabled}
+          disabled={
+            disabled ||
+            field.disabled ||
+            formState.isLoading ||
+            formState.isValidating ||
+            formState.isSubmitting ||
+            formState.disabled
+          }
           name={name}
           onBlur={field.onBlur}
           onCheckedChange={(value) =>

@@ -62,11 +62,18 @@ export const FormCombobox = <
       name={name}
       rules={{ required }}
       disabled={disabled}
-      render={({ field, fieldState: { error } }) => (
+      render={({ field, fieldState: { error }, formState }) => (
         <div className="flex flex-col gap-1 antialiased">
           <Label
             description={description}
-            disabled={disabled}
+            disabled={
+              disabled ||
+              field.disabled ||
+              formState.isLoading ||
+              formState.isValidating ||
+              formState.isSubmitting ||
+              formState.disabled
+            }
             htmlFor={elId}
             id={`${elId}__label`}
             required={!!required}
@@ -83,7 +90,14 @@ export const FormCombobox = <
               aria-invalid={ariaInvalid}
               aria-labelledby={label ? `${elId}__label` : undefined}
               destructive={!!error}
-              disabled={disabled || field.disabled}
+              disabled={
+                disabled ||
+                field.disabled ||
+                formState.isLoading ||
+                formState.isValidating ||
+                formState.isSubmitting ||
+                formState.disabled
+              }
               name={name}
               onBlur={field.onBlur}
               onValueChange={(value) => {
@@ -97,7 +111,14 @@ export const FormCombobox = <
 
           <Label.Helper
             aria-invalid={ariaInvalid}
-            disabled={disabled}
+            disabled={
+              disabled ||
+              field.disabled ||
+              formState.isLoading ||
+              formState.isValidating ||
+              formState.isSubmitting ||
+              formState.disabled
+            }
             id={`${elId}__describer`}
           >
             {error && (
