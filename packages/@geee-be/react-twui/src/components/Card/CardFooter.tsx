@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import * as React from 'react';
 
 import type { VariantProps } from 'cva';
-import { cn, isReactElement } from '../../helpers/utils.js';
+import { cn } from '../../helpers/utils.js';
 import { cardFooterVariants } from './variants.js';
 
 export const CardFooter = React.forwardRef<
@@ -12,7 +12,7 @@ export const CardFooter = React.forwardRef<
       asChild?: boolean;
     }
 >(({ asChild, className, children, gutters, ...props }, ref) => {
-  const Component = asChild || isReactElement(children) ? Slot : 'div';
+  const Component = asChild ? Slot : 'div';
 
   return (
     <div
