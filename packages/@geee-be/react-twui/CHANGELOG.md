@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.10
+
+### Patch Changes
+
+- 4b65cc4: Explicit asChild
+
 ## 1.3.9
 
 ### Patch Changes
