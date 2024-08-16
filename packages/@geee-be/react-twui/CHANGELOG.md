@@ -1,5 +1,13 @@
 # @geee-be/react-twui
 
+## 1.3.12
+
+### Patch Changes
+
+- b5d137c: Add Carousel
+- Updated dependencies [b5d137c]
+  - @geee-be/react-utils@1.1.3
+
 ## 1.3.11
 
 ### Patch Changes

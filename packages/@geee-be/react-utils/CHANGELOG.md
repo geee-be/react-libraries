@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.3
+
+### Patch Changes
+
+- b5d137c: Add Carousel
+
 ## 1.1.2
 
 ### Patch Changes
