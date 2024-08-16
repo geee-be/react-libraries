@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader } from './index.js';
 const meta = {
   component: Card,
   argTypes: {
-    children: { control: 'none' },
+    children: { control: undefined },
     color: { control: 'radio', options: ['none', 'primary'] },
     variant: { control: 'radio', options: ['rounded', 'square-top'] },
   },
