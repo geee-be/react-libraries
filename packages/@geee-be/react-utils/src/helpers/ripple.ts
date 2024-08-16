@@ -6,7 +6,6 @@ export const createRipple: MouseEventHandler<HTMLElement> = (event) => {
   const element = event.currentTarget;
   if (!element || !(element instanceof HTMLElement)) return;
 
-  element.style.position = 'relative';
   element.style.overflow = 'hidden';
 
   const rect = element.getBoundingClientRect();

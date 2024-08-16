@@ -4,6 +4,7 @@ export * from './Avatar/index.js';
 export * from './Breadcrumb/index.js';
 export * from './Button/index.js';
 export * from './Card/index.js';
+export * from './Carousel/index.js';
 export * from './Checkbox/index.js';
 export * from './Combobox/index.js';
 export * from './Command/index.js';

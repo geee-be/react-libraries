@@ -21,6 +21,7 @@ export const buttonVariants = cva({
       warning: 'outline-warning',
       success: 'outline-success',
       error: 'outline-error',
+      card: 'outline-control-focus',
     },
     variant: {
       solid: '',
@@ -154,6 +155,13 @@ export const buttonVariants = cva({
       color: 'error',
       variant: ['outline', 'transparent'],
       class: 'text-error hover:bg-error/10 dark:hover:bg-error-fg/20',
+    },
+    // card
+    {
+      color: 'card',
+      variant: 'solid',
+      class:
+        'bg-paper text-paper-fg grow hover:bg-paper/80 hover:scale-[1] hover:shadow-lg active:scale-[0.97]',
     },
     // transparent
     {
