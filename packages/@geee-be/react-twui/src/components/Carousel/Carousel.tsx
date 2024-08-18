@@ -1,12 +1,14 @@
 'use client';
 
+import type { VariantProps } from 'cva';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import * as React from 'react';
 import { cn } from '../../helpers/utils.js';
 import { Button } from '../Button/index.js';
+import { nextButtonVariants, previousButtonVariants } from './variants.js';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -195,10 +197,20 @@ CarouselItem.displayName = 'CarouselItem';
 
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<typeof Button> & { autoHide?: boolean }
+  React.ComponentProps<typeof Button> &
+    Omit<VariantProps<typeof previousButtonVariants>, 'orientation'> & {
+      autoHide?: boolean;
+    }
 >(
   (
-    { className, autoHide, variant = 'outline', size = 'xs-icon', ...props },
+    {
+      className,
+      autoHide,
+      layout,
+      variant = 'outline',
+      size = 'xs-icon',
+      ...props
+    },
     ref,
   ) => {
     const { orientation, scrollPrev, canScrollPrev } = useCarousel();
@@ -209,10 +221,7 @@ const CarouselPrevious = React.forwardRef<
         variant={variant}
         size={size}
         className={cn(
-          'absolute h-8 w-8 rounded-full',
-          orientation === 'horizontal'
-            ? '-left-12 top-1/2 -translate-y-1/2'
-            : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+          previousButtonVariants({ orientation, layout }),
           !canScrollPrev && autoHide && 'hidden',
           className,
         )}
@@ -220,8 +229,12 @@ const CarouselPrevious = React.forwardRef<
         onClick={scrollPrev}
         {...props}
       >
-        <ArrowLeft className="h-4 w-4" />
-        <span className="sr-only">Previous slide</span>
+        {layout === 'overlayed' ? (
+          <ChevronLeft className="h-6 w-6" />
+        ) : (
+          <ArrowLeft className="h-4 w-4" />
+        )}
+        <span className="sr-only">Previous</span>
       </Button>
     );
   },
@@ -230,10 +243,20 @@ CarouselPrevious.displayName = 'CarouselPrevious';
 
 const CarouselNext = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<typeof Button> & { autoHide?: boolean }
+  React.ComponentProps<typeof Button> &
+    Omit<VariantProps<typeof nextButtonVariants>, 'orientation'> & {
+      autoHide?: boolean;
+    }
 >(
   (
-    { className, autoHide, variant = 'outline', size = 'xs-icon', ...props },
+    {
+      className,
+      autoHide,
+      layout,
+      variant = 'outline',
+      size = 'xs-icon',
+      ...props
+    },
     ref,
   ) => {
     const { orientation, scrollNext, canScrollNext } = useCarousel();
@@ -244,10 +267,7 @@ const CarouselNext = React.forwardRef<
         variant={variant}
         size={size}
         className={cn(
-          'absolute h-8 w-8 rounded-full',
-          orientation === 'horizontal'
-            ? '-right-12 top-1/2 -translate-y-1/2'
-            : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
+          nextButtonVariants({ orientation, layout }),
           !canScrollNext && autoHide && 'hidden',
           className,
         )}
@@ -255,8 +275,12 @@ const CarouselNext = React.forwardRef<
         onClick={scrollNext}
         {...props}
       >
-        <ArrowRight className="h-4 w-4" />
-        <span className="sr-only">Next slide</span>
+        {layout === 'overlayed' ? (
+          <ChevronRight className="h-6 w-6" />
+        ) : (
+          <ArrowRight className="h-4 w-4" />
+        )}
+        <span className="sr-only">Next</span>
       </Button>
     );
   },

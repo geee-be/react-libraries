@@ -29,6 +29,7 @@ const meta = {
         'warning',
         'success',
         'error',
+        'card',
       ],
       defaultValue: { summary: 'default' },
     },

@@ -14,7 +14,7 @@ const meta = {
   component: Carousel,
   decorators: (Story, ctx) => {
     return (
-      <div className="my-16 mx-16 max-w-6xl">
+      <div className="my-16 mx-16 max-w-[500px]">
         <Story args={{ ...ctx.args }} />
       </div>
     );
@@ -95,20 +95,20 @@ export const CardButtons: Story = {
     },
     children: (
       <>
-        <CarouselPrevious autoHide />
+        <CarouselPrevious autoHide layout="overlayed" />
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {Array.from({ length: 15 }).map((_, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: index is all we have in this case
-            <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+            <CarouselItem key={index} className="md:basis-[28%] lg:basis-[18%]">
               <div className="p-1">
-                <Button color="card" className="min-h-24 flex grow w-full">
-                  No {index}
+                <Button color="card" className="flex grow w-full">
+                  <CardContent>No {index}</CardContent>
                 </Button>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext autoHide />
+        <CarouselNext autoHide layout="overlayed" />
       </>
     ),
   },

@@ -56,6 +56,10 @@ const corePlugin = (
             '-webkit-font-smoothing': 'var(--font-smooth--webkit)',
             '-moz-osx-font-smoothing': 'var(--font-smooth--moz)',
           },
+          '.font-inherit': {
+            fontWeight: 'inherit',
+            fontFace: 'inherit',
+          },
         },
       ]);
 
