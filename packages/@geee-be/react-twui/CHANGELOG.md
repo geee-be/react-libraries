@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.13
+
+### Patch Changes
+
+- d673db1: Improvements to Carousel
+
 ## 1.3.12
 
 ### Patch Changes
