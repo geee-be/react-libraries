@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.14
+
+### Patch Changes
+
+- d3657cf: Minor tweaks to card button and carousel
+
 ## 1.3.13
 
 ### Patch Changes
