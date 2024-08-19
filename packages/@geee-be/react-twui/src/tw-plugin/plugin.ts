@@ -58,7 +58,7 @@ const corePlugin = (
           },
           '.font-inherit': {
             fontWeight: 'inherit',
-            fontFace: 'inherit',
+            fontFamily: 'inherit',
           },
         },
       ]);

@@ -161,7 +161,7 @@ export const buttonVariants = cva({
       color: 'card',
       variant: 'solid',
       class: [
-        'bg-paper text-paper-fg grow normal-case font-inherit rounded-xl',
+        'bg-paper text-paper-fg border border-paper-border grow normal-case font-inherit rounded-xl',
         'shadow-none hover:!shadow-none',
         'justify-stretch items-start p-0',
         'hover:bg-paper/80 hover:scale-[1] hover:shadow-lg active:scale-[0.97]',
