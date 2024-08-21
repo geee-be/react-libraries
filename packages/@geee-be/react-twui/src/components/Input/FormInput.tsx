@@ -85,14 +85,6 @@ export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
         <div className="flex flex-col gap-1 antialiased">
           <Label
             description={description}
-            disabled={
-              disabled ||
-              field.disabled ||
-              formState.isLoading ||
-              formState.isValidating ||
-              formState.isSubmitting ||
-              formState.disabled
-            }
             htmlFor={elId}
             id={`${elId}__label`}
             required={!!required}
@@ -113,7 +105,6 @@ export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
                 disabled ||
                 field.disabled ||
                 formState.isLoading ||
-                formState.isValidating ||
                 formState.isSubmitting ||
                 formState.disabled
               }

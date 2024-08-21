@@ -53,7 +53,6 @@ export const FormCheckbox = <
             disabled ||
             field.disabled ||
             formState.isLoading ||
-            formState.isValidating ||
             formState.isSubmitting ||
             formState.disabled
           }

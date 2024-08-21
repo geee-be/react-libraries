@@ -92,7 +92,6 @@ export const FormSelect = <T extends FieldValues, Field extends FieldPath<T>>({
                 disabled ||
                 field.disabled ||
                 formState.isLoading ||
-                formState.isValidating ||
                 formState.isSubmitting ||
                 formState.disabled
               }
