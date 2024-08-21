@@ -1,5 +1,13 @@
 # @geee-be/react-twui
 
+## 1.3.15
+
+### Patch Changes
+
+- cd8ab6e: Minor style tweaks
+- 46c0a98: Add InputOtp
+- bd1fa8f: fix focus issue in form fields
+
 ## 1.3.14
 
 ### Patch Changes
