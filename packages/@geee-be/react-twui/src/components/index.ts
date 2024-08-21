@@ -11,6 +11,7 @@ export * from './Command/index.js';
 export * from './Dialog/index.js';
 export * from './icons/index.js';
 export * from './Input/index.js';
+export * from './InputOtp/index.js';
 export * from './Join/index.js';
 export * from './Label/index.js';
 export * from './Popover/index.js';

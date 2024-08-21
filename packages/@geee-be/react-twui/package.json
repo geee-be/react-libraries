@@ -22,10 +22,7 @@
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
   "types": "./dist/cjs/index.d.cts",
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "scripts": {
     "build": "concurrently \"npm run build:cjs\" \"npm run build:esm\"",
     "build:cjs": "tsup --format cjs --external react",
@@ -72,9 +69,10 @@
     "embla-carousel": "^8.1.8",
     "embla-carousel-react": "^8.1.8",
     "flat": "^6.0.1",
+    "input-otp": "^1.2.4",
     "lodash.omit": "^4.5.0",
-    "lucide-react": "^0.360.0",
-    "react-hook-form": "^7.50.0",
+    "lucide-react": "^0.429.0",
+    "react-hook-form": "^7.52.2",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
