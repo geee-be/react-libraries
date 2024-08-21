@@ -1,4 +1,5 @@
 export { FormInputOtp } from './FormInputOtp.js';
+export type { FormInputOtpElement, FormInputOtpProps } from './FormInputOtp.js';
 export {
   InputOtp,
   InputOtpGroup,

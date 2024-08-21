@@ -17,7 +17,7 @@ import type { InputOtpElement, InputOtpProps } from './InputOtp.js';
 import { InputOtp } from './InputOtp.js';
 
 /* ---------------------------------- Types --------------------------------- */
-export type FormInputTopElement = InputOtpElement;
+export type FormInputOtpElement = InputOtpElement;
 
 export type FormInputOtpProps<
   T extends FieldValues,
