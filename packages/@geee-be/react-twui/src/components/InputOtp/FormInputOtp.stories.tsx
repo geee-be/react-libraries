@@ -69,6 +69,7 @@ export const Default: FC = () => {
         label="One Time Password"
         helperText="Enter the OTP you received by email"
         maxLength={6}
+        pushPasswordManagerStrategy="increase-width"
       >
         <InputOtpGroup>
           <InputOtpSlot index={0} />

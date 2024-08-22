@@ -39,6 +39,7 @@ export const FormInputOtp = <
   T extends FieldValues,
   Field extends FieldPath<T>,
 >({
+  autoFocus,
   children,
   className,
   control,
@@ -109,6 +110,7 @@ export const FormInputOtp = <
               }
               onChange={field.onChange}
               value={field.value}
+              autoFocus={autoFocus}
             >
               {children}
             </InputOtp>
