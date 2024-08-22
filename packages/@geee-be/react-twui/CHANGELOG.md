@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.16
+
+### Patch Changes
+
+- 5d2bd6a: Small changes to IntutOtp
+
 ## 1.3.15
 
 ### Patch Changes
