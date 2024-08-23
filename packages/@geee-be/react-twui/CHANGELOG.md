@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.18
+
+### Patch Changes
+
+- c63de52: Thumb styling
+
 ## 1.3.17
 
 ### Patch Changes
