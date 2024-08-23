@@ -15,6 +15,7 @@ export * from './InputOtp/index.js';
 export * from './Join/index.js';
 export * from './Label/index.js';
 export * from './Popover/index.js';
+export * from './ScrollArea/index.js';
 export * from './Select/index.js';
 export * from './Skeleton/index.js';
 export * from './Tooltip/index.js';
