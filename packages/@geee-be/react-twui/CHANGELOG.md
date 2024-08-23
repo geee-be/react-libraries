@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.17
+
+### Patch Changes
+
+- dd1e546: Add ScrollArea
+
 ## 1.3.16
 
 ### Patch Changes
