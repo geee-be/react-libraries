@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.20
+
+### Patch Changes
+
+- f2a64bf: Popover exports
+
 ## 1.3.19
 
 ### Patch Changes
