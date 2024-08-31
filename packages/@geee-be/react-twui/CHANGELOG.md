@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.19
+
+### Patch Changes
+
+- 3d05477: Add missing popover exports
+
 ## 1.3.18
 
 ### Patch Changes
