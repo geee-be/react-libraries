@@ -3,6 +3,5 @@ export {
   PopoverArrow,
   PopoverClose,
   PopoverContent,
-  PopoverPortal,
   PopoverTrigger,
 } from './Popover';
