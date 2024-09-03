@@ -7,7 +7,6 @@ import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ElementRef,
-  type HTMLAttributes,
   type ReactNode,
 } from 'react';
 import { cn } from '../../helpers/utils';
@@ -156,23 +155,6 @@ const CommandItem = forwardRef<
 
 CommandItem.displayName = CommandPrimitive.Item.displayName;
 
-const CommandShortcut = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLSpanElement>) => {
-  return (
-    <span
-      className={cn(
-        'ml-auto text-xs tracking-widest text-control-fg/50',
-        className,
-      )}
-      {...props}
-    />
-  );
-};
-
-CommandShortcut.displayName = 'CommandShortcut';
-
 export {
   Command,
   CommandDialog,
@@ -183,5 +165,4 @@ export {
   CommandList,
   CommandLoading,
   CommandSeparator,
-  CommandShortcut,
 };

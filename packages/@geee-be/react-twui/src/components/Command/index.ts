@@ -8,5 +8,4 @@ export {
   CommandList,
   CommandLoading,
   CommandSeparator,
-  CommandShortcut,
 } from './Command.js';

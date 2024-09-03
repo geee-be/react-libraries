@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { ShortcutKey } from '../ShortcutKey/index.js';
 import {
   Command,
   CommandEmpty,
@@ -7,7 +8,6 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
 } from './index.js';
 
 const meta = {
@@ -25,7 +25,7 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput autoFocus placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
@@ -37,7 +37,7 @@ export const Default: Story = {
           <CommandGroup heading="Settings">
             <CommandItem>
               <span>Profile</span>
-              <CommandShortcut>⌘P</CommandShortcut>
+              <ShortcutKey>⌘P</ShortcutKey>
             </CommandItem>
             <CommandItem>Billing</CommandItem>
             <CommandItem>Settings</CommandItem>
