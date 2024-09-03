@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.4
+
+### Patch Changes
+
+- 464eb24: Trial sub components with Card
+
 ## 1.1.3
 
 ### Patch Changes
