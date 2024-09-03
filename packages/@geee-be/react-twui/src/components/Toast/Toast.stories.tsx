@@ -12,7 +12,6 @@ export default meta;
 
 const options: ToastOptions = {
   autoClose: 2000,
-  // type: ToastType.success,
   hideProgressBar: false,
   position: 'top-right',
   pauseOnHover: true,
