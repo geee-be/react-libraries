@@ -1,5 +1,14 @@
 # @geee-be/react-twui
 
+## 1.3.23
+
+### Patch Changes
+
+- 464eb24: Trial sub components with Card
+- 78b3fd5: Add ShortcutKey
+- Updated dependencies [464eb24]
+  - @geee-be/react-utils@1.1.4
+
 ## 1.3.22
 
 ### Patch Changes
