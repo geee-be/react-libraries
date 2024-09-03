@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.22
+
+### Patch Changes
+
+- 69a8a55: Add Spinner
+
 ## 1.3.21
 
 ### Patch Changes
