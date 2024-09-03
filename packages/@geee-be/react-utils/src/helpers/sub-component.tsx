@@ -5,8 +5,8 @@ export const withSubComponents = <P extends {}, S>(
   subComponents: S,
 ) =>
   Object.assign(
-    forwardRef<P, P>((props, ref) => (
-      <RootComponent {...props} {...(ref ? { ref } : {})} />
+    forwardRef<P, P>((props, ref: any) => (
+      <RootComponent {...props} ref={ref} />
     )),
     subComponents,
   );
