@@ -21,7 +21,7 @@ const options: ToastOptions = {
 export const Default: FC = () => (
   <>
     <Toaster />
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 max-w-96">
       <Button
         onClick={() => {
           toast('Default toast', options);

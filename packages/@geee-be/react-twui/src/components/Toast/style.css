@@ -48,6 +48,7 @@
 
 .Toastify__toast-container {
   z-index: var(--toastify-z-index);
+  transform: translate3d(0, 0, var(--toastify-z-index));
   -webkit-transform: translate3d(0, 0, var(--toastify-z-index));
   position: fixed;
   padding: 4px;
@@ -110,7 +111,7 @@
   min-height: var(--toastify-toast-min-height);
   box-sizing: border-box;
   margin-bottom: 1rem;
-  padding: 8px;
+  padding: 1rem;
   @apply rounded-lg;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   display: -ms-flexbox;
