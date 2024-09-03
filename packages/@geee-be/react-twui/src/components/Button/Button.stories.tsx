@@ -1,5 +1,6 @@
 import { UserIcon } from '@iconicicons/react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { Spinner } from '../Spinner/Spinner.js';
 import { Button } from './index.js';
 
 const meta = {
@@ -60,6 +61,13 @@ export const IconBefore: Story = {
   args: {
     ...Default.args,
     before: <UserIcon />,
+  },
+};
+
+export const SpinnerBefore: Story = {
+  args: {
+    ...Default.args,
+    before: <Spinner color="foreground" />,
   },
 };
 
