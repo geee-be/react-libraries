@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.21
+
+### Patch Changes
+
+- 88e7116: Add Toaster
+
 ## 1.3.20
 
 ### Patch Changes
