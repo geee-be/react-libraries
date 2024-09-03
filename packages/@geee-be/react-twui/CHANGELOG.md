@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.24
+
+### Patch Changes
+
+- a78117b: Revert sub components
+
 ## 1.3.23
 
 ### Patch Changes
