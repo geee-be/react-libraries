@@ -9,6 +9,7 @@ const meta = {
     after: { table: { disable: true } },
     before: { table: { disable: true } },
     asChild: { table: { disable: true } },
+    disabled: { control: 'boolean', defaultValue: { summary: false } },
     isIconOnly: { control: 'boolean', defaultValue: { summary: false } },
     shape: {
       control: 'select',
