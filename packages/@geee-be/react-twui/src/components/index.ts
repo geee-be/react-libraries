@@ -9,6 +9,7 @@ export * from './Checkbox/index.js';
 export * from './Combobox/index.js';
 export * from './Command/index.js';
 export * from './Dialog/index.js';
+export * from './Drawer/index.js';
 export * from './icons/index.js';
 export * from './Input/index.js';
 export * from './InputOtp/index.js';
