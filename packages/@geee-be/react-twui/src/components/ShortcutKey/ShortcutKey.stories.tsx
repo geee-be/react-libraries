@@ -9,7 +9,7 @@ const meta = {
 export default meta;
 
 export const Default: FC = () => (
-  <div>
+  <div className="text-background-fg">
     <div>
       Please don't press <ShortcutKey>⌘C</ShortcutKey> right now.
     </div>
