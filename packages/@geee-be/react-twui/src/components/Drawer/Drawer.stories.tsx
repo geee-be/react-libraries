@@ -100,7 +100,7 @@ export const FloatLeft: Story = {
     children: (
       <>
         <DrawerTrigger>Open</DrawerTrigger>
-        <DrawerContent from="left" className="left-4 inset-y-4 rounded-2xl">
+        <DrawerContent from="left" inset="md">
           <DrawerHeader>
             <DrawerTitle>Are you absolutely sure?</DrawerTitle>
             <DrawerDescription>This action cannot be undone.</DrawerDescription>

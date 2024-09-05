@@ -53,12 +53,16 @@ const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> &
     VariantProps<typeof contentVariants>
->(({ className, children, from, ...props }, ref) => (
+>(({ className, children, from, inset, ...props }, ref) => (
   <DrawerPortal>
     <DrawerOverlay />
     <DrawerPrimitive.Content
       ref={ref}
-      className={cn('Drawer-content', contentVariants({ from }), className)}
+      className={cn(
+        'Drawer-content',
+        contentVariants({ from, inset }),
+        className,
+      )}
       {...props}
     >
       {children}
