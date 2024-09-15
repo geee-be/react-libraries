@@ -3,7 +3,7 @@ import { cva } from 'cva';
 export const alertVariants = cva({
   variants: {
     variant: {
-      inline: 'rounded-lg px-2 py-3 sm:items-center',
+      inline: 'rounded-lg px-2 py-3 items-center',
       expanded: 'gap-1 rounded-r-lg border-l-2 p-4 pl-14px',
     },
     color: {
