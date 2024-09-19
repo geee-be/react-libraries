@@ -1,5 +1,14 @@
 # @geee-be/react-twui
 
+## 1.3.26
+
+### Patch Changes
+
+- b579458: Drawer inset variant
+- 247de21: Add cropper and image input
+- 2b7166c: lighten dark default color
+- c83d376: Alert: center vertically
+
 ## 1.3.25
 
 ### Patch Changes
