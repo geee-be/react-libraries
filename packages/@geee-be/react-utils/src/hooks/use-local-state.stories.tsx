@@ -19,7 +19,7 @@ export const Primary: Story = {
         {JSON.stringify(value)}
         <button
           type="button"
-          onClick={() => setValue((prev) => ({ val: prev.val + 1 ?? -2 }))}
+          onClick={() => setValue((prev) => ({ val: prev.val + 1 }))}
         >
           Inc
         </button>
