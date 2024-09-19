@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputImageBorder as InputImage } from './index.js';
+import { InputImage } from './index.js';
 
 const meta = {
   component: InputImage,

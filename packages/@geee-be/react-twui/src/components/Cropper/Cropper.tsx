@@ -66,7 +66,7 @@ export const Cropper = forwardRef<
   />
 ));
 
-export const BackgroundWrapperWithNotifications = ({
+const BackgroundWrapperWithNotifications = ({
   cropper,
   scaleImage = true,
   moveImage = true,

@@ -61,10 +61,7 @@ const blobToImage = (blob: Blob): Promise<HTMLImageElement> => {
   });
 };
 
-export const computeScale = (
-  originalSize: Size,
-  imageSpec: ImageSpec,
-): number => {
+const computeScale = (originalSize: Size, imageSpec: ImageSpec): number => {
   const aspectRatio = originalSize.width / originalSize.height;
 
   if ('aspectRatio' in imageSpec) {

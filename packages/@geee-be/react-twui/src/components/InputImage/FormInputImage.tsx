@@ -12,14 +12,13 @@ import {
   type ValidationRule,
 } from 'react-hook-form';
 import { fieldError } from '../../helpers/field-error.js';
-import { cn } from '../../helpers/utils.js';
 import { Label, type LabelProps } from '../Label/index.js';
 import type { LabelHelperProps } from '../types.js';
 import type { InputImageProps } from './InputImage.js';
 import { InputImage } from './InputImage.js';
 import type { ImageSpec } from './types.js';
 
-export type FormInputProps<
+export type FormInputImageProps<
   T extends FieldValues,
   Field extends FieldPath<T>,
 > = Omit<InputImageProps & LabelProps & LabelHelperProps, 'required'> & {
@@ -65,7 +64,7 @@ export const FormInputImage = <
   useImageTitle,
 
   ...otherProps
-}: FormInputProps<T, Field>): ReactElement => {
+}: FormInputImageProps<T, Field>): ReactElement => {
   const generatedId = useId();
   const elId = id ?? generatedId;
   const ariaInvalid = otherProps['aria-invalid'] ?? destructive;
