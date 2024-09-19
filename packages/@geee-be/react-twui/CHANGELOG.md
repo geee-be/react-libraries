@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.27
+
+### Patch Changes
+
+- 68ea8f0: Try local styles
+
 ## 1.3.26
 
 ### Patch Changes
