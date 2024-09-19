@@ -11,6 +11,7 @@ const config = {
     twui({
       darkMode: 'data-theme',
     }),
+    require('@tailwindcss/container-queries'),
   ],
   theme: {
     extend: {

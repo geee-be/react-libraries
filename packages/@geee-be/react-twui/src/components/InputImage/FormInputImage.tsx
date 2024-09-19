@@ -2,44 +2,45 @@
 
 import type { ReactElement, ReactNode } from 'react';
 import { useId } from 'react';
-import type {
-  Control,
-  FieldPath,
-  FieldValues,
-  Message,
-  ValidationRule,
+import {
+  Controller,
+  type Control,
+  type FieldPath,
+  type FieldValues,
+  type Message,
+  type ValidationRule,
 } from 'react-hook-form';
-import { Controller } from 'react-hook-form';
 import { fieldError } from '../../helpers/field-error.js';
 import { Label, type LabelProps } from '../Label/index.js';
 import type { LabelHelperProps } from '../types.js';
-import type { ComboboxElement, ComboboxProps } from './Combobox.js';
-import { Combobox } from './Combobox.js';
+import type { ImageSpec, InputImageProps } from './InputImage.js';
+import { InputImage } from './InputImage.js';
 
-/* ---------------------------------- Types --------------------------------- */
-export type FormComboboxElement = ComboboxElement;
-
-export type FormComboboxProps<
+export type FormInputProps<
   T extends FieldValues,
   Field extends FieldPath<T>,
-> = Omit<
-  ComboboxProps & LabelProps & LabelHelperProps,
-  'required' | 'min' | 'max' | 'maxLength' | 'minLength' | 'pattern'
-> & {
+> = Omit<InputImageProps & LabelProps & LabelHelperProps, 'required'> & {
   destructive?: boolean;
   control?: Control<T>;
   name: Field;
   label: ReactNode;
-  placeholder?: ReactNode;
+
+  cropTitle?: ReactNode;
+  discardImageTitle?: ReactNode;
+  imageSpec: ImageSpec;
+  outputMimeType?: string;
+  useImageTitle?: ReactNode;
+
   // validation
   required?: Message | ValidationRule<boolean>;
 };
 
 /* -------------------------------- Component ------------------------------- */
-export const FormCombobox = <
+export const FormInputImage = <
   T extends FieldValues,
   Field extends FieldPath<T>,
 >({
+  className,
   control,
   description,
   destructive,
@@ -48,10 +49,18 @@ export const FormCombobox = <
   id,
   label,
   name,
-  required,
   tooltip,
+  required,
+
+  cropTitle,
+  discardImageTitle,
+  imageSpec,
+  outputMimeType,
+  placeholder,
+  useImageTitle,
+
   ...otherProps
-}: FormComboboxProps<T, Field>): ReactElement => {
+}: FormInputProps<T, Field>): ReactElement => {
   const generatedId = useId();
   const elId = id ?? generatedId;
   const ariaInvalid = otherProps['aria-invalid'] ?? destructive;
@@ -60,20 +69,14 @@ export const FormCombobox = <
     <Controller
       control={control}
       name={name}
-      rules={{ required }}
+      rules={{
+        required,
+      }}
       disabled={disabled}
       render={({ field, fieldState: { error }, formState }) => (
         <div className="flex flex-col gap-1 antialiased">
           <Label
             description={description}
-            disabled={
-              disabled ||
-              field.disabled ||
-              formState.isLoading ||
-              formState.isValidating ||
-              formState.isSubmitting ||
-              formState.disabled
-            }
             htmlFor={elId}
             id={`${elId}__label`}
             required={!!required}
@@ -83,13 +86,20 @@ export const FormCombobox = <
           </Label>
 
           <div className="relative flex items-center">
-            <Combobox
+            <InputImage
               id={elId}
               ref={field.ref}
               aria-describedby={helperText ? `${elId}__describer` : undefined}
               aria-invalid={ariaInvalid}
               aria-labelledby={label ? `${elId}__label` : undefined}
-              destructive={!!error}
+              // destructive={!!error}
+              className={className}
+              cropTitle={cropTitle}
+              discardImageTitle={discardImageTitle}
+              imageSpec={imageSpec}
+              outputMimeType={outputMimeType}
+              placeholder={placeholder}
+              useImageTitle={useImageTitle}
               disabled={
                 disabled ||
                 field.disabled ||
@@ -97,13 +107,15 @@ export const FormCombobox = <
                 formState.isSubmitting ||
                 formState.disabled
               }
-              name={name}
+              // name={name}
               onBlur={field.onBlur}
-              onValueChange={(value) => {
+              onImageSelect={(value) => {
+                // console.log('image', value);
                 field.onChange({ target: { name, value } });
               }}
-              value={field.value as string}
+              // value={field.value as string}
               {...otherProps}
+              // {...(field as any)}
             />
           </div>
 
@@ -130,4 +142,4 @@ export const FormCombobox = <
   );
 };
 
-FormCombobox.displayName = 'FormCombobox';
+FormInputImage.displayName = 'FormInputImage';
