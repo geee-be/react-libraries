@@ -1,6 +1,7 @@
 import type { Meta } from '@storybook/react';
 import type { FC } from 'react';
 import { useEffect } from 'react';
+import { CircleStencil } from 'react-advanced-cropper';
 import type { SubmitErrorHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { Button } from '../Button/Button.js';
@@ -70,6 +71,7 @@ export const Default: FC = () => {
           'image/svg+xml': ['.svg'],
           'image/webp': ['.webp'],
         }}
+        cropperProps={{ stencilComponent: CircleStencil }}
         imageSpec={{ width: 256, height: 256 }}
         placeholder="Drag 'n' drop an image here, or click to select one"
         className="max-w-64 h-64"

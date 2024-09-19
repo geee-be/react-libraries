@@ -2,6 +2,7 @@
 
 import type { ReactElement, ReactNode } from 'react';
 import { useId } from 'react';
+import type { CropperProps } from 'react-advanced-cropper';
 import {
   Controller,
   type Control,
@@ -27,6 +28,7 @@ export type FormInputProps<
   name: Field;
   label: ReactNode;
 
+  cropperProps?: Pick<CropperProps, 'stencilComponent' | 'stencilProps'>;
   cropTitle?: ReactNode;
   discardImageTitle?: ReactNode;
   imageSpec: ImageSpec;
@@ -54,6 +56,7 @@ export const FormInputImage = <
   tooltip,
   required,
 
+  cropperProps,
   cropTitle,
   discardImageTitle,
   imageSpec,
@@ -95,7 +98,8 @@ export const FormInputImage = <
               aria-invalid={ariaInvalid}
               aria-labelledby={label ? `${elId}__label` : undefined}
               // destructive={!!error}
-              className={cn(field.value && 'border-solid p-0', className)}
+              className={className}
+              cropperProps={cropperProps}
               cropTitle={cropTitle}
               discardImageTitle={discardImageTitle}
               imageSpec={imageSpec}

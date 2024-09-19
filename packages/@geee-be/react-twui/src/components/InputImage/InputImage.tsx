@@ -11,8 +11,9 @@ import {
   type FC,
   type ReactNode,
 } from 'react';
-import type { CropperRef } from 'react-advanced-cropper';
+import type { CropperProps, CropperRef } from 'react-advanced-cropper';
 import type { DropzoneOptions } from 'react-dropzone-esm';
+import { cn } from '../../helpers/utils';
 import { Button } from '../Button';
 import { Cropper } from '../Cropper';
 import { Dialog, DialogContent, DialogTitle } from '../Dialog';
@@ -28,6 +29,7 @@ export type InputImageProps = VariantProps<typeof borderVariants> &
     React.HTMLProps<HTMLElement>,
     'id' | 'ref' | 'className' | 'onChange'
   > & {
+    cropperProps?: Pick<CropperProps, 'stencilComponent' | 'stencilProps'>;
     cropTitle?: ReactNode;
     discardImageTitle?: ReactNode;
     imageSpec: ImageSpec;
@@ -43,6 +45,7 @@ export const InputImage: FC<InputImageProps> = ({
   ref,
   className,
   accept,
+  cropperProps,
   cropTitle = 'Crop image',
   disabled,
   discardImageTitle = 'Discard',
@@ -57,8 +60,11 @@ export const InputImage: FC<InputImageProps> = ({
   const [file, setFile] = useState<File | undefined>();
   const [showCropper, setShowCropper] = useState(false);
   const [rendering, setRendering] = useState(false);
+  const [uncontrolledValue, setUncontrolledValue] = useState<Blob>();
   const narrow = useMediaQuery('@container (min-width: 42rem /* 672px */)');
   const cropperRef = useRef<CropperRef>(null);
+
+  const displayValue = value ?? uncontrolledValue;
 
   const aspectRatio = useMemo(
     () =>
@@ -85,11 +91,9 @@ export const InputImage: FC<InputImageProps> = ({
     exportImage(canvas, exportSize, outputMimeType)
       .then((blob) => {
         onChange?.(blob);
+        setUncontrolledValue(blob);
         setFile(undefined);
         setShowCropper(false);
-        // const file = new File([blob], 'image.png', { type: blob.type });
-        // setFile(file);
-        // setShowCropper(!!file);
       })
       .finally(() => {
         setRendering(false);
@@ -104,9 +108,10 @@ export const InputImage: FC<InputImageProps> = ({
           src={URL.createObjectURL(file)}
           aspectRatio={aspectRatio ?? { minimum: 1, maximum: 1 }}
           className="!max-h-[calc(100vh-180px)]"
+          {...cropperProps}
         />
       ),
-    [file, aspectRatio],
+    [file, aspectRatio, cropperProps],
   );
 
   return (
@@ -123,7 +128,7 @@ export const InputImage: FC<InputImageProps> = ({
             'image/webp': ['.webp'],
           }
         }
-        className={className}
+        className={cn(displayValue && 'border-solid p-0', className)}
         disabled={disabled}
         onChange={(selectedFile) => {
           setFile(selectedFile);
@@ -131,8 +136,8 @@ export const InputImage: FC<InputImageProps> = ({
         }}
         shape={shape}
       >
-        {value ? (
-          <img src={URL.createObjectURL(value)} alt="selected content" />
+        {displayValue ? (
+          <img src={URL.createObjectURL(displayValue)} alt="selected content" />
         ) : (
           placeholder
         )}

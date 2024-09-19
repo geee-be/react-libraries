@@ -16,7 +16,7 @@ import {
   useScaleImageOptions,
 } from 'react-advanced-cropper';
 import 'react-advanced-cropper/dist/style.css';
-import 'react-advanced-cropper/dist/themes/corners.css';
+import 'react-advanced-cropper/dist/themes/compact.css';
 import { useDebouncedCallback } from 'use-debounce';
 import { cn } from '../../helpers/utils';
 import './style.css';
