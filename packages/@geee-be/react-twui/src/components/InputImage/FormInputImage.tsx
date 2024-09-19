@@ -11,10 +11,12 @@ import {
   type ValidationRule,
 } from 'react-hook-form';
 import { fieldError } from '../../helpers/field-error.js';
+import { cn } from '../../helpers/utils.js';
 import { Label, type LabelProps } from '../Label/index.js';
 import type { LabelHelperProps } from '../types.js';
-import type { ImageSpec, InputImageProps } from './InputImage.js';
+import type { InputImageProps } from './InputImage.js';
 import { InputImage } from './InputImage.js';
+import type { ImageSpec } from './types.js';
 
 export type FormInputProps<
   T extends FieldValues,
@@ -93,7 +95,7 @@ export const FormInputImage = <
               aria-invalid={ariaInvalid}
               aria-labelledby={label ? `${elId}__label` : undefined}
               // destructive={!!error}
-              className={className}
+              className={cn(field.value && 'border-solid p-0', className)}
               cropTitle={cropTitle}
               discardImageTitle={discardImageTitle}
               imageSpec={imageSpec}
@@ -107,15 +109,12 @@ export const FormInputImage = <
                 formState.isSubmitting ||
                 formState.disabled
               }
-              // name={name}
               onBlur={field.onBlur}
-              onImageSelect={(value) => {
-                // console.log('image', value);
+              onChange={(value) => {
                 field.onChange({ target: { name, value } });
               }}
-              // value={field.value as string}
+              value={field.value as Blob}
               {...otherProps}
-              // {...(field as any)}
             />
           </div>
 

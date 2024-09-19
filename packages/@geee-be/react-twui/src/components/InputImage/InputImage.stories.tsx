@@ -15,12 +15,6 @@ export const Default: Story = {
     placeholder: <p>Drag 'n' drop some files here, or click to select files</p>,
     className: 'w-64',
     shape: 'rectangle',
-    accept: {
-      'image/png': ['.png'],
-      'image/jpeg': ['.jpg', '.jpeg'],
-      'image/svg+xml': ['.svg'],
-      'image/webp': ['.webp'],
-    },
   },
 };
 
@@ -35,9 +29,7 @@ export const AspectRatio: Story = {
     className: 'w-64',
     shape: 'rectangle',
     accept: {
-      'image/png': ['.png'],
       'image/jpeg': ['.jpg', '.jpeg'],
-      'image/svg+xml': ['.svg'],
       'image/webp': ['.webp'],
     },
   },

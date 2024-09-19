@@ -4,7 +4,7 @@ import { cn } from '../../helpers/utils.js';
 export const borderVariants = cva({
   // base: 'w-full py-9 bg-control border border-control-border gap-3 grid border-dashed',
   base: cn(
-    'antialiased flex text-center items-center justify-center grow border px-4 py-2 text-sm leading-6 transition-colors duration-100 cursor-pointer',
+    'antialiased flex text-center items-center justify-center grow border px-4 py-2 text-sm leading-6 transition-colors duration-100 cursor-pointer overflow-hidden',
     // focus
     'outline-control-focus focus:outline focus:outline-2 focus:outline-offset-2',
     // color

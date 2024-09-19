@@ -1,4 +1,5 @@
 import type { Size } from 'advanced-cropper';
+import type { ImageSpec } from './types';
 
 // Function to export the canvas with a different size
 export const exportImage = async (
@@ -58,4 +59,51 @@ const blobToImage = (blob: Blob): Promise<HTMLImageElement> => {
     };
     img.src = url;
   });
+};
+
+export const computeScale = (
+  originalSize: Size,
+  imageSpec: ImageSpec,
+): number => {
+  const aspectRatio = originalSize.width / originalSize.height;
+
+  if ('aspectRatio' in imageSpec) {
+    const maxWidth = imageSpec.maxWidth ?? Number.POSITIVE_INFINITY;
+    const maxHeight = imageSpec.maxHeight ?? Number.POSITIVE_INFINITY;
+    const minWidth = imageSpec.minWidth ?? 1;
+    const minHeight = imageSpec.minHeight ?? 1;
+
+    if (originalSize.width > maxWidth || originalSize.height > maxHeight) {
+      // scale original size to fit the new size
+      return Math.min(
+        maxWidth / originalSize.width,
+        maxHeight / originalSize.height,
+      );
+    }
+
+    if (originalSize.width < minWidth || originalSize.height < minHeight) {
+      // scale original size to fit the new size
+      return Math.max(
+        minWidth / originalSize.width,
+        minHeight / originalSize.height,
+      );
+    }
+
+    return 1;
+  }
+
+  const width = imageSpec.width;
+  const height = imageSpec.height;
+
+  // scale original size to fit the new size
+  return Math.min(width / originalSize.width, height / originalSize.height);
+};
+
+export const finalSize = (originalSize: Size, imageSpec: ImageSpec): Size => {
+  const scale = computeScale(originalSize, imageSpec);
+  if (scale === 1) return originalSize;
+
+  const scaledWidth = originalSize.width * scale;
+  const scaledHeight = originalSize.height * scale;
+  return { width: scaledWidth, height: scaledHeight };
 };
