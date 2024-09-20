@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.28
+
+### Patch Changes
+
+- d656be3: forwardRef for image input
+
 ## 1.3.27
 
 ### Patch Changes
