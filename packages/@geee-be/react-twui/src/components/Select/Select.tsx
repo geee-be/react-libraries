@@ -96,7 +96,7 @@ export const Select = forwardRef<SelectElement, SelectProps>(
         </BaseSelect.Icon>
       </BaseSelect.Trigger>
       <BaseSelect.Portal>
-        <BaseSelect.Content className="overflow-hidden bg-control rounded-xl border-2 border-control-focus shadow-xl">
+        <BaseSelect.Content className="overflow-hidden bg-control rounded-xl border-2 border-control-focus/50 shadow-xl">
           <BaseSelect.ScrollUpButton className="flex items-center justify-center h-6 bg-control text-control-fg cursor-default">
             <ChevronUpIcon />
           </BaseSelect.ScrollUpButton>
