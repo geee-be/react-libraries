@@ -2,10 +2,10 @@
 
 import { CheckIcon } from '@radix-ui/react-icons';
 import { Popover } from '@radix-ui/react-popover';
-import { useDebounce } from '@uidotdev/usehooks';
 import { LocateIcon } from 'lucide-react';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Fragment, forwardRef, useEffect, useState } from 'react';
+import { useDebounceValue } from 'usehooks-ts';
 import { cn } from '../../helpers/utils.js';
 import {
   Command,
@@ -93,11 +93,14 @@ const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
     const [loadedItems, setLoadedItems] = useState<ComboboxGroupProps[]>([]);
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState('');
-
-    const debouncedSearch = useDebounce(search, debounceMs);
+    const [debouncedSearch, setDebouncedSearch] = useDebounceValue(
+      search,
+      debounceMs,
+    );
 
     // biome-ignore lint/correctness/useExhaustiveDependencies: used in debounce
     useEffect(() => {
+      setDebouncedSearch(search);
       setLoading(true);
     }, [search]);
 

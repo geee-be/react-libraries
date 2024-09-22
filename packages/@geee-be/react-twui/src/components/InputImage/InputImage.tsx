@@ -1,6 +1,6 @@
 'use client';
 
-import { useMediaQuery } from '@uidotdev/usehooks';
+import { useMediaQuery } from 'usehooks-ts';
 import type { VariantProps } from 'cva';
 import { ChevronLeft, CircleCheckBig } from 'lucide-react';
 import {
