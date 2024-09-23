@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.32
+
+### Patch Changes
+
+- c7c1065: CSS modules
+
 ## 1.3.31
 
 ### Patch Changes
