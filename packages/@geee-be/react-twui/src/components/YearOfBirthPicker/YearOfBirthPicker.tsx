@@ -155,6 +155,7 @@ export const YearOfBirthPicker = forwardRef<
             disabled={disabled}
             className={cn(
               'justify-start text-left font-normal shadow-none hover:shadow-none focus:shadow-none',
+              'focus:outline focus:outline-2 focus:outline-offset-2',
               ariaInvalid && 'border-destructive hover:border-destructive',
               disabled && 'cursor-not-allowed',
               disabled &&
