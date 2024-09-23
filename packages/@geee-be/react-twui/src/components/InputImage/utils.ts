@@ -1,5 +1,5 @@
 import type { Size } from 'advanced-cropper';
-import type { ImageSpec } from './types';
+import type { ImageSpec, ValueType } from './types';
 
 // Function to export the canvas with a different size
 export const exportImage = async (
@@ -103,4 +103,25 @@ export const finalSize = (originalSize: Size, imageSpec: ImageSpec): Size => {
   const scaledWidth = originalSize.width * scale;
   const scaledHeight = originalSize.height * scale;
   return { width: scaledWidth, height: scaledHeight };
+};
+
+export const fromValue = (value: string | ArrayBuffer | Blob): Blob => {
+  if (value instanceof ArrayBuffer) return new Blob([value]);
+  if (typeof value === 'string')
+    return new Blob([Buffer.from(value, 'base64')]);
+  return value;
+};
+
+export const toValue = async (
+  blob: Blob,
+  type: ValueType,
+): Promise<Buffer | string | Blob> => {
+  switch (type) {
+    case 'buffer':
+      return Buffer.from(await blob.arrayBuffer());
+    case 'base64':
+      return Buffer.from(await blob.arrayBuffer()).toString('base64');
+    default:
+      return Promise.resolve(blob);
+  }
 };

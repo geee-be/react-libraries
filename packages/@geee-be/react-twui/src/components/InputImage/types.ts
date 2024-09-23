@@ -16,3 +16,5 @@ export type ImageSpec =
       minHeight?: number;
     }
   | Size;
+
+export type ValueType = 'blob' | 'buffer' | 'base64';

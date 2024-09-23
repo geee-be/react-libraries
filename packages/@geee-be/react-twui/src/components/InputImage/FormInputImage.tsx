@@ -16,7 +16,8 @@ import { Label, type LabelProps } from '../Label/index.js';
 import type { LabelHelperProps } from '../types.js';
 import type { InputImageProps } from './InputImage.js';
 import { InputImage } from './InputImage.js';
-import type { ImageSpec } from './types.js';
+import type { ImageSpec, ValueType } from './types.js';
+import { fromValue, toValue } from './utils.js';
 
 export type FormInputImageProps<
   T extends FieldValues,
@@ -26,6 +27,7 @@ export type FormInputImageProps<
   control?: Control<T>;
   name: Field;
   label: ReactNode;
+  valueType?: ValueType;
 
   cropperProps?: Pick<CropperProps, 'stencilComponent' | 'stencilProps'>;
   cropTitle?: ReactNode;
@@ -54,6 +56,7 @@ export const FormInputImage = <
   name,
   tooltip,
   required,
+  valueType = 'blob',
 
   cropperProps,
   cropTitle,
@@ -114,9 +117,13 @@ export const FormInputImage = <
               }
               onBlur={field.onBlur}
               onChange={(value) => {
-                field.onChange({ target: { name, value } });
+                Promise.resolve(() =>
+                  field.onChange({
+                    target: { name, value: toValue(value as Blob, valueType) },
+                  }),
+                ).catch(console.error);
               }}
-              value={field.value as Blob}
+              value={fromValue(field.value)}
               {...otherProps}
             />
           </div>
