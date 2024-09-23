@@ -1,6 +1,5 @@
 'use client';
 
-import { useMediaQuery } from 'usehooks-ts';
 import type { VariantProps } from 'cva';
 import { ChevronLeft, CircleCheckBig } from 'lucide-react';
 import {
@@ -13,6 +12,7 @@ import {
 } from 'react';
 import type { CropperProps, CropperRef } from 'react-advanced-cropper';
 import type { DropzoneOptions } from 'react-dropzone-esm';
+import { useMediaQuery } from 'usehooks-ts';
 import { cn } from '../../helpers/utils';
 import { Button } from '../Button';
 import { Cropper } from '../Cropper';
@@ -154,7 +154,7 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
             }
           }}
         >
-          <DialogContent aria-describedby={undefined}>
+          <DialogContent aria-describedby={undefined} className="flex flex-col">
             <DialogTitle>{cropTitle}</DialogTitle>
             {cropper}
             <div className="flex gap-3 justify-end @container">
