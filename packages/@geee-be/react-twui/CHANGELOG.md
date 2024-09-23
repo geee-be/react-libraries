@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.34
+
+### Patch Changes
+
+- e2d7a12: InputImage value type
+
 ## 1.3.33
 
 ### Patch Changes
