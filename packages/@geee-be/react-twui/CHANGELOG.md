@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.33
+
+### Patch Changes
+
+- 177565b: CSS
+
 ## 1.3.32
 
 ### Patch Changes
