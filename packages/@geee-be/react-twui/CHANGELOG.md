@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.31
+
+### Patch Changes
+
+- fcaab6a: Tweak dialog layout
+
 ## 1.3.30
 
 ### Patch Changes
