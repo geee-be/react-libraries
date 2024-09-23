@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.30
+
+### Patch Changes
+
+- e69ee06: Revert button focus style
+
 ## 1.3.29
 
 ### Patch Changes
