@@ -1,5 +1,9 @@
 @import './base.css';
 
+@import './components/Cropper/style.css';
+@import './components/Cropper/custom.css';
+@import './components/Cropper/compact.css';
+
 html,
 body {
   @apply w-full h-full;

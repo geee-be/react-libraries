@@ -17,9 +17,6 @@ import {
 } from 'react-advanced-cropper';
 import { useDebouncedCallback } from 'use-debounce';
 import { cn } from '../../helpers/utils';
-import './compact.module.css';
-import './custom.module.css';
-import './style.module.css';
 
 const getAspectRatio = (state: CropperState, settings: CoreSettings) => {
   const aspectRatio =
