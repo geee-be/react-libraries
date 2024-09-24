@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.35
+
+### Patch Changes
+
+- 0c540df: Fix missing value for InputImage
+
 ## 1.3.34
 
 ### Patch Changes
