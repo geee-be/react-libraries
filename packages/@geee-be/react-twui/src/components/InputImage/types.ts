@@ -18,3 +18,8 @@ export type ImageSpec =
   | Size;
 
 export type ValueType = 'blob' | 'buffer' | 'base64';
+
+export type ImageBinary<T> = {
+  mimeType: string;
+  data: T;
+};

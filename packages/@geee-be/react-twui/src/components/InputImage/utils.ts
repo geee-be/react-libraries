@@ -1,5 +1,5 @@
 import type { Size } from 'advanced-cropper';
-import type { ImageSpec, ValueType } from './types';
+import type { ImageBinary, ImageSpec, ValueType } from './types';
 
 // Function to export the canvas with a different size
 export const exportImage = async (
@@ -105,22 +105,38 @@ export const finalSize = (originalSize: Size, imageSpec: ImageSpec): Size => {
   return { width: scaledWidth, height: scaledHeight };
 };
 
-export const fromValue = (value: string | ArrayBuffer | Blob): Blob => {
-  if (value instanceof ArrayBuffer) return new Blob([value]);
-  if (typeof value === 'string')
-    return new Blob([Buffer.from(value, 'base64')]);
-  return value;
+export const fromValue = (
+  value: ImageBinary<string | ArrayBuffer | Buffer> | Blob,
+): Blob => {
+  if ('data' in value) {
+    if (value.data instanceof ArrayBuffer)
+      return new Blob([value.data], { type: value.mimeType });
+    if (value.data instanceof Buffer)
+      return new Blob([value.data], { type: value.mimeType });
+    if (typeof value.data === 'string')
+      return new Blob([Buffer.from(value.data, 'base64')], {
+        type: value.mimeType,
+      });
+  }
+  if (value instanceof Blob) return value;
+  throw new Error('Invalid value');
 };
 
 export const toValue = async (
   blob: Blob,
-  type: ValueType,
-): Promise<Buffer | string | Blob> => {
+  type?: ValueType,
+): Promise<ImageBinary<Buffer | string> | Blob> => {
   switch (type) {
     case 'buffer':
-      return Buffer.from(await blob.arrayBuffer());
+      return {
+        data: Buffer.from(await blob.arrayBuffer()),
+        mimeType: blob.type,
+      };
     case 'base64':
-      return Buffer.from(await blob.arrayBuffer()).toString('base64');
+      return {
+        data: Buffer.from(await blob.arrayBuffer()).toString('base64'),
+        mimeType: blob.type,
+      };
     default:
       return Promise.resolve(blob);
   }

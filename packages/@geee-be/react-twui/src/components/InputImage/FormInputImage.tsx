@@ -117,11 +117,16 @@ export const FormInputImage = <
               }
               onBlur={field.onBlur}
               onChange={(value) => {
-                Promise.resolve(() =>
-                  field.onChange({
-                    target: { name, value: toValue(value as Blob, valueType) },
-                  }),
-                ).catch(console.error);
+                Promise.resolve()
+                  .then(async () =>
+                    field.onChange({
+                      target: {
+                        name,
+                        value: await toValue(value as Blob, valueType),
+                      },
+                    }),
+                  )
+                  .catch(console.error);
               }}
               value={fromValue(field.value)}
               {...otherProps}
