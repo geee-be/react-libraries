@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.36
+
+### Patch Changes
+
+- 22304ee: Fix TypeError
+
 ## 1.3.35
 
 ### Patch Changes
