@@ -107,7 +107,8 @@ export const finalSize = (originalSize: Size, imageSpec: ImageSpec): Size => {
 
 export const fromValue = (
   value: ImageBinary<string | ArrayBuffer | Buffer> | Blob,
-): Blob => {
+): Blob | undefined => {
+  if (!value) return undefined;
   if ('data' in value) {
     if (value.data instanceof ArrayBuffer)
       return new Blob([value.data], { type: value.mimeType });
