@@ -21,7 +21,7 @@ const Command = forwardRef<
     className={cn(
       'flex h-full w-full flex-col overflow-hidden rounded-lg bg-paper/100 text-popover-foreground',
       // focus
-      'focus-within:border-none focus-within:outline focus-within:outline-2 focus-within:outline-control-focus/50',
+      'border-none outline outline-2 outline-control-focus/50',
       // color
       'bg-control text-control-fg border border-default hover:border-default/70 data-[placeholder]:text-control-fg/50',
       '[&_[cmdk-input-wrapper]]:border-default [&_[cmdk-input-wrapper]]:hover:border-default/70',
