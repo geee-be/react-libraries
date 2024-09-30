@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.37
+
+### Patch Changes
+
+- 46f1fd5: Tweak default colors
+
 ## 1.3.36
 
 ### Patch Changes
