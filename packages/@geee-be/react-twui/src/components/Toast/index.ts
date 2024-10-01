@@ -1,12 +1,9 @@
-import './style.css';
-// import 'react-toastify/dist/ReactToastify.css';
-
 export {
-  ToastContainer as Toaster,
   toast,
   useToast,
   type ToastOptions,
 } from 'react-toastify';
+export { Toaster, type ToasterProps } from './Toaster';
 
 export const ToastType = {
   info: 'info',
