@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.38
+
+### Patch Changes
+
+- 8d50650: Wrap Toaster as a client component
+
 ## 1.3.37
 
 ### Patch Changes
