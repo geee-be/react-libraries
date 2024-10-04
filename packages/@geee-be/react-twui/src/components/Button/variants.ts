@@ -1,7 +1,7 @@
 import { cva } from 'cva';
 
 export const buttonVariants = cva({
-  base: 'group inline-flex shrink-0 shadow-md select-none items-center justify-center text-sm font-semibold uppercase leading-6 transition-colors duration-100 antialiased border border-transparent focus:outline-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-[1.03] hover:shadow-lg active:scale-[0.97] active:shadow-sm transition-all duration-200',
+  base: 'group inline-flex shrink-0 shadow-md select-none items-center justify-center text-sm font-semibold uppercase leading-6 transition-colors duration-100 antialiased border border-transparent focus:outline-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 hover:scale-[1.03] disabled:hover:scale-[1] hover:shadow-lg disabled:hover:shadow-none active:scale-[0.97] active:shadow-sm transition-all duration-200',
   variants: {
     size: {
       'xs-icon': 'gap-0 p-2',
@@ -48,7 +48,8 @@ export const buttonVariants = cva({
     {
       color: 'default',
       variant: 'solid',
-      class: 'bg-default text-default-fg hover:bg-default/80',
+      class:
+        'bg-default text-default-fg hover:bg-default/80 disabled:hover:bg-default',
     },
     {
       color: 'default',
@@ -64,7 +65,8 @@ export const buttonVariants = cva({
     {
       color: 'primary',
       variant: 'solid',
-      class: 'bg-primary text-primary-fg hover:bg-primary/80',
+      class:
+        'bg-primary text-primary-fg hover:bg-primary/80 disabled:hover:bg-primary',
     },
     {
       color: 'primary',
@@ -80,7 +82,8 @@ export const buttonVariants = cva({
     {
       color: 'secondary',
       variant: 'solid',
-      class: 'bg-secondary text-secondary-fg hover:bg-secondary/80',
+      class:
+        'bg-secondary text-secondary-fg hover:bg-secondary/80 disabled:hover:bg-secondary',
     },
     {
       color: 'secondary',
@@ -97,7 +100,7 @@ export const buttonVariants = cva({
     {
       color: 'info',
       variant: 'solid',
-      class: 'bg-info text-info-fg hover:bg-info/80',
+      class: 'bg-info text-info-fg hover:bg-info/80 disabled:hover:bg-info',
     },
     {
       color: 'info',
@@ -113,7 +116,8 @@ export const buttonVariants = cva({
     {
       color: 'warning',
       variant: 'solid',
-      class: 'bg-warning text-warning-fg hover:bg-warning/80',
+      class:
+        'bg-warning text-warning-fg hover:bg-warning/80 disabled:hover:bg-warning',
     },
     {
       color: 'warning',
@@ -129,7 +133,8 @@ export const buttonVariants = cva({
     {
       color: 'success',
       variant: 'solid',
-      class: 'bg-success text-success-fg hover:bg-success/80',
+      class:
+        'bg-success text-success-fg hover:bg-success/80 disabled:hover:bg-success',
     },
     {
       color: 'success',
@@ -145,7 +150,7 @@ export const buttonVariants = cva({
     {
       color: 'error',
       variant: 'solid',
-      class: 'bg-error text-error-fg hover:bg-error/80',
+      class: 'bg-error text-error-fg hover:bg-error/80 disabled:hover:bg-error',
     },
     {
       color: 'error',
@@ -165,7 +170,7 @@ export const buttonVariants = cva({
         'bg-paper text-paper-fg border border-paper-border grow normal-case font-inherit rounded-xl',
         'shadow-none hover:!shadow-none',
         'justify-stretch items-start p-0',
-        'hover:bg-paper/80 hover:scale-[1] hover:shadow-lg active:scale-[0.97]',
+        'hover:bg-paper/80 disabled:hover:bg-paper hover:scale-[1] active:scale-[0.97]',
       ],
     },
     // transparent

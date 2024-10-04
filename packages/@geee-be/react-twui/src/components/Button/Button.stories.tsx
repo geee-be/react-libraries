@@ -1,5 +1,6 @@
 import { UserIcon } from '@iconicicons/react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { Spinner } from '../Spinner/Spinner.js';
 import { Button } from './index.js';
 
@@ -76,5 +77,27 @@ export const IconAfter: Story = {
   args: {
     ...Default.args,
     after: <UserIcon />,
+  },
+};
+
+export const Disable: Story = {
+  render: () => {
+    const [busy, setBusy] = useState(false);
+
+    const handleClick = () => {
+      setBusy(true);
+      setTimeout(() => setBusy(false), 2000);
+    };
+    return (
+      <Button
+        {...Default.args}
+        id="test-button"
+        onClick={handleClick}
+        disabled={busy}
+        color="primary"
+      >
+        Test me
+      </Button>
+    );
   },
 };
