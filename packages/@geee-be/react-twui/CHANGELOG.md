@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.39
+
+### Patch Changes
+
+- e278853: Improve ripple when disabled
+
 ## 1.3.38
 
 ### Patch Changes
