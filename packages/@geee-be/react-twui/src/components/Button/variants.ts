@@ -1,7 +1,7 @@
 import { cva } from 'cva';
 
 export const buttonVariants = cva({
-  base: 'group inline-flex shrink-0 shadow-md select-none items-center justify-center text-sm font-semibold uppercase leading-6 transition-colors duration-100 antialiased border border-transparent focus:outline-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 hover:scale-[1.03] disabled:hover:scale-[1] hover:shadow-lg disabled:hover:shadow-none active:scale-[0.97] active:shadow-sm transition-all duration-200',
+  base: 'relative group inline-flex shrink-0 shadow-md select-none items-center justify-center text-sm font-semibold uppercase leading-6 transition-colors duration-100 antialiased border border-transparent focus:outline-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 hover:scale-[1.03] disabled:hover:scale-[1] hover:shadow-lg disabled:hover:shadow-none active:scale-[0.97] active:shadow-sm transition-all duration-200',
   variants: {
     size: {
       'xs-icon': 'gap-0 p-2',

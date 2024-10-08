@@ -152,9 +152,9 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
         )}
         disabled={disabled}
         {...otherProps}
-        onMouseUp={(e) => {
+        onClick={(e) => {
           createRipple(e);
-          otherProps.onMouseUp?.(
+          otherProps.onClick?.(
             e as React.MouseEvent<HTMLButtonElement, MouseEvent>,
           );
         }}
