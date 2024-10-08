@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.40
+
+### Patch Changes
+
+- acb104c: Fix ripple on button
+
 ## 1.3.39
 
 ### Patch Changes
