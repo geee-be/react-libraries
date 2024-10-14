@@ -10,8 +10,8 @@ import {
   type Message,
   type ValidationRule,
 } from 'react-hook-form';
-import { fieldError } from '../../helpers/field-error.js';
-import { Label, type LabelProps } from '../Label/index.js';
+import { FormControl } from '../FormControl/FormControl.js';
+import type { LabelProps } from '../Label/index.js';
 import type { LabelHelperProps } from '../types.js';
 import type { InputOtpElement, InputOtpProps } from './InputOtp.js';
 import { InputOtp } from './InputOtp.js';
@@ -68,72 +68,51 @@ export const FormInputOtp = <
       }}
       disabled={disabled}
       render={({ field, fieldState: { error }, formState }) => (
-        <div className="flex flex-col gap-1 antialiased">
-          <Label
-            description={description}
-            disabled={
-              disabled ||
-              field.disabled ||
-              formState.isLoading ||
-              formState.isValidating ||
-              formState.isSubmitting ||
-              formState.disabled
-            }
-            htmlFor={elId}
-            id={`${elId}__label`}
-            required={!!required}
-            tooltip={tooltip}
-          >
-            {label}
-          </Label>
-
-          <div className="relative flex items-center">
-            <InputOtp
-              id={elId}
-              ref={field.ref}
-              aria-describedby={helperText ? `${elId}__describer` : undefined}
-              aria-invalid={ariaInvalid}
-              aria-labelledby={label ? `${elId}__label` : undefined}
-              // destructive={!!error}
-              disabled={
-                disabled ||
-                field.disabled ||
-                formState.isLoading ||
-                formState.isSubmitting ||
-                formState.disabled
-              }
-              name={name}
-              maxLength={
-                (typeof maxLength === 'number'
-                  ? maxLength
-                  : maxLength?.value) || 6
-              }
-              onChange={field.onChange}
-              value={field.value}
-              autoFocus={autoFocus}
-            >
-              {children}
-            </InputOtp>
-          </div>
-
-          <Label.Helper
+        <FormControl
+          id={elId}
+          aria-invalid={otherProps['aria-invalid']}
+          description={description}
+          destructive={!!error}
+          disabled={
+            disabled ||
+            field.disabled ||
+            formState.isLoading ||
+            formState.isValidating ||
+            formState.isSubmitting ||
+            formState.disabled
+          }
+          error={error}
+          helperText={helperText}
+          label={label}
+          required={required}
+          tooltip={tooltip}
+        >
+          <InputOtp
+            id={elId}
+            ref={field.ref}
+            aria-describedby={helperText ? `${elId}__describer` : undefined}
             aria-invalid={ariaInvalid}
+            aria-labelledby={label ? `${elId}__label` : undefined}
+            // destructive={!!error}
             disabled={
               disabled ||
               field.disabled ||
               formState.isLoading ||
-              formState.isValidating ||
               formState.isSubmitting ||
               formState.disabled
             }
-            id={`${elId}__describer`}
+            name={name}
+            maxLength={
+              (typeof maxLength === 'number' ? maxLength : maxLength?.value) ||
+              6
+            }
+            onChange={field.onChange}
+            value={field.value}
+            autoFocus={autoFocus}
           >
-            {error && (
-              <span className="text-error mr-2">{fieldError(error)}</span>
-            )}
-            <span className="">{helperText}</span>
-          </Label.Helper>
-        </div>
+            {children}
+          </InputOtp>
+        </FormControl>
       )}
     />
   );

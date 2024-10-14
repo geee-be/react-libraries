@@ -11,6 +11,7 @@ export * from './Command/index.js';
 export * from './Cropper/index.js';
 export * from './Dialog/index.js';
 export * from './Drawer/index.js';
+export * from './FormControl/index.js';
 export * from './icons/index.js';
 export * from './Input/index.js';
 export * from './InputImage/index.js';

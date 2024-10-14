@@ -10,8 +10,8 @@ import type {
   ValidationRule,
 } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
-import { fieldError } from '../../helpers/field-error.js';
-import { Label, type LabelProps } from '../Label/index.js';
+import { FormControl } from '../FormControl/FormControl.js';
+import type { LabelProps } from '../Label/index.js';
 import type { LabelHelperProps } from '../types.js';
 import type { SelectElement, SelectGroupProps, SelectProps } from './Select.js';
 import { Select } from './Select.js';
@@ -61,68 +61,48 @@ export const FormSelect = <T extends FieldValues, Field extends FieldPath<T>>({
       rules={{ required }}
       disabled={disabled}
       render={({ field, fieldState: { error }, formState }) => (
-        <div className="flex flex-col gap-1 antialiased">
-          <Label
-            description={description}
-            disabled={
-              disabled ||
-              field.disabled ||
-              formState.isLoading ||
-              formState.isValidating ||
-              formState.isSubmitting ||
-              formState.disabled
-            }
-            htmlFor={elId}
-            id={`${elId}__label`}
-            required={!!required}
-            tooltip={tooltip}
-          >
-            {label}
-          </Label>
-
-          <div className="relative flex items-center">
-            <Select
-              id={elId}
-              ref={field.ref}
-              aria-describedby={helperText ? `${elId}__describer` : undefined}
-              aria-invalid={ariaInvalid}
-              aria-labelledby={label ? `${elId}__label` : undefined}
-              destructive={!!error}
-              disabled={
-                disabled ||
-                field.disabled ||
-                formState.isLoading ||
-                formState.isSubmitting ||
-                formState.disabled
-              }
-              name={name}
-              onBlur={field.onBlur}
-              onValueChange={(value) =>
-                field.onChange({ target: { name, value } })
-              }
-              value={field.value as string}
-              {...otherProps}
-            />
-          </div>
-
-          <Label.Helper
+        <FormControl
+          id={elId}
+          aria-invalid={otherProps['aria-invalid']}
+          description={description}
+          destructive={!!error}
+          disabled={
+            disabled ||
+            field.disabled ||
+            formState.isLoading ||
+            formState.isValidating ||
+            formState.isSubmitting ||
+            formState.disabled
+          }
+          error={error}
+          helperText={helperText}
+          label={label}
+          required={required}
+          tooltip={tooltip}
+        >
+          <Select
+            id={elId}
+            ref={field.ref}
+            aria-describedby={helperText ? `${elId}__describer` : undefined}
             aria-invalid={ariaInvalid}
+            aria-labelledby={label ? `${elId}__label` : undefined}
+            destructive={!!error}
             disabled={
               disabled ||
               field.disabled ||
               formState.isLoading ||
-              formState.isValidating ||
               formState.isSubmitting ||
               formState.disabled
             }
-            id={`${elId}__describer`}
-          >
-            {error && (
-              <span className="text-error mr-2">{fieldError(error)}</span>
-            )}
-            <span className="">{helperText}</span>
-          </Label.Helper>
-        </div>
+            name={name}
+            onBlur={field.onBlur}
+            onValueChange={(value) =>
+              field.onChange({ target: { name, value } })
+            }
+            value={field.value as string}
+            {...otherProps}
+          />
+        </FormControl>
       )}
     />
   );
