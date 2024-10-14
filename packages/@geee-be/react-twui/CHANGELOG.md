@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.41
+
+### Patch Changes
+
+- 8aa2849: Refactored out FormControl
+
 ## 1.3.40
 
 ### Patch Changes
