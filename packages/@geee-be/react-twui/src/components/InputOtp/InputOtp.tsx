@@ -3,6 +3,7 @@
 import { OTPInput, OTPInputContext } from 'input-otp';
 import { Dot } from 'lucide-react';
 import * as React from 'react';
+import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
 
 /* ---------------------------------- Types --------------------------------- */
@@ -51,7 +52,7 @@ const InputOtpSlot = React.forwardRef<
       ref={ref}
       className={cn(
         'relative flex h-[2.625rem] w-10 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-lg first:border-l last:rounded-r-lg',
-        'bg-control text-control-fg border-default hover:border-default/70 placeholder:text-control-fg/50',
+        Style.inputColorStateNormal(),
         isActive &&
           'z-10 border-l ring-2 ring-primary ring-offset-background ring-offset-2',
         className,

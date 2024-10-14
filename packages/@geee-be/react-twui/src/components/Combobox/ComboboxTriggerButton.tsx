@@ -4,6 +4,7 @@ import {
   type ComponentPropsWithoutRef,
   type ReactNode,
 } from 'react';
+import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
 import { Button } from '../Button';
 
@@ -32,10 +33,8 @@ const ComboboxTriggerButton = forwardRef<
       {...props}
       disabled={disabled}
       className={cn(
-        'shadow-none hover:shadow-none focus:shadow-none',
-        disabled && 'cursor-not-allowed',
-        disabled &&
-          'bg-control text-control-fg/50 placeholder:text-control-fg/50 border-default/50 hover:border-default/50 opacity-100',
+        'justify-between',
+        disabled && [Style.inputColorStateDisabled(), 'opacity-100'],
         className,
       )}
     >

@@ -1,4 +1,5 @@
 import { cva } from 'cva';
+import { Style } from '../../helpers/style';
 
 export const buttonVariants = cva({
   base: 'relative group inline-flex shrink-0 shadow-md select-none items-center justify-center text-sm font-semibold uppercase leading-6 transition-colors duration-100 antialiased border border-transparent focus:outline-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 hover:scale-[1.03] disabled:hover:scale-[1] hover:shadow-lg disabled:hover:shadow-none active:scale-[0.97] active:shadow-sm transition-all duration-200',
@@ -27,8 +28,11 @@ export const buttonVariants = cva({
     variant: {
       solid: '',
       outline: 'dark:shadow:none border shadow-xs [--border-width:1px]',
-      input:
-        'justify-between normal-case font-normal hover:bg-control hover:scale-[1] active:scale-[1] antialiased inline-flex grow rounded-lg border px-4 py-2 text-sm leading-6 transition-colors duration-100 bg-control text-control-fg border-default hover:border-default/70 placeholder:text-control-fg/50',
+      input: [
+        'normal-case font-normal hover:bg-control hover:scale-[1] active:scale-[1]',
+        Style.inputLike({ display: 'inline-flex', focus: false }),
+        'justify-start text-left font-normal',
+      ],
       transparent: 'bg-transparent',
       link: 'p-0 underline underline-offset-3 focus-visible:text-primary focus-visible:font-bold',
     },

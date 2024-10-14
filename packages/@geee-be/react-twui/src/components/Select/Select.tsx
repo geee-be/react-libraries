@@ -8,6 +8,7 @@ import {
 import * as BaseSelect from '@radix-ui/react-select';
 import type { ButtonHTMLAttributes, PropsWithChildren, ReactNode } from 'react';
 import { Fragment, forwardRef } from 'react';
+import { Style } from '../../helpers/style.js';
 import { cn } from '../../helpers/utils.js';
 
 export type SelectElement = HTMLButtonElement;
@@ -66,16 +67,17 @@ export const Select = forwardRef<SelectElement, SelectProps>(
         id={id}
         name={id}
         className={cn(
-          'antialiased inline-flex justify-between grow rounded-lg items-center border px-4 py-2 text-sm leading-6 transition-colors duration-100',
-          disabled && 'cursor-not-allowed',
-          // focus
-          'outline-control-focus focus:outline focus:outline-2 focus:outline-offset-2',
-          // color
-          'bg-control text-control-fg border-default hover:border-default/70 data-[placeholder]:text-control-fg/50',
+          Style.inputLike({
+            display: 'inline-flex',
+            placeholderSelector: 'data-[placeholder]',
+          }),
+          'justify-between',
           (props['aria-invalid'] ?? destructive) &&
-            'border-destructive hover:border-destructive',
+            Style.inputColorStateError(),
           disabled &&
-            'bg-control text-control-fg/50 data-[placeholder]:text-control-fg/50 border-default/50 hover:border-default/50',
+            Style.inputColorStateDisabled({
+              placeholderSelector: 'data-[placeholder]',
+            }),
           className,
         )}
         aria-label={ariaLabel}

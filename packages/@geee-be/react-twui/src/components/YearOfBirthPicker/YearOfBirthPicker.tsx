@@ -11,6 +11,7 @@ import {
   type ElementRef,
   type InputHTMLAttributes,
 } from 'react';
+import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
 import { Button } from '../Button';
 import { Input } from '../Input';
@@ -154,12 +155,8 @@ export const YearOfBirthPicker = forwardRef<
             variant="input"
             disabled={disabled}
             className={cn(
-              'justify-start text-left font-normal shadow-none hover:shadow-none focus:shadow-none',
-              'focus:outline focus:outline-2 focus:outline-offset-2',
-              ariaInvalid && 'border-destructive hover:border-destructive',
-              disabled && 'cursor-not-allowed',
-              disabled &&
-                'bg-control text-control-fg/50 placeholder:text-control-fg/50 border-default/50 hover:border-default/50 opacity-100',
+              ariaInvalid && Style.inputColorStateError(),
+              disabled && [Style.inputColorStateDisabled(), 'opacity-100'],
               !internalValue && 'text-control-fg/50',
               className,
             )}
