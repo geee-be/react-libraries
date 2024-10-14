@@ -61,7 +61,7 @@ export const themableColors: ThemableColors = {
   paper: {
     DEFAULT: ['hsl(255, 0%, 98%)', 'hsl(255 0% 15%)'],
     nested: ['hsl(255, 0%, 90% / 0.35)', 'hsl(255 0% 10% / 0.35)'],
-    border: ['hsl(255 0% 80% / 0.5)', 'hsl(255 0% 0% / 0.5)'],
+    border: ['hsl(255 0% 40% / 0.5)', 'hsl(255 0% 60% / 0.5)'],
     fg: ['hsl(255 0% 20%)', 'hsl(255 0% 87.5%)'],
   },
   control: {
