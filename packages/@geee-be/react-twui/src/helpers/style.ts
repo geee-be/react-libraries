@@ -30,17 +30,21 @@ export namespace Style {
     );
 
   export const inputColorStateNormal = (props?: PlaceholderSelector) =>
-    `bg-control text-control-fg border-default hover:border-default/70 ${
+    `bg-control print:bg-none text-control-fg print:text-black border-default print:border-black/50 hover:border-default/70 ${
       props?.placeholderSelector ?? 'placeholder'
-    }:text-control-fg/50`;
+    }:text-control-fg/50 print:${
+      props?.placeholderSelector ?? 'placeholder'
+    }:text-transparent`;
 
   export const inputColorStateError = () =>
-    'border-destructive hover:border-destructive';
+    'border-destructive hover:border-destructive print:border-destructive';
 
   export const inputColorStateDisabled = (props?: PlaceholderSelector) =>
-    `bg-control text-control-fg/50 ${
+    `bg-control print:bg-none text-control-fg/50 print:text-black/50 ${
       props?.placeholderSelector ?? 'placeholder'
-    }:text-control-fg/50 border-default/50 hover:border-default/50 cursor-not-allowed`;
+    }:text-control-fg/50 print:${
+      props?.placeholderSelector ?? 'placeholder'
+    }:text-transparent border-default/50 print:border-black/50 hover:border-default/50 cursor-not-allowed`;
 
   export const focusRing = ({ trigger = 'focus' }) =>
     `outline-control-focus ${trigger}:outline ${trigger}:outline-2 ${trigger}:outline-offset-2`;
