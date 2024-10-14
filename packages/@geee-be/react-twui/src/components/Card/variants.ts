@@ -7,9 +7,9 @@ export const cardVariants = cva({
       'square-top': 'rounded-t-none rounded-b-xl',
     },
     color: {
-      none: 'border-paper-border text-paper-fg',
+      none: 'border-paper-border text-paper-fg print:border-black/50 print:text-black',
       primary:
-        'border-paper-border text-paper-fg border-t-[6px] border-t-primary',
+        'border-paper-border text-paper-fg print:border-black/50 print:text-black border-t-[6px] border-t-primary print:border-t-primary',
     },
   },
   defaultVariants: {
@@ -44,7 +44,7 @@ export const cardContentVariants = cva({
 });
 
 export const cardFooterVariants = cva({
-  base: 'text-start font-medium border-t border-t-paper-border',
+  base: 'text-start border-t border-t-paper-border print:border-t-paper-black/50',
   variants: {
     gutters: {
       'collapse-none': 'p-6',
@@ -59,7 +59,7 @@ export const cardFooterVariants = cva({
 });
 
 export const cardHeaderVariants = cva({
-  base: 'text-start font-medium border-b border-b-paper-border',
+  base: 'text-start font-medium border-b border-b-paper-border print:border-b-paper-black/50',
   variants: {
     gutters: {
       'collapse-none': 'p-6',
@@ -69,12 +69,17 @@ export const cardHeaderVariants = cva({
     },
     color: {
       none: '',
-      primary: 'bg-primary text-primary-fg default-primary',
-      secondary: 'bg-secondary text-secondary-fg default-secondary',
-      info: 'bg-info text-info-fg default-info',
-      warning: 'bg-warning text-warning-fg default-warning',
-      success: 'bg-success text-success-fg default-success',
-      error: 'bg-error text-error-fg default-error',
+      primary:
+        'bg-primary text-primary-fg default-primary print:bg-none print:text-primary',
+      secondary:
+        'bg-secondary text-secondary-fg default-secondary print:bg-none print:text-secondary',
+      info: 'bg-info text-info-fg default-info print:bg-none print:text-info',
+      warning:
+        'bg-warning text-warning-fg default-warning print:bg-none print:text-warning',
+      success:
+        'bg-success text-success-fg default-success print:bg-none print:text-success',
+      error:
+        'bg-error text-error-fg default-error print:bg-none print:text-error',
     },
   },
   defaultVariants: {

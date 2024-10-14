@@ -65,7 +65,7 @@ const LabelComponent = React.forwardRef<LabelElement, LabelProps>(
         {description ? (
           <span
             className={cn(
-              'font-normal text-paper-fg/70',
+              'font-normal text-paper-fg/70 print:text-black',
               disabled && 'text-paper-fg/50',
             )}
           >
@@ -93,7 +93,7 @@ const LabelComponent = React.forwardRef<LabelElement, LabelProps>(
           ref={ref}
           asChild={useAsChild}
           className={cn(
-            'Label-root inline cursor-pointer items-center gap-1 text-sm font-medium leading-6',
+            'Label-root inline cursor-pointer items-center gap-1 text-sm font-medium leading-6 print:text-black',
             disabled && 'pointer-events-none text-paper-fg/50',
             className,
           )}
@@ -126,7 +126,7 @@ const HelperText = React.forwardRef<
       data-component="HelperText"
       ref={ref}
       className={cn(
-        'Label-helperText text-start text-sm leading-6 text-paper-fg/70 antialiased',
+        'Label-helperText text-start text-sm leading-6 text-paper-fg/70 print:text-black antialiased',
         (ariaInvalid ?? error) && 'text-destructive',
         disabled && 'text-paper-fg/50',
         className,

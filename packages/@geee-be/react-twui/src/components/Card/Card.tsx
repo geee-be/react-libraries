@@ -34,10 +34,10 @@ const CardRoot = React.forwardRef<
       ref={ref}
       className={clsx(
         cn(
-          'Card-root bg-paper rounded-xl text-paper-fg border border-primary overflow-clip',
+          'Card-root bg-paper print:bg-none rounded-xl text-paper-fg print:text-black border border-primary print:border-black/50 overflow-clip',
           className,
         ),
-        '[&_.Card-root]:bg-paper-nested',
+        '[&_.Card-root]:bg-paper-nested print:bg-none',
       )}
       role="region"
       {...otherProps}

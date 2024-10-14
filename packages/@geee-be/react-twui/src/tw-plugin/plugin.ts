@@ -85,6 +85,10 @@ const corePlugin = (
       // ],
       darkMode:
         darkMode === 'data-theme' ? ['class', '[data-theme="dark"]'] : 'media',
+      screens: {
+        print: { raw: 'print' },
+        screen: { raw: 'screen' },
+      },
       theme: {
         extend: {
           colors: {
