@@ -1,5 +1,13 @@
 # @geee-be/react-twui
 
+## 1.3.42
+
+### Patch Changes
+
+- 77fab84: More contrasting paper border
+- c37a63c: Refactor re-usable input styling
+- 5eba1b0: Print color optimization
+
 ## 1.3.41
 
 ### Patch Changes
