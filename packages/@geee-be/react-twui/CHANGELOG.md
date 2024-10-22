@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.3.43
+
+### Patch Changes
+
+- d93f0f1: Changed mimeType to contentType
+
 ## 1.3.42
 
 ### Patch Changes
