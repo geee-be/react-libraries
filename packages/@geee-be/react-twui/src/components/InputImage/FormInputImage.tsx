@@ -33,7 +33,7 @@ export type FormInputImageProps<
   cropTitle?: ReactNode;
   discardImageTitle?: ReactNode;
   imageSpec: ImageSpec;
-  outputMimeType?: string;
+  outputContentType?: string;
   useImageTitle?: ReactNode;
 
   // validation
@@ -62,7 +62,7 @@ export const FormInputImage = <
   cropTitle,
   discardImageTitle,
   imageSpec,
-  outputMimeType,
+  outputContentType,
   placeholder,
   useImageTitle,
 
@@ -112,7 +112,7 @@ export const FormInputImage = <
             cropTitle={cropTitle}
             discardImageTitle={discardImageTitle}
             imageSpec={imageSpec}
-            outputMimeType={outputMimeType}
+            outputContentType={outputContentType}
             placeholder={placeholder}
             useImageTitle={useImageTitle}
             disabled={

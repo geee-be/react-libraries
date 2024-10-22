@@ -5,11 +5,11 @@ import type { ImageBinary, ImageSpec, ValueType } from './types';
 export const exportImage = async (
   source: HTMLCanvasElement,
   size: Size,
-  mimeType = 'image/webp',
+  contentType = 'image/webp',
 ): Promise<Blob> => {
   if (source.width === size.width && source.height === size.height) {
     // Export the image as a blob promise
-    return getBlob(source, mimeType);
+    return getBlob(source, contentType);
   }
 
   const sourceBlob = await getBlob(source, 'image/webp', 0.95);
@@ -30,12 +30,12 @@ export const exportImage = async (
   ctx.drawImage(sourceImage, 0, 0, size.width, size.height);
 
   // Export the image as a blob promise
-  return getBlob(target, mimeType);
+  return getBlob(target, contentType);
 };
 
 const getBlob = (
   canvas: HTMLCanvasElement,
-  mimeType = 'image/png',
+  contentType = 'image/png',
   quality?: number,
 ) =>
   new Promise<Blob>((resolve, reject) => {
@@ -44,7 +44,7 @@ const getBlob = (
         if (!blob) return reject(new Error('Could not export image'));
         resolve(blob);
       },
-      mimeType,
+      contentType,
       quality,
     );
   });
@@ -111,12 +111,12 @@ export const fromValue = (
   if (!value) return undefined;
   if ('data' in value) {
     if (value.data instanceof ArrayBuffer)
-      return new Blob([value.data], { type: value.mimeType });
+      return new Blob([value.data], { type: value.contentType });
     if (value.data instanceof Buffer)
-      return new Blob([value.data], { type: value.mimeType });
+      return new Blob([value.data], { type: value.contentType });
     if (typeof value.data === 'string')
       return new Blob([Buffer.from(value.data, 'base64')], {
-        type: value.mimeType,
+        type: value.contentType,
       });
   }
   if (value instanceof Blob) return value;
@@ -131,12 +131,12 @@ export const toValue = async (
     case 'buffer':
       return {
         data: Buffer.from(await blob.arrayBuffer()),
-        mimeType: blob.type,
+        contentType: blob.type,
       };
     case 'base64':
       return {
         data: Buffer.from(await blob.arrayBuffer()).toString('base64'),
-        mimeType: blob.type,
+        contentType: blob.type,
       };
     default:
       return Promise.resolve(blob);

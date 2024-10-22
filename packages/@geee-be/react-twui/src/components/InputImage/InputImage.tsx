@@ -31,7 +31,7 @@ export type InputImageProps = VariantProps<typeof borderVariants> &
     discardImageTitle?: ReactNode;
     imageSpec: ImageSpec;
     onChange?: (blob?: Blob) => void;
-    outputMimeType?: string;
+    outputContentType?: string;
     placeholder?: ReactNode;
     useImageTitle?: ReactNode;
     value?: Blob;
@@ -49,7 +49,7 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
       discardImageTitle = 'Discard',
       imageSpec,
       onChange,
-      outputMimeType,
+      outputContentType,
       placeholder,
       useImageTitle = 'Use image',
       shape,
@@ -88,7 +88,7 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
         imageSpec,
       );
 
-      exportImage(canvas, exportSize, outputMimeType)
+      exportImage(canvas, exportSize, outputContentType)
         .then((blob) => {
           onChange?.(blob);
           setUncontrolledValue(blob);
@@ -98,7 +98,7 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
         .finally(() => {
           setRendering(false);
         });
-    }, [imageSpec, outputMimeType, onChange]);
+    }, [imageSpec, outputContentType, onChange]);
 
     const cropper = useMemo(
       () =>
