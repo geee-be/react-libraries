@@ -74,7 +74,7 @@ export const Default: FC = () => {
         cropperProps={{ stencilComponent: CircleStencil }}
         imageSpec={{ width: 256, height: 256 }}
         placeholder="Drag 'n' drop an image here, or click to select one"
-        className="max-w-64 h-64"
+        className="max-w-64 w-64 h-64"
       />
       {blob && <img src={URL.createObjectURL(blob)} alt="bar" />}
       <Button type="submit">Submit</Button>
