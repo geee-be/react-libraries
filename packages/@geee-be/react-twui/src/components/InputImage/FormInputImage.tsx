@@ -61,6 +61,7 @@ export const FormInputImage = <
   cropperProps,
   cropTitle,
   discardImageTitle,
+  imageAlt,
   imageSpec,
   outputContentType,
   placeholder,
@@ -111,6 +112,7 @@ export const FormInputImage = <
             cropperProps={cropperProps}
             cropTitle={cropTitle}
             discardImageTitle={discardImageTitle}
+            imageAlt={imageAlt}
             imageSpec={imageSpec}
             outputContentType={outputContentType}
             placeholder={placeholder}

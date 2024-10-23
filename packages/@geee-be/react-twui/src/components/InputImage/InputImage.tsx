@@ -29,6 +29,7 @@ export type InputImageProps = VariantProps<typeof borderVariants> &
     cropperProps?: Pick<CropperProps, 'stencilComponent' | 'stencilProps'>;
     cropTitle?: ReactNode;
     discardImageTitle?: ReactNode;
+    imageAlt?: string;
     imageSpec: ImageSpec;
     onChange?: (blob?: Blob) => void;
     outputContentType?: string;
@@ -47,6 +48,7 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
       cropTitle = 'Crop image',
       disabled,
       discardImageTitle = 'Discard',
+      imageAlt = 'Selected image',
       imageSpec,
       onChange,
       outputContentType,
@@ -137,10 +139,7 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
           shape={shape}
         >
           {displayValue ? (
-            <img
-              src={URL.createObjectURL(displayValue)}
-              alt="selected content"
-            />
+            <img src={URL.createObjectURL(displayValue)} alt={imageAlt} />
           ) : (
             placeholder
           )}
