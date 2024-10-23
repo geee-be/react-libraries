@@ -1,5 +1,6 @@
 'use client';
 
+import { useIsClient } from '@geee-be/react-utils';
 import type { ReactElement, ReactNode } from 'react';
 import { useId } from 'react';
 import type { CropperProps } from 'react-advanced-cropper';
@@ -13,6 +14,7 @@ import {
 } from 'react-hook-form';
 import { FormControl } from '../FormControl/FormControl.js';
 import type { LabelProps } from '../Label/index.js';
+import { Skeleton } from '../Skeleton/Skeleton.js';
 import type { LabelHelperProps } from '../types.js';
 import type { InputImageProps } from './InputImage.js';
 import { InputImage } from './InputImage.js';
@@ -72,6 +74,7 @@ export const FormInputImage = <
   const generatedId = useId();
   const elId = id ?? generatedId;
   const ariaInvalid = otherProps['aria-invalid'] ?? destructive;
+  const isClient = useIsClient();
 
   return (
     <Controller
@@ -101,45 +104,49 @@ export const FormInputImage = <
           required={required}
           tooltip={tooltip}
         >
-          <InputImage
-            id={elId}
-            ref={field.ref}
-            aria-describedby={helperText ? `${elId}__describer` : undefined}
-            aria-invalid={ariaInvalid}
-            aria-labelledby={label ? `${elId}__label` : undefined}
-            // destructive={!!error}
-            className={className}
-            cropperProps={cropperProps}
-            cropTitle={cropTitle}
-            discardImageTitle={discardImageTitle}
-            imageAlt={imageAlt}
-            imageSpec={imageSpec}
-            outputContentType={outputContentType}
-            placeholder={placeholder}
-            useImageTitle={useImageTitle}
-            disabled={
-              disabled ||
-              field.disabled ||
-              formState.isLoading ||
-              formState.isSubmitting ||
-              formState.disabled
-            }
-            onBlur={field.onBlur}
-            onChange={(value) => {
-              Promise.resolve()
-                .then(async () =>
-                  field.onChange({
-                    target: {
-                      name,
-                      value: await toValue(value as Blob, valueType),
-                    },
-                  }),
-                )
-                .catch(console.error);
-            }}
-            value={fromValue(field.value)}
-            {...otherProps}
-          />
+          {isClient ? (
+            <InputImage
+              id={elId}
+              ref={field.ref}
+              aria-describedby={helperText ? `${elId}__describer` : undefined}
+              aria-invalid={ariaInvalid}
+              aria-labelledby={label ? `${elId}__label` : undefined}
+              // destructive={!!error}
+              className={className}
+              cropperProps={cropperProps}
+              cropTitle={cropTitle}
+              discardImageTitle={discardImageTitle}
+              imageAlt={imageAlt}
+              imageSpec={imageSpec}
+              outputContentType={outputContentType}
+              placeholder={placeholder}
+              useImageTitle={useImageTitle}
+              disabled={
+                disabled ||
+                field.disabled ||
+                formState.isLoading ||
+                formState.isSubmitting ||
+                formState.disabled
+              }
+              onBlur={field.onBlur}
+              onChange={(value) => {
+                Promise.resolve()
+                  .then(async () =>
+                    field.onChange({
+                      target: {
+                        name,
+                        value: await toValue(value as Blob, valueType),
+                      },
+                    }),
+                  )
+                  .catch(console.error);
+              }}
+              value={fromValue(field.value)}
+              {...otherProps}
+            />
+          ) : (
+            <Skeleton className={className} />
+          )}
         </FormControl>
       )}
     />

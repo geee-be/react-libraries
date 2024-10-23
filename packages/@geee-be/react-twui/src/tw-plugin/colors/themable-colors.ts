@@ -40,6 +40,7 @@ export type ThemableColors = {
   error: ThemableColorScale;
   paper: ThemableColorScale;
   control: ControlColors;
+  skeleton: string | [string, string];
   surface: ThemableColorScale;
   destructive: ThemableColorScale;
 };
@@ -69,6 +70,7 @@ export const themableColors: ThemableColors = {
     focus: '#EC740C',
   },
 
+  skeleton: ['hsl(255 0% 70%)', 'hsl(255 0% 30%)'],
   surface: error,
 
   destructive: error,
