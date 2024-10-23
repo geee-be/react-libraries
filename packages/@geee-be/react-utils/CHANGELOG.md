@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.5
+
+### Patch Changes
+
+- 70692ad: Use skeleton for input image on initial server render
+
 ## 1.1.4
 
 ### Patch Changes
