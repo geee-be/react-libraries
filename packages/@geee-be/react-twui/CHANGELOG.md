@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 1.3.44
+
+### Patch Changes
+
+- 23610f0: Ability to set image alt
+- 17670a7: Use client for FormInputImage render
+
 ## 1.3.43
 
 ### Patch Changes
