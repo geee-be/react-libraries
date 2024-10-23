@@ -1,5 +1,14 @@
 # @geee-be/react-twui
 
+## 1.3.45
+
+### Patch Changes
+
+- ab0c15c: Revert Use client for FormInputImage render
+- 70692ad: Use skeleton for input image on initial server render
+- Updated dependencies [70692ad]
+  - @geee-be/react-utils@1.1.5
+
 ## 1.3.44
 
 ### Patch Changes
