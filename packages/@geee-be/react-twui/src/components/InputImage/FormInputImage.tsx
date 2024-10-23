@@ -81,70 +81,67 @@ export const FormInputImage = <
         required,
       }}
       disabled={disabled}
-      render={({ field, fieldState: { error }, formState }) => {
-        'use client';
-        return (
-          <FormControl
+      render={({ field, fieldState: { error }, formState }) => (
+        <FormControl
+          id={elId}
+          aria-invalid={otherProps['aria-invalid']}
+          description={description}
+          destructive={!!error}
+          disabled={
+            disabled ||
+            field.disabled ||
+            formState.isLoading ||
+            formState.isValidating ||
+            formState.isSubmitting ||
+            formState.disabled
+          }
+          error={error}
+          helperText={helperText}
+          label={label}
+          required={required}
+          tooltip={tooltip}
+        >
+          <InputImage
             id={elId}
-            aria-invalid={otherProps['aria-invalid']}
-            description={description}
-            destructive={!!error}
+            ref={field.ref}
+            aria-describedby={helperText ? `${elId}__describer` : undefined}
+            aria-invalid={ariaInvalid}
+            aria-labelledby={label ? `${elId}__label` : undefined}
+            // destructive={!!error}
+            className={className}
+            cropperProps={cropperProps}
+            cropTitle={cropTitle}
+            discardImageTitle={discardImageTitle}
+            imageAlt={imageAlt}
+            imageSpec={imageSpec}
+            outputContentType={outputContentType}
+            placeholder={placeholder}
+            useImageTitle={useImageTitle}
             disabled={
               disabled ||
               field.disabled ||
               formState.isLoading ||
-              formState.isValidating ||
               formState.isSubmitting ||
               formState.disabled
             }
-            error={error}
-            helperText={helperText}
-            label={label}
-            required={required}
-            tooltip={tooltip}
-          >
-            <InputImage
-              id={elId}
-              ref={field.ref}
-              aria-describedby={helperText ? `${elId}__describer` : undefined}
-              aria-invalid={ariaInvalid}
-              aria-labelledby={label ? `${elId}__label` : undefined}
-              // destructive={!!error}
-              className={className}
-              cropperProps={cropperProps}
-              cropTitle={cropTitle}
-              discardImageTitle={discardImageTitle}
-              imageAlt={imageAlt}
-              imageSpec={imageSpec}
-              outputContentType={outputContentType}
-              placeholder={placeholder}
-              useImageTitle={useImageTitle}
-              disabled={
-                disabled ||
-                field.disabled ||
-                formState.isLoading ||
-                formState.isSubmitting ||
-                formState.disabled
-              }
-              onBlur={field.onBlur}
-              onChange={(value) => {
-                Promise.resolve()
-                  .then(async () =>
-                    field.onChange({
-                      target: {
-                        name,
-                        value: await toValue(value as Blob, valueType),
-                      },
-                    }),
-                  )
-                  .catch(console.error);
-              }}
-              value={fromValue(field.value)}
-              {...otherProps}
-            />
-          </FormControl>
-        );
-      }}
+            onBlur={field.onBlur}
+            onChange={(value) => {
+              Promise.resolve()
+                .then(async () =>
+                  field.onChange({
+                    target: {
+                      name,
+                      value: await toValue(value as Blob, valueType),
+                    },
+                  }),
+                )
+                .catch(console.error);
+            }}
+            value={fromValue(field.value)}
+            {...otherProps}
+          />
+        </FormControl>
+      )}
     />
   );
 };
