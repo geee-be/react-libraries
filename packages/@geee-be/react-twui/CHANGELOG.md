@@ -1,5 +1,16 @@
 # @geee-be/react-twui
 
+## 1.4.0
+
+### Minor Changes
+
+- 8011d1e: Add Collapsible, DropdownMenu, Separator, Sheet, Sidebar from shadcn
+
+### Patch Changes
+
+- Updated dependencies [8011d1e]
+  - @geee-be/react-utils@1.1.6
+
 ## 1.3.45
 
 ### Patch Changes
