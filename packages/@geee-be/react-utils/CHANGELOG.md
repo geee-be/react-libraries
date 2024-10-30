@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.6
+
+### Patch Changes
+
+- 8011d1e: Add Collapsible, DropdownMenu, Separator, Sheet, Sidebar from shadcn
+
 ## 1.1.5
 
 ### Patch Changes
