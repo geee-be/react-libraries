@@ -49,6 +49,7 @@ const iconOnlyPadding = {
   sm: 'p-6px',
   'xs-icon': 'p-2px',
   'sm-icon': 'p-6px',
+  icon: '',
 };
 
 export const Button = React.forwardRef<ButtonElement, ButtonProps>(

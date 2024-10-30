@@ -46,6 +46,8 @@ export namespace Style {
       props?.placeholderSelector ?? 'placeholder'
     }:text-transparent border-default/50 print:border-black/50 hover:border-default/50 cursor-not-allowed`;
 
-  export const focusRing = ({ trigger = 'focus' }) =>
-    `outline-control-focus ${trigger}:outline ${trigger}:outline-2 ${trigger}:outline-offset-2`;
+  export const focusRing = ({ trigger = 'focus', type = 'outline' }) =>
+    `${type}-control-focus ${trigger}:${type} ${trigger}:${type}-2 ${trigger}:${type}-offset-2`;
+
+  export const overlay = () => 'fixed inset-0 bg-black/50 dark:bg-black/80';
 }

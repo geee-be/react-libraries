@@ -7,6 +7,7 @@ export const buttonVariants = cva({
     size: {
       'xs-icon': 'gap-0 p-2',
       'sm-icon': 'gap-0 px-[0.66rem] py-1',
+      icon: 'h-10 w-10',
       sm: 'gap-2 px-[0.75rem] py-1',
       md: 'gap-2 px-[1rem] py-2',
     },
@@ -33,6 +34,8 @@ export const buttonVariants = cva({
         Style.inputLike({ display: 'inline-flex', focus: false }),
         'justify-start text-left font-normal',
       ],
+      ghost:
+        'hover:bg-accent hover:text-accent-foreground shadow-none hover:shadow-none',
       transparent: 'bg-transparent',
       link: 'p-0 underline underline-offset-3 focus-visible:text-primary focus-visible:font-bold',
     },
@@ -205,6 +208,7 @@ export const iconVariants = cva({
     size: {
       'xs-icon': 'h-5 w-5',
       'sm-icon': 'h-6 w-6',
+      icon: 'h-6 w-6',
       sm: 'h-5 w-5',
       md: 'h-6 w-6',
     },

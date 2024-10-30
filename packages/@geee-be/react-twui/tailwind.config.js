@@ -12,6 +12,7 @@ const config = {
       darkMode: 'data-theme',
     }),
     require('@tailwindcss/container-queries'),
+    require('tailwindcss-animate'),
   ],
   theme: {
     extend: {

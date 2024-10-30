@@ -3,6 +3,7 @@
 import type { VariantProps } from 'cva';
 import * as React from 'react';
 import { Drawer as DrawerPrimitive } from 'vaul';
+import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
 import { contentVariants } from './variants';
 
@@ -31,11 +32,7 @@ const DrawerOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Overlay
     ref={ref}
-    className={cn(
-      'Drawer-overlay',
-      'fixed inset-0 z-50 bg-black/50 dark:bg-black/80',
-      className,
-    )}
+    className={cn('Drawer-overlay', Style.overlay(), 'z-50', className)}
     {...props}
   />
 ));

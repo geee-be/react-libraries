@@ -26,7 +26,7 @@ type TooltipProviderProps = React.ComponentPropsWithRef<
   typeof TooltipPrimitive.Provider
 >;
 
-const TooltipProvider = React.forwardRef<
+export const TooltipProvider = React.forwardRef<
   TooltipProviderElement,
   TooltipProviderProps
 >(

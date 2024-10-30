@@ -40,6 +40,7 @@ export type ThemableColors = {
   error: ThemableColorScale;
   paper: ThemableColorScale;
   control: ControlColors;
+  menu: ThemableColorScale;
   skeleton: string | [string, string];
   surface: ThemableColorScale;
   destructive: ThemableColorScale;
@@ -68,6 +69,12 @@ export const themableColors: ThemableColors = {
   control: {
     DEFAULT: ['hsl(255, 0%, 98%)', 'hsl(255 0% 15%)'],
     focus: '#EC740C',
+  },
+  menu: {
+    DEFAULT: ['hsl(255, 0%, 98%)', 'hsl(255 0% 15%)'],
+    border: ['hsl(255 0% 40% / 0.5)', 'hsl(255 0% 60% / 0.5)'],
+    active: ['hsl(255, 0%, 88%)', 'hsl(255 0% 25%)'],
+    hover: ['hsl(255, 0%, 93%)', 'hsl(255 0% 20%)'],
   },
 
   skeleton: ['hsl(255 0% 70%)', 'hsl(255 0% 30%)'],
