@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.4.1
+
+### Patch Changes
+
+- 716c21d: refactor: update useSidebar function to arrow function syntax
+
 ## 1.4.0
 
 ### Minor Changes
