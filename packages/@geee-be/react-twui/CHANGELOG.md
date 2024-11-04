@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.4.2
+
+### Patch Changes
+
+- 1396696: export SheetPrimitiveContent
+
 ## 1.4.1
 
 ### Patch Changes
