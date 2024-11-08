@@ -46,6 +46,7 @@
     "@geee-be/core": "latest",
     "@geee-be/react-utils": "workspace:*",
     "@iconicicons/react": "latest",
+    "@radix-ui/react-aspect-ratio": "^1.1.0",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-checkbox": "^1.1.2",
     "@radix-ui/react-collapsible": "^1.1.1",
