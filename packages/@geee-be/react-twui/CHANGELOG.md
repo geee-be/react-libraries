@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.4.3
+
+### Patch Changes
+
+- 345e919: add AspectRatio component and update dependencies
+
 ## 1.4.2
 
 ### Patch Changes
