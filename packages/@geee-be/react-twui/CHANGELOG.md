@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.4.5
+
+### Patch Changes
+
+- 7279710: feat: export ImageSpec type from InputImage component
+
 ## 1.4.4
 
 ### Patch Changes
