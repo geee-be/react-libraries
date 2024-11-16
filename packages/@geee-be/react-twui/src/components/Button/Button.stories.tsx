@@ -26,6 +26,7 @@ const meta = {
       control: 'select',
       options: [
         'default',
+        'gray',
         'primary',
         'secondary',
         'info',

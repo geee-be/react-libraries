@@ -17,7 +17,7 @@ export const buttonVariants = cva({
     },
     color: {
       default: 'outline-control-focus',
-      gray: 'outline-control-gray default-gray',
+      gray: 'outline-gray default-gray',
       primary: 'outline-primary default-primary',
       secondary: 'outline-secondary default-secondary',
       info: 'outline-info default-info',
@@ -67,6 +67,22 @@ export const buttonVariants = cva({
       color: 'default',
       variant: ['outline', 'transparent'],
       class: 'text-default hover:bg-default/10 dark:hover:bg-default-fg/10',
+    },
+    // gray
+    {
+      color: 'gray',
+      variant: 'solid',
+      class: 'bg-gray text-gray-fg hover:bg-gray/80 disabled:hover:bg-gray',
+    },
+    {
+      color: 'gray',
+      variant: 'outline',
+      class: 'border-gray',
+    },
+    {
+      color: 'gray',
+      variant: ['outline', 'transparent'],
+      class: 'text-gray hover:bg-gray/10 dark:hover:bg-gray-fg/10',
     },
     // primary
     {

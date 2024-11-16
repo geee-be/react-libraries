@@ -2,7 +2,7 @@ import type { ThemableColorScale } from './themable-colors.js';
 
 export const defaultColors: ThemableColorScale = {
   // base
-  DEFAULT: ['hsl(0 0% 40%)', 'hsl(0 0% 85%)'],
+  DEFAULT: ['hsl(0 0% 30%)', 'hsl(0 0% 85%)'],
 
   // muted
   muted: ['hsl(0 0% 60% / 0.5)', 'hsl(0 0% 60% / 0.5)'],
