@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.7
+
+### Patch Changes
+
+- 3ca7ee9: feat: add ClientOnly component for client-side rendering
+
 ## 1.1.6
 
 ### Patch Changes
