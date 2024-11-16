@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.4.4
+
+### Patch Changes
+
+- 30410f9: feat: add gray variant to Button component and update default color
+
 ## 1.4.3
 
 ### Patch Changes
