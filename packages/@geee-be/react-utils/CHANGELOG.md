@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.9
+
+### Patch Changes
+
+- 48e0d4e: fix negated logic in ClientOnly
+
 ## 1.1.8
 
 ### Patch Changes
