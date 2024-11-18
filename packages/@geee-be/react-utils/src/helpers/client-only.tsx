@@ -9,6 +9,6 @@ interface Props extends PropsWithChildren {
 
 export const ClientOnly: FC<Props> = ({ children, serverFallback }) => {
   const isClient = useIsClient();
-  if (isClient) return <>{serverFallback}</>;
+  if (!isClient) return <>{serverFallback}</>;
   return <>{children}</>;
 };
