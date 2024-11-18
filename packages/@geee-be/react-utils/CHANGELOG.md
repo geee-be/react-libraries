@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.8
+
+### Patch Changes
+
+- 1aee5a6: feat: enable client-side rendering in client-only helper
+
 ## 1.1.7
 
 ### Patch Changes
