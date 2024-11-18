@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { useIsClient } from '../hooks';
 
