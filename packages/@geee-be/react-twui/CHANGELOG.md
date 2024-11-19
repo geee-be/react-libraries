@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.4.10
+
+### Patch Changes
+
+- 207c617: feat: add new TextBefore story and improve Input focus styles
+
 ## 1.4.9
 
 ### Patch Changes
