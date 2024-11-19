@@ -23,7 +23,7 @@ export const Default: Story = {
   },
 };
 
-export const IconBefore: Story = {
+export const Icons: Story = {
   args: {
     disabled: false,
     placeholder: 'This is a placeholder',
@@ -35,6 +35,22 @@ export const IconBefore: Story = {
         before={<DragHandleDots2Icon />}
       />
     ),
+    after: (
+      <Button
+        size="xs-icon"
+        variant="ghost"
+        className="mx-1"
+        after={<XIcon />}
+      />
+    ),
+  },
+};
+
+export const TextBefore: Story = {
+  args: {
+    disabled: false,
+    placeholder: 'example.com',
+    before: <div className="pl-4">https://</div>,
     after: (
       <Button
         size="xs-icon"

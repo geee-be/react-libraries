@@ -61,7 +61,7 @@ export const Input = forwardRef<InputElement, InputProps>(
           className,
         )}
       >
-        {before ? <div className="inline-flex -m-2">{before}</div> : null}
+        {before ? <div className="inline-flex -m-2 z-[1]">{before}</div> : null}
         <input
           ref={ref}
           className="bg-control px-2 w-full outline-none"
@@ -72,7 +72,7 @@ export const Input = forwardRef<InputElement, InputProps>(
           autoFocus={computedAutoFocus}
           {...otherProps}
         />
-        {after ? <div className="inline-flex -m-2">{after}</div> : null}
+        {after ? <div className="inline-flex -m-2 z-[1]">{after}</div> : null}
       </div>
     );
   },

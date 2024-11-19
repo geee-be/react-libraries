@@ -6,7 +6,12 @@ interface PlaceholderSelector {
 
 interface InputLikeProps extends PlaceholderSelector {
   display?: string;
-  focus?: boolean | 'focus' | 'focus-within' | 'focus-visible';
+  focus?:
+    | boolean
+    | 'focus'
+    | 'focus-within'
+    | 'focus-visible'
+    | 'has-[input:focus]';
 }
 
 export namespace Style {
@@ -53,7 +58,7 @@ export namespace Style {
     trigger = 'focus',
     type = 'outline',
   }: {
-    trigger?: 'focus' | 'focus-within' | 'focus-visible';
+    trigger?: 'focus' | 'focus-within' | 'focus-visible' | 'has-[input:focus]';
     type?: 'outline' | 'ring';
   }) =>
     cn(
@@ -66,6 +71,9 @@ export namespace Style {
       type === 'outline' &&
         trigger === 'focus-visible' &&
         'outline-control-focus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+      type === 'outline' &&
+        trigger === 'has-[input:focus]' &&
+        'outline-control-focus has-[input:focus]:outline has-[input:focus]:outline-2 has-[input:focus]:outline-offset-2',
       type === 'ring' &&
         trigger === 'focus' &&
         'outline-control-focus focus:outline focus:outline-2 focus:outline-offset-2',
@@ -75,6 +83,9 @@ export namespace Style {
       type === 'ring' &&
         trigger === 'focus-visible' &&
         'outline-control-focus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+      type === 'ring' &&
+        trigger === 'has-[input:focus]' &&
+        'outline-control-focus has-[input:focus]:outline has-[input:focus]:outline-2 has-[input:focus]:outline-offset-2',
     );
   // `${type}-control-focus ${trigger}:${type} ${trigger}:${type}-2 ${trigger}:${type}-offset-2`;
 
