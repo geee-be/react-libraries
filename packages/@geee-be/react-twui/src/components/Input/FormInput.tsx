@@ -46,7 +46,6 @@ export type FormInputProps<
 
 /* -------------------------------- Component ------------------------------- */
 export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
-  className,
   control,
   description,
   destructive,
