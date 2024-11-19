@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 1.4.9
+
+### Patch Changes
+
+- 3ee36ca: enhance Input component with before and after slots
+- e4e83ff: fix: hiding className
+
 ## 1.4.8
 
 ### Patch Changes
