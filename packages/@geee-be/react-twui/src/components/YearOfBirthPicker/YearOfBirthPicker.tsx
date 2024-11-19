@@ -174,23 +174,23 @@ export const YearOfBirthPicker = forwardRef<
           <div className="flex items-center justify-between p-2 select-none">
             <Button
               variant="outline"
-              size="xs-icon"
+              shape="pill"
+              size="sm-icon"
               isIconOnly
               onClick={() => handleDecadeChange(-1)}
               disabled={decade <= 1900}
-            >
-              <ChevronLeftIcon className="h-4 w-4" />
-            </Button>
+              before={<ChevronLeftIcon />}
+            />
             <div className="font-semibold">{decade}s</div>
             <Button
               variant="outline"
-              size="xs-icon"
+              shape="pill"
+              size="sm-icon"
               isIconOnly
               onClick={() => handleDecadeChange(1)}
               disabled={decade >= Math.floor(currentYear / 10) * 10}
-            >
-              <ChevronRightIcon className="h-4 w-4" />
-            </Button>
+              after={<ChevronRightIcon />}
+            />
           </div>
           <div className="grid grid-cols-2 gap-2 p-2">
             {years.map((y) => (

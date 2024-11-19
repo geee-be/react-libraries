@@ -11,6 +11,16 @@ export type InputProps = Omit<
 > & {
   autoFocus?: boolean | 'non-touch';
   destructive?: boolean;
+
+  /**
+   * The slot to be rendered before the label.
+   */
+  before?: React.ReactElement<HTMLElement>;
+
+  /**
+   * The slot to be rendered after the label.
+   */
+  after?: React.ReactElement<HTMLElement>;
 };
 
 function isTouchDevice() {
@@ -26,7 +36,16 @@ function isTouchDevice() {
 /* -------------------------------- Component ------------------------------- */
 export const Input = forwardRef<InputElement, InputProps>(
   (
-    { autoFocus, className, destructive, disabled, readOnly, ...otherProps },
+    {
+      after,
+      autoFocus,
+      before,
+      className,
+      destructive,
+      disabled,
+      readOnly,
+      ...otherProps
+    },
     ref,
   ) => {
     const ariaInvalid = otherProps['aria-invalid'] ?? destructive;
@@ -35,19 +54,26 @@ export const Input = forwardRef<InputElement, InputProps>(
       autoFocus === 'non-touch' ? !isTouchDevice() : autoFocus ?? false;
 
     return (
-      <input
-        ref={ref}
-        aria-invalid={ariaInvalid}
+      <div
         className={cn(
           inputVariants({ ariaInvalid: !!ariaInvalid, disabled }),
+          'px-2 inline-flex flex-row items-center',
           className,
         )}
-        disabled={disabled || readOnly}
-        readOnly={readOnly}
-        // biome-ignore lint/a11y/noAutofocus: <explanation>
-        autoFocus={computedAutoFocus}
-        {...otherProps}
-      />
+      >
+        {before ? <div className="inline-flex -m-2">{before}</div> : null}
+        <input
+          ref={ref}
+          className="bg-control px-2 w-full outline-none"
+          aria-invalid={ariaInvalid}
+          disabled={disabled || readOnly}
+          readOnly={readOnly}
+          // biome-ignore lint/a11y/noAutofocus: there is logic to handle touch devices
+          autoFocus={computedAutoFocus}
+          {...otherProps}
+        />
+        {after ? <div className="inline-flex -m-2">{after}</div> : null}
+      </div>
     );
   },
 );

@@ -1,4 +1,7 @@
+import { DragHandleDots2Icon } from '@radix-ui/react-icons';
 import type { Meta, StoryObj } from '@storybook/react';
+import { XIcon } from 'lucide-react';
+import { Button } from '../Button/Button.js';
 import { Input } from './index.js';
 
 const meta = {
@@ -17,6 +20,29 @@ export const Default: Story = {
     disabled: false,
     placeholder: 'This is a placeholder',
     // color: 'default',
+  },
+};
+
+export const IconBefore: Story = {
+  args: {
+    disabled: false,
+    placeholder: 'This is a placeholder',
+    before: (
+      <Button
+        size="xs-icon"
+        variant="ghost"
+        className="mx-1"
+        before={<DragHandleDots2Icon />}
+      />
+    ),
+    after: (
+      <Button
+        size="xs-icon"
+        variant="ghost"
+        className="mx-1"
+        after={<XIcon />}
+      />
+    ),
   },
 };
 

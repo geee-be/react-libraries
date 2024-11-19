@@ -255,7 +255,7 @@ const CarouselNext = React.forwardRef<
       autoHide,
       layout,
       variant = 'outline',
-      size = 'xs-icon',
+      size = 'icon',
       ...props
     },
     ref,

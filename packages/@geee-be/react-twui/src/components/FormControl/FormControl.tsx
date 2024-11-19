@@ -51,8 +51,8 @@ export const FormControl = ({
       disabled={disabled}
       id={`${id}__describer`}
     >
-      {error && <span className="text-error mr-2">{fieldError(error)}</span>}
       <span className="">{helperText}</span>
+      {error && <span className="text-error mr-2"> {fieldError(error)}</span>}
     </Label.Helper>
   </div>
 );

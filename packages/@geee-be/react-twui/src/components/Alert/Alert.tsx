@@ -139,7 +139,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             'flex grow flex-col',
             variant === 'expanded' && 'items-start gap-3 px-2',
             variant === 'inline' && 'items-center px-2 sm:flex-row sm:gap-2',
-            variant === 'inline' && closable && 'pr-1',
+            variant === 'inline' && closable && 'mr-1',
           )}
         >
           <div
@@ -164,7 +164,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 
         {closable && (
           <AlertCloseButton
-            className={cn(variant === 'inline' && 'pr-1', 'text-inherit')}
+            className={cn(variant === 'inline' && 'mr-1', 'text-inherit')}
             onClick={handleClose}
           />
         )}
