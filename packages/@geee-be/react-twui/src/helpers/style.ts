@@ -87,7 +87,6 @@ export namespace Style {
         trigger === 'has-[input:focus]' &&
         'outline-control-focus has-[input:focus]:outline has-[input:focus]:outline-2 has-[input:focus]:outline-offset-2',
     );
-  // `${type}-control-focus ${trigger}:${type} ${trigger}:${type}-2 ${trigger}:${type}-offset-2`;
 
   export const overlay = () => 'fixed inset-0 bg-black/50 dark:bg-black/80';
 }
