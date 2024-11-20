@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.4.12
+
+### Patch Changes
+
+- 335a93f: fix: apply className to FormControl
+
 ## 1.4.11
 
 ### Patch Changes
