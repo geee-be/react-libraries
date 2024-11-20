@@ -31,3 +31,23 @@ export const Red: Story = {
     className: 'w-48 h-6 bg-red-500',
   },
 };
+
+export const Circle: Story = {
+  args: {
+    className: 'w-24 h-24',
+    shape: 'circle',
+  },
+};
+
+export const Input: Story = {
+  args: {
+    shape: 'input',
+  },
+};
+
+export const FormControl: Story = {
+  args: {
+    shape: 'form-control',
+    children: <Skeleton shape="input" />,
+  },
+};
