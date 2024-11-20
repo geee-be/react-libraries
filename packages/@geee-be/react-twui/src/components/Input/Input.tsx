@@ -21,6 +21,13 @@ export type InputProps = Omit<
    * The slot to be rendered after the label.
    */
   after?: React.ReactElement<HTMLElement>;
+
+  InputProps?: {
+    /**
+     * The class name to be applied to the input element.
+     */
+    className?: string;
+  };
 };
 
 function isTouchDevice() {
@@ -44,6 +51,7 @@ export const Input = forwardRef<InputElement, InputProps>(
       destructive,
       disabled,
       readOnly,
+      InputProps: Input,
       ...otherProps
     },
     ref,
@@ -64,7 +72,10 @@ export const Input = forwardRef<InputElement, InputProps>(
         {before ? <div className="inline-flex -m-2 z-[1]">{before}</div> : null}
         <input
           ref={ref}
-          className="bg-control px-2 w-full outline-none"
+          className={cn(
+            'bg-control px-2 w-full outline-none',
+            Input?.className,
+          )}
           aria-invalid={ariaInvalid}
           disabled={disabled || readOnly}
           readOnly={readOnly}

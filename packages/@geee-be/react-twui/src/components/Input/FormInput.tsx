@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactElement, ReactNode } from 'react';
+import type { ComponentProps, ReactElement, ReactNode } from 'react';
 import { useId } from 'react';
 import {
   Controller,
@@ -38,6 +38,7 @@ export type FormInputProps<
   FormControlProps?: {
     className?: string;
   };
+  InputProps?: ComponentProps<typeof Input>['InputProps'];
   // validation
   max?: ValidationRule<number | string>;
   maxLength?: ValidationRule<number>;
@@ -65,6 +66,7 @@ export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
   pattern,
   required,
   FormControlProps,
+  InputProps,
   ...otherProps
 }: FormInputProps<T, Field>): ReactElement => {
   const generatedId = useId();
@@ -120,6 +122,7 @@ export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
               formState.disabled
             }
             name={name}
+            InputProps={InputProps}
             {...otherProps}
             {...(field as any)}
           />
