@@ -32,7 +32,9 @@ export type FormSelectProps<
   items: SelectGroupProps[];
   label: ReactNode;
   placeholder?: ReactNode;
-  wrapperClassName?: string;
+  FormControlProps?: {
+    className?: string;
+  };
   // validation
   required?: Message | ValidationRule<boolean>;
 };
@@ -49,7 +51,7 @@ export const FormSelect = <T extends FieldValues, Field extends FieldPath<T>>({
   name,
   required,
   tooltip,
-  wrapperClassName,
+  FormControlProps,
   ...otherProps
 }: FormSelectProps<T, Field>): ReactElement => {
   const generatedId = useId();
@@ -66,7 +68,7 @@ export const FormSelect = <T extends FieldValues, Field extends FieldPath<T>>({
         <FormControl
           id={elId}
           aria-invalid={otherProps['aria-invalid']}
-          className={wrapperClassName}
+          className={FormControlProps?.className}
           description={description}
           destructive={!!error}
           disabled={

@@ -2,4 +2,4 @@
 "@geee-be/react-twui": patch
 ---
 
-feat: add wrapperClassName prop
+feat: add FormControlProps prop

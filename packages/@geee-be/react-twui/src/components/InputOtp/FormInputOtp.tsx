@@ -29,7 +29,9 @@ export type FormInputOtpProps<
   control?: Control<T>;
   name: Field;
   label: ReactNode;
-  wrapperClassName?: string;
+  FormControlProps?: {
+    className?: string;
+  };
   // validation
   maxLength?: ValidationRule<number>;
   required?: Message | ValidationRule<boolean>;
@@ -53,7 +55,7 @@ export const FormInputOtp = <
   tooltip,
   maxLength,
   required,
-  wrapperClassName,
+  FormControlProps,
   ...otherProps
 }: FormInputOtpProps<T, Field>): ReactElement => {
   const generatedId = useId();
@@ -73,7 +75,7 @@ export const FormInputOtp = <
         <FormControl
           id={elId}
           aria-invalid={otherProps['aria-invalid']}
-          className={wrapperClassName}
+          className={FormControlProps?.className}
           description={description}
           destructive={!!error}
           disabled={
