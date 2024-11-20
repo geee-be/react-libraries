@@ -30,6 +30,7 @@ export type FormInputImageProps<
   name: Field;
   label: ReactNode;
   valueType?: ValueType;
+  wrapperClassName?: string;
 
   cropperProps?: Pick<CropperProps, 'stencilComponent' | 'stencilProps'>;
   cropTitle?: ReactNode;
@@ -59,6 +60,7 @@ export const FormInputImage = <
   tooltip,
   required,
   valueType = 'blob',
+  wrapperClassName,
 
   cropperProps,
   cropTitle,
@@ -88,6 +90,7 @@ export const FormInputImage = <
         <FormControl
           id={elId}
           aria-invalid={otherProps['aria-invalid']}
+          className={wrapperClassName}
           description={description}
           destructive={!!error}
           disabled={

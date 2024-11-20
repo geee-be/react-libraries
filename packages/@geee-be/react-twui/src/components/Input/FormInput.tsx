@@ -35,6 +35,7 @@ export type FormInputProps<
   name: Field;
   label: ReactNode;
   placeholder?: ReactNode;
+  wrapperClassName?: string;
   // validation
   max?: ValidationRule<number | string>;
   maxLength?: ValidationRule<number>;
@@ -61,6 +62,7 @@ export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
   minLength,
   pattern,
   required,
+  wrapperClassName,
   ...otherProps
 }: FormInputProps<T, Field>): ReactElement => {
   const generatedId = useId();
@@ -84,6 +86,7 @@ export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
         <FormControl
           id={elId}
           aria-invalid={otherProps['aria-invalid']}
+          className={wrapperClassName}
           description={description}
           destructive={!!error}
           disabled={

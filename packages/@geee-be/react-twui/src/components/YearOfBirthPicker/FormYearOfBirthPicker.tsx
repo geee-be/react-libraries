@@ -29,6 +29,7 @@ export type FormYearOfBirthPickerProps<
   name: Field;
   label: ReactNode;
   placeholder?: ReactNode;
+  wrapperClassName?: string;
   // validation
   max?: ValidationRule<number | string>;
   min?: ValidationRule<number | string>;
@@ -53,6 +54,7 @@ export const FormYearOfBirthPicker = <
   max,
   min,
   required,
+  wrapperClassName,
   ...otherProps
 }: FormYearOfBirthPickerProps<T, Field>): ReactElement => {
   const generatedId = useId();
@@ -75,6 +77,7 @@ export const FormYearOfBirthPicker = <
         <FormControl
           id={elId}
           aria-invalid={otherProps['aria-invalid']}
+          className={wrapperClassName}
           description={description}
           destructive={!!error}
           disabled={

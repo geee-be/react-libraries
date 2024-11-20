@@ -31,6 +31,7 @@ export type FormComboboxProps<
   name: Field;
   label: ReactNode;
   placeholder?: ReactNode;
+  wrapperClassName?: string;
   // validation
   required?: Message | ValidationRule<boolean>;
 };
@@ -50,6 +51,7 @@ export const FormCombobox = <
   name,
   required,
   tooltip,
+  wrapperClassName,
   ...otherProps
 }: FormComboboxProps<T, Field>): ReactElement => {
   const generatedId = useId();
@@ -66,6 +68,7 @@ export const FormCombobox = <
         <FormControl
           id={elId}
           aria-invalid={otherProps['aria-invalid']}
+          className={wrapperClassName}
           description={description}
           destructive={!!error}
           disabled={
