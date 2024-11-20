@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 1.4.11
+
+### Patch Changes
+
+- 10ea6f2: feat: skeleton shapes
+- fb404de: feat: add FormControlProps prop
+
 ## 1.4.10
 
 ### Patch Changes
