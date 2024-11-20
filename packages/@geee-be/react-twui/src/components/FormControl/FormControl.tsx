@@ -3,6 +3,7 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import type { FieldError, Message, ValidationRule } from 'react-hook-form';
 import { fieldError } from '../../helpers/field-error.js';
+import { cn } from '../../helpers/utils.js';
 import { Label, type LabelProps } from '../Label/index.js';
 import type { LabelHelperProps } from '../types.js';
 
@@ -22,6 +23,7 @@ export type FormControlProps = Omit<
 /* -------------------------------- Component ------------------------------- */
 export const FormControl = ({
   children,
+  className,
   description,
   destructive,
   disabled,
@@ -33,7 +35,7 @@ export const FormControl = ({
   tooltip,
   'aria-invalid': ariaInvalid,
 }: PropsWithChildren<FormControlProps>): ReactElement => (
-  <div className="flex flex-col gap-1 antialiased">
+  <div className={cn('flex flex-col gap-1 antialiased', className)}>
     <Label
       description={description}
       htmlFor={id}
