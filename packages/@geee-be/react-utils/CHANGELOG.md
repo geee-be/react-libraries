@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.1.10
+
+### Patch Changes
+
+- 3ad787e: feat: add Monitor
+
 ## 1.1.9
 
 ### Patch Changes
