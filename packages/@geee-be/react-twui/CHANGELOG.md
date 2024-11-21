@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 1.4.13
+
+### Patch Changes
+
+- Updated dependencies [3ad787e]
+  - @geee-be/react-utils@1.1.10
+
 ## 1.4.12
 
 ### Patch Changes
