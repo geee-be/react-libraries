@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.2.0
+
+### Minor Changes
+
+- ad3b011: Update packages
+
 ## 1.1.10
 
 ### Patch Changes
