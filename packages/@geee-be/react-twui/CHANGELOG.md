@@ -1,5 +1,18 @@
 # @geee-be/react-twui
 
+## 1.5.0
+
+### Minor Changes
+
+- ad3b011: Update packages
+
+### Patch Changes
+
+- fb3e5d0: fix: double open file selector
+- 512cc88: feat: restrict file input to single file selection
+- Updated dependencies [ad3b011]
+  - @geee-be/react-utils@1.2.0
+
 ## 1.4.13
 
 ### Patch Changes
