@@ -41,7 +41,13 @@ export const InputFile = forwardRef<
           ),
         })}
       >
-        <input id={id} ref={ref} type="file" {...getInputProps()} />
+        <input
+          id={id}
+          ref={ref}
+          type="file"
+          multiple={false}
+          {...getInputProps()}
+        />
         {children}
       </label>
     );
