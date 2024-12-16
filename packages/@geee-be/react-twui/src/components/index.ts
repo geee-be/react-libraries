@@ -34,4 +34,5 @@ export * from './Toast/index.js';
 export * from './Tooltip/index.js';
 export * from './YearOfBirthPicker/index.js';
 
+export { Slot } from '@radix-ui/react-slot';
 export type { LabelHelperProps } from './types.js';
