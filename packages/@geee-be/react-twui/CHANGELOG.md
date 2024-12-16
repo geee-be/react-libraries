@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.1
+
+### Patch Changes
+
+- 74f588b: Export slot from radix-ui
+
 ## 1.5.0
 
 ### Minor Changes
