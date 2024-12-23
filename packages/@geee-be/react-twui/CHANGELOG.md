@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.2
+
+### Patch Changes
+
+- 6cc1efd: Viewport class name for scroll area
+
 ## 1.5.1
 
 ### Patch Changes
