@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.3
+
+### Patch Changes
+
+- 1bf02d9: Fix vertical gap in BreadcrumbList
+
 ## 1.5.2
 
 ### Patch Changes
