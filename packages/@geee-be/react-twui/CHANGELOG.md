@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.4
+
+### Patch Changes
+
+- ba27e9b: Breadcrumb inline; WithIcon component
+
 ## 1.5.3
 
 ### Patch Changes
