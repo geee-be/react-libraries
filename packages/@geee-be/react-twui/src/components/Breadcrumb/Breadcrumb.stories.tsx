@@ -67,3 +67,32 @@ export const Wrapped: Story = {
     ),
   ],
 };
+
+export const WrappedWithoutLastItem: Story = {
+  args: {
+    children: (
+      <BreadcrumbList className="text-center">
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">
+            <WithIcon iconBefore={<Home />}>Many words in this crumb</WithIcon>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/components">Multi word crumb</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem last>
+          <BreadcrumbPage>
+            <WithIcon iconBefore={<Bean />}>Many words in this crumb</WithIcon>
+          </BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    ),
+  },
+  decorators: [
+    (Story) => (
+      <div className="max-w-[7rem]">
+        <Story />
+      </div>
+    ),
+  ],
+};
