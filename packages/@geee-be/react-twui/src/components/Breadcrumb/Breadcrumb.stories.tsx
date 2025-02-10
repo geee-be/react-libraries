@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Bean, Home } from 'lucide-react';
+import { WithIcon } from '../WithIcon/index.js';
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
 } from './index.js';
 
 const meta = {
@@ -23,22 +23,47 @@ export const Default: Story = {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink href="/">
-            <Home />
-            Home
+            <WithIcon iconBefore={<Home />}>Home</WithIcon>
           </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink href="/components">Components</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
+        <BreadcrumbItem last>
           <BreadcrumbPage>
-            <Bean />
-            Breadcrumb
+            <WithIcon iconBefore={<Bean />}>Breadcrumb</WithIcon>
           </BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     ),
   },
+};
+
+export const Wrapped: Story = {
+  args: {
+    children: (
+      <BreadcrumbList className="text-center">
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">
+            <WithIcon iconBefore={<Home />}>Many words in this crumb</WithIcon>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/components">Multi word crumb</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem last>
+          <BreadcrumbPage>
+            <WithIcon iconBefore={<Bean />}>Many words in this crumb</WithIcon>
+          </BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    ),
+  },
+  decorators: [
+    (Story) => (
+      <div className="max-w-[7rem]">
+        <Story />
+      </div>
+    ),
+  ],
 };

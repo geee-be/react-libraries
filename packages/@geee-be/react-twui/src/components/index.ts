@@ -32,6 +32,7 @@ export * from './Skeleton/index.js';
 export * from './Spinner/index.js';
 export * from './Toast/index.js';
 export * from './Tooltip/index.js';
+export * from './WithIcon/index.js';
 export * from './YearOfBirthPicker/index.js';
 
 export { Slot } from '@radix-ui/react-slot';
