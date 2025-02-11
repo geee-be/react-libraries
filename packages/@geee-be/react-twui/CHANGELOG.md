@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.5
+
+### Patch Changes
+
+- 383bd33: fix: vertical alignment in breadcrumb
+
 ## 1.5.4
 
 ### Patch Changes
