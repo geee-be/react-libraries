@@ -16,7 +16,7 @@ export const WithIcon: FC<PropsWithChildren<Props>> = ({
 }) => (
   <div
     data-content={dataContent}
-    className={`inline leading-[1em] ${className ?? ''}`}
+    className={`inline align-middle leading-[1em] ${className ?? ''}`}
   >
     {iconBefore && (
       <div className="inline-block align-middle whitespace-pre-wrap mr-[0.5em] w-[1em] h-[1em] [&>svg]:max-w-[1em] [&>svg]:max-h-[1em]">
