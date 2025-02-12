@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.6
+
+### Patch Changes
+
+- fde228a: Pass href to child when asChild in BreadcrumbLink
+
 ## 1.5.5
 
 ### Patch Changes
