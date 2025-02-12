@@ -58,7 +58,6 @@ const BreadcrumbLink = React.forwardRef<
         'inline align-middle transition-colors hover:text-paper-fg/100 [&>svg]:size-3.5',
         className,
       )}
-      data-href={props.href}
       {...props}
     />
   );
