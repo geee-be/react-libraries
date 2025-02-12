@@ -33,7 +33,7 @@ const BreadcrumbItem = React.forwardRef<
 >(({ children, className, last, ...props }, ref) => (
   <li
     ref={ref}
-    className={cn('inline align-middle gap-1.5 my-1', className)}
+    className={cn('inline align-middle gap-1.5 mb-1', className)}
     {...props}
   >
     <WithIcon iconAfter={last ? null : <BreadcrumbSeparator />}>
