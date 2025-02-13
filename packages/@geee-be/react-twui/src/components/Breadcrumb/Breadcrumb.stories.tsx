@@ -7,6 +7,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
+  BreadcrumbSeparator,
 } from './index.js';
 
 const meta = {
@@ -26,10 +27,12 @@ export const Default: Story = {
             <WithIcon iconBefore={<Home />}>Home</WithIcon>
           </BreadcrumbLink>
         </BreadcrumbItem>
+        <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink href="/components">Components</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbItem last>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
           <BreadcrumbPage>
             <WithIcon iconBefore={<Bean />}>Breadcrumb</WithIcon>
           </BreadcrumbPage>
@@ -48,10 +51,12 @@ export const Wrapped: Story = {
             <WithIcon iconBefore={<Home />}>Many words in this crumb</WithIcon>
           </BreadcrumbLink>
         </BreadcrumbItem>
+        <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink href="/components">Multi word crumb</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbItem last>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
           <BreadcrumbPage>
             <WithIcon iconBefore={<Bean />}>Many words in this crumb</WithIcon>
           </BreadcrumbPage>
@@ -77,10 +82,12 @@ export const WrappedWithoutLastItem: Story = {
             <WithIcon iconBefore={<Home />}>Many words in this crumb</WithIcon>
           </BreadcrumbLink>
         </BreadcrumbItem>
+        <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink href="/components">Multi word crumb</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbItem last>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
           <BreadcrumbPage>
             <WithIcon iconBefore={<Bean />}>Many words in this crumb</WithIcon>
           </BreadcrumbPage>
