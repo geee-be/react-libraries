@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.8
+
+### Patch Changes
+
+- 6f73866: refactor: change BreadcrumbSeparator from 'li' to 'div' for improved semantics
+
 ## 1.5.7
 
 ### Patch Changes
