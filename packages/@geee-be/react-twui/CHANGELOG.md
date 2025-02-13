@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.9
+
+### Patch Changes
+
+- 421042e: revert Breadcrumb
+
 ## 1.5.8
 
 ### Patch Changes
