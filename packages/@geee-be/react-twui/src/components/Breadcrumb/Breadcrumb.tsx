@@ -2,7 +2,6 @@ import { Slot } from '@radix-ui/react-slot';
 import { ChevronRight, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 import { cn } from '../../helpers/utils';
-import { WithIcon } from '../WithIcon';
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
@@ -19,7 +18,7 @@ const BreadcrumbList = React.forwardRef<
   <ol
     ref={ref}
     className={cn(
-      'flex flex-wrap items-center gap-y-0 gap-x-1.5 break-words text-sm text-paper-fg/75 sm:gap-x-2.5 leading-[1em]',
+      'flex flex-wrap items-center gap-1.5 break-words text-sm text-paper-fg/75 sm:gap-2.5',
       className,
     )}
     {...props}
@@ -29,17 +28,13 @@ BreadcrumbList.displayName = 'BreadcrumbList';
 
 const BreadcrumbItem = React.forwardRef<
   HTMLLIElement,
-  React.ComponentPropsWithoutRef<'li'> & { last?: boolean }
->(({ children, className, last, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<'li'>
+>(({ className, ...props }, ref) => (
   <li
     ref={ref}
-    className={cn('inline align-middle gap-1.5 mb-1', className)}
+    className={cn('inline-flex items-center gap-1.5', className)}
     {...props}
-  >
-    <WithIcon iconAfter={last ? null : <BreadcrumbSeparator />}>
-      {children}
-    </WithIcon>
-  </li>
+  />
 ));
 BreadcrumbItem.displayName = 'BreadcrumbItem';
 
@@ -55,7 +50,7 @@ const BreadcrumbLink = React.forwardRef<
     <Comp
       ref={ref}
       className={cn(
-        'inline align-middle transition-colors hover:text-paper-fg/100 [&>svg]:size-3.5',
+        'transition-colors hover:text-paper-fg/100 [&>svg]:size-3.5 flex gap-1 items-center',
         className,
       )}
       {...props}
@@ -86,15 +81,15 @@ const BreadcrumbSeparator = ({
   children,
   className,
   ...props
-}: React.ComponentProps<'div'>) => (
-  <div
+}: React.ComponentProps<'li'>) => (
+  <li
     role="presentation"
     aria-hidden="true"
-    className={cn('inline-block align-middle [&>svg]:size-[1em]', className)}
+    className={cn('[&>svg]:size-3.5', className)}
     {...props}
   >
     {children ?? <ChevronRight />}
-  </div>
+  </li>
 );
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator';
 
