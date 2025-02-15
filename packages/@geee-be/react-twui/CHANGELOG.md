@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.10
+
+### Patch Changes
+
+- 14fd4cd: add Pagination component
+
 ## 1.5.9
 
 ### Patch Changes
