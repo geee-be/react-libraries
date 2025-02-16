@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.11
+
+### Patch Changes
+
+- db56676: Update Pagination component to use 'sm' size and add stories for documentation
+
 ## 1.5.10
 
 ### Patch Changes
