@@ -41,7 +41,7 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
       className,
       destructive,
       disabled,
-      formatValue = (value) => `Born in ${value}`,
+      formatValue = (value) => `Year ${value}`,
       inputPlaceholder = 'Enter year',
       onChange,
       placeholder = 'Select year',
