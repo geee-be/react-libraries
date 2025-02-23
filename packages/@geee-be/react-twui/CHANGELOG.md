@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.12
+
+### Patch Changes
+
+- a129939: YearPicker
+
 ## 1.5.11
 
 ### Patch Changes
