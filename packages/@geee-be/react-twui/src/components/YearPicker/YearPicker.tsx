@@ -10,6 +10,7 @@ import {
   type ChangeEvent,
   type ElementRef,
   type InputHTMLAttributes,
+  type ReactNode,
 } from 'react';
 import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
@@ -17,34 +18,33 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Popover, PopoverContent, PopoverTrigger } from '../Popover';
 
-type YearOfBirthPickerElement = Omit<HTMLInputElement, 'onChange' | 'value'> & {
-  onChange: (event: ChangeEvent<YearOfBirthPickerElement>) => void;
+type YearPickerElement = Omit<HTMLInputElement, 'onChange' | 'value'> & {
+  onChange: (event: ChangeEvent<YearPickerElement>) => void;
   value?: number;
 };
 
-export type YearOfBirthPickerProps = Omit<
-  InputHTMLAttributes<YearOfBirthPickerElement>,
+export type YearPickerProps = Omit<
+  InputHTMLAttributes<YearPickerElement>,
   'type' | 'autoFocus' | 'min' | 'max'
 > & {
   destructive?: boolean;
+  formatValue?: (value: number) => ReactNode;
   inputPlaceholder?: string;
   max?: number;
   min?: number;
   value?: number;
 };
 
-export const YearOfBirthPicker = forwardRef<
-  YearOfBirthPickerElement,
-  YearOfBirthPickerProps
->(
+export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
   (
     {
       className,
       destructive,
       disabled,
+      formatValue = (value) => `Born in ${value}`,
       inputPlaceholder = 'Enter year',
       onChange,
-      placeholder = 'Select birth year',
+      placeholder = 'Select year',
       value,
       ...props
     },
@@ -66,7 +66,7 @@ export const YearOfBirthPicker = forwardRef<
           focus: (options?: FocusOptions) => {
             buttonRef.current?.focus(options);
           },
-        } as YearOfBirthPickerElement;
+        } as YearPickerElement;
       },
       [],
     );
@@ -97,12 +97,12 @@ export const YearOfBirthPicker = forwardRef<
           ...inputRef.current,
           value: selectedYear,
           // Add other properties from the target that you might need
-        } as YearOfBirthPickerElement,
+        } as YearPickerElement,
         currentTarget: {
           ...inputRef.current,
           value: selectedYear,
           // Add other properties from the currentTarget if needed
-        } as YearOfBirthPickerElement,
+        } as YearPickerElement,
         bubbles: true,
         cancelable: true,
         defaultPrevented: false,
@@ -164,7 +164,7 @@ export const YearOfBirthPicker = forwardRef<
             onClick={() => setOpen(true)}
           >
             {internalValue ? (
-              `Born in ${internalValue}`
+              formatValue(internalValue)
             ) : (
               <span>{placeholder}</span>
             )}
@@ -230,4 +230,4 @@ export const YearOfBirthPicker = forwardRef<
   },
 );
 
-YearOfBirthPicker.displayName = 'YearOfBirthPicker';
+YearPicker.displayName = 'YearPicker';
