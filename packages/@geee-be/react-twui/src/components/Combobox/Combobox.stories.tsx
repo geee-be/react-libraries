@@ -74,7 +74,7 @@ export const Default: Story = {
     placeholder: 'Select your value here',
     items: () => Promise.resolve(items),
     loadingHint: 'Loading...',
-    onValueChange: (value) => console.log(value),
+    onValueChange: (value: unknown) => console.log(value),
     className: 'w-64',
   },
 };

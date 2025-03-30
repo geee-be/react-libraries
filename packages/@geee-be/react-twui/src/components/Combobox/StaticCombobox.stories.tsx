@@ -73,7 +73,7 @@ export const Default: Story = {
     inputPlaceholder: 'Search...',
     placeholder: 'Select your value here',
     items,
-    onValueChange: (value) => console.log(value),
+    onValueChange: (value: unknown) => console.log(value),
     className: 'w-64',
   },
 };
