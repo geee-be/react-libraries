@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.5.13
+
+### Patch Changes
+
+- ceb19b1: NoWrap option for WithIcon
+
 ## 1.5.12
 
 ### Patch Changes
