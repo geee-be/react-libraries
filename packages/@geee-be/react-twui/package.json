@@ -1,47 +1,5 @@
 {
-  "name": "@geee-be/react-twui",
-  "version": "1.5.13",
-  "description": "",
-  "keywords": [],
-  "license": "MIT",
   "author": "",
-  "sideEffects": false,
-  "type": "module",
-  "exports": {
-    ".": {
-      "require": {
-        "types": "./dist/cjs/index.d.cts",
-        "default": "./dist/cjs/index.cjs"
-      },
-      "import": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
-      }
-    }
-  },
-  "main": "./dist/cjs/index.cjs",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/cjs/index.d.cts",
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "scripts": {
-    "build": "concurrently \"npm run build:cjs\" \"npm run build:esm\"",
-    "build:cjs": "tsup --format cjs --external react",
-    "build:esm": "tsup --format esm --external react",
-    "build:watch": "concurrently \"npm:build:watch:*\"",
-    "build:watch:cjs": "npm run build:cjs -- --watch",
-    "build:watch:esm": "npm run build:esm -- --watch",
-    "clean": "rimraf .turbo node_modules dist",
-    "dev": "npm run build:watch",
-    "lint": "npm run lint:biome && npm run lint:types && npm run lint:unused-exports",
-    "lint:biome": "biome ci src/",
-    "lint:biome:fix": "biome check src/ --apply",
-    "lint:types": "tsc --noEmit",
-    "lint:unused-exports": "ts-unused-exports tsconfig.unused-exports.json --excludePathsFromReport=src/index.ts",
-    "storybook": "storybook dev -p 6006 --ci"
-  },
   "dependencies": {
     "@geee-be/core": "latest",
     "@geee-be/react-utils": "workspace:*",
@@ -72,6 +30,7 @@
     "color": "^4.2.3",
     "color2k": "^2.0.3",
     "cva": "1.0.0-beta.1",
+    "date-fns": "^4.1.0",
     "deepmerge": "^4.3.1",
     "downshift": "^8.5.0",
     "embla-carousel": "^8.5.1",
@@ -81,6 +40,7 @@
     "lodash.omit": "^4.5.0",
     "lucide-react": "^0.453.0",
     "react-advanced-cropper": "^0.20.0",
+    "react-day-picker": "^9.6.7",
     "react-dropzone-esm": "^15.2.0",
     "react-hook-form": "^7.53.2",
     "react-toastify": "^10.0.6",
@@ -91,6 +51,7 @@
     "usehooks-ts": "^3.1.0",
     "vaul": "^0.9.9"
   },
+  "description": "",
   "devDependencies": {
     "@happy-dom/global-registrator": "^12.10.3",
     "@storybook/addon-docs": "^8.4.5",
@@ -118,6 +79,24 @@
     "ts-jest": "^29.2.5",
     "tsup": "^8.3.5"
   },
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/esm/index.js",
+        "types": "./dist/esm/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/cjs/index.cjs",
+        "types": "./dist/cjs/index.d.cts"
+      }
+    }
+  },
+  "files": ["dist", "README.md"],
+  "keywords": [],
+  "license": "MIT",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "name": "@geee-be/react-twui",
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",
@@ -132,5 +111,25 @@
     "@types/react-dom": {
       "optional": true
     }
-  }
+  },
+  "scripts": {
+    "build": "concurrently \"npm run build:cjs\" \"npm run build:esm\"",
+    "build:cjs": "tsup --format cjs --external react",
+    "build:esm": "tsup --format esm --external react",
+    "build:watch": "concurrently \"npm:build:watch:*\"",
+    "build:watch:cjs": "npm run build:cjs -- --watch",
+    "build:watch:esm": "npm run build:esm -- --watch",
+    "clean": "rimraf .turbo node_modules dist",
+    "dev": "npm run build:watch",
+    "lint": "npm run lint:biome && npm run lint:types && npm run lint:unused-exports",
+    "lint:biome": "biome ci src/",
+    "lint:biome:fix": "biome check src/ --apply",
+    "lint:types": "tsc --noEmit",
+    "lint:unused-exports": "ts-unused-exports tsconfig.unused-exports.json --excludePathsFromReport=src/index.ts",
+    "storybook": "storybook dev -p 6006 --ci"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/cjs/index.d.cts",
+  "version": "1.5.13"
 }
