@@ -16,6 +16,8 @@ export type DatePickerProps = {
   disabled?: boolean;
   /** Default date to display (uncontrolled component) */
   defaultDate?: Date;
+  /** Whether the date picker is in a destructive state */
+  destructive?: boolean;
   /** Current date value (controlled component) */
   value?: Date;
   /** Format to display the date in, defaults to 'PPP' (e.g., April 3, 2023) */
@@ -36,6 +38,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
       className,
       disabled = false,
       defaultDate,
+      destructive,
       value,
       dateFormat = 'PPP',
       placeholder = 'Pick a date',
@@ -79,6 +82,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
           <Button
             ref={ref}
             variant="input"
+            color={destructive ? 'error' : 'default'}
             disabled={disabled}
             className={cn(
               'justify-start text-left font-normal',

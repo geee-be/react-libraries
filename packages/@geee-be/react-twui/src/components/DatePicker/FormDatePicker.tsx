@@ -103,7 +103,7 @@ export const FormDatePicker = <
             aria-invalid={ariaInvalid}
             aria-labelledby={label ? `${elId}__label` : undefined}
             className={className}
-            // destructive={!!error}
+            destructive={!!error}
             disabled={
               disabled ||
               field.disabled ||
