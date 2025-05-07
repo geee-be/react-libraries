@@ -12,6 +12,7 @@ export * from './Collapsible/index.js';
 export * from './Combobox/index.js';
 export * from './Command/index.js';
 export * from './Cropper/index.js';
+export * from './DatePicker/index.js';
 export * from './Dialog/index.js';
 export * from './Drawer/index.js';
 export * from './DropdownMenu/index.js';
