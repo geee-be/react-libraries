@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.0
+
+### Minor Changes
+
+- 3d1a935: Added calendar and date picker (WIP)
+
 ## 1.5.13
 
 ### Patch Changes
