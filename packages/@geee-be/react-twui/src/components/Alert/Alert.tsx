@@ -145,7 +145,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
           <div
             className={cn(
               'flex grow flex-col items-start',
-              variant === 'expanded' && 'items-start',
+              variant === 'expanded' && 'w-full',
               variant === 'inline' && 'sm:flex-row sm:items-center sm:gap-2',
             )}
           >
