@@ -4,12 +4,14 @@
     "capslock",
     "clsx",
     "deepmerge",
+    "geee",
     "iconicicons",
     "pagedown",
     "pageup",
     "renderable",
     "tailwindcss",
     "themable",
+    "twui",
     "typeguard"
   ]
 }
