@@ -19,7 +19,7 @@ export * from './DropdownMenu/index.js';
 export * from './FormControl/index.js';
 export * from './icons/index.js';
 export * from './Input/index.js';
-export * from './InputImage/index.js';
+export * from './InputFile/index.js';
 export * from './InputOtp/index.js';
 export * from './Join/index.js';
 export * from './Label/index.js';
