@@ -16,7 +16,6 @@ import type { LabelProps } from '../Label/Label';
 import { Skeleton } from '../Skeleton/Skeleton';
 import type { LabelHelperProps } from '../types';
 import { InputFile, type InputFileProps } from './InputFile';
-import type { ImageBinary } from './types';
 
 export type FormInputFileProps<
   T extends FieldValues,
@@ -32,11 +31,6 @@ export type FormInputFileProps<
 
   // validation
   required?: Message | ValidationRule<boolean>;
-};
-
-export const fromValue = (value: ImageBinary<Buffer>): Blob | undefined => {
-  if (!value) return undefined;
-  return new Blob([value.data], { type: value.contentType });
 };
 
 /* -------------------------------- Component ------------------------------- */
