@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 1.6.1
+
+### Patch Changes
+
+- a27f4e9: FormInputFile
+- f2c7d6f: DatePicker outline red when validation failed
+
 ## 1.6.0
 
 ### Minor Changes
