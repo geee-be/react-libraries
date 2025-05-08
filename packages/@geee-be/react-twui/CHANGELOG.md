@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.2
+
+### Patch Changes
+
+- eb90d42: update Alert component styles for expanded variant to use full width
+
 ## 1.6.1
 
 ### Patch Changes
