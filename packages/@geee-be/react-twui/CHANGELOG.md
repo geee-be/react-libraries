@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.3
+
+### Patch Changes
+
+- 33847cd: WithIcon alignment
+
 ## 1.6.2
 
 ### Patch Changes
