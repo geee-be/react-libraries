@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.4
+
+### Patch Changes
+
+- 89e0a51: replace noWrap prop with ellipsis for text overflow handling
+
 ## 1.6.3
 
 ### Patch Changes
