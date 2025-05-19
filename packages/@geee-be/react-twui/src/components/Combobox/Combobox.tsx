@@ -39,7 +39,7 @@ export interface StaticComboboxProps extends ComboboxRootProps {
 
 export interface ComboboxProps extends ComboboxRootProps {
   debounceMs?: number;
-  items: (seatch: string) => Promise<ComboboxGroupProps[]>;
+  items: (search: string) => Promise<ComboboxGroupProps[]>;
   loadingHint: ReactNode;
 }
 
