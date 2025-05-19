@@ -26,7 +26,7 @@ const meta: Meta<typeof WithIcon> = {
   argTypes: {
     className: { control: 'text' },
     'data-content': { control: 'text' },
-    noWrap: { control: 'boolean', defaultValue: false },
+    ellipsis: { control: 'boolean', defaultValue: false },
     iconBefore: { table: { disable: true } },
     iconAfter: { table: { disable: true } },
   },
@@ -47,6 +47,35 @@ export const WithIconBefore: Story = {
     children: 'Icon Before Text',
     iconBefore: <Home />,
   },
+};
+
+export const WithIconBeforeWrap: Story = {
+  args: {
+    children: 'Icon Before Text',
+    iconBefore: <Home />,
+  },
+  decorators: [
+    (Story) => (
+      <div className="max-w-[120px] border border-gray-300 p-1">
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const WithIconBeforeEllipsis: Story = {
+  args: {
+    children: 'Icon Before Text',
+    iconBefore: <Home />,
+    ellipsis: true,
+  },
+  decorators: [
+    (Story) => (
+      <div className="max-w-[120px] border border-gray-300 p-1">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const WithIconAfter: Story = {
@@ -87,17 +116,17 @@ export const InlineText: Story = {
   ],
 };
 
-export const WithNoWrap: Story = {
+export const WithEllipsis: Story = {
   args: {
     children:
       'This text will not wrap even if it is very very very long and would normally wrap onto multiple lines',
     iconBefore: <Mail />,
     iconAfter: <ChevronRight />,
-    noWrap: true,
+    ellipsis: true,
   },
   decorators: [
     (Story) => (
-      <div className="max-w-[200px] border border-gray-300 p-4">
+      <div className="max-w-[200px] border border-gray-300 p-2">
         <Story />
       </div>
     ),
@@ -107,13 +136,13 @@ export const WithNoWrap: Story = {
 export const WithWrap: Story = {
   args: {
     children:
-      'This text will wrap when it reaches the edge of its container since noWrap is not specified',
+      'This text will wrap when it reaches the edge of its container since ellipsis is not specified',
     iconBefore: <Mail />,
     iconAfter: <ChevronRight />,
   },
   decorators: [
     (Story) => (
-      <div className="max-w-[200px] border border-gray-300 p-4">
+      <div className="max-w-[200px] border border-gray-300 p-2">
         <Story />
       </div>
     ),
