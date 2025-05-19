@@ -72,7 +72,11 @@ export const Default: Story = {
     emptyHint: 'No results found.',
     inputPlaceholder: 'Search...',
     placeholder: 'Select your value here',
-    items: () => Promise.resolve(items),
+    debounceMs: 750,
+    items: (search: string) => {
+      console.log('Finding...', search);
+      return Promise.resolve(items);
+    },
     loadingHint: 'Loading...',
     onValueChange: (value: unknown) => console.log(value),
     className: 'w-64',
