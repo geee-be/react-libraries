@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.5
+
+### Patch Changes
+
+- 3e1f05d: adjust margin and padding values for card component variants
+
 ## 1.6.4
 
 ### Patch Changes
