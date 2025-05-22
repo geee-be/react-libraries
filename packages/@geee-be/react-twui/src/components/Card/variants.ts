@@ -31,9 +31,9 @@ export const cardContentVariants = cva({
       '2xl': 'gap-12',
     },
     gutters: {
-      'collapse-none': 'm-6',
-      'collapse-x': 'my-6 mx-0',
-      'collapse-y': 'mx-6 my-0',
+      'collapse-none': 'm-4 md:m-6',
+      'collapse-x': 'my-4 md:my-6 mx-0',
+      'collapse-y': 'mx-4 md:mx-6 my-0',
       collapse: 'm-0',
     },
   },
@@ -47,9 +47,9 @@ export const cardFooterVariants = cva({
   base: 'text-start border-t border-t-paper-border print:border-t-paper-black/50',
   variants: {
     gutters: {
-      'collapse-none': 'p-6',
-      'collapse-x': 'py-6 px-0',
-      'collapse-y': 'px-6 py-0',
+      'collapse-none': 'p-4 md:p-6',
+      'collapse-x': 'py-4 md:py-6 px-0',
+      'collapse-y': 'px-4 md:px-6 py-0',
       collapse: 'p-0',
     },
   },
@@ -62,9 +62,9 @@ export const cardHeaderVariants = cva({
   base: 'text-start font-medium border-b border-b-paper-border print:border-b-paper-black/50',
   variants: {
     gutters: {
-      'collapse-none': 'p-6',
-      'collapse-x': 'py-6 px-0',
-      'collapse-y': 'px-6 py-0',
+      'collapse-none': 'p-4 md:p-6',
+      'collapse-x': 'py-4 md:py-6 px-0',
+      'collapse-y': 'px-4 md:px-6 py-0',
       collapse: 'p-0',
     },
     color: {
