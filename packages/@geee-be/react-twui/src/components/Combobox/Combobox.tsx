@@ -118,12 +118,12 @@ const Combobox = forwardRef<ComboboxElement, ComboboxProps>(
 
     return (
       <ComboboxRoot
+        shouldFilter={false}
         {...props}
         items={loadedItems}
         loading={loading ? loadingHint : undefined}
         search={search}
         setSearch={setSearch}
-        shouldFilter={false}
         ref={ref}
       />
     );
