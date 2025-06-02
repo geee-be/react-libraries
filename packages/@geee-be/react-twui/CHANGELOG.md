@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.6
+
+### Patch Changes
+
+- 2b8dea3: Combobox: don't force shouldFilter=false
+
 ## 1.6.5
 
 ### Patch Changes
