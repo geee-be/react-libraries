@@ -76,6 +76,7 @@ const StaticCombobox = forwardRef<ComboboxElement, StaticComboboxProps>(
 
     return (
       <ComboboxRoot
+        shouldFilter={true}
         {...props}
         items={items}
         search={search}
