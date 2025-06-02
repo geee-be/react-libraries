@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.7
+
+### Patch Changes
+
+- 05044a2: shouldFilter=true
+
 ## 1.6.6
 
 ### Patch Changes
