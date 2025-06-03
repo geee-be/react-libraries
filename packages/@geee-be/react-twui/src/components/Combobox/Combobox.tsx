@@ -24,6 +24,7 @@ export type ComboboxElement = HTMLButtonElement;
 type ComboboxRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   destructive?: boolean;
   emptyHint?: ReactNode;
+  inputIcon?: ReactNode;
   inputPlaceholder?: string;
   onValueChange?: (value: string | undefined) => void;
   placeholder?: ReactNode;
@@ -151,6 +152,7 @@ const ComboboxRoot = forwardRef<
       disabled,
       emptyHint,
       id,
+      inputIcon = <LocateIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />,
       inputPlaceholder,
       items,
       loading,
@@ -202,7 +204,7 @@ const ComboboxRoot = forwardRef<
         >
           <Command shouldFilter={shouldFilter}>
             <CommandInput
-              icon={<LocateIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />}
+              icon={inputIcon}
               placeholder={inputPlaceholder}
               value={search}
               onValueChange={setSearch}
