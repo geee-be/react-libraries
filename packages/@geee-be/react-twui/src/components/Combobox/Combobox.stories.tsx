@@ -40,20 +40,20 @@ const items: ComboboxGroupProps[] = [
     label: 'Numbers',
     items: [
       {
-        key: 'one',
+        key: 'key-one',
         label: 'One',
       },
       {
-        key: 'two',
+        key: 'key-two',
         label: 'Two',
       },
       {
-        key: 'three',
+        key: 'key-three',
         label: 'Three',
         disabled: true,
       },
       {
-        key: 'four',
+        key: 'key-four',
         label: 'Four',
       },
     ],
@@ -66,9 +66,10 @@ const items: ComboboxGroupProps[] = [
   },
 ];
 
-export const Default: Story = {
+export const Filter: Story = {
   args: {
     disabled: false,
+    shouldFilter: true,
     emptyHint: 'No results found.',
     inputPlaceholder: 'Search...',
     placeholder: 'Select your value here',
@@ -76,6 +77,33 @@ export const Default: Story = {
     items: (search: string) => {
       console.log('Finding...', search);
       return Promise.resolve(items);
+    },
+    loadingHint: 'Loading...',
+    onValueChange: (value: unknown) => console.log(value),
+    className: 'w-64',
+  },
+};
+
+export const Search: Story = {
+  args: {
+    disabled: false,
+    shouldFilter: false,
+    emptyHint: 'No results found.',
+    inputPlaceholder: 'Search...',
+    placeholder: 'Select your value here',
+    debounceMs: 750,
+    items: (search: string) => {
+      console.log('Finding...', search);
+      return Promise.resolve(
+        items.map((group) => ({
+          ...group,
+          items: group.items.filter(
+            (item) =>
+              item.label &&
+              String(item.label).toLowerCase().includes(search.toLowerCase()),
+          ),
+        })),
+      );
     },
     loadingHint: 'Loading...',
     onValueChange: (value: unknown) => console.log(value),

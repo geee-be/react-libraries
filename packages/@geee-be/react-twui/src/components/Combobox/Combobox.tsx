@@ -2,7 +2,7 @@
 
 import { CheckIcon } from '@radix-ui/react-icons';
 import { Popover } from '@radix-ui/react-popover';
-import { LocateIcon } from 'lucide-react';
+import { SearchIcon } from 'lucide-react';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Fragment, forwardRef, useEffect, useState } from 'react';
 import { useDebounceValue } from 'usehooks-ts';
@@ -68,7 +68,7 @@ const toDisplay =
         }
       }
     }
-    return key;
+    return undefined;
   };
 
 const StaticCombobox = forwardRef<ComboboxElement, StaticComboboxProps>(
@@ -152,7 +152,7 @@ const ComboboxRoot = forwardRef<
       disabled,
       emptyHint,
       id,
-      inputIcon = <LocateIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />,
+      inputIcon = <SearchIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />,
       inputPlaceholder,
       items,
       loading,

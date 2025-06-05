@@ -24,7 +24,7 @@ const Command = forwardRef<
       'border-none outline outline-2 outline-control-focus/50',
       // color
       'bg-control text-control-fg border border-default hover:border-default/70 data-[placeholder]:text-control-fg/50',
-      '[&_[cmdk-input-wrapper]]:border-default [&_[cmdk-input-wrapper]]:hover:border-default/70',
+      // '[&_[cmdk-input-wrapper]]:border-default [&_[cmdk-input-wrapper]]:hover:border-default/70',
       className,
     )}
     {...props}
@@ -51,7 +51,10 @@ const CommandInput = forwardRef<
   ElementRef<typeof CommandPrimitive.Input>,
   ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & { icon?: ReactNode }
 >(({ className, icon, ...props }, ref) => (
-  <div className="flex items-center border-b px-4" cmdk-input-wrapper="">
+  <div
+    className="flex items-center border-b border-paper-border hover:border-paper-border px-4"
+    cmdk-input-wrapper=""
+  >
     {icon ?? <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />}
     <CommandPrimitive.Input
       ref={ref}

@@ -12,6 +12,7 @@
     "tailwindcss",
     "themable",
     "twui",
-    "typeguard"
+    "typeguard",
+    "usehooks"
   ]
 }
