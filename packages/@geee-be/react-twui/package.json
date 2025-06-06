@@ -91,7 +91,10 @@
       }
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [],
   "license": "MIT",
   "main": "./dist/cjs/index.cjs",
@@ -131,5 +134,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/cjs/index.d.cts",
-  "version": "1.6.11"
+  "version": "1.6.12"
 }
