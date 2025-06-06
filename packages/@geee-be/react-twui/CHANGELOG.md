@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.12
+
+### Patch Changes
+
+- f0022d9: update cmdk
+
 ## 1.6.11
 
 ### Patch Changes
