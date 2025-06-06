@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.11
+
+### Patch Changes
+
+- 1665068: feat: enhance CommandDialogProps with value and onValueChange for better state management
+
 ## 1.6.10
 
 ### Patch Changes
