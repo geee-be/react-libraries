@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.9
+
+### Patch Changes
+
+- 3cb0312: feat: add shouldFilter prop to CommandDialog for conditional filtering
+
 ## 1.6.8
 
 ### Patch Changes
