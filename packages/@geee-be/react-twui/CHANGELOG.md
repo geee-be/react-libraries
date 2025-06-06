@@ -1,5 +1,13 @@
 # @geee-be/react-twui
 
+## 1.6.8
+
+### Patch Changes
+
+- a7039e4: feat: update Combobox component to support asynchronous rendering and improve layout in trigger button
+- 46d433c: feat: enhance Combobox and Command components with search functionality and improved icons
+- bee57b9: feat: add inputIcon prop to ComboboxRoot for customizable icons
+
 ## 1.6.7
 
 ### Patch Changes
