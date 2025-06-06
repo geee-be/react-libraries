@@ -35,17 +35,27 @@ Command.displayName = CommandPrimitive.displayName;
 
 export interface CommandDialogProps extends DialogProps {
   shouldFilter?: boolean;
+  value?: string;
+  onValueChange?: (value: string | undefined) => void;
 }
 
 const CommandDialog = ({
   children,
   shouldFilter,
+  value,
+  onValueChange,
   ...props
 }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
       <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <Command shouldFilter={shouldFilter}>{children}</Command>
+        <Command
+          shouldFilter={shouldFilter}
+          value={value}
+          onValueChange={onValueChange}
+        >
+          {children}
+        </Command>
       </DialogContent>
     </Dialog>
   );
