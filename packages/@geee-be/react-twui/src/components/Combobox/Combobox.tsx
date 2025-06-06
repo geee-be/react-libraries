@@ -4,9 +4,10 @@ import { CheckIcon } from '@radix-ui/react-icons';
 import { Popover } from '@radix-ui/react-popover';
 import { SearchIcon } from 'lucide-react';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
-import { Fragment, forwardRef, useEffect, useState } from 'react';
+import { Fragment, forwardRef, useEffect, useMemo, useState } from 'react';
 import { useDebounceValue } from 'usehooks-ts';
 import { cn } from '../../helpers/utils.js';
+import { Async } from '../Async/index.js';
 import {
   Command,
   CommandEmpty,
@@ -18,6 +19,7 @@ import {
   CommandSeparator,
 } from '../Command/Command.js';
 import { PopoverContent, PopoverTrigger } from '../Popover/Popover.js';
+import { Skeleton } from '../Skeleton/Skeleton.js';
 import { ComboboxTriggerButton } from './ComboboxTriggerButton.js';
 
 export type ComboboxElement = HTMLButtonElement;
@@ -29,8 +31,9 @@ type ComboboxRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   onValueChange?: (value: string | undefined) => void;
   placeholder?: ReactNode;
   readOnly?: boolean;
-  renderValue?: (key: string) => ReactNode;
+  renderValue?: (key: string) => Promise<ReactNode>;
   required?: boolean;
+  shouldFilter?: boolean;
   value?: string;
 };
 
@@ -60,15 +63,15 @@ export interface ComboboxItemProps {
 
 const toDisplay =
   (items: ComboboxGroupProps[]) =>
-  (key: string): ReactNode => {
+  (key: string): Promise<ReactNode> => {
     for (const group of items) {
       for (const item of group.items) {
         if (item.key === key) {
-          return item.label;
+          return Promise.resolve(item.label);
         }
       }
     }
-    return undefined;
+    return Promise.resolve(undefined);
   };
 
 const StaticCombobox = forwardRef<ComboboxElement, StaticComboboxProps>(
@@ -173,6 +176,10 @@ const ComboboxRoot = forwardRef<
     ref,
   ) => {
     const [open, setOpen] = useState(false);
+    const valueLabel = useMemo(
+      () => (value ? renderValue(value) : Promise.resolve(undefined)),
+      [renderValue, value],
+    );
 
     return (
       <Popover
@@ -193,7 +200,14 @@ const ComboboxRoot = forwardRef<
           <ComboboxTriggerButton
             aria-expanded={open && !disabled}
             // biome-ignore lint/correctness/noChildrenProp: <explanation>
-            children={value ? renderValue(value) : undefined}
+            children={
+              value ? (
+                <Async
+                  fallback={<Skeleton className="h-4 min-w-16" />}
+                  waitFor={() => valueLabel}
+                />
+              ) : undefined
+            }
             disabled={disabled}
             placeholder={placeholder}
           />

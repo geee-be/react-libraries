@@ -38,7 +38,7 @@ const ComboboxTriggerButton = forwardRef<
         className,
       )}
     >
-      <div className="min-w-0">
+      <div className="min-w-0 min-h-6 content-center">
         {children ? (
           <div className="truncate select-none text-control-fg">{children}</div>
         ) : (

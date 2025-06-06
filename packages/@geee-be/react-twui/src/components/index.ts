@@ -1,6 +1,7 @@
 // Components
 export * from './Alert/index.js';
 export * from './AspectRatio/index.js';
+export * from './Async/index.js';
 export * from './Avatar/index.js';
 export * from './Breadcrumb/index.js';
 export * from './Button/index.js';
