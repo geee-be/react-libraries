@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.10
+
+### Patch Changes
+
+- 01bd9c3: feat: export CommandDialogProps interface and update CommandDialog to use shouldFilter prop
+
 ## 1.6.9
 
 ### Patch Changes
