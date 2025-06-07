@@ -12,6 +12,8 @@ import {
 import { cn } from '../../helpers/utils';
 import { Dialog, DialogContent } from '../Dialog';
 
+export type CommandProps = ComponentPropsWithoutRef<typeof CommandPrimitive>;
+
 const Command = forwardRef<
   ElementRef<typeof CommandPrimitive>,
   ComponentPropsWithoutRef<typeof CommandPrimitive>

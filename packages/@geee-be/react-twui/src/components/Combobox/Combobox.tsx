@@ -16,6 +16,7 @@ import {
   CommandItem,
   CommandList,
   CommandLoading,
+  type CommandProps,
   CommandSeparator,
 } from '../Command/Command.js';
 import { PopoverContent, PopoverTrigger } from '../Popover/Popover.js';
@@ -23,19 +24,19 @@ import { Skeleton } from '../Skeleton/Skeleton.js';
 import { ComboboxTriggerButton } from './ComboboxTriggerButton.js';
 
 export type ComboboxElement = HTMLButtonElement;
-type ComboboxRootProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  destructive?: boolean;
-  emptyHint?: ReactNode;
-  inputIcon?: ReactNode;
-  inputPlaceholder?: string;
-  onValueChange?: (value: string | undefined) => void;
-  placeholder?: ReactNode;
-  readOnly?: boolean;
-  renderValue?: (key: string) => Promise<ReactNode>;
-  required?: boolean;
-  shouldFilter?: boolean;
-  value?: string;
-};
+type ComboboxRootProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  Pick<CommandProps, 'shouldFilter' | 'filter'> & {
+    destructive?: boolean;
+    emptyHint?: ReactNode;
+    inputIcon?: ReactNode;
+    inputPlaceholder?: string;
+    onValueChange?: (value: string | undefined) => void;
+    placeholder?: ReactNode;
+    readOnly?: boolean;
+    renderValue?: (key: string) => Promise<ReactNode>;
+    required?: boolean;
+    value?: string;
+  };
 
 export interface StaticComboboxProps extends ComboboxRootProps {
   items: ComboboxGroupProps[];
@@ -144,7 +145,6 @@ const ComboboxRoot = forwardRef<
     loading?: ReactNode;
     search: string;
     setSearch: (value: string) => void;
-    shouldFilter?: boolean;
   }
 >(
   (
@@ -169,6 +169,7 @@ const ComboboxRoot = forwardRef<
       search,
       setSearch,
       shouldFilter = true,
+      filter,
       value,
       type,
       ...props
@@ -216,7 +217,7 @@ const ComboboxRoot = forwardRef<
           className={cn('border-none p-0')}
           style={{ width: 'var(--radix-popper-anchor-width)' }}
         >
-          <Command shouldFilter={shouldFilter}>
+          <Command shouldFilter={shouldFilter} filter={filter}>
             <CommandInput
               icon={inputIcon}
               placeholder={inputPlaceholder}
