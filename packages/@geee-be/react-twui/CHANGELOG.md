@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.14
+
+### Patch Changes
+
+- 156f9b8: revert lucide-react
+
 ## 1.6.13
 
 ### Patch Changes
