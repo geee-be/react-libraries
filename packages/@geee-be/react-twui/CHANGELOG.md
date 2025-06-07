@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.13
+
+### Patch Changes
+
+- 4e135ec: refactor: update Combobox and Command components to include filter prop in Command
+
 ## 1.6.12
 
 ### Patch Changes
