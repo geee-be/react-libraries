@@ -38,7 +38,7 @@
     "flat": "^6.0.1",
     "input-otp": "^1.4.1",
     "lodash.omit": "^4.5.0",
-    "lucide-react": "latest",
+    "lucide-react": "^0.453.0",
     "react-advanced-cropper": "^0.20.0",
     "react-day-picker": "^9.6.7",
     "react-dropzone-esm": "^15.2.0",
@@ -91,10 +91,7 @@
       }
     }
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "keywords": [],
   "license": "MIT",
   "main": "./dist/cjs/index.cjs",
