@@ -40,20 +40,20 @@ const items: ComboboxGroupProps[] = [
     label: 'Numbers',
     items: [
       {
-        key: 'key-one',
+        key: '1',
         label: 'One',
       },
       {
-        key: 'key-two',
+        key: '2',
         label: 'Two',
       },
       {
-        key: 'key-three',
+        key: '3',
         label: 'Three',
         disabled: true,
       },
       {
-        key: 'key-four',
+        key: '4',
         label: 'Four',
       },
     ],
