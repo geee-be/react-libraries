@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.15
+
+### Patch Changes
+
+- 458fd39: Change dialog and overlay z-index
+
 ## 1.6.14
 
 ### Patch Changes
