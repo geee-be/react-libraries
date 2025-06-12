@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.16
+
+### Patch Changes
+
+- f4bbc84: fix: add initialHint prop to Combobox and update CommandEmpty/Loading padding
+
 ## 1.6.15
 
 ### Patch Changes
