@@ -28,6 +28,7 @@ type ComboboxRootProps = ButtonHTMLAttributes<HTMLButtonElement> &
   Pick<CommandProps, 'shouldFilter' | 'filter'> & {
     destructive?: boolean;
     emptyHint?: ReactNode;
+    initialHint?: ReactNode;
     inputIcon?: ReactNode;
     inputPlaceholder?: string;
     onValueChange?: (value: string | undefined) => void;
@@ -154,6 +155,7 @@ const ComboboxRoot = forwardRef<
       destructive,
       disabled,
       emptyHint,
+      initialHint,
       id,
       inputIcon = <SearchIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />,
       inputPlaceholder,
@@ -229,7 +231,9 @@ const ComboboxRoot = forwardRef<
                 <CommandLoading>{loading}</CommandLoading>
               ) : (
                 <>
-                  <CommandEmpty>{emptyHint}</CommandEmpty>
+                  <CommandEmpty>
+                    {search ? emptyHint : initialHint}
+                  </CommandEmpty>
                   {items.map((group, groupIndex) => (
                     <Fragment key={group.key}>
                       {groupIndex > 0 ? <CommandSeparator /> : null}

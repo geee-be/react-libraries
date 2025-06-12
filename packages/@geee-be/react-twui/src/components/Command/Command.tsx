@@ -110,7 +110,7 @@ const CommandEmpty = forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="py-2 text-center text-sm italic text-control-fg/70"
+    className="p-2 text-center text-sm italic text-control-fg/70"
     {...props}
   />
 ));
@@ -123,7 +123,7 @@ const CommandLoading = forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Loading
     ref={ref}
-    className="py-2 text-center text-sm italic text-control-fg/70"
+    className="p-2 text-center text-sm italic text-control-fg/70"
     {...props}
   />
 ));
