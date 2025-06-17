@@ -17,6 +17,15 @@ export const Skeleton = ({ children, className, shape, ...props }: Props) => {
     );
   }
 
+  if (shape === 'form-control-no-helper') {
+    return (
+      <div className={cn('flex flex-col gap-1', className)} {...props}>
+        <div className={cn(skeletonVariants({ shape: 'label' }))} />
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div className={cn(skeletonVariants({ shape }), className)} {...props}>
       {children}

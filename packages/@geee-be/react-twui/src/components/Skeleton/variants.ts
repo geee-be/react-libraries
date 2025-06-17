@@ -9,6 +9,7 @@ export const skeletonVariants = cva({
       label: 'h-[1.5rem] w-[30%] bg-skeleton/50',
       helper: 'h-[1.5rem] w-[60%] bg-skeleton/50',
       'form-control': '',
+      'form-control-no-helper': '',
     },
   },
 });
