@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.18
+
+### Patch Changes
+
+- 1720681: fix: update Select component to enhance styling for better layout
+
 ## 1.6.17
 
 ### Patch Changes
