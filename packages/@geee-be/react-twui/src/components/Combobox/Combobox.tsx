@@ -208,6 +208,7 @@ const ComboboxRoot = forwardRef<
                 <Async
                   fallback={<Skeleton className="h-4 min-w-16" />}
                   waitFor={() => valueLabel}
+                  render={(label) => label}
                 />
               ) : undefined
             }

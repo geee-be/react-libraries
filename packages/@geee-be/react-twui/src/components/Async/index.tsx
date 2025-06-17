@@ -1,19 +1,24 @@
-import { useEffect, useState, type FC, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
-export const Async: FC<{
+type AsyncProps<T> = {
   error?: (e: unknown) => ReactNode;
   fallback?: ReactNode;
-  waitFor: () => Promise<ReactNode>;
-}> = ({ error, fallback, waitFor }) => {
+  waitFor: () => Promise<T>;
+  render?: (data: T) => ReactNode;
+};
+
+export function Async<T>({ error, fallback, waitFor, render }: AsyncProps<T>) {
   const [content, setContent] = useState<ReactNode>(null);
 
   useEffect(() => {
     waitFor()
-      .then(setContent)
+      .then((data) => {
+        setContent(render ? render(data) : <>{data}</>);
+      })
       .catch((e) => {
         setContent(error?.(e));
       });
-  }, [error, waitFor]);
+  }, [error, waitFor, render]);
 
   return <>{content || fallback}</>;
-};
+}
