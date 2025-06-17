@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.6.17
+
+### Patch Changes
+
+- 2a799a0: fix: update Async component to support render prop and improve type definitions
+
 ## 1.6.16
 
 ### Patch Changes
