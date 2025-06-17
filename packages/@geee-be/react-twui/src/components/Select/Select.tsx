@@ -85,7 +85,7 @@ export const Select = forwardRef<SelectElement, SelectProps>(
         onBlur={onBlur}
         ref={ref}
       >
-        <div className="min-w-0 truncate select-none [&>span]:flex">
+        <div className="min-w-0 truncate select-none [&>span]:inline-grid">
           <BaseSelect.Value placeholder={placeholder} />
         </div>
         <BaseSelect.Icon
