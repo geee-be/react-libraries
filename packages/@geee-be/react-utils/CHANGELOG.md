@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.3.0
+
+### Minor Changes
+
+- 7c049e1: Upgrade packages
+
 ## 1.2.0
 
 ### Minor Changes
