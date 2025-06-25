@@ -1,5 +1,16 @@
 # @geee-be/react-twui
 
+## 1.7.0
+
+### Minor Changes
+
+- 7c049e1: Upgrade packages
+
+### Patch Changes
+
+- Updated dependencies [7c049e1]
+  - @geee-be/react-utils@1.3.0
+
 ## 1.6.18
 
 ### Patch Changes
