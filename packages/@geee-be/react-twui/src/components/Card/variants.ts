@@ -31,6 +31,7 @@ export const cardContentVariants = cva({
       '2xl': 'gap-12',
     },
     gutters: {
+      uneven: 'mx-4 my-2 md:mx-6 md:py-4',
       'collapse-none': 'm-4 md:m-6',
       'collapse-x': 'my-4 md:my-6 mx-0',
       'collapse-y': 'mx-4 md:mx-6 my-0',
