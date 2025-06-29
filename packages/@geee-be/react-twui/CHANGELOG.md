@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.7.1
+
+### Patch Changes
+
+- addf67d: fix: add 'uneven' gutter variant to cardContentVariants
+
 ## 1.7.0
 
 ### Minor Changes
