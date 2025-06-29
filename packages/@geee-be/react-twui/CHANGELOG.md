@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.7.2
+
+### Patch Changes
+
+- 4a8ff79: fix: update gutter variants in cardContentVariants and deprecate old values
+
 ## 1.7.1
 
 ### Patch Changes
