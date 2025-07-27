@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 1.7.3
+
+### Patch Changes
+
+- 3d6dc9e: fix: add asChild prop to ScrollArea component
+
 ## 1.7.2
 
 ### Patch Changes
