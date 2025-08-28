@@ -1,0 +1,27 @@
+@layer theme {
+  :root {
+    /* Light defaults and dark references */
+    --color-primary-base: 221.2 83.2% 53.3%;
+    --color-primary-base-dark: 217.2 91.2% 59.8%;
+    /* ... etc ... */
+  }
+
+  .dark {
+    --color-primary-base: var(--color-primary-base-dark);
+    --color-secondary-base: var(--color-secondary-base-dark);
+    --color-success-base: var(--color-success-base-dark);
+    --color-background-base: var(--color-background-base-dark);
+    --color-foreground-base: var(--color-foreground-base-dark);
+    /* ... all assignments once ... */
+  }
+
+    @media (prefers-color-scheme: dark) {
+    :root {
+      @apply dark;
+    }
+  }
+
+  [data-theme="dark"] {
+    @apply dark;
+  }
+}
