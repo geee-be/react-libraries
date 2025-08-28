@@ -1,5 +1,5 @@
 import { sleep } from '@geee-be/core';
-import type { Meta } from '@storybook/react';
+import type { Meta } from '@storybook/react-vite';
 import type { FC } from 'react';
 import { Button } from '../Button';
 import { toast, Toaster, ToastType, type ToastOptions } from './index';

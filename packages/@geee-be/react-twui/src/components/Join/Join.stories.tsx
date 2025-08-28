@@ -1,5 +1,5 @@
 import { SearchIcon } from '@iconicicons/react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button/Button.js';
 import { Input } from '../Input/Input.js';
 import { Select } from '../Select/Select.js';

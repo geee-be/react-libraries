@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { FC } from 'react';
 import { Button } from '../Button/Button.js';
 import type { DrawerProps } from './Drawer.js';

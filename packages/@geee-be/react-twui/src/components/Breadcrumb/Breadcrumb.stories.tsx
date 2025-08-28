@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Bean, Home } from 'lucide-react';
 import { WithIcon } from '../WithIcon/index.js';
 import {

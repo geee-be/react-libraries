@@ -1,5 +1,5 @@
 import { DragHandleDots2Icon } from '@radix-ui/react-icons';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { XIcon } from 'lucide-react';
 import { Button } from '../Button/Button.js';
 import { Input } from './index.js';

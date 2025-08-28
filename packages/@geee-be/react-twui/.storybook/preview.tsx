@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 import React, { useEffect } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import '../src/globals.css';

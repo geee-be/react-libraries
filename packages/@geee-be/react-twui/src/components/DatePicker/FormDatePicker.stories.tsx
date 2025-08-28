@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react';
+import type { Meta } from '@storybook/react-vite';
 import { subYears } from 'date-fns';
 import type { FC } from 'react';
 import { useEffect } from 'react';
