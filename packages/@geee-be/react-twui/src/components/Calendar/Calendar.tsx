@@ -52,7 +52,7 @@ function Calendar({
         weekdays: 'rdp-weekdays flex',
         month: 'rdp-month space-y-4',
         months: 'rdp-months relative flex flex-col space-y-4 sm:space-y-0',
-        nav: 'rdp-nav absolute z-[3] px-2 w-full flex justify-between',
+        nav: 'rdp-nav absolute z-3 px-2 w-full flex justify-between',
         button_previous: cn(
           buttonVariants({ variant: 'outline' }),
           'h-7 w-7 bg-transparent p-0 rounded-full',

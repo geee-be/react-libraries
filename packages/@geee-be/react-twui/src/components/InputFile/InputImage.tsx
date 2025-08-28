@@ -109,7 +109,7 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
             ref={cropperRef}
             src={URL.createObjectURL(file)}
             aspectRatio={aspectRatio ?? { minimum: 1, maximum: 1 }}
-            className="!max-h-[calc(100vh-180px)]"
+            className="max-h-[calc(100vh-180px)]!"
             {...cropperProps}
           />
         ),

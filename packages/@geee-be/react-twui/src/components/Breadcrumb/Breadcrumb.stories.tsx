@@ -66,7 +66,7 @@ export const Wrapped: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="max-w-[7rem]">
+      <div className="max-w-28">
         <Story />
       </div>
     ),
@@ -97,7 +97,7 @@ export const WrappedWithoutLastItem: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="max-w-[7rem]">
+      <div className="max-w-28">
         <Story />
       </div>
     ),

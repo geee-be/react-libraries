@@ -106,7 +106,7 @@ export const Select = forwardRef<SelectElement, SelectProps>(
             {items.map((group, groupIndex) => (
               <Fragment key={group.key}>
                 {groupIndex > 0 ? (
-                  <BaseSelect.Separator className="h-[1px] bg-control-fg/10 m-1" />
+                  <BaseSelect.Separator className="h-px bg-control-fg/10 m-1" />
                 ) : null}
                 <BaseSelect.Group>
                   {group.label ? (
@@ -145,7 +145,7 @@ const SelectItem = forwardRef<
   return (
     <BaseSelect.Item
       className={cn(
-        'cursor-pointer leading-none text-sm rounded-lg flex items-center h-[45px] pr-[35px] pl-6 relative select-none data-[disabled]:pointer-events-none data-[highlighted]:outline-none',
+        'cursor-pointer leading-none text-sm rounded-lg flex items-center h-[45px] pr-[35px] pl-6 relative select-none data-disabled:pointer-events-none data-highlighted:outline-none',
         // colors
         'text-control-fg data-[disabled]:text-control-fg/50 data-[highlighted]:bg-control-fg/10 data-[highlighted]:text-control-fg',
         className,

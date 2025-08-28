@@ -9,13 +9,13 @@ import { tooltipTriggerVariant, tooltipVariant } from './variants.js';
 
 const TOOLTIP_ANIMATION_CLASSES = [
   // transform-origin
-  'origin-[var(--radix-popper-transform-origin)]',
+  'origin-(--radix-popper-transform-origin)',
 
   // state animations
   'data-[side=bottom]:animate-fade-in-down data-[side=top]:animate-fade-in-up data-[side=left]:animate-fade-in-left data-[side=right]:animate-fade-in-right data-[state=closed]:animate-fade-out',
 
   // instant-open
-  'data-[state=instant-open]:!animate-none',
+  'data-[state=instant-open]:animate-none!',
 ];
 
 /* ---------------------------- Tooltip Provider ---------------------------- */

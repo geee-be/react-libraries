@@ -8,8 +8,8 @@ export const buttonVariants = cva({
       'xs-icon': 'gap-0 p-1',
       'sm-icon': 'gap-0 p-2',
       icon: 'h-10 w-10',
-      sm: 'gap-2 px-[0.75rem] py-1',
-      md: 'gap-2 px-[1rem] py-2',
+      sm: 'gap-2 px-3 py-1',
+      md: 'gap-2 px-4 py-2',
     },
     shape: {
       rounded: 'rounded-lg',
@@ -191,7 +191,7 @@ export const buttonVariants = cva({
       variant: 'solid',
       class: [
         'bg-paper text-paper-fg border border-paper-border grow normal-case font-inherit rounded-xl',
-        'shadow-none hover:!shadow-none',
+        'shadow-none hover:shadow-none!',
         'justify-stretch items-start p-0',
         'hover:bg-paper/80 disabled:hover:bg-paper hover:scale-[1] active:scale-[0.97]',
       ],
