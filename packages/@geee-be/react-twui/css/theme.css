@@ -1,27 +1,79 @@
 @layer theme {
   :root {
-    /* Light defaults and dark references */
-    --color-primary-base: 221.2 83.2% 53.3%;
-    --color-primary-base-dark: 217.2 91.2% 59.8%;
-    /* ... etc ... */
-  }
+    --control-radius: 0.5rem;
+    --ring-opacity: 50%;
+    --ring-width: 5px;
+    --ring-offset: 0px;
+    --color-ring-base: #ec740c;
 
-  .dark {
-    --color-primary-base: var(--color-primary-base-dark);
-    --color-secondary-base: var(--color-secondary-base-dark);
-    --color-success-base: var(--color-success-base-dark);
-    --color-background-base: var(--color-background-base-dark);
-    --color-foreground-base: var(--color-foreground-base-dark);
-    /* ... all assignments once ... */
-  }
+    /* --color-primary-base: #ec740c; */
+    --color-primary-fg-base: oklch(from var(--color-primary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
 
-    @media (prefers-color-scheme: dark) {
-    :root {
-      @apply dark;
-    }
-  }
+    --color-secondary-base: #5722ff;
+    --color-secondary-fg-base: oklch(
+      from var(--color-secondary-base) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h
+    );
 
-  [data-theme="dark"] {
-    @apply dark;
+    /* --color-success-base: #6dd125; */
+    --color-secondary-fg-base: oklch(from var(--color-secondary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+    /* --color-error-base: #f40909; */
+    --color-error-fg-base: oklch(from var(--color-error) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+    /* --color-danger-base: #f40909; */
+    --color-danger-fg-base: oklch(from var(--color-danger) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+    /* --color-warning-base: #ffc233; */
+    --color-warning-fg-base: oklch(from var(--color-warning) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+    /* --color-info-base: #1485ff; */
+    --color-info-fg-base: oklch(from var(--color-info) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+    /* --color-gray-base: light-dark(hsl(0 0% 30%), hsl(0 0% 85%)); */
+    --color-gray-fg-base: oklch(from var(--color-gray) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+    /* --color-default-base: var(--color-gray-base); */
+    --color-default-fg-base: oklch(from var(--color-default) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
   }
+}
+
+@theme {
+  --color-background: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
+  --color-foreground: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
+  /* input */
+  --color-input: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
+  --color-input-fg: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
+  --color-input-border: light-dark(hsl(0 0% 50%), hsl(0 0% 70%));
+  /* control */
+  --color-control: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
+  --color-control-fg: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
+  /* ring */
+  --color-ring: #ec740c;
+  /* primary */
+  --color-primary: #ec740c;
+  --color-primary-fg: oklch(from var(--color-primary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* secondary */
+  --color-secondary: #5722ff;
+  --color-secondary-fg: oklch(from var(--color-secondary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* success */
+  --color-success: light-dark(#6fd626, #55a919);
+  --color-success-fg: oklch(from var(--color-success) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* error */
+  --color-error: #f40909;
+  --color-error-fg: oklch(from var(--color-error) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* danger */
+  --color-danger: #f40909;
+  --color-danger-fg: oklch(from var(--color-danger) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* warning */
+  --color-warning: light-dark(#ffc233, #e7a60c);
+  --color-warning-fg: oklch(from var(--color-warning) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* info */
+  --color-info: light-dark(#1485ff, #0a71df);
+  --color-info-fg: oklch(from var(--color-info) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* gray */
+  --color-gray: light-dark(hsl(0 0% 30%), hsl(0 0% 85%));
+  --color-gray-fg: oklch(from var(--color-gray) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* default */
+  --color-default: var(--color-gray);
+  --color-default-fg: var(--color-gray-fg);
 }

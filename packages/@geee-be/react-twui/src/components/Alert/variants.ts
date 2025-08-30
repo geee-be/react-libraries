@@ -8,17 +8,18 @@ export const alertVariants = cva({
     },
     color: {
       default:
-        'border-default-muted-fg bg-default-muted text-paper-fg default-default',
+        'border-default bg-default text-default-fg default-default',
       primary:
-        'border-primary-muted-fg bg-primary-muted text-paper-fg default-primary',
+        'border-primary bg-primary text-primary-fg default-primary',
       secondary:
-        'border-secondary-muted-fg bg-secondary-muted text-paper-fg default-secondary',
-      info: 'border-info-muted-fg bg-info-muted text-paper-fg default-info',
+        'border-secondary bg-secondary text-secondary-fg default-secondary',
+      info: 'border-info bg-info text-info-fg default-info',
       warning:
-        'border-warning-muted-fg bg-warning-muted text-paper-fg default-warning',
+        'border-warning bg-warning text-warning-fg default-warning',
       success:
-        'border-success-muted-fg bg-success-muted text-paper-fg default-success',
-      error: 'border-error-muted-fg bg-error-muted text-paper-fg default-error',
+        'border-success bg-success text-success-fg default-success',
+      error: 'border-error bg-error text-error-fg default-error',
+      danger: 'border-danger bg-danger text-danger-fg default-danger',
     },
   },
   defaultVariants: {
@@ -31,13 +32,13 @@ export const alertTitleVariants = cva({
   base: 'text-start font-bold',
   variants: {
     color: {
-      default: 'text-default-muted-fg',
-      primary: 'text-primary-muted-fg',
-      secondary: 'text-secondary-muted-fg',
-      info: 'text-info-muted-fg',
-      warning: 'text-warning-muted-fg',
-      success: 'text-success-muted-fg',
-      error: 'text-error-muted-fg',
+      default: 'text-default-fg',
+      primary: 'text-primary-fg',
+      secondary: 'text-secondary-fg',
+      info: 'text-info-fg',
+      warning: 'text-warning-fg',
+      success: 'text-success-fg',
+      error: 'text-error-fg',
     },
   },
   defaultVariants: {
@@ -48,13 +49,13 @@ export const alertTitleVariants = cva({
 export const alertIconVariants = cva({
   variants: {
     color: {
-      default: 'text-default-muted-fg',
-      primary: 'text-primary-muted-fg',
-      secondary: 'text-secondary-muted-fg',
-      info: 'text-info-muted-fg',
-      warning: 'text-warning-muted-fg',
-      success: 'text-success-muted-fg',
-      error: 'text-error-muted-fg',
+      default: 'text-default-fg',
+      primary: 'text-primary-fg',
+      secondary: 'text-secondary-fg',
+      info: 'text-info-fg',
+      warning: 'text-warning-fg',
+      success: 'text-success-fg',
+      error: 'text-error-fg',
     },
   },
   defaultVariants: {

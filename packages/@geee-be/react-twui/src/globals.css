@@ -1,15 +1,7 @@
-@import './base.css';
+@import 'tailwindcss';
 
 @import './components/Cropper/style.css';
 @import './components/Cropper/custom.css';
 @import './components/Cropper/compact.css';
 
-html,
-body {
-  @apply w-full h-full;
-}
-
-#storybook-docs .sbdocs .docs-story {
-  color: hsl(var(--color-foreground));
-  background-color: hsl(var(--color-background));
-}
+@import '../css/twui.css';

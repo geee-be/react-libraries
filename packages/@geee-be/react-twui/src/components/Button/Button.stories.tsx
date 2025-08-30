@@ -11,15 +11,14 @@ const meta = {
     before: { table: { disable: true } },
     asChild: { table: { disable: true } },
     disabled: { control: 'boolean', defaultValue: { summary: false } },
-    isIconOnly: { control: 'boolean', defaultValue: { summary: false } },
     shape: {
       control: 'select',
-      options: ['rounded', 'pill'],
+      options: ['rounded', 'icon', 'pill'],
       defaultValue: { summary: 'rounded' },
     },
     size: {
       control: 'select',
-      options: ['xs-icon', 'sm', 'md'],
+      options: ['sm', 'md'],
       defaultValue: { summary: 'md' },
     },
     color: {
@@ -33,13 +32,14 @@ const meta = {
         'warning',
         'success',
         'error',
+        'danger',
         'card',
       ],
       defaultValue: { summary: 'default' },
     },
     variant: {
       control: 'select',
-      options: ['solid', 'outline', 'transparent', 'link', 'input'],
+      options: ['solid', 'outline', 'ghost', 'link', 'input'],
       defaultValue: { summary: 'solid' },
     },
   },
@@ -56,7 +56,6 @@ export const Default: Story = {
     variant: 'solid',
     size: 'md',
     shape: 'rounded',
-    isIconOnly: false,
   },
 };
 

@@ -65,7 +65,7 @@ export const ButtonAfter: Story = {
     variant: 'inline',
     color: 'info',
     after: (
-      <Button size="sm" variant="outline">
+      <Button size="sm" color="gray">
         Save
       </Button>
     ),
