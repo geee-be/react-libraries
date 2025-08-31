@@ -57,13 +57,14 @@
   @layer components {
     @apply like-button;
 
-    @apply bg-default/5 dark:bg-default/15 border-default text-foreground;
+    /* @apply bg-default/5 dark:bg-default/15 border-default text-foreground; */
+    @apply bg-default-muted border-default text-default-muted-fg;
   }
 }
 
 @utility like-input {
   @layer components {
-    @apply antialiased inline-flex grow border px-4 py-2 text-sm leading-6 transition-colors duration-300;
+    @apply antialiased inline-flex grow border px-4 py-2 text-sm leading-6 transition-all duration-300;
 
     /* alignment */
     @apply items-center justify-start text-left;
@@ -75,11 +76,15 @@
     @apply rounded-[var(--control-radius)];
 
     /* color */
-    @apply bg-input text-input-fg border-input-border hover:border-input-border/70;
+    @apply bg-input text-input-fg border-input-border ring-0 ring-input-border;
 
     &::placeholder,
     &[data-placeholder] {
       @apply text-control-fg/50;
+    }
+
+    @variant not-disabled {
+      @apply hover:ring-1;
     }
 
     @variant disabled {

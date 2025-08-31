@@ -26,39 +26,41 @@ export const alertVariants = cva({
     variant: 'inline',
     color: 'default',
   },
-});
-
-export const alertTitleVariants = cva({
-  base: 'text-start font-bold',
-  variants: {
-    color: {
-      default: 'text-default-fg',
-      primary: 'text-primary-fg',
-      secondary: 'text-secondary-fg',
-      info: 'text-info-fg',
-      warning: 'text-warning-fg',
-      success: 'text-success-fg',
-      error: 'text-error-fg',
+  compoundVariants: [
+    {
+      variant: 'expanded',
+      color: 'default',
+      class: 'border-default bg-default-muted text-default-muted-fg'
     },
-  },
-  defaultVariants: {
-    color: 'default',
-  },
-});
-
-export const alertIconVariants = cva({
-  variants: {
-    color: {
-      default: 'text-default-fg',
-      primary: 'text-primary-fg',
-      secondary: 'text-secondary-fg',
-      info: 'text-info-fg',
-      warning: 'text-warning-fg',
-      success: 'text-success-fg',
-      error: 'text-error-fg',
+    {
+      variant: 'expanded',
+      color: 'primary',
+      class: 'border-primary bg-primary-muted text-primary-muted-fg'
     },
-  },
-  defaultVariants: {
-    color: 'default',
-  },
+    {
+      variant: 'expanded',
+      color: 'secondary',
+      class: 'border-secondary bg-secondary-muted text-secondary-muted-fg'
+    },
+    {
+      variant: 'expanded',
+      color: 'info',
+      class: 'border-info bg-info-muted text-info-muted-fg'
+    },
+    {
+      variant: 'expanded',
+      color: 'warning',
+      class: 'border-warning bg-warning-muted text-warning-muted-fg'
+    },
+    {
+      variant: 'expanded',
+      color: 'error',
+      class: 'border-error bg-error-muted text-error-muted-fg'
+    },
+    {
+      variant: 'expanded',
+      color: 'danger',
+      class: 'border-danger bg-danger-muted text-danger-muted-fg'
+    },
+  ]
 });

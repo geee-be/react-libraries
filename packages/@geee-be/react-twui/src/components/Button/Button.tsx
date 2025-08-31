@@ -41,9 +41,6 @@ export type ButtonElement = HTMLButtonElement;
 const iconOnlyPadding = {
   md: 'p-8px',
   sm: 'p-6px',
-  'xs-icon': 'p-2px',
-  'sm-icon': 'p-6px',
-  icon: '',
 };
 
 export const Button = React.forwardRef<ButtonElement, ButtonProps>(
@@ -115,7 +112,6 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
                 children.props.children as React.ReactElement<HTMLElement>,
               )}
             {isElementWithChildren(children) &&
-              !isIcon &&
               children.props.children}
             {after ? renderIcon(after) : null}
           </>
@@ -127,7 +123,7 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
         {React.isValidElement(children) &&
           isIcon &&
           renderIcon(children as React.ReactElement<HTMLElement>)}
-        {children && !isIcon && children}
+        {children}
         {after ? renderIcon(after) : null}
       </>
     );

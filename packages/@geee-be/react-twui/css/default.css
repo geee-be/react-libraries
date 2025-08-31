@@ -1,39 +1,55 @@
 @utility default-primary {
   --color-default: var(--color-primary);
   --color-default-fg: var(--color-primary-fg);
+  --color-default-muted: var(--color-primary-muted);
+  --color-default-muted-fg: var(--color-primary-muted-fg);
 }
 
 @utility default-secondary {
   --color-default: var(--color-secondary);
   --color-default-fg: var(--color-secondary-fg);
+  --color-default-muted: var(--color-secondary-muted);
+  --color-default-muted-fg: var(--color-secondary-muted-fg);
 }
 
 @utility default-success {
   --color-default: var(--color-success);
   --color-default-fg: var(--color-success-fg);
+  --color-default-muted: var(--color-success-muted);
+  --color-default-muted-fg: var(--color-success-muted-fg);
 }
 
 @utility default-error {
   --color-default: var(--color-error);
   --color-default-fg: var(--color-error-fg);
+  --color-default-muted: var(--color-error-muted);
+  --color-default-muted-fg: var(--color-error-muted-fg);
 }
 
 @utility default-danger {
   --color-default: var(--color-danger);
   --color-default-fg: var(--color-danger-fg);
+  --color-default-muted: var(--color-danger-muted);
+  --color-default-muted-fg: var(--color-danger-muted-fg);
 }
 
 @utility default-warning {
   --color-default: var(--color-warning);
   --color-default-fg: var(--color-warning-fg);
+  --color-default-muted: var(--color-warning-muted);
+  --color-default-muted-fg: var(--color-warning-muted-fg);
 }
 
 @utility default-info {
   --color-default: var(--color-info);
   --color-default-fg: var(--color-info-fg);
+  --color-default-muted: var(--color-info-muted);
+  --color-default-muted-fg: var(--color-info-muted-fg);
 }
 
 @utility default-gray {
   --color-default: var(--color-gray);
   --color-default-fg: var(--color-gray-fg);
+  --color-default-muted: var(--color-gray-muted);
+  --color-default-muted-fg: var(--color-gray-muted-fg);
 }

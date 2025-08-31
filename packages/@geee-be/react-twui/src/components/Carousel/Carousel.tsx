@@ -208,7 +208,7 @@ const CarouselPrevious = React.forwardRef<
       autoHide,
       layout,
       variant = 'outline',
-      size = 'xs-icon',
+      size = 'md',
       ...props
     },
     ref,
@@ -219,7 +219,8 @@ const CarouselPrevious = React.forwardRef<
       <Button
         ref={ref}
         type="button"
-        variant={variant}
+        variant="outline"
+        shape="icon"
         size={size}
         className={cn(
           previousButtonVariants({ orientation, layout }),
@@ -255,7 +256,7 @@ const CarouselNext = React.forwardRef<
       autoHide,
       layout,
       variant = 'outline',
-      size = 'icon',
+      size = 'md',
       ...props
     },
     ref,
@@ -266,7 +267,8 @@ const CarouselNext = React.forwardRef<
       <Button
         ref={ref}
         type="button"
-        variant={variant}
+        variant="outline"
+        shape="icon"
         size={size}
         className={cn(
           nextButtonVariants({ orientation, layout }),
@@ -295,5 +297,6 @@ export {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
+  type CarouselApi
 };
+

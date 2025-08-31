@@ -47,33 +47,58 @@
   /* control */
   --color-control: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
   --color-control-fg: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
+  /* paper */
+  --color-paper: light-dark(hsl(255, 0%, 98%), hsl(255, 0%, 15%));
+  --color-paper-nested: light-dark(hsl(255, 0%, 90% / 0.35), hsl(255, 0%, 10% / 0.35));
+  --color-paper-fg: light-dark(hsl(255 0% 20%), hsl(255 0% 87.5%));
+  --color-paper-border: light-dark(hsl(255 0% 40% / 0.5), hsl(255 0% 60% / 0.5));
+  /* skeleton */
+  --color-skeleton: light-dark(hsl(255 0% 70%), hsl(255 0% 30%));
   /* ring */
   --color-ring: #ec740c;
   /* primary */
   --color-primary: #ec740c;
   --color-primary-fg: oklch(from var(--color-primary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-primary-muted: light-dark(oklch(from var(--color-primary) l c h / 0.05), oklch(from var(--color-primary) l c h / 0.15));
+  --color-primary-muted-fg: var(--color-foreground);
   /* secondary */
   --color-secondary: #5722ff;
   --color-secondary-fg: oklch(from var(--color-secondary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-secondary-muted: light-dark(oklch(from var(--color-secondary) l c h / 0.05), oklch(from var(--color-secondary) l c h / 0.15));
+  --color-secondary-muted-fg: var(--color-foreground);
   /* success */
   --color-success: light-dark(#6fd626, #55a919);
   --color-success-fg: oklch(from var(--color-success) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-success-muted: light-dark(oklch(from var(--color-success) l c h / 0.05), oklch(from var(--color-success) l c h / 0.15));
+  --color-success-muted-fg: var(--color-foreground);
   /* error */
   --color-error: #f40909;
   --color-error-fg: oklch(from var(--color-error) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-error-muted: light-dark(oklch(from var(--color-error) l c h / 0.05), oklch(from var(--color-error) l c h / 0.15));
+  --color-error-muted-fg: var(--color-foreground);
   /* danger */
   --color-danger: #f40909;
   --color-danger-fg: oklch(from var(--color-danger) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-danger-muted: light-dark(oklch(from var(--color-danger) l c h / 0.05), oklch(from var(--color-danger) l c h / 0.15));
+  --color-danger-muted-fg: var(--color-foreground);
   /* warning */
   --color-warning: light-dark(#ffc233, #e7a60c);
   --color-warning-fg: oklch(from var(--color-warning) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-warning-muted: light-dark(oklch(from var(--color-warning) l c h / 0.05), oklch(from var(--color-warning) l c h / 0.15));
+  --color-warning-muted-fg: var(--color-foreground);
   /* info */
   --color-info: light-dark(#1485ff, #0a71df);
   --color-info-fg: oklch(from var(--color-info) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-info-muted: light-dark(oklch(from var(--color-info) l c h / 0.05), oklch(from var(--color-info) l c h / 0.15));
+  --color-info-muted-fg: var(--color-foreground);
   /* gray */
   --color-gray: light-dark(hsl(0 0% 30%), hsl(0 0% 85%));
   --color-gray-fg: oklch(from var(--color-gray) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-gray-muted: light-dark(oklch(from var(--color-gray) l c h / 0.05), oklch(from var(--color-gray) l c h / 0.15));
+  --color-gray-muted-fg: var(--color-foreground);
   /* default */
   --color-default: var(--color-gray);
   --color-default-fg: var(--color-gray-fg);
+  --color-default-muted: var(--color-gray-muted);
+  --color-default-muted-fg: var(--color-gray-muted-fg);
 }
