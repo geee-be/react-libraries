@@ -5,7 +5,7 @@ import { cn, isReactElement } from '../../helpers/utils.js';
 import { TippyIcon } from '../icons/index.js';
 
 const TooltipArrow = React.forwardRef<
-  React.ElementRef<typeof PrimitiveArrow>,
+  React.ComponentRef<typeof PrimitiveArrow>,
   React.ComponentPropsWithoutRef<typeof PrimitiveArrow>
 >(
   (

@@ -240,7 +240,7 @@ const AlertTitle = React.forwardRef<
   return (
     <Component
       ref={ref}
-      className={cn('Alert-title', className)}
+      className={cn('Alert-title font-bold', className)}
       {...props}
     >
       {children}
@@ -268,7 +268,7 @@ const AlertDescription = React.forwardRef<
 
 /* CloseButton */
 const AlertCloseButton = React.forwardRef<
-  React.ElementRef<typeof Button>,
+  React.ComponentRef<typeof Button>,
   React.ComponentPropsWithoutRef<typeof Button>
 >(({ children, ...otherProps }, ref) => {
   const renderCloseIcon = (

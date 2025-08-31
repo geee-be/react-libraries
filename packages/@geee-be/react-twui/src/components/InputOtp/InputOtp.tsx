@@ -7,12 +7,12 @@ import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
 
 /* ---------------------------------- Types --------------------------------- */
-export type InputOtpElement = React.ElementRef<typeof OTPInput>;
+export type InputOtpElement = React.ComponentRef<typeof OTPInput>;
 export type InputOtpProps = React.ComponentPropsWithoutRef<typeof OTPInput>;
 
 /* -------------------------------- Component ------------------------------- */
 const InputOtp = React.forwardRef<
-  React.ElementRef<typeof OTPInput>,
+  React.ComponentRef<typeof OTPInput>,
   React.ComponentPropsWithoutRef<typeof OTPInput>
 >(({ className, containerClassName, ...props }, ref) => (
   <OTPInput
@@ -28,7 +28,7 @@ const InputOtp = React.forwardRef<
 InputOtp.displayName = 'InputOTP';
 
 const InputOtpGroup = React.forwardRef<
-  React.ElementRef<'div'>,
+  React.ComponentRef<'div'>,
   React.ComponentPropsWithoutRef<'div'>
 >(({ className, ...props }, ref) => (
   <div ref={ref} className={cn('flex items-center', className)} {...props} />
@@ -36,7 +36,7 @@ const InputOtpGroup = React.forwardRef<
 InputOtpGroup.displayName = 'InputOtpGroup';
 
 const InputOtpSlot = React.forwardRef<
-  React.ElementRef<'div'>,
+  React.ComponentRef<'div'>,
   React.ComponentPropsWithoutRef<'div'> & { index: number }
 >(({ index, className, ...props }, ref) => {
   const inputOTPContext = React.useContext(OTPInputContext);
@@ -71,7 +71,7 @@ const InputOtpSlot = React.forwardRef<
 InputOtpSlot.displayName = 'InputOtpSlot';
 
 const InputOtpSeparator = React.forwardRef<
-  React.ElementRef<'div'>,
+  React.ComponentRef<'div'>,
   React.ComponentPropsWithoutRef<'div'>
 >(({ ...props }, ref) => (
   // biome-ignore lint/a11y/useAriaPropsForRole: invalid

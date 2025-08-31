@@ -41,6 +41,7 @@ export type ButtonElement = HTMLButtonElement;
 const iconOnlyPadding = {
   md: 'p-8px',
   sm: 'p-6px',
+  xs: 'p-6px',
 };
 
 export const Button = React.forwardRef<ButtonElement, ButtonProps>(

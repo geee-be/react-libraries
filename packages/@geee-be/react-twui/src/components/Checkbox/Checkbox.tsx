@@ -8,7 +8,7 @@ import { Label, type LabelProps } from '../Label';
 import type { LabelHelperProps } from '../types';
 
 /* ---------------------------------- Types --------------------------------- */
-export type CheckboxElement = React.ElementRef<typeof CheckboxPrimitive.Root>;
+export type CheckboxElement = React.ComponentRef<typeof CheckboxPrimitive.Root>;
 export type CheckboxElementProps = React.ComponentPropsWithoutRef<
   typeof CheckboxPrimitive.Root
 > &

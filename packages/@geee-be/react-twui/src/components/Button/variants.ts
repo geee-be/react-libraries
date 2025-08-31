@@ -3,7 +3,8 @@ import { cva } from 'cva';
 export const buttonVariants = cva({
   variants: {
     size: {
-      sm: 'gap-2 px-3 py-1',
+      xs: 'gap-2 px-3 py-1',
+      sm: 'gap-2 px-3 py-2',
       md: 'gap-2 px-4 py-2',
     },
     shape: {
@@ -39,9 +40,14 @@ export const buttonVariants = cva({
 
   compoundVariants: [
     {
-      size: 'sm',
+      size: 'xs',
       shape: 'icon',
       class: 'px-0 py-0'
+    },
+    {
+      size: 'sm',
+      shape: 'icon',
+      class: 'px-1 py-1'
     },
     {
       size: 'md',
@@ -64,6 +70,7 @@ export const iconVariants = cva({
       true: 'text-current',
     },
     size: {
+      xs: 'h-5 w-5',
       sm: 'h-5 w-5',
       md: 'h-6 w-6',
     },

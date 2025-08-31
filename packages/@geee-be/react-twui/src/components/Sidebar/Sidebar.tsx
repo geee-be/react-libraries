@@ -2,7 +2,7 @@
 
 import { useIsMobile } from '@geee-be/react-utils';
 import { Slot } from '@radix-ui/react-slot';
-import { cva, type VariantProps } from 'cva';
+import { type VariantProps, cva } from 'cva';
 import { PanelLeft } from 'lucide-react';
 import * as React from 'react';
 import { Style } from '../../helpers/style';
@@ -13,9 +13,9 @@ import { Separator } from '../Separator/Separator';
 import { Sheet, SheetContent } from '../Sheet/Sheet';
 import { Skeleton } from '../Skeleton';
 import {
-  Tooltip,
-  type TooltipContent,
-  TooltipProvider,
+    Tooltip,
+    type TooltipContent,
+    TooltipProvider,
 } from '../Tooltip/Tooltip';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
@@ -261,7 +261,7 @@ const Sidebar = React.forwardRef<
 Sidebar.displayName = 'Sidebar';
 
 const SidebarTrigger = React.forwardRef<
-  React.ElementRef<typeof Button>,
+  React.ComponentRef<typeof Button>,
   React.ComponentProps<typeof Button>
 >(({ className, onClick, ...props }, ref) => {
   const { toggleSidebar } = useSidebar();
@@ -334,7 +334,7 @@ const SidebarInset = React.forwardRef<
 SidebarInset.displayName = 'SidebarInset';
 
 const SidebarInput = React.forwardRef<
-  React.ElementRef<typeof Input>,
+  React.ComponentRef<typeof Input>,
   React.ComponentProps<typeof Input>
 >(({ className, ...props }, ref) => {
   return (
@@ -383,7 +383,7 @@ const SidebarFooter = React.forwardRef<
 SidebarFooter.displayName = 'SidebarFooter';
 
 const SidebarSeparator = React.forwardRef<
-  React.ElementRef<typeof Separator>,
+  React.ComponentRef<typeof Separator>,
   React.ComponentProps<typeof Separator>
 >(({ className, ...props }, ref) => {
   return (
@@ -737,28 +737,29 @@ const SidebarMenuSubButton = React.forwardRef<
 SidebarMenuSubButton.displayName = 'SidebarMenuSubButton';
 
 export {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupAction,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarInput,
-  SidebarInset,
-  SidebarMenu,
-  SidebarMenuAction,
-  SidebarMenuBadge,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSkeleton,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarProvider,
-  SidebarRail,
-  SidebarSeparator,
-  SidebarTrigger,
-  useSidebar,
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarGroup,
+    SidebarGroupAction,
+    SidebarGroupContent,
+    SidebarGroupLabel,
+    SidebarHeader,
+    SidebarInput,
+    SidebarInset,
+    SidebarMenu,
+    SidebarMenuAction,
+    SidebarMenuBadge,
+    SidebarMenuButton,
+    SidebarMenuItem,
+    SidebarMenuSkeleton,
+    SidebarMenuSub,
+    SidebarMenuSubButton,
+    SidebarMenuSubItem,
+    SidebarProvider,
+    SidebarRail,
+    SidebarSeparator,
+    SidebarTrigger,
+    useSidebar
 };
+

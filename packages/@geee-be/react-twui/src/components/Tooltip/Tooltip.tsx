@@ -19,7 +19,7 @@ const TOOLTIP_ANIMATION_CLASSES = [
 ];
 
 /* ---------------------------- Tooltip Provider ---------------------------- */
-type TooltipProviderElement = React.ElementRef<
+type TooltipProviderElement = React.ComponentRef<
   typeof TooltipPrimitive.Provider
 >;
 type TooltipProviderProps = React.ComponentPropsWithRef<
@@ -45,7 +45,7 @@ export const TooltipProvider = React.forwardRef<
 );
 
 /* ------------------------------ Tooltip Root ------------------------------ */
-type TooltipRootElement = React.ElementRef<typeof TooltipPrimitive.Root>;
+type TooltipRootElement = React.ComponentRef<typeof TooltipPrimitive.Root>;
 type TooltipRootProps = React.ComponentPropsWithRef<
   typeof TooltipPrimitive.Root
 >;
@@ -62,7 +62,7 @@ const TooltipRoot = React.forwardRef<TooltipRootElement, TooltipRootProps>(
 );
 
 /* ----------------------------- Tooltip Content ---------------------------- */
-type TooltipContentElement = React.ElementRef<typeof TooltipPrimitive.Content>;
+type TooltipContentElement = React.ComponentRef<typeof TooltipPrimitive.Content>;
 type TooltipContentProps = Omit<
   React.ComponentPropsWithRef<typeof TooltipPrimitive.Content>,
   'content'

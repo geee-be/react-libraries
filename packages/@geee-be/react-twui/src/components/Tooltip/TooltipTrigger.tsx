@@ -5,7 +5,7 @@ import { cn, isReactElement } from '../../helpers/utils.js';
 import { InfoIcon } from '../icons/index.js';
 
 const TooltipTrigger = React.forwardRef<
-  React.ElementRef<typeof PrimitiveTrigger>,
+  React.ComponentRef<typeof PrimitiveTrigger>,
   React.ComponentPropsWithoutRef<typeof PrimitiveTrigger>
 >((props, ref) => {
   const {
