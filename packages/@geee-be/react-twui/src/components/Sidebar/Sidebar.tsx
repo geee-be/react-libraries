@@ -81,10 +81,41 @@ const SidebarProvider = React.forwardRef<
           );
         }
 
-        _setOpen(value);
+        const nextOpen =
+          typeof value === 'function'
+            ? (value as (v: boolean) => boolean)(open)
+            : value;
+        _setOpen(nextOpen);
 
-        // This sets the cookie to keep the sidebar state.
-        document.cookie = `${SIDEBAR_COOKIE_NAME}=${open}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
+        // Persist the sidebar state using the Cookie Store API with a safe fallback, avoiding direct document.cookie assignment.
+        try {
+          const cookieStore = (
+            navigator as unknown as {
+              cookieStore?: {
+                set: (init: {
+                  name: string;
+                  value: string;
+                  expires?: number;
+                  path?: string;
+                }) => Promise<void>;
+              };
+            }
+          ).cookieStore;
+
+          if (cookieStore?.set) {
+            void cookieStore.set({
+              name: SIDEBAR_COOKIE_NAME,
+              value: String(nextOpen),
+              expires: Date.now() + SIDEBAR_COOKIE_MAX_AGE * 1000,
+              path: '/',
+            });
+          } else {
+            // Fallback persistence when Cookie Store API is not available.
+            window.localStorage.setItem(SIDEBAR_COOKIE_NAME, String(nextOpen));
+          }
+        } catch {
+          // Ignore persistence errors
+        }
       },
       [setOpenProp, open],
     );
