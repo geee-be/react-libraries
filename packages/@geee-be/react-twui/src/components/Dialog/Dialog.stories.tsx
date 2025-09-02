@@ -91,7 +91,7 @@ export const WithForm: Story = {
               {/** biome-ignore lint/correctness/useUniqueElementIds: story example */}
               <Input
                 id="username"
-                defaultValue="@johndoe"
+                defaultValue="@john.doe"
                 className="col-span-3"
               />
             </div>
@@ -197,6 +197,7 @@ export const LongContent: Story = {
           </DialogHeader>
           <div className="py-4 overflow-y-auto">
             <div className="space-y-4 text-sm">
+              {/* cspell:disable */}
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -231,6 +232,7 @@ export const LongContent: Story = {
                 consequatur? Quis autem vel eum iure reprehenderit qui in ea
                 voluptate velit esse quam nihil molestiae consequatur.
               </p>
+              {/* cspell:enable */}
             </div>
           </div>
           <DialogFooter>

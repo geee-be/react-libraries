@@ -10,6 +10,8 @@ import { cn } from '../../helpers/utils.js';
 import { Button } from '../Button/index.js';
 import { nextButtonVariants, previousButtonVariants } from './variants.js';
 
+// cspell:ignore embla
+
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
