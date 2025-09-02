@@ -8,7 +8,7 @@ import { cn } from '../../helpers/utils';
 /* ---------------------------------- Types --------------------------------- */
 export type InputOtpElement = React.ComponentRef<typeof OTPInput>;
 export type InputOtpProps = React.ComponentPropsWithoutRef<typeof OTPInput> & {
-  disableAutoComplete: boolean;
+  disableAutoComplete?: boolean;
 };
 
 /* -------------------------------- Component ------------------------------- */

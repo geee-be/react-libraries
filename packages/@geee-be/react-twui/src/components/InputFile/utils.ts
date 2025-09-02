@@ -111,7 +111,9 @@ export const fromValue = (
     if (value.data instanceof ArrayBuffer)
       return new Blob([value.data], { type: value.contentType });
     if (value.data instanceof Buffer)
-      return new Blob([value.data], { type: value.contentType });
+      return new Blob([new Uint8Array(value.data)], {
+        type: value.contentType,
+      });
     if (typeof value.data === 'string')
       return new Blob([Buffer.from(value.data, 'base64')], {
         type: value.contentType,

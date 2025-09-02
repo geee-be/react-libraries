@@ -12,7 +12,6 @@ import {
 } from 'react';
 import type { CropperProps, CropperRef } from 'react-advanced-cropper';
 import type { DropzoneOptions } from 'react-dropzone-esm';
-import { useMediaQuery } from 'usehooks-ts';
 import { cn } from '../../helpers/utils';
 import { Button } from '../Button';
 import { Cropper } from '../Cropper';
@@ -63,7 +62,6 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
     const [showCropper, setShowCropper] = useState(false);
     const [rendering, setRendering] = useState(false);
     const [uncontrolledValue, setUncontrolledValue] = useState<Blob>();
-    const narrow = useMediaQuery('@container (min-width: 42rem /* 672px */)');
     const cropperRef = useRef<CropperRef>(null);
 
     const displayValue = value ?? uncontrolledValue;
@@ -159,7 +157,7 @@ export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
             <div className="flex gap-3 justify-end @container">
               <Button
                 variant="outline"
-                isIconOnly={narrow}
+                shape="icon"
                 before={<ChevronLeft />}
                 disabled={rendering}
                 onClick={() => {

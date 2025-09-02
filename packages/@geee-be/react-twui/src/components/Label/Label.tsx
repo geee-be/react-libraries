@@ -46,18 +46,21 @@ const LabelComponent = React.forwardRef<LabelElement, LabelProps>(
     const useAsChild = asChild && isReactElement(children);
 
     const innerContent = useAsChild ? (
-      React.cloneElement(children, {
-        children: (
-          <>
-            {isElementWithChildren(children) && children.props.children}
-            {required && (
-              <span className="text-error">
-                <RequiredIcon size="0.7em" />
-              </span>
-            )}
-          </>
-        ),
-      })
+      React.cloneElement(
+        children as React.ReactElement<{ children?: React.ReactNode }>,
+        {
+          children: (
+            <>
+              {isElementWithChildren(children) && children.props.children}
+              {required && (
+                <span className="text-error">
+                  <RequiredIcon size="0.7em" />
+                </span>
+              )}
+            </>
+          ),
+        },
+      )
     ) : (
       <>
         {children ? <span>{children}</span> : null}

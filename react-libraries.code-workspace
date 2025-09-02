@@ -1,70 +1,71 @@
 {
-	"folders": [
-		{
-			"name": ".root",
-			"path": "."
-		},
-		{
-			"name": "react-twui",
-			"path": "packages/@geee-be/react-twui"
-		},
-		{
-			"name": "react-utils",
-			"path": "packages/@geee-be/react-utils"
-		}
-	],
-	"settings": {
-		"editor.codeActionsOnSave": {
-			"source.fixAll": "explicit",
-			"source.organizeImports": "explicit"
-		},
-		"editor.formatOnSave": true,
-		"editor.tabSize": 2,
-		"eslint.codeAction.disableRuleComment": {
-			"enable": true,
-			"location": "separateLine"
-		},
-		"[json]": {
-			"editor.defaultFormatter": "biomejs.biome"
-		},
-		"[jsonc]": {
-			"editor.defaultFormatter": "biomejs.biome"
-		},
-		"[typescript]": {
-			"editor.defaultFormatter": "biomejs.biome"
-		},
-		"[typescriptreact]": {
-			"editor.defaultFormatter": "biomejs.biome"
-		},
-		"[tailwindcss]": {
-			"editor.defaultFormatter": "biomejs.biome"
-		},
-		"files.associations": {
-			"**/common/config/rush/*.json": "jsonc",
-			"**/rush.json": "jsonc",
-			"**/*.css": "tailwindcss"
-		},
-		"files.exclude": {
-			"**/.DS_Store": true,
-			"**/.git": true,
-			"**/.rush": true,
-			"**/.vscode": true,
-			"**/node_modules": true,
-			"dist": true,
-			"packages": true
-		},
-		"files.insertFinalNewline": true,
-		"files.trimTrailingWhitespace": true,
-		"javascript.preferences.quoteStyle": "single",
-		"peacock.affectAccentBorders": true,
-		"peacock.affectActivityBar": true,
-		"peacock.affectStatusBar": true,
-		"peacock.affectTabActiveBorder": true,
-		"peacock.affectTitleBar": true,
-		"peacock.color": "#378cf3",
-		"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-		"typescript.preferences.quoteStyle": "single",
-		"workbench.colorCustomizations": {
+  "folders": [
+    {
+      "name": ".root",
+      "path": "."
+    },
+    {
+      "name": "react-twui",
+      "path": "packages/@geee-be/react-twui"
+    },
+    {
+      "name": "react-utils",
+      "path": "packages/@geee-be/react-utils"
+    }
+  ],
+  "settings": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll.eslint": "never"
+    },
+    "eslint.format.enable": false,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "eslint.codeAction.disableRuleComment": {
+      "enable": true,
+      "location": "separateLine"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[tailwindcss]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "files.associations": {
+      "**/common/config/rush/*.json": "jsonc",
+      "**/rush.json": "jsonc",
+      "**/*.css": "tailwindcss"
+    },
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/.rush": true,
+      "**/.vscode": true,
+      "**/node_modules": true,
+      "dist": true,
+      "packages": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "javascript.preferences.quoteStyle": "single",
+    "peacock.affectAccentBorders": true,
+    "peacock.affectActivityBar": true,
+    "peacock.affectStatusBar": true,
+    "peacock.affectTabActiveBorder": true,
+    "peacock.affectTitleBar": true,
+    "peacock.color": "#378cf3",
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "typescript.preferences.quoteStyle": "single",
+    "workbench.colorCustomizations": {
       "activityBar.activeBackground": "#67a8f6",
       "activityBar.activeBorder": "#02fd51",
       "activityBar.background": "#67a8f6",
@@ -85,6 +86,6 @@
       "sash.hoverBorder": "#67a8f6",
       "commandCenter.border": "#e7e7e799"
     },
-		"biome.lsp.trace.server": "verbose"
-	}
+    "biome.lsp.trace.server": "verbose"
+  }
 }

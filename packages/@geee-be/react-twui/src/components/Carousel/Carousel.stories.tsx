@@ -101,7 +101,7 @@ export const CardButtons: Story = {
             // biome-ignore lint/suspicious/noArrayIndexKey: index is all we have in this case
             <CarouselItem key={index} className="md:basis-[28%] lg:basis-[18%]">
               <div className="p-1">
-                <Button color="card" className="flex grow w-full">
+                <Button variant="card" className="flex grow w-full">
                   <CardContent>No {index}</CardContent>
                 </Button>
               </div>

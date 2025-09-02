@@ -54,7 +54,7 @@ export const IconButton: Story = {
     children: (
       <>
         <Input className="join-item" />
-        <Button className="join-item" isIconOnly before={<SearchIcon />} />
+        <Button className="join-item" shape="icon" before={<SearchIcon />} />
       </>
     ),
     shape: 'pill',
