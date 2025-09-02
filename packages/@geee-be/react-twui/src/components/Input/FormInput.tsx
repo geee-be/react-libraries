@@ -109,7 +109,6 @@ export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
         >
           <Input
             id={elId}
-            ref={field.ref}
             aria-describedby={helperText ? `${elId}__describer` : undefined}
             aria-invalid={ariaInvalid}
             aria-labelledby={label ? `${elId}__label` : undefined}
@@ -121,10 +120,10 @@ export const FormInput = <T extends FieldValues, Field extends FieldPath<T>>({
               formState.isSubmitting ||
               formState.disabled
             }
-            name={name}
             InputProps={InputProps}
             {...otherProps}
-            {...(field as any)}
+            {...field}
+            name={field.name ?? name}
           />
         </FormControl>
       )}

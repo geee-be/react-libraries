@@ -8,6 +8,7 @@ import type {
 export const fieldError = (
   error:
     | FieldError
+    // biome-ignore lint/suspicious/noExplicitAny: intended
     | Merge<FieldError, FieldErrorsImpl<DeepRequired<any>[string]>>
     | undefined,
 ): string | null => {

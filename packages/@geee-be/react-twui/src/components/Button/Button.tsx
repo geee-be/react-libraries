@@ -116,7 +116,7 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
             {after ? renderIcon(after) : null}
           </>
         ),
-      } as Record<string, any>)
+      } as Record<string, unknown>)
     ) : (
       <>
         {before ? renderIcon(before) : null}

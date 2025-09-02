@@ -27,6 +27,7 @@ const TooltipTrigger = React.forwardRef<
       {children ? (
         children
       ) : (
+        // biome-ignore lint/a11y/noStaticElementInteractions: its handled in logic
         <span
           className={cn(
             onClick ? 'cursor-pointer' : 'cursor-default',

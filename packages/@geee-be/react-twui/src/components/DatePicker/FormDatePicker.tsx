@@ -70,7 +70,9 @@ export const FormDatePicker = <
       control={control}
       name={name}
       rules={{
+        // biome-ignore lint/suspicious/noExplicitAny: needed
         min: min as ValidationRule<any>,
+        // biome-ignore lint/suspicious/noExplicitAny: needed
         max: max as ValidationRule<any>,
         required,
       }}

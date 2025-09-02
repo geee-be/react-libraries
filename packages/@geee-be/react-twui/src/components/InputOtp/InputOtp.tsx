@@ -78,8 +78,7 @@ const InputOtpSeparator = React.forwardRef<
   React.ComponentRef<'div'>,
   React.ComponentPropsWithoutRef<'div'>
 >(({ ...props }, ref) => (
-  // biome-ignore lint/a11y/useAriaPropsForRole: invalid
-  <div ref={ref} role="separator" {...props}>
+  <div ref={ref} aria-hidden="true" {...props}>
     <Dot className="text-default" />
   </div>
 ));

@@ -90,7 +90,6 @@ export const Disable: Story = {
     return (
       <Button
         {...Default.args}
-        id="test-button"
         onClick={handleClick}
         disabled={busy}
         color="primary"

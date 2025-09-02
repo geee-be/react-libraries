@@ -98,7 +98,6 @@ export const FormYearPicker = <
         >
           <YearPicker
             id={elId}
-            ref={field.ref}
             aria-describedby={helperText ? `${elId}__describer` : undefined}
             aria-invalid={ariaInvalid}
             aria-labelledby={label ? `${elId}__label` : undefined}
@@ -110,9 +109,9 @@ export const FormYearPicker = <
               formState.isSubmitting ||
               formState.disabled
             }
-            name={name}
             {...otherProps}
-            {...(field as any)}
+            {...field}
+            name={field.name ?? name}
           />
         </FormControl>
       )}

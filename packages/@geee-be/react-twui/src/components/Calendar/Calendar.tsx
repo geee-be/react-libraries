@@ -25,6 +25,7 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       locale={
+        // biome-ignore lint/performance/noDynamicNamespaceImportAccess: intended
         locales[
           (navigator.language?.replace('-', '') as keyof typeof locales) ||
             'enUS'

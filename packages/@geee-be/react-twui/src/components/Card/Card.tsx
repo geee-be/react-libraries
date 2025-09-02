@@ -28,18 +28,17 @@ const CardRoot = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...otherProps }, ref) => {
   return (
-    <div
+    <section
       data-component="Card"
       ref={ref}
       className={clsx(
         cn('Card-root like-card', className),
         '[&_.Card-root]:bg-paper-nested print:bg-none',
       )}
-      role="region"
       {...otherProps}
     >
       {children}
-    </div>
+    </section>
   );
 });
 
