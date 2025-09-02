@@ -115,7 +115,8 @@ export const FormDatePicker = <
             }
             // name={name}
             onBlur={field.onBlur}
-            onValueChange={(value) => {
+            // biome-ignore lint/suspicious/noExplicitAny: depends on mode
+            onValueChange={(value: any) => {
               field.onChange({ target: { name, value } });
             }}
             value={field.value}

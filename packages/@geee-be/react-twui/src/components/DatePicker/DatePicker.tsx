@@ -3,34 +3,31 @@
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { forwardRef, useEffect, useState } from 'react';
-import type {
-  PropsMulti,
-  PropsMultiRequired,
-  PropsRange,
-  PropsRangeRequired,
-  PropsSingle,
-  PropsSingleRequired,
-} from 'react-day-picker';
+import type { DateRange, Modifiers, OnSelectHandler } from 'react-day-picker';
 import { cn } from '../../helpers/utils';
 import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '../Popover';
 
-type DatePickerValueProps =
-  | PropsSingle
-  | PropsSingleRequired
-  | PropsMulti
-  | PropsMultiRequired
-  | PropsRange
-  | PropsRangeRequired
-  | {
-      mode?: undefined;
-      required?: undefined;
-      selected: unknown;
-      onSelect: unknown;
-    };
+type ValueProps<T> = {
+  /** Current date value (controlled component) */
+  value?: T;
+  /** Callback when date selection changes */
+  onValueChange?: (date: T | undefined) => void;
+};
 
-export type DatePickerProps = {
+type DatePickerModeProps =
+  | ({
+      mode: 'single';
+    } & ValueProps<Date>)
+  | ({
+      mode: 'multiple';
+    } & ValueProps<Date[]>)
+  | ({
+      mode: 'range';
+    } & ValueProps<DateRange>);
+
+export type DatePickerProps = DatePickerModeProps & {
   /** CSS class to apply to the trigger button */
   className?: string;
   /** Whether the date picker is disabled */
@@ -45,7 +42,12 @@ export type DatePickerProps = {
   placeholder?: string;
   /** Show footer with today button */
   showFooter?: boolean;
-} & DatePickerValueProps;
+};
+
+const isDateRange = (date: unknown): date is DateRange => {
+  const { from, to } = date as DateRange;
+  return !!date && from instanceof Date && to instanceof Date;
+};
 
 export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
   (
@@ -54,10 +56,10 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
       disabled = false,
       defaultDate,
       destructive,
-      selected,
+      value,
       dateFormat = 'PPP',
       placeholder = 'Pick a date',
-      onSelect,
+      onValueChange,
       mode = 'single',
       showFooter = false,
       ...props
@@ -65,19 +67,28 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
     ref,
   ) => {
     // Handle controlled and uncontrolled states
-    const [date, setDate] = useState<DatePickerProps['selected']>(
-      selected || defaultDate,
+    const [date, setDate] = useState<Date | DateRange | Date[] | undefined>(
+      value || defaultDate,
     );
 
     // Update internal state when controlled value changes
     useEffect(() => {
-      setDate(selected || defaultDate);
-    }, [selected, defaultDate]);
+      setDate(value || defaultDate);
+    }, [value, defaultDate]);
 
     // Handle date selection
-    const handleSelect = (selectedDate: DatePickerProps['selected']) => {
+    const handleSelect = (
+      selectedDate: DatePickerModeProps['value'],
+      triggerDate: Date,
+      modifiers: Modifiers,
+      e: React.MouseEvent | React.KeyboardEvent,
+    ) => {
       setDate(selectedDate);
-      onSelect?.(selectedDate);
+      (
+        onValueChange as
+          | OnSelectHandler<DatePickerModeProps['value']>
+          | undefined
+      )?.(selectedDate, triggerDate, modifiers, e);
     };
 
     // Render today button in footer if enabled
@@ -86,7 +97,24 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
         <Button
           size="sm"
           className="w-full justify-center"
-          onClick={() => handleSelect(new Date())}
+          onClick={(evt) => {
+            switch (mode) {
+              case 'single':
+                handleSelect(new Date(), new Date(), {}, evt);
+                break;
+              case 'range':
+                handleSelect(
+                  { from: new Date(), to: new Date() },
+                  new Date(),
+                  {},
+                  evt,
+                );
+                break;
+              case 'multiple':
+                handleSelect([new Date()], new Date(), {}, evt);
+                break;
+            }
+          }}
         >
           Today
         </Button>
@@ -116,14 +144,22 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
                 ) : (
                   placeholder
                 )
-              ) : 'from' in date && 'to' in date ? (
+              ) : isDateRange(date) ? (
                 date.from === date.to ? (
-                  `${format(date.from, dateFormat)}`
-                ) : (
+                  date.from ? (
+                    `${format(date.from, dateFormat)}`
+                  ) : (
+                    placeholder
+                  )
+                ) : date.from && date.to ? (
                   `${format(date.from, dateFormat)} - ${format(date.to, dateFormat)}`
+                ) : (
+                  placeholder
                 )
-              ) : (
+              ) : date ? (
                 format(date, dateFormat)
+              ) : (
+                placeholder
               )
             ) : (
               <span>{placeholder}</span>
@@ -132,7 +168,8 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
           <Calendar
-            mode={mode}
+            // biome-ignore lint/suspicious/noExplicitAny: just can't figure it out otherwise
+            mode={mode as any}
             selected={date}
             onSelect={handleSelect}
             defaultMonth={
@@ -144,7 +181,6 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
                     : date
                 : undefined
             }
-            required={false}
           />
           {renderFooter}
         </PopoverContent>
