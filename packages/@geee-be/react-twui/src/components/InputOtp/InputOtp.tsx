@@ -23,6 +23,7 @@ const InputOtp = React.forwardRef<InputOtpElement, InputOtpProps>(
       className={cn('disabled:cursor-not-allowed', className)}
       data-1p-ignore={disableAutoComplete}
       autoComplete={disableAutoComplete ? 'off' : 'one-time-code'}
+      spellCheck={false}
       {...props}
     />
   ),
