@@ -41,14 +41,14 @@
   --color-background: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
   --color-foreground: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
   /* input */
-  --color-input: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
+  --color-input: light-dark(hsl(0 0% 98%), hsl(0 0% 15%));
   --color-input-fg: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
   --color-input-border: light-dark(hsl(0 0% 50%), hsl(0 0% 70%));
   /* control */
   --color-control: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
   --color-control-fg: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
   /* paper */
-  --color-paper: light-dark(hsl(255, 0%, 98%), hsl(255, 0%, 15%));
+  --color-paper: light-dark(hsl(255, 0%, 97%), hsl(255, 0%, 15%));
   --color-paper-nested: light-dark(hsl(255, 0%, 90% / 0.35), hsl(255, 0%, 10% / 0.35));
   --color-paper-fg: light-dark(hsl(255 0% 20%), hsl(255 0% 87.5%));
   --color-paper-border: light-dark(hsl(255 0% 40% / 0.5), hsl(255 0% 60% / 0.5));

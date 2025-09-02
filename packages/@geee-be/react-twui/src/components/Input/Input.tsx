@@ -72,10 +72,7 @@ export const Input = forwardRef<InputElement, InputProps>(
         {before ? <div className="inline-flex -m-2 z-1">{before}</div> : null}
         <input
           ref={ref}
-          className={cn(
-            'bg-control px-2 w-full outline-none',
-            Input?.className,
-          )}
+          className={cn('bg-input px-2 w-full outline-none', Input?.className)}
           aria-invalid={ariaInvalid}
           disabled={disabled || readOnly}
           readOnly={readOnly}

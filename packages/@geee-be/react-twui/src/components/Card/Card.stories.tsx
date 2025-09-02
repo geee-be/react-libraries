@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Alert } from '../Alert/index.js';
+import { Input } from '../Input/Input.js';
 import { Card, CardContent, CardFooter, CardHeader } from './index.js';
 
 const meta = {
@@ -31,7 +32,7 @@ export const HeaderFooter: Story = {
         <CardContent>
           <div>Hello Content!</div>
           <Alert color="warning">Hello Alert!</Alert>
-          <div>Line 2</div>
+          <Input placeholder="Type something..." />
         </CardContent>
         <CardFooter>Footer Here</CardFooter>
       </>

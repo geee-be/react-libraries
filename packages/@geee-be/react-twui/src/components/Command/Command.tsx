@@ -21,11 +21,12 @@ const Command = forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      'flex h-full w-full flex-col overflow-hidden rounded-lg bg-paper/100 text-popover-foreground',
-      // focus
-      'border-none outline outline-2 outline-control-focus/50',
-      // color
-      'bg-control text-control-fg border border-default hover:border-default/70 data-[placeholder]:text-control-fg/50',
+      'like-input',
+      'items-stretch px-0 py-0 flex h-full w-full flex-col overflow-hidden',
+      // // focus
+      // 'border-none outline-2 outline-input-focus/50',
+      // // color
+      // 'bg-input text-input-fg border border-default hover:border-default/70 data-[placeholder]:text-input-fg/50',
       // '[&_[cmdk-input-wrapper]]:border-default [&_[cmdk-input-wrapper]]:hover:border-default/70',
       className,
     )}
@@ -58,6 +59,7 @@ const CommandDialog = ({
           shouldFilter={shouldFilter}
           value={value}
           onValueChange={onValueChange}
+          className="rounded-2xl"
         >
           {children}
         </Command>
@@ -71,14 +73,14 @@ const CommandInput = forwardRef<
   ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & { icon?: ReactNode }
 >(({ className, icon, ...props }, ref) => (
   <div
-    className="flex items-center border-b border-paper-border hover:border-paper-border px-4"
+    className="flex items-center border-b border-input-border hover:border-input-border px-4"
     cmdk-input-wrapper=""
   >
     {icon ?? <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />}
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        'flex h-11 w-full rounded-lg bg-paper/100 py-3 text-sm outline-none placeholder:text-control-fg/50 disabled:cursor-not-allowed disabled:text-control-fg/50',
+        'flex h-11 w-full bg-input/100 py-3 text-sm outline-none placeholder:text-input-fg/50 disabled:cursor-not-allowed disabled:text-input-fg/50',
         className,
       )}
       {...props}
@@ -110,7 +112,7 @@ const CommandEmpty = forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="p-2 text-center text-sm italic text-control-fg/70"
+    className="p-2 text-center text-sm italic text-input-fg/70"
     {...props}
   />
 ));
@@ -123,7 +125,7 @@ const CommandLoading = forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Loading
     ref={ref}
-    className="p-2 text-center text-sm italic text-control-fg/70"
+    className="p-2 text-center text-sm italic text-input-fg/70"
     {...props}
   />
 ));
@@ -137,7 +139,7 @@ const CommandGroup = forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      'overflow-hidden [&_[cmdk-group-heading]]:px-4 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:text-muted-foreground',
+      'overflow-hidden [&_[cmdk-group-heading]]:px-4 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-bold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:text-input-fg/70',
       className,
     )}
     {...props}
@@ -152,7 +154,7 @@ const CommandSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn('h-px bg-control-fg/10 m-1', className)}
+    className={cn('h-px bg-input-border/20 my-1', className)}
     {...props}
   />
 ));
@@ -168,7 +170,7 @@ const CommandItem = forwardRef<
     className={cn(
       'relative flex cursor-pointer leading-none select-none items-center rounded-lg mx-1 px-4 py-2 text-sm h-[45px] pl-6 outline-none data-[disabled=true]:pointer-events-none',
       // colors
-      'text-control-fg data-[disabled=true]:text-control-fg/50 aria-selected:bg-control-fg/10 aria-selected:text-control-fg',
+      'text-input-fg data-[disabled=true]:text-input-fg/50 aria-selected:bg-input-fg/10 aria-selected:text-input-fg',
       className,
     )}
     {...props}

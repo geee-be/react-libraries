@@ -56,7 +56,7 @@
     @apply bg-default text-default-fg;
 
     @variant not-disabled {
-      @apply hover:shadow-lg active:shadow-sm;
+      @apply hover:shadow-xl active:shadow-sm;
     }
   }
 }
@@ -87,7 +87,7 @@
 
     &::placeholder,
     &[data-placeholder] {
-      @apply text-control-fg/50;
+      @apply text-input-fg/50;
     }
 
     @variant not-disabled {
@@ -115,6 +115,7 @@
 
 @utility like-paper {
   @layer components {
+    --color-input: light-dark(hsl(0 0% 100%), hsl(0 0% 10%));
     --color-foreground: var(--color-paper-fg);
     @apply bg-paper print:bg-none text-paper-fg print:text-black border border-paper-border print:border-black/50;
   }
