@@ -5,7 +5,6 @@ import {
   Bell,
   BookOpen,
   Bot,
-  Calendar,
   ChevronRight,
   ChevronsUpDown,
   Command,
@@ -14,14 +13,10 @@ import {
   Forward,
   Frame,
   GalleryVerticalEnd,
-  Home,
-  Inbox,
   LogOut,
   MoreHorizontal,
   PieChart,
   Plus,
-  Search,
-  Settings,
   Settings2,
   Sparkles,
   SquareTerminal,
@@ -83,34 +78,6 @@ const meta: Meta<typeof Sidebar> = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home,
-  },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox,
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar,
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: Search,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings,
-  },
-];
 
 const data = {
   user: {

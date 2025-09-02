@@ -1,7 +1,7 @@
 export {
+  type ToastOptions,
   toast,
   useToast,
-  type ToastOptions,
 } from 'react-toastify';
 export { Toaster, type ToasterProps } from './Toaster';
 

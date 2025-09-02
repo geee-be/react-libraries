@@ -4,6 +4,9 @@ import { Calendar } from './index.js';
 
 const meta = {
   component: Calendar,
+  args: {
+    mode: 'single',
+  },
   argTypes: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof Calendar>;
@@ -17,7 +20,7 @@ export const Default: Story = {
 
 export const WithSelectedDate: Story = {
   args: {
-    selected: new Date(),
+    selected: addDays(new Date(), 2),
   },
 };
 

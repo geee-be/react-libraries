@@ -29,7 +29,8 @@ export const Icons: Story = {
     placeholder: 'This is a placeholder',
     before: (
       <Button
-        size="xs-icon"
+        shape="icon"
+        size="sm"
         variant="ghost"
         className="mx-1"
         before={<DragHandleDots2Icon />}
@@ -37,7 +38,8 @@ export const Icons: Story = {
     ),
     after: (
       <Button
-        size="xs-icon"
+        shape="icon"
+        size="sm"
         variant="ghost"
         className="mx-1"
         after={<XIcon />}
@@ -53,7 +55,8 @@ export const TextBefore: Story = {
     before: <div className="pl-4">https://</div>,
     after: (
       <Button
-        size="xs-icon"
+        shape="icon"
+        size="sm"
         variant="ghost"
         className="mx-1"
         after={<XIcon />}

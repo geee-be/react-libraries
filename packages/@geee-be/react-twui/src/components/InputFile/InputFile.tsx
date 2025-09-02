@@ -2,7 +2,7 @@
 
 import type { VariantProps } from 'cva';
 import { forwardRef, memo, type PropsWithChildren } from 'react';
-import { useDropzone, type DropzoneOptions } from 'react-dropzone-esm';
+import { type DropzoneOptions, useDropzone } from 'react-dropzone-esm';
 import { cn } from '../../helpers/utils';
 import { borderVariants } from './variants';
 

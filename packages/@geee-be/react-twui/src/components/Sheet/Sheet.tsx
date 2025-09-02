@@ -1,7 +1,7 @@
 'use client';
 
 import * as SheetPrimitive from '@radix-ui/react-dialog';
-import { type VariantProps, cva } from 'cva';
+import { cva, type VariantProps } from 'cva';
 import { X } from 'lucide-react';
 import * as React from 'react';
 import { Style } from '../../helpers/style';
@@ -133,16 +133,15 @@ const SheetDescription = React.forwardRef<
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
 export {
-    Sheet,
-    SheetClose,
-    SheetContent,
-    SheetDescription,
-    SheetFooter,
-    SheetHeader,
-    SheetOverlay,
-    SheetPortal,
-    SheetPrimitiveContent,
-    SheetTitle,
-    SheetTrigger
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetOverlay,
+  SheetPortal,
+  SheetPrimitiveContent,
+  SheetTitle,
+  SheetTrigger,
 };
-

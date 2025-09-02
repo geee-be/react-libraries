@@ -51,7 +51,8 @@ export const previousButtonVariants = cva({
     },
     layout: {
       extended: 'w-8 h-8 rounded-full',
-      overlayed: 'bg-background/70 hover:!bg-background/90 border-none rounded-none',
+      overlayed:
+        'bg-background/70 hover:!bg-background/90 border-none rounded-none',
     },
   },
 

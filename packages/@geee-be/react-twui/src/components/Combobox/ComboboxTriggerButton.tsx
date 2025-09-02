@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import {
-  forwardRef,
   type ComponentPropsWithoutRef,
+  forwardRef,
   type ReactNode,
 } from 'react';
 import { Style } from '../../helpers/style';

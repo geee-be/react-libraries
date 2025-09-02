@@ -203,14 +203,7 @@ const CarouselPrevious = React.forwardRef<
     }
 >(
   (
-    {
-      className,
-      autoHide,
-      layout,
-      variant = 'outline',
-      size = 'md',
-      ...props
-    },
+    { className, autoHide, layout, variant = 'outline', size = 'md', ...props },
     ref,
   ) => {
     const { orientation, scrollPrev, canScrollPrev } = useCarousel();
@@ -251,14 +244,7 @@ const CarouselNext = React.forwardRef<
     }
 >(
   (
-    {
-      className,
-      autoHide,
-      layout,
-      variant = 'outline',
-      size = 'md',
-      ...props
-    },
+    { className, autoHide, layout, variant = 'outline', size = 'md', ...props },
     ref,
   ) => {
     const { orientation, scrollNext, canScrollNext } = useCarousel();
@@ -297,6 +283,5 @@ export {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi
+  type CarouselApi,
 };
-

@@ -1,0 +1,66 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "off"
+			}
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "space",
+			"lineWidth": 120
+		}
+	},
+	"files": {
+		"includes": ["**"]
+	},
+	"formatter": {
+		"indentStyle": "space"
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single"
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"complexity": {
+				"useLiteralKeys": "off"
+			},
+			"correctness": {
+				"useUniqueElementIds": "off"
+			},
+			"performance": {
+				"noAccumulatingSpread": "off"
+			},
+			"recommended": true,
+			"style": {
+				"noInferrableTypes": "error",
+				"noParameterAssign": "error",
+				"noUnusedTemplateLiteral": "error",
+				"noUselessElse": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useNumberNamespace": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noUnknownAtRules": "off"
+			}
+		}
+	},
+	"root": false,
+	"vcs": {
+		"clientKind": "git",
+		"defaultBranch": "master",
+		"enabled": true,
+		"useIgnoreFile": true
+	}
+}

@@ -2,7 +2,7 @@ import { sleep } from '@geee-be/core';
 import type { Meta } from '@storybook/react-vite';
 import type { FC } from 'react';
 import { Button } from '../Button';
-import { toast, Toaster, ToastType, type ToastOptions } from './index';
+import { Toaster, type ToastOptions, ToastType, toast } from './index';
 
 const meta = {
   component: Toaster,

@@ -202,19 +202,17 @@ const ComboboxRoot = forwardRef<
         >
           <ComboboxTriggerButton
             aria-expanded={open && !disabled}
-            // biome-ignore lint/correctness/noChildrenProp: <explanation>
-            children={
-              value ? (
-                <Async
-                  fallback={<Skeleton className="h-4 min-w-16" />}
-                  waitFor={() => valueLabel}
-                  render={(label) => label}
-                />
-              ) : undefined
-            }
             disabled={disabled}
             placeholder={placeholder}
-          />
+          >
+            {value ? (
+              <Async
+                fallback={<Skeleton className="h-4 min-w-16" />}
+                waitFor={() => valueLabel}
+                render={(label) => label}
+              />
+            ) : undefined}
+          </ComboboxTriggerButton>
         </PopoverTrigger>
         <PopoverContent
           className={cn('border-none p-0')}

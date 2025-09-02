@@ -3,12 +3,12 @@ import { Slot } from '@radix-ui/react-slot';
 import React from 'react';
 
 import {
-    cn,
-    isElementWithChildren,
-    isReactElement,
+  cn,
+  isElementWithChildren,
+  isReactElement,
 } from '../../helpers/utils.js';
-import { Tooltip } from '../Tooltip/index.js';
 import { RequiredIcon } from '../icons/index.js';
+import { Tooltip } from '../Tooltip/index.js';
 
 /* ---------------------------------- Types --------------------------------- */
 export type LabelElement = React.ComponentRef<typeof LabelPrimitive.Root>;

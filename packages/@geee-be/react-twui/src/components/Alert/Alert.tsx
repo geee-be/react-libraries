@@ -195,22 +195,11 @@ const AlertBefore = React.forwardRef<
   const Component = isReactElement(children) ? Slot : 'span';
 
   if (!children) {
-    return (
-      <InfoIcon
-        className={cn(
-          'h-6 w-6 shrink-0',
-          className,
-        )}
-      />
-    );
+    return <InfoIcon className={cn('h-6 w-6 shrink-0', className)} />;
   }
 
   return (
-    <Component
-      ref={ref}
-      className={className}
-      {...props}
-    >
+    <Component ref={ref} className={className} {...props}>
       {children}
     </Component>
   );
@@ -275,6 +264,7 @@ const AlertCloseButton = React.forwardRef<
     children: React.ReactNode,
   ): React.ReactElement<HTMLElement> => {
     return isReactElement(children) ? (
+      // biome-ignore lint/complexity/noUselessFragments: otherwise there is a type error
       <>{children}</>
     ) : (
       <CloseIcon aria-label="Close" />

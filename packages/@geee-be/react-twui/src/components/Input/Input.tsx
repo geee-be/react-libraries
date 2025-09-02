@@ -59,7 +59,7 @@ export const Input = forwardRef<InputElement, InputProps>(
     const ariaInvalid = otherProps['aria-invalid'] ?? destructive;
 
     const computedAutoFocus =
-      autoFocus === 'non-touch' ? !isTouchDevice() : autoFocus ?? false;
+      autoFocus === 'non-touch' ? !isTouchDevice() : (autoFocus ?? false);
 
     return (
       <div

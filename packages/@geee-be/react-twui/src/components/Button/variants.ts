@@ -13,7 +13,7 @@ export const buttonVariants = cva({
       pill: 'rounded-full',
     },
     color: {
-      default: 'focus-ring-color-control default-control',
+      default: 'focus-ring-color-primary default-gray',
       gray: 'focus-ring-color-gray default-gray',
       primary: 'focus-ring-color-primary default-primary',
       secondary: 'focus-ring-color-secondary default-secondary',
@@ -22,13 +22,13 @@ export const buttonVariants = cva({
       success: 'focus-ring-color-success default-success',
       error: 'focus-ring-color-error default-error',
       danger: 'focus-ring-color-danger default-danger',
-      card: 'outline-control-focus',
     },
     variant: {
       solid: 'like-button',
       outline: 'like-outline-button',
       input: 'like-input',
-      ghost: 'like-base-button bg-transparent text-default',
+      ghost: 'like-base-button like-button-text bg-transparent text-default',
+      card: 'like-base-button like-card',
       link: 'p-0 underline underline-offset-3 focus-visible:text-primary focus-visible:font-bold',
     },
 
@@ -42,17 +42,17 @@ export const buttonVariants = cva({
     {
       size: 'xs',
       shape: 'icon',
-      class: 'px-0 py-0'
+      class: 'px-0 py-0',
     },
     {
       size: 'sm',
       shape: 'icon',
-      class: 'px-1 py-1'
+      class: 'px-1 py-1',
     },
     {
       size: 'md',
       shape: 'icon',
-      class: 'px-2 py-2'
+      class: 'px-2 py-2',
     },
   ],
   defaultVariants: {

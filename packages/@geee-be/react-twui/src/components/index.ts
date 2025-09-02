@@ -1,4 +1,6 @@
 // Components
+
+export { Slot } from '@radix-ui/react-slot';
 export * from './Alert/index.js';
 export * from './AspectRatio/index.js';
 export * from './Async/index.js';
@@ -18,10 +20,10 @@ export * from './Dialog/index.js';
 export * from './Drawer/index.js';
 export * from './DropdownMenu/index.js';
 export * from './FormControl/index.js';
-export * from './icons/index.js';
 export * from './Input/index.js';
 export * from './InputFile/index.js';
 export * from './InputOtp/index.js';
+export * from './icons/index.js';
 export * from './Join/index.js';
 export * from './Label/index.js';
 export * from './Pagination/index.js';
@@ -36,8 +38,6 @@ export * from './Skeleton/index.js';
 export * from './Spinner/index.js';
 export * from './Toast/index.js';
 export * from './Tooltip/index.js';
+export type { LabelHelperProps } from './types.js';
 export * from './WithIcon/index.js';
 export * from './YearPicker/index.js';
-
-export { Slot } from '@radix-ui/react-slot';
-export type { LabelHelperProps } from './types.js';

@@ -1,4 +1,4 @@
-export { Checkbox } from './Checkbox';
 export type { CheckboxElement, CheckboxElementProps } from './Checkbox';
-export { FormCheckbox } from './FormCheckbox.js';
+export { Checkbox } from './Checkbox';
 export type { FormCheckboxElement, FormCheckboxProps } from './FormCheckbox.js';
+export { FormCheckbox } from './FormCheckbox.js';

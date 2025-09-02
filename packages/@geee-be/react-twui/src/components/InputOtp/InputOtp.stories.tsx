@@ -32,5 +32,6 @@ export const Default: Story = {
         </InputOtpGroup>
       </>
     ),
+    disableAutoComplete: true,
   },
 };

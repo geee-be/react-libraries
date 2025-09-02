@@ -1,6 +1,6 @@
 'use client';
 
-import { type ChangeEvent, type InputHTMLAttributes, forwardRef } from 'react';
+import { type ChangeEvent, forwardRef, type InputHTMLAttributes } from 'react';
 import { YearPicker } from './YearPicker';
 
 type YearOfBirthPickerElement = Omit<HTMLInputElement, 'onChange' | 'value'> & {

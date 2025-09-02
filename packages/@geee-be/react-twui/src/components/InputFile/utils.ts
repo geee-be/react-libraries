@@ -62,8 +62,6 @@ const blobToImage = (blob: Blob): Promise<HTMLImageElement> => {
 };
 
 const computeScale = (originalSize: Size, imageSpec: ImageSpec): number => {
-  const aspectRatio = originalSize.width / originalSize.height;
-
   if ('aspectRatio' in imageSpec) {
     const maxWidth = imageSpec.maxWidth ?? Number.POSITIVE_INFINITY;
     const maxHeight = imageSpec.maxHeight ?? Number.POSITIVE_INFINITY;

@@ -4,10 +4,10 @@ import type { DialogProps } from '@radix-ui/react-dialog';
 import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
 import {
-    type ComponentPropsWithoutRef,
-    type ComponentRef,
-    type ReactNode,
-    forwardRef,
+  type ComponentPropsWithoutRef,
+  type ComponentRef,
+  forwardRef,
+  type ReactNode,
 } from 'react';
 import { cn } from '../../helpers/utils';
 import { Dialog, DialogContent } from '../Dialog';
@@ -178,14 +178,13 @@ const CommandItem = forwardRef<
 CommandItem.displayName = CommandPrimitive.Item.displayName;
 
 export {
-    Command,
-    CommandDialog,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
-    CommandLoading,
-    CommandSeparator
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandLoading,
+  CommandSeparator,
 };
-

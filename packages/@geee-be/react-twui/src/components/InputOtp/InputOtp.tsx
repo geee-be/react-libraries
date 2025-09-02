@@ -3,35 +3,41 @@
 import { OTPInput, OTPInputContext } from 'input-otp';
 import { Dot } from 'lucide-react';
 import * as React from 'react';
-import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
 
 /* ---------------------------------- Types --------------------------------- */
 export type InputOtpElement = React.ComponentRef<typeof OTPInput>;
-export type InputOtpProps = React.ComponentPropsWithoutRef<typeof OTPInput>;
+export type InputOtpProps = React.ComponentPropsWithoutRef<typeof OTPInput> & {
+  disableAutoComplete: boolean;
+};
 
 /* -------------------------------- Component ------------------------------- */
-const InputOtp = React.forwardRef<
-  React.ComponentRef<typeof OTPInput>,
-  React.ComponentPropsWithoutRef<typeof OTPInput>
->(({ className, containerClassName, ...props }, ref) => (
-  <OTPInput
-    ref={ref}
-    containerClassName={cn(
-      'flex items-center gap-2 has-disabled:opacity-50 w-fit',
-      containerClassName,
-    )}
-    className={cn('disabled:cursor-not-allowed', className)}
-    {...props}
-  />
-));
+const InputOtp = React.forwardRef<InputOtpElement, InputOtpProps>(
+  ({ className, containerClassName, disableAutoComplete, ...props }, ref) => (
+    <OTPInput
+      ref={ref}
+      containerClassName={cn(
+        'flex items-center has-disabled:opacity-50 w-fit',
+        containerClassName,
+      )}
+      className={cn('disabled:cursor-not-allowed', className)}
+      data-1p-ignore={disableAutoComplete}
+      autoComplete={disableAutoComplete ? 'off' : 'one-time-code'}
+      {...props}
+    />
+  ),
+);
 InputOtp.displayName = 'InputOTP';
 
 const InputOtpGroup = React.forwardRef<
   React.ComponentRef<'div'>,
   React.ComponentPropsWithoutRef<'div'>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('flex items-center', className)} {...props} />
+  <div
+    ref={ref}
+    className={cn('flex items-center gap-1', className)}
+    {...props}
+  />
 ));
 InputOtpGroup.displayName = 'InputOtpGroup';
 
@@ -51,10 +57,8 @@ const InputOtpSlot = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        'relative flex h-10.5 w-10 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-lg first:border-l last:rounded-r-lg',
-        Style.inputColorStateNormal(),
-        isActive &&
-          'z-10 border-l ring-2 ring-primary ring-offset-background ring-offset-2',
+        'like-input relative flex h-10.5 w-10 items-center justify-center text-sm transition-all',
+        isActive && 'z-10 focus-ring focus-ring-visible',
         className,
       )}
       {...props}

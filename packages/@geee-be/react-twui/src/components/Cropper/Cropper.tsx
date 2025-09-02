@@ -2,18 +2,18 @@
 
 import { forwardRef, useState } from 'react';
 import {
-    Cropper as BaseCropper,
-    type CoreSettings,
-    type CropperBackgroundWrapperProps,
-    type CropperRef,
-    type CropperState,
-    ImageRestriction,
-    TransformableImage,
-    type TransformableImageEvent,
-    isTouchEvent,
-    isWheelEvent,
-    useMoveImageOptions,
-    useScaleImageOptions,
+  Cropper as BaseCropper,
+  type CoreSettings,
+  type CropperBackgroundWrapperProps,
+  type CropperRef,
+  type CropperState,
+  ImageRestriction,
+  isTouchEvent,
+  isWheelEvent,
+  TransformableImage,
+  type TransformableImageEvent,
+  useMoveImageOptions,
+  useScaleImageOptions,
 } from 'react-advanced-cropper';
 import { useDebouncedCallback } from 'use-debounce';
 import { cn } from '../../helpers/utils';

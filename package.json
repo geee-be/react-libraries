@@ -17,7 +17,7 @@
     "start:dev": "pnpm --stream --parallel -r start:dev"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.6",
+    "@biomejs/biome": "2.2.2",
     "@changesets/cli": "2.29.5",
     "@swc/cli": "^0.1.65",
     "@swc/core": "^1.12.6",

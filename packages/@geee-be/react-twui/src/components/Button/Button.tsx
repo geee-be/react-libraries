@@ -72,7 +72,7 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
         (after && !before && !children && size) ??
         shape === 'icon'
       );
-    }, [before, after, children, size]);
+    }, [before, after, children, size, shape]);
 
     // Determine if the button is a 'link', 'outline', 'tertiary', or 'transparent' variant.
     const isVariantLinkOutlineTertiaryTransparent = React.useMemo(
@@ -112,8 +112,7 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
               renderIcon(
                 children.props.children as React.ReactElement<HTMLElement>,
               )}
-            {isElementWithChildren(children) &&
-              children.props.children}
+            {isElementWithChildren(children) && children.props.children}
             {after ? renderIcon(after) : null}
           </>
         ),
@@ -143,7 +142,9 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
         disabled={disabled}
         {...otherProps}
         onClick={(e) => {
-          if (!['link', 'input'].includes(variant)) { createRipple(e);}
+          if (!['link', 'input'].includes(variant)) {
+            createRipple(e);
+          }
           otherProps.onClick?.(
             e as React.MouseEvent<HTMLButtonElement, MouseEvent>,
           );

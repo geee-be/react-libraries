@@ -9,17 +9,7 @@ import {
   Settings,
   User,
 } from 'lucide-react';
-import type { ReactNode } from 'react';
 import { WithIcon } from './index';
-
-// Define the Props type explicitly to match the component
-interface WithIconProps {
-  className?: string;
-  'data-content'?: string;
-  iconBefore?: ReactNode;
-  iconAfter?: ReactNode;
-  noWrap?: boolean;
-}
 
 const meta: Meta<typeof WithIcon> = {
   component: WithIcon,

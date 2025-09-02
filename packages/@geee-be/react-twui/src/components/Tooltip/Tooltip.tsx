@@ -62,7 +62,9 @@ const TooltipRoot = React.forwardRef<TooltipRootElement, TooltipRootProps>(
 );
 
 /* ----------------------------- Tooltip Content ---------------------------- */
-type TooltipContentElement = React.ComponentRef<typeof TooltipPrimitive.Content>;
+type TooltipContentElement = React.ComponentRef<
+  typeof TooltipPrimitive.Content
+>;
 type TooltipContentProps = Omit<
   React.ComponentPropsWithRef<typeof TooltipPrimitive.Content>,
   'content'

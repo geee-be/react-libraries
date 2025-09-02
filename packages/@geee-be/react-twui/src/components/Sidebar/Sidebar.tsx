@@ -2,7 +2,7 @@
 
 import { useIsMobile } from '@geee-be/react-utils';
 import { Slot } from '@radix-ui/react-slot';
-import { type VariantProps, cva } from 'cva';
+import { cva, type VariantProps } from 'cva';
 import { PanelLeft } from 'lucide-react';
 import * as React from 'react';
 import { Style } from '../../helpers/style';
@@ -13,9 +13,9 @@ import { Separator } from '../Separator/Separator';
 import { Sheet, SheetContent } from '../Sheet/Sheet';
 import { Skeleton } from '../Skeleton';
 import {
-    Tooltip,
-    type TooltipContent,
-    TooltipProvider,
+  Tooltip,
+  type TooltipContent,
+  TooltipProvider,
 } from '../Tooltip/Tooltip';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
@@ -271,7 +271,7 @@ const SidebarTrigger = React.forwardRef<
       ref={ref}
       data-sidebar="trigger"
       variant="ghost"
-      size="icon"
+      shape="icon"
       className={cn('h-7 w-7', className)}
       onClick={(event) => {
         onClick?.(event);
@@ -737,29 +737,28 @@ const SidebarMenuSubButton = React.forwardRef<
 SidebarMenuSubButton.displayName = 'SidebarMenuSubButton';
 
 export {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarGroup,
-    SidebarGroupAction,
-    SidebarGroupContent,
-    SidebarGroupLabel,
-    SidebarHeader,
-    SidebarInput,
-    SidebarInset,
-    SidebarMenu,
-    SidebarMenuAction,
-    SidebarMenuBadge,
-    SidebarMenuButton,
-    SidebarMenuItem,
-    SidebarMenuSkeleton,
-    SidebarMenuSub,
-    SidebarMenuSubButton,
-    SidebarMenuSubItem,
-    SidebarProvider,
-    SidebarRail,
-    SidebarSeparator,
-    SidebarTrigger,
-    useSidebar
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupAction,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSkeleton,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarProvider,
+  SidebarRail,
+  SidebarSeparator,
+  SidebarTrigger,
+  useSidebar,
 };
-
