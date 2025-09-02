@@ -95,7 +95,7 @@ export const CardButtons: Story = {
     },
     children: (
       <>
-        <CarouselPrevious autoHide layout="overlayed" />
+        <CarouselPrevious autoHide layout="overlaid" />
         <CarouselContent>
           {Array.from({ length: 15 }).map((_, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: index is all we have in this case
@@ -108,7 +108,7 @@ export const CardButtons: Story = {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext autoHide layout="overlayed" />
+        <CarouselNext autoHide layout="overlaid" />
       </>
     ),
   },

@@ -222,7 +222,7 @@ const CarouselPrevious = React.forwardRef<
         onClick={scrollPrev}
         {...props}
       >
-        {layout === 'overlayed' ? (
+        {layout === 'overlaid' ? (
           <ChevronLeft className="h-6 w-6" />
         ) : (
           <ArrowLeft className="h-4 w-4" />
@@ -263,7 +263,7 @@ const CarouselNext = React.forwardRef<
         onClick={scrollNext}
         {...props}
       >
-        {layout === 'overlayed' ? (
+        {layout === 'overlaid' ? (
           <ChevronRight className="h-6 w-6" />
         ) : (
           <ArrowRight className="h-4 w-4" />
