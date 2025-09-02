@@ -3,8 +3,8 @@ import { cva } from 'cva';
 export const cardVariants = cva({
   variants: {
     variant: {
-      rounded: 'rounded-xl',
-      'square-top': 'rounded-t-none rounded-b-xl',
+      rounded: 'rounded-[var(--control-radius)]',
+      'square-top': 'rounded-t-none rounded-b-[var(--control-radius)]',
     },
     color: {
       none: 'border-paper-border text-paper-fg print:border-black/50 print:text-black',

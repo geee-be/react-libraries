@@ -50,6 +50,38 @@ const items: SelectGroupProps[] = [
         key: 'four',
         label: 'Four',
       },
+      {
+        key: 'five',
+        label: 'Five',
+      },
+      {
+        key: 'six',
+        label: 'Six',
+      },
+      {
+        key: 'seven',
+        label: 'Seven',
+      },
+      {
+        key: 'eight',
+        label: 'Eight',
+      },
+      {
+        key: 'nine',
+        label: 'Nine',
+      },
+      {
+        key: 'ten',
+        label: 'Ten',
+      },
+      {
+        key: 'eleven',
+        label: 'Eleven',
+      },
+      {
+        key: 'twelve',
+        label: 'Twelve',
+      },
     ],
   },
 ];

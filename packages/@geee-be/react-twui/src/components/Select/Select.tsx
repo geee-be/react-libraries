@@ -90,7 +90,7 @@ export const Select = forwardRef<SelectElement, SelectProps>(
         </div>
         <BaseSelect.Icon
           className={cn(
-            'text-control-fg right-0 ml-4',
+            'text-input-fg right-0 ml-4',
             disabled && 'text-transparent',
           )}
         >
@@ -98,19 +98,19 @@ export const Select = forwardRef<SelectElement, SelectProps>(
         </BaseSelect.Icon>
       </BaseSelect.Trigger>
       <BaseSelect.Portal>
-        <BaseSelect.Content className="overflow-hidden bg-control rounded-xl border-2 border-control-focus/50 shadow-xl">
-          <BaseSelect.ScrollUpButton className="flex items-center justify-center h-6 bg-control text-control-fg cursor-default">
+        <BaseSelect.Content className="bg-input overflow-hidden bg-input rounded-[calc(var(--control-radius)+var(--ring-width))] border-[oklch(from_var(--color-ring)_l_c_h/var(--ring-opacity))] border-(length:--ring-width) shadow-2xl">
+          <BaseSelect.ScrollUpButton className="flex items-center justify-center h-6 bg-input text-input-fg cursor-default">
             <ChevronUpIcon />
           </BaseSelect.ScrollUpButton>
           <BaseSelect.Viewport className="p-1">
             {items.map((group, groupIndex) => (
               <Fragment key={group.key}>
                 {groupIndex > 0 ? (
-                  <BaseSelect.Separator className="h-px bg-control-fg/10 m-1" />
+                  <BaseSelect.Separator className="h-px bg-input-fg/20 my-1" />
                 ) : null}
                 <BaseSelect.Group>
                   {group.label ? (
-                    <BaseSelect.Label className="px-3 text-xs font-bold leading-6 bg-control/60 uppercase">
+                    <BaseSelect.Label className="px-3 text-xs font-bold leading-6 text-input-fg/70 uppercase">
                       {group.label}
                     </BaseSelect.Label>
                   ) : null}
@@ -127,7 +127,7 @@ export const Select = forwardRef<SelectElement, SelectProps>(
               </Fragment>
             ))}
           </BaseSelect.Viewport>
-          <BaseSelect.ScrollDownButton className="flex items-center justify-center h-6 bg-control text-control-fg cursor-default">
+          <BaseSelect.ScrollDownButton className="flex items-center justify-center h-6 bg-input text-input-fg cursor-default">
             <ChevronDownIcon />
           </BaseSelect.ScrollDownButton>
         </BaseSelect.Content>
