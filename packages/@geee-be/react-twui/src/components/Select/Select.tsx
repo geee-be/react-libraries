@@ -98,7 +98,7 @@ export const Select = forwardRef<SelectElement, SelectProps>(
         </BaseSelect.Icon>
       </BaseSelect.Trigger>
       <BaseSelect.Portal>
-        <BaseSelect.Content className="bg-input overflow-hidden bg-input rounded-[calc(var(--control-radius)+var(--ring-width))] border-[oklch(from_var(--color-ring)_l_c_h/var(--ring-opacity))] border-(length:--ring-width) shadow-2xl">
+        <BaseSelect.Content className="overflow-hidden bg-input rounded-[calc(var(--control-radius)+var(--ring-width))] border-[oklch(from_var(--color-ring)_l_c_h/var(--ring-opacity))] border-(length:--ring-width) shadow-2xl">
           <BaseSelect.ScrollUpButton className="flex items-center justify-center h-6 bg-input text-input-fg cursor-default">
             <ChevronUpIcon />
           </BaseSelect.ScrollUpButton>
