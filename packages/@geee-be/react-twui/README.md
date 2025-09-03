@@ -147,16 +147,40 @@ Most components support size and variant props:
 
 ```tsx
 // Button variants
-<Button variant="default">Default</Button>
+<Button variant="solid">Solid</Button>
 <Button variant="outline">Outline</Button>
 <Button variant="ghost">Ghost</Button>
+<Button variant="input">Input</Button>
+<Button variant="card">Card</Button>
 <Button variant="link">Link</Button>
 
 // Button sizes
+<Button size="xs">Extra Small</Button>
 <Button size="sm">Small</Button>
 <Button size="md">Medium</Button>
-<Button size="lg">Large</Button>
-<Button size="xl">Extra Large</Button>
+
+// Button shapes
+<Button shape="rounded">Rounded</Button>
+<Button shape="pill">Pill</Button>
+<Button shape="icon">
+  <IconComponent />
+</Button>
+
+// Button colors
+<Button color="default">Default</Button>
+<Button color="primary">Primary</Button>
+<Button color="secondary">Secondary</Button>
+<Button color="gray">Gray</Button>
+<Button color="info">Info</Button>
+<Button color="warning">Warning</Button>
+<Button color="success">Success</Button>
+<Button color="error">Error</Button>
+<Button color="danger">Danger</Button>
+
+// Combining variants
+<Button variant="outline" color="primary" shape="pill" size="sm">
+  Pill Primary Outline
+</Button>
 ```
 
 ## 🔧 Advanced Usage
@@ -201,26 +225,82 @@ Components are designed for easy composition:
 
 ### Form Integration
 
-Works seamlessly with form libraries:
+Works seamlessly with form libraries like React Hook Form. Use the dedicated Form* components for integrated validation and error handling:
 
 ```tsx
 import { useForm } from 'react-hook-form';
-import { Button, Input, Label } from '@geee-be/react-twui';
+import {
+  Button,
+  FormInput,
+  FormSelect,
+  FormCheckbox,
+  FormDatePicker
+} from '@geee-be/react-twui';
 
-function LoginForm() {
-  const { register, handleSubmit } = useForm();
+function ProfileForm() {
+  const { control, handleSubmit } = useForm();
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <FormInput
+        control={control}
+        name="email"
+        label="Email Address"
+        placeholder="Enter your email"
+        required="Email is required"
+      />
+
+      <FormSelect
+        control={control}
+        name="country"
+        label="Country"
+        placeholder="Select your country"
+        items={[
+          {
+            key: 'countries',
+            label: 'Countries',
+            items: [
+              { key: 'us', label: 'United States' },
+              { key: 'ca', label: 'Canada' },
+              { key: 'uk', label: 'United Kingdom' },
+            ],
+          },
+        ]}
+      />
+
+      <FormDatePicker
+        control={control}
+        name="birthDate"
+        label="Date of Birth"
+      />
+
+      <FormCheckbox
+        control={control}
+        name="newsletter"
+        label="Subscribe to newsletter"
+        description="Get updates about new features and releases"
+      />
+
+      <Button type="submit">Save Profile</Button>
+    </form>
+  );
+}
+
+// For manual form handling without React Hook Form
+import { Input, Label } from '@geee-be/react-twui';
+
+function SimpleForm() {
+  return (
+    <form className="space-y-4">
       <div>
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
           type="email"
-          {...register('email', { required: true })}
+          placeholder="Enter your email"
         />
       </div>
-      <Button type="submit">Sign In</Button>
+      <Button type="submit">Submit</Button>
     </form>
   );
 }
@@ -243,10 +323,6 @@ export default function Page() {
   return <Button>Server Rendered</Button>;
 }
 ```
-
-## 📚 Storybook Documentation
-
-Explore all components interactively in our [Storybook documentation](https://geee-be-react-twui.netlify.app) (link placeholder).
 
 ## 🔗 Related Packages
 

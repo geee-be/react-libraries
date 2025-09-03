@@ -149,7 +149,7 @@ react-libraries/
 ## 🎨 Styling Approach
 
 ### Tailwind CSS v4
-- Modern CSS features with `@property` support
+- Modern CSS features
 - CSS custom properties for theming
 - Utility-first approach with semantic color tokens
 - Dark mode support built-in
