@@ -114,30 +114,34 @@ function App() {
 Customize the design system using CSS custom properties:
 
 ```css
-:root {
-  --primary: 220 100% 50%;
-  --primary-fg: 0 0% 100%;
-  --secondary: 220 20% 95%;
-  --secondary-fg: 220 20% 10%;
-  --background: 0 0% 100%;
-  --foreground: 0 0% 5%;
-  --info: 200 100% 50%;
-  --warning: 45 100% 60%;
-  --error: 0 100% 60%;
-  --danger: 0 100% 60%;
-  --input: 220 20% 95%;
-  --input-fg: 220 20% 10%;
-  --input-border: 220 20% 80%;
-}
+@theme {
+  /* Background and foreground */
+  --color-background: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
+  --color-foreground: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
 
-[data-theme='dark'] {
-  --primary: 220 100% 60%;
-  --primary-fg: 0 0% 100%;
-  --secondary: 220 20% 15%;
-  --secondary-fg: 220 20% 90%;
-  --background: 0 0% 5%;
-  --foreground: 0 0% 95%;
-  /* ... other dark mode colors */
+  /* Primary color */
+  --color-primary: #ec740c;
+  --color-primary-fg: oklch(from var(--color-primary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+  /* Secondary color */
+  --color-secondary: #5722ff;
+  --color-secondary-fg: oklch(from var(--color-secondary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+  /* Status colors */
+  --color-info: light-dark(#1485ff, #0a71df);
+  --color-warning: light-dark(#ffc233, #e7a60c);
+  --color-success: light-dark(#6fd626, #55a919);
+  --color-error: #f40909;
+  --color-danger: #f40909;
+
+  /* Input controls */
+  --color-input: light-dark(hsl(0 0% 98%), hsl(0 0% 15%));
+  --color-input-fg: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
+  --color-input-border: light-dark(hsl(0 0% 50%), hsl(0 0% 70%));
+
+  /* Paper/Card surfaces */
+  --color-paper: light-dark(hsl(255, 0%, 97%), hsl(255, 0%, 15%));
+  --color-paper-fg: light-dark(hsl(255 0% 20%), hsl(255 0% 87.5%));
 }
 ```
 
