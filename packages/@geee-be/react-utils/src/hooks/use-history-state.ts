@@ -17,10 +17,6 @@ export const useHistoryState = <T, S = T>(
   replace = true,
   options?: SerializationOptions<T, S>,
 ): Response<T> => {
-  if (typeof history === 'undefined') {
-    return [undefined, () => {}, false];
-  }
-
   const [value, setValue] = useState<T | typeof LOADING>(LOADING);
 
   useEffect(() => {
