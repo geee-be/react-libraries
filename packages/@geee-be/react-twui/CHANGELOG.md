@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.1
+
+### Patch Changes
+
+- e7e22e2: refactor: Remove Cropper component styles from twui.css for better organization
+
 ## 2.0.0
 
 ### Major Changes
