@@ -191,40 +191,80 @@ function App() {
 }
 ```
 
-#### `SubComponent`
-Utilities for component composition patterns.
+#### `withSubComponents`
+Utility for creating compound components with sub-components.
 
 ```tsx
-import { SubComponent } from '@geee-be/react-utils';
+import { withSubComponents } from '@geee-be/react-utils';
 
 // Create compound components easily
-const Card = SubComponent.create('Card', {
+const Card = withSubComponents(CardRoot, {
   Header: CardHeader,
   Content: CardContent,
   Footer: CardFooter
 });
+
+// Usage
+<Card>
+  <Card.Header>Title</Card.Header>
+  <Card.Content>Content here</Card.Content>
+</Card>
+```
+
+#### `Monitor`
+Development component for monitoring component renders and lifecycle.
+
+```tsx
+import { Monitor } from '@geee-be/react-utils';
+
+function DebugComponent() {
+  return (
+    <Monitor label="MyComponent">
+      <MyComponent />
+    </Monitor>
+  );
+}
+// Logs: "MyComponent mounted", "MyComponent rendered 1", etc.
 ```
 
 ### Effects and Interactions
 
-#### `ripple`
-Material Design ripple effect implementation.
+#### `createRipple`
+Material Design ripple effect implementation for click interactions.
 
 ```tsx
-import { ripple } from '@geee-be/react-utils';
+import { createRipple } from '@geee-be/react-utils';
 
 function RippleButton() {
-  const handleClick = (event) => {
-    ripple(event.currentTarget, { duration: 600, color: 'rgba(255,255,255,0.5)' });
-  };
-
   return (
-    <button onClick={handleClick} className="relative overflow-hidden">
+    <button
+      onClick={createRipple}
+      className="relative overflow-hidden"
+    >
       Click for Ripple Effect
     </button>
   );
 }
+
+// Or use with custom event handler
+function CustomButton() {
+  const handleClick = (event) => {
+    createRipple(event);
+    // Your custom logic here
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="relative overflow-hidden"
+    >
+      Custom Click Handler
+    </button>
+  );
+}
 ```
+
+NOTE: it is important that the button has `className="relative"`
 
 ## 🌐 SSR Compatibility
 

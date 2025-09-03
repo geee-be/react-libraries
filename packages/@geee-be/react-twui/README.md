@@ -35,7 +35,7 @@ npm install react react-dom tailwindcss
 
 **Required versions:**
 - React >= 18.0.0
-- Tailwind CSS >= 4.0.0 (alpha)
+- Tailwind CSS >= 4.0.0 (this library is built for Tailwind CSS v4)
 
 ## 🚀 Quick Start
 
@@ -76,24 +76,32 @@ function App() {
 - **AspectRatio** - Maintain consistent aspect ratios
 - **Separator** - Visual dividers and spacers
 - **Skeleton** - Loading placeholders
+- **Join** - Component for joining elements with visual separators
+- **ScrollArea** - Custom scrollable areas with styled scrollbars
 
 ### Navigation
 - **Breadcrumb** - Navigation breadcrumbs
 - **Pagination** - Page navigation controls
 - **Sidebar** - Collapsible sidebar navigation
+- **DropdownMenu** - Context menus and dropdown navigation
+- **Command** - Command palette and search interface
 
 ### Form Controls
 - **Button** - Clickable actions with multiple variants
 - **Input** - Text input with validation states
 - **Checkbox** - Toggle selections
 - **Select** - Dropdown selections
+- **Combobox** - Searchable select with autocomplete
 - **DatePicker** - Date selection with calendar
+- **YearPicker** - Year selection component
 - **InputFile** - File upload with drag and drop
 - **InputOtp** - One-time password input
+- **Label** - Form labels with helper text
+- **FormControl** - Form field wrapper with validation support
 
 ### Feedback
 - **Alert** - Status messages and notifications
-- **Toast** - Temporary notifications
+- **Toast** - Temporary notifications (powered by react-toastify)
 - **Tooltip** - Contextual information on hover
 - **Spinner** - Loading indicators
 
@@ -102,12 +110,18 @@ function App() {
 - **Drawer** - Slide-out panels
 - **Popover** - Floating content containers
 - **Sheet** - Side panels and overlays
+- **Collapsible** - Expandable and collapsible content containers
 
 ### Data Display
 - **Avatar** - User profile images with fallbacks
 - **Calendar** - Full calendar component
 - **Carousel** - Image and content carousels
-- **Command** - Command palette and search
+- **Cropper** - Image cropping and editing
+
+### Utilities
+- **ShortcutKey** - Display keyboard shortcuts
+- **WithIcon** - Icon wrapper utilities
+- **Async** - Async content loading states
 
 ## 🎨 Theming
 
@@ -327,6 +341,21 @@ export default function Page() {
   return <Button>Server Rendered</Button>;
 }
 ```
+
+## 📚 Storybook Documentation
+
+Explore all components interactively in our Storybook documentation. Run locally with:
+
+```bash
+cd packages/@geee-be/react-twui
+pnpm storybook
+```
+
+This will start Storybook on `http://localhost:6006` where you can:
+- View all components with live examples
+- Test different props and variants
+- See component documentation
+- Interact with components in isolation
 
 ## 🔗 Related Packages
 
