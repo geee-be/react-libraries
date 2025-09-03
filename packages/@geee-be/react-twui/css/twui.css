@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@import "../src/components/Cropper/style.css";
+@import "../src/components/Cropper/custom.css";
+@import "../src/components/Cropper/compact.css";
+
 @import "./reset.css";
 @import "./theme.css";
 @import "./calculations.css";

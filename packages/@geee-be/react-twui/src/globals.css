@@ -1,7 +1,0 @@
-@import "tailwindcss";
-
-@import "./components/Cropper/style.css";
-@import "./components/Cropper/custom.css";
-@import "./components/Cropper/compact.css";
-
-@import "../css/twui.css";

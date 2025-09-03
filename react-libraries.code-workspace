@@ -49,7 +49,7 @@
       "**/.DS_Store": true,
       "**/.git": true,
       "**/.rush": true,
-      "**/.vscode": true,
+      "**/.vscode": false,
       "**/node_modules": true,
       "dist": true,
       "packages": true
