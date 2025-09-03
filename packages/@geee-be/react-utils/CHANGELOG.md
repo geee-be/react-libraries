@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.3.1
+
+### Patch Changes
+
+- 1cdc182: Tidy ups
+
 ## 1.3.0
 
 ### Minor Changes
