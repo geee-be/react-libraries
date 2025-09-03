@@ -1,3 +1,5 @@
+@reference "../../../css/twui.css";
+
 .advanced-cropper-line-wrapper--north,
 .advanced-cropper-line-wrapper--south {
   height: 12px;
