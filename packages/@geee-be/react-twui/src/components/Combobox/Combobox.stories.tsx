@@ -1,6 +1,6 @@
-import { useArgs } from '@storybook/preview-api';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
+import { useArgs } from 'storybook/preview-api';
 import type { ComboboxGroupProps } from './Combobox.js';
 import { Combobox } from './Combobox.js';
 

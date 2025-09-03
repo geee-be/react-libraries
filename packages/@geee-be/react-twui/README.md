@@ -1,0 +1,382 @@
+# @geee-be/react-twui
+
+A comprehensive React UI component library built with Tailwind CSS v4 and Radix UI primitives. Designed for modern applications with accessibility, customization, and developer experience in mind.
+
+[![npm version](https://badge.fury.io/js/%40geee-be%2Freact-twui.svg)](https://www.npmjs.com/package/@geee-be/react-twui)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## ✨ Features
+
+- 🎨 **Modern Design System** - Built with Tailwind CSS v4 and semantic color tokens
+- ♿ **Accessibility First** - WCAG compliant with proper ARIA support using Radix UI
+- 🎯 **TypeScript Native** - Full type safety with comprehensive TypeScript definitions
+- 🌙 **Dark Mode Ready** - Built-in dark mode support with CSS custom properties
+- 📦 **Tree Shakeable** - Optimized bundle size with ES modules
+- 🔧 **Highly Customizable** - Easy theming with CSS custom properties
+- 📱 **Responsive** - Mobile-first design with flexible layouts
+- ⚡ **Performance Focused** - Minimal re-renders and optimized components
+
+## 📋 Installation
+
+```bash
+npm install @geee-be/react-twui
+# or
+pnpm add @geee-be/react-twui
+# or
+yarn add @geee-be/react-twui
+```
+
+### Peer Dependencies
+
+```bash
+npm install react react-dom tailwindcss
+```
+
+**Required versions:**
+- React >= 18.0.0
+- Tailwind CSS >= 4.0.0 (this library is built for Tailwind CSS v4)
+
+## 🚀 Quick Start
+
+### 1. Setup Tailwind CSS
+
+Add to your CSS file:
+
+```css
+@import 'tailwindcss';
+@import '@geee-be/react-twui/css/twui.css';
+```
+
+### 2. Basic Usage
+
+```tsx
+import { Button, Card, Input } from '@geee-be/react-twui';
+
+function App() {
+  return (
+    <Card className="w-96">
+      <Card.Header>
+        <Card.Title>Welcome</Card.Title>
+        <Card.Description>Get started with our component library</Card.Description>
+      </Card.Header>
+      <Card.Content className="space-y-4">
+        <Input placeholder="Enter your name" />
+        <Button className="w-full">Get Started</Button>
+      </Card.Content>
+    </Card>
+  );
+}
+```
+
+## 🧩 Components
+
+### Layout & Structure
+- **Card** - Flexible container with header, content, and footer
+- **AspectRatio** - Maintain consistent aspect ratios
+- **Separator** - Visual dividers and spacers
+- **Skeleton** - Loading placeholders
+- **Join** - Component for joining elements with visual separators
+- **ScrollArea** - Custom scrollable areas with styled scrollbars
+
+### Navigation
+- **Breadcrumb** - Navigation breadcrumbs
+- **Pagination** - Page navigation controls
+- **Sidebar** - Collapsible sidebar navigation
+- **DropdownMenu** - Context menus and dropdown navigation
+- **Command** - Command palette and search interface
+
+### Form Controls
+- **Button** - Clickable actions with multiple variants
+- **Input** - Text input with validation states
+- **Checkbox** - Toggle selections
+- **Select** - Dropdown selections
+- **Combobox** - Searchable select with autocomplete
+- **DatePicker** - Date selection with calendar
+- **YearPicker** - Year selection component
+- **InputFile** - File upload with drag and drop
+- **InputOtp** - One-time password input
+- **Label** - Form labels with helper text
+- **FormControl** - Form field wrapper with validation support
+
+### Feedback
+- **Alert** - Status messages and notifications
+- **Toast** - Temporary notifications (powered by react-toastify)
+- **Tooltip** - Contextual information on hover
+- **Spinner** - Loading indicators
+
+### Overlays
+- **Dialog** - Modal dialogs and confirmations
+- **Drawer** - Slide-out panels
+- **Popover** - Floating content containers
+- **Sheet** - Side panels and overlays
+- **Collapsible** - Expandable and collapsible content containers
+
+### Data Display
+- **Avatar** - User profile images with fallbacks
+- **Calendar** - Full calendar component
+- **Carousel** - Image and content carousels
+- **Cropper** - Image cropping and editing
+
+### Utilities
+- **ShortcutKey** - Display keyboard shortcuts
+- **WithIcon** - Icon wrapper utilities
+- **Async** - Async content loading states
+
+## 🎨 Theming
+
+Customize the design system using CSS custom properties:
+
+```css
+@theme {
+  /* Background and foreground */
+  --color-background: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
+  --color-foreground: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
+
+  /* Primary color */
+  --color-primary: #ec740c;
+  --color-primary-fg: oklch(from var(--color-primary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+  /* Secondary color */
+  --color-secondary: #5722ff;
+  --color-secondary-fg: oklch(from var(--color-secondary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+
+  /* Status colors */
+  --color-info: light-dark(#1485ff, #0a71df);
+  --color-warning: light-dark(#ffc233, #e7a60c);
+  --color-success: light-dark(#6fd626, #55a919);
+  --color-error: #f40909;
+  --color-danger: #f40909;
+
+  /* Input controls */
+  --color-input: light-dark(hsl(0 0% 98%), hsl(0 0% 15%));
+  --color-input-fg: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
+  --color-input-border: light-dark(hsl(0 0% 50%), hsl(0 0% 70%));
+
+  /* Paper/Card surfaces */
+  --color-paper: light-dark(hsl(255, 0%, 97%), hsl(255, 0%, 15%));
+  --color-paper-fg: light-dark(hsl(255 0% 20%), hsl(255 0% 87.5%));
+}
+```
+
+### Component Variants
+
+Most components support size and variant props:
+
+```tsx
+// Button variants
+<Button variant="solid">Solid</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="input">Input</Button>
+<Button variant="card">Card</Button>
+<Button variant="link">Link</Button>
+
+// Button sizes
+<Button size="xs">Extra Small</Button>
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+
+// Button shapes
+<Button shape="rounded">Rounded</Button>
+<Button shape="pill">Pill</Button>
+<Button shape="icon">
+  <IconComponent />
+</Button>
+
+// Button colors
+<Button color="default">Default</Button>
+<Button color="primary">Primary</Button>
+<Button color="secondary">Secondary</Button>
+<Button color="gray">Gray</Button>
+<Button color="info">Info</Button>
+<Button color="warning">Warning</Button>
+<Button color="success">Success</Button>
+<Button color="error">Error</Button>
+<Button color="danger">Danger</Button>
+
+// Combining variants
+<Button variant="outline" color="primary" shape="pill" size="sm">
+  Pill Primary Outline
+</Button>
+```
+
+## 🔧 Advanced Usage
+
+### Custom Styling
+
+Use the `className` prop to add custom styles:
+
+```tsx
+<Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
+  Gradient Button
+</Button>
+```
+
+### Composition Patterns
+
+Components are designed for easy composition:
+
+```tsx
+<Card>
+  <Card.Header>
+    <div className="flex items-center space-x-2">
+      <Avatar>
+        <Avatar.Image src="/avatar.jpg" />
+        <Avatar.Fallback>JD</Avatar.Fallback>
+      </Avatar>
+      <div>
+        <Card.Title>John Doe</Card.Title>
+        <Card.Description>Software Engineer</Card.Description>
+      </div>
+    </div>
+  </Card.Header>
+  <Card.Content>
+    <p>Building amazing user interfaces with React and Tailwind CSS.</p>
+  </Card.Content>
+  <Card.Footer className="flex justify-between">
+    <Button variant="outline">Follow</Button>
+    <Button>Message</Button>
+  </Card.Footer>
+</Card>
+```
+
+### Form Integration
+
+Works seamlessly with form libraries like React Hook Form. Use the dedicated Form* components for integrated validation and error handling:
+
+```tsx
+import { useForm } from 'react-hook-form';
+import {
+  Button,
+  FormInput,
+  FormSelect,
+  FormCheckbox,
+  FormDatePicker
+} from '@geee-be/react-twui';
+
+function ProfileForm() {
+  const { control, handleSubmit } = useForm();
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <FormInput
+        control={control}
+        name="email"
+        label="Email Address"
+        placeholder="Enter your email"
+        required="Email is required"
+      />
+
+      <FormSelect
+        control={control}
+        name="country"
+        label="Country"
+        placeholder="Select your country"
+        items={[
+          {
+            key: 'countries',
+            label: 'Countries',
+            items: [
+              { key: 'us', label: 'United States' },
+              { key: 'ca', label: 'Canada' },
+              { key: 'uk', label: 'United Kingdom' },
+            ],
+          },
+        ]}
+      />
+
+      <FormDatePicker
+        control={control}
+        name="birthDate"
+        label="Date of Birth"
+      />
+
+      <FormCheckbox
+        control={control}
+        name="newsletter"
+        label="Subscribe to newsletter"
+        description="Get updates about new features and releases"
+      />
+
+      <Button type="submit">Save Profile</Button>
+    </form>
+  );
+}
+
+// For manual form handling without React Hook Form
+import { Input, Label } from '@geee-be/react-twui';
+
+function SimpleForm() {
+  return (
+    <form className="space-y-4">
+      <div>
+        <Label htmlFor="email">Email</Label>
+        <Input
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+        />
+      </div>
+      <Button type="submit">Submit</Button>
+    </form>
+  );
+}
+```
+
+## 🌐 SSR Compatibility
+
+All components are server-side rendering compatible and work with:
+
+- **Next.js** (App Router & Pages Router)
+- **Remix**
+- **Gatsby**
+- **Vite SSR**
+
+```tsx
+// No hydration issues or client-only requirements
+import { Button } from '@geee-be/react-twui';
+
+export default function Page() {
+  return <Button>Server Rendered</Button>;
+}
+```
+
+## 📚 Storybook Documentation
+
+Explore all components interactively in our Storybook documentation. Run locally with:
+
+```bash
+cd packages/@geee-be/react-twui
+pnpm storybook
+```
+
+This will start Storybook on `http://localhost:6006` where you can:
+- View all components with live examples
+- Test different props and variants
+- See component documentation
+- Interact with components in isolation
+
+## 🔗 Related Packages
+
+- **[@geee-be/react-utils](https://www.npmjs.com/package/@geee-be/react-utils)** - Companion utility hooks
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Radix UI](https://www.radix-ui.com/)** - Low-level UI primitives
+
+## 🙏 Credits
+
+This library is built on the shoulders of giants:
+
+- **[shadcn/ui](https://ui.shadcn.com/)** - Many components are based on or inspired by the excellent shadcn/ui component library
+- **[Radix UI](https://www.radix-ui.com/)** - Provides the accessible, unstyled component primitives that power our components
+- **[Tailwind CSS](https://tailwindcss.com/)** - The utility-first CSS framework that makes styling a joy
+
+Special thanks to [@shadcn](https://github.com/shadcn) for creating an amazing foundation and to the Radix UI team for their commitment to accessibility.
+
+## 📄 License
+
+MIT License - see [LICENSE](../../LICENSE) file for details.
+
+## 🐛 Issues & Support
+
+Found a bug or need help? Please [open an issue](https://github.com/geee-be/react-libraries/issues) on GitHub.

@@ -1,3 +1,4 @@
+export type { CarouselApi } from './Carousel.js';
 export {
   Carousel,
   CarouselContent,
@@ -5,4 +6,3 @@ export {
   CarouselNext,
   CarouselPrevious,
 } from './Carousel.js';
-export type { CarouselApi } from './Carousel.js';

@@ -7,57 +7,56 @@ export const alertVariants = cva({
       expanded: 'gap-1 rounded-r-lg border-l-2 p-4 pl-14px',
     },
     color: {
-      default:
-        'border-default-muted-fg bg-default-muted text-paper-fg default-default',
-      primary:
-        'border-primary-muted-fg bg-primary-muted text-paper-fg default-primary',
+      default: 'border-default bg-default text-default-fg default-default',
+      primary: 'border-primary bg-primary text-primary-fg default-primary',
       secondary:
-        'border-secondary-muted-fg bg-secondary-muted text-paper-fg default-secondary',
-      info: 'border-info-muted-fg bg-info-muted text-paper-fg default-info',
-      warning:
-        'border-warning-muted-fg bg-warning-muted text-paper-fg default-warning',
-      success:
-        'border-success-muted-fg bg-success-muted text-paper-fg default-success',
-      error: 'border-error-muted-fg bg-error-muted text-paper-fg default-error',
+        'border-secondary bg-secondary text-secondary-fg default-secondary',
+      info: 'border-info bg-info text-info-fg default-info',
+      warning: 'border-warning bg-warning text-warning-fg default-warning',
+      success: 'border-success bg-success text-success-fg default-success',
+      error: 'border-error bg-error text-error-fg default-error',
+      danger: 'border-danger bg-danger text-danger-fg default-danger',
     },
   },
   defaultVariants: {
     variant: 'inline',
     color: 'default',
   },
-});
-
-export const alertTitleVariants = cva({
-  base: 'text-start font-bold',
-  variants: {
-    color: {
-      default: 'text-default-muted-fg',
-      primary: 'text-primary-muted-fg',
-      secondary: 'text-secondary-muted-fg',
-      info: 'text-info-muted-fg',
-      warning: 'text-warning-muted-fg',
-      success: 'text-success-muted-fg',
-      error: 'text-error-muted-fg',
+  compoundVariants: [
+    {
+      variant: 'expanded',
+      color: 'default',
+      class: 'border-default bg-default-muted text-default-muted-fg',
     },
-  },
-  defaultVariants: {
-    color: 'default',
-  },
-});
-
-export const alertIconVariants = cva({
-  variants: {
-    color: {
-      default: 'text-default-muted-fg',
-      primary: 'text-primary-muted-fg',
-      secondary: 'text-secondary-muted-fg',
-      info: 'text-info-muted-fg',
-      warning: 'text-warning-muted-fg',
-      success: 'text-success-muted-fg',
-      error: 'text-error-muted-fg',
+    {
+      variant: 'expanded',
+      color: 'primary',
+      class: 'border-primary bg-primary-muted text-primary-muted-fg',
     },
-  },
-  defaultVariants: {
-    color: 'default',
-  },
+    {
+      variant: 'expanded',
+      color: 'secondary',
+      class: 'border-secondary bg-secondary-muted text-secondary-muted-fg',
+    },
+    {
+      variant: 'expanded',
+      color: 'info',
+      class: 'border-info bg-info-muted text-info-muted-fg',
+    },
+    {
+      variant: 'expanded',
+      color: 'warning',
+      class: 'border-warning bg-warning-muted text-warning-muted-fg',
+    },
+    {
+      variant: 'expanded',
+      color: 'error',
+      class: 'border-error bg-error-muted text-error-muted-fg',
+    },
+    {
+      variant: 'expanded',
+      color: 'danger',
+      class: 'border-danger bg-danger-muted text-danger-muted-fg',
+    },
+  ],
 });

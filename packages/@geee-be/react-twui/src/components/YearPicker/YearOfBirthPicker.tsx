@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, type ChangeEvent, type InputHTMLAttributes } from 'react';
+import { type ChangeEvent, forwardRef, type InputHTMLAttributes } from 'react';
 import { YearPicker } from './YearPicker';
 
 type YearOfBirthPickerElement = Omit<HTMLInputElement, 'onChange' | 'value'> & {
@@ -21,7 +21,7 @@ export type YearOfBirthPickerProps = Omit<
 export const YearOfBirthPicker = forwardRef<
   YearOfBirthPickerElement,
   YearOfBirthPickerProps
->(({ className, destructive, disabled, onChange, value, ...props }, ref) => (
+>(({ className, destructive, disabled, onChange, ...props }, ref) => (
   <YearPicker
     ref={ref}
     {...props}

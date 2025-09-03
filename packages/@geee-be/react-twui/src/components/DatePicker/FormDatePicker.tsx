@@ -3,8 +3,8 @@
 import type { ReactElement, ReactNode } from 'react';
 import { useId } from 'react';
 import {
-  Controller,
   type Control,
+  Controller,
   type FieldPath,
   type FieldValues,
   type Message,
@@ -70,7 +70,9 @@ export const FormDatePicker = <
       control={control}
       name={name}
       rules={{
+        // biome-ignore lint/suspicious/noExplicitAny: needed
         min: min as ValidationRule<any>,
+        // biome-ignore lint/suspicious/noExplicitAny: needed
         max: max as ValidationRule<any>,
         required,
       }}
@@ -113,7 +115,8 @@ export const FormDatePicker = <
             }
             // name={name}
             onBlur={field.onBlur}
-            onValueChange={(value) => {
+            // biome-ignore lint/suspicious/noExplicitAny: depends on mode
+            onValueChange={(value: any) => {
               field.onChange({ target: { name, value } });
             }}
             value={field.value}

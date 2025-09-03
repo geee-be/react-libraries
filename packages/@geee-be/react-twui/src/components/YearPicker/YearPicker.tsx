@@ -2,15 +2,15 @@
 
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 import {
+  type ChangeEvent,
+  type ComponentRef,
   forwardRef,
+  type InputHTMLAttributes,
+  type ReactNode,
   useEffect,
   useImperativeHandle,
   useRef,
   useState,
-  type ChangeEvent,
-  type ElementRef,
-  type InputHTMLAttributes,
-  type ReactNode,
 } from 'react';
 import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
@@ -56,20 +56,16 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
 
     const buttonRef = useRef<HTMLButtonElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
-    const popoverRef = useRef<ElementRef<typeof Popover>>(null);
+    const popoverRef = useRef<ComponentRef<typeof Popover>>(null);
 
-    useImperativeHandle(
-      ref,
-      () => {
-        return {
-          ...inputRef.current,
-          focus: (options?: FocusOptions) => {
-            buttonRef.current?.focus(options);
-          },
-        } as YearPickerElement;
-      },
-      [],
-    );
+    useImperativeHandle(ref, () => {
+      return {
+        ...inputRef.current,
+        focus: (options?: FocusOptions) => {
+          buttonRef.current?.focus(options);
+        },
+      } as YearPickerElement;
+    }, []);
 
     const [open, setOpen] = useState(false);
     const [internalValue, setInternalValue] = useState<number | undefined>(
@@ -174,9 +170,8 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
           <div className="flex items-center justify-between p-2 select-none">
             <Button
               variant="outline"
-              shape="pill"
-              size="sm-icon"
-              isIconOnly
+              shape="icon"
+              size="sm"
               onClick={() => handleDecadeChange(-1)}
               disabled={decade <= 1900}
               before={<ChevronLeftIcon />}
@@ -184,9 +179,8 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
             <div className="font-semibold">{decade}s</div>
             <Button
               variant="outline"
-              shape="pill"
-              size="sm-icon"
-              isIconOnly
+              shape="icon"
+              size="sm"
               onClick={() => handleDecadeChange(1)}
               disabled={decade >= Math.floor(currentYear / 10) * 10}
               after={<ChevronRightIcon />}

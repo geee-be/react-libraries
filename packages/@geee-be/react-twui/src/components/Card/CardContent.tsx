@@ -1,7 +1,6 @@
 import { Slot } from '@radix-ui/react-slot';
-import * as React from 'react';
-
 import type { VariantProps } from 'cva';
+import * as React from 'react';
 import { cn } from '../../helpers/utils.js';
 import { cardContentVariants } from './variants.js';
 

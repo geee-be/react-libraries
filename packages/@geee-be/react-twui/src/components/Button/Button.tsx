@@ -20,12 +20,6 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     asChild?: boolean;
 
     /**
-     * Does the button only contains an icon?
-     * If `true`, the button will be rendered with matching padding.
-     */
-    isIconOnly?: boolean;
-
-    /**
      * The slot to be rendered before the label.
      */
     before?: React.ReactElement<HTMLElement>;
@@ -47,9 +41,7 @@ export type ButtonElement = HTMLButtonElement;
 const iconOnlyPadding = {
   md: 'p-8px',
   sm: 'p-6px',
-  'xs-icon': 'p-2px',
-  'sm-icon': 'p-6px',
-  icon: '',
+  xs: 'p-6px',
 };
 
 export const Button = React.forwardRef<ButtonElement, ButtonProps>(
@@ -66,7 +58,6 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
       size = 'md',
       color = 'default',
       variant = 'solid',
-      isIconOnly = false,
       ...otherProps
     },
     ref,
@@ -79,10 +70,9 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
       return (
         (before && !after && !children && size) ??
         (after && !before && !children && size) ??
-        isIconOnly === true ??
-        false
+        shape === 'icon'
       );
-    }, [before, after, children, size, isIconOnly]);
+    }, [before, after, children, size, shape]);
 
     // Determine if the button is a 'link', 'outline', 'tertiary', or 'transparent' variant.
     const isVariantLinkOutlineTertiaryTransparent = React.useMemo(
@@ -118,24 +108,22 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
           <>
             {before ? renderIcon(before) : null}
             {isElementWithChildren(children) &&
-              isIconOnly &&
+              isIcon &&
               renderIcon(
                 children.props.children as React.ReactElement<HTMLElement>,
               )}
-            {isElementWithChildren(children) &&
-              !isIconOnly &&
-              children.props.children}
+            {isElementWithChildren(children) && children.props.children}
             {after ? renderIcon(after) : null}
           </>
         ),
-      })
+      } as Record<string, unknown>)
     ) : (
       <>
         {before ? renderIcon(before) : null}
         {React.isValidElement(children) &&
-          isIconOnly &&
+          isIcon &&
           renderIcon(children as React.ReactElement<HTMLElement>)}
-        {children && !isIconOnly && children}
+        {children}
         {after ? renderIcon(after) : null}
       </>
     );
@@ -154,7 +142,9 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
         disabled={disabled}
         {...otherProps}
         onClick={(e) => {
-          createRipple(e);
+          if (!['link', 'input'].includes(variant)) {
+            createRipple(e);
+          }
           otherProps.onClick?.(
             e as React.MouseEvent<HTMLButtonElement, MouseEvent>,
           );

@@ -1,5 +1,5 @@
 import type { VariantProps } from 'cva';
-import { forwardRef, type FC } from 'react';
+import { type FC, forwardRef } from 'react';
 import { cn } from '../../helpers/utils';
 import { spinnerVariants } from './variants';
 

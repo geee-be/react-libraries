@@ -1,11 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
   AudioWaveform,
   BadgeCheck,
   Bell,
   BookOpen,
   Bot,
-  Calendar,
   ChevronRight,
   ChevronsUpDown,
   Command,
@@ -14,14 +13,10 @@ import {
   Forward,
   Frame,
   GalleryVerticalEnd,
-  Home,
-  Inbox,
   LogOut,
   MoreHorizontal,
   PieChart,
   Plus,
-  Search,
-  Settings,
   Settings2,
   Sparkles,
   SquareTerminal,
@@ -83,34 +78,6 @@ const meta: Meta<typeof Sidebar> = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home,
-  },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox,
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar,
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: Search,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings,
-  },
-];
 
 const data = {
   user: {
@@ -272,7 +239,7 @@ export const SidebarDemo: Story = {
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
-                  className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+                  className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
                   align="start"
                   side="bottom"
                   sideOffset={4}
@@ -422,7 +389,7 @@ export const SidebarDemo: Story = {
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
-                  className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+                  className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
                   side="bottom"
                   align="end"
                   sideOffset={4}

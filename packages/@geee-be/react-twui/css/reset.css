@@ -1,0 +1,9 @@
+html,
+body {
+  @apply w-full h-full;
+}
+
+#storybook-docs .sbdocs .docs-story {
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+}

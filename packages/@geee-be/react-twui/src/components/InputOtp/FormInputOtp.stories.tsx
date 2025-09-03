@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react';
+import type { Meta } from '@storybook/react-vite';
 import type { FC } from 'react';
 import { useCallback, useEffect } from 'react';
 import type { SubmitErrorHandler } from 'react-hook-form';

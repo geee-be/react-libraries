@@ -5,11 +5,7 @@ import * as React from 'react';
 import { cn, isReactElement } from '../../helpers/utils.js';
 import { Button } from '../Button/index.js';
 import { CloseIcon, InfoIcon } from '../icons/index.js';
-import {
-  alertIconVariants,
-  alertTitleVariants,
-  alertVariants,
-} from './variants.js';
+import { alertVariants } from './variants.js';
 
 const defaultRootClasses =
   'antialiased flex text-sm leading-6 bg-surface items-start';
@@ -194,28 +190,16 @@ const AlertRoot = React.forwardRef<
 /* Before */
 const AlertBefore = React.forwardRef<
   HTMLElement,
-  React.HTMLAttributes<HTMLElement> & VariantProps<typeof alertIconVariants>
+  React.HTMLAttributes<HTMLElement>
 >(({ className, color, children, ...props }, ref) => {
   const Component = isReactElement(children) ? Slot : 'span';
 
   if (!children) {
-    return (
-      <InfoIcon
-        className={cn(
-          'h-6 w-6 shrink-0',
-          alertIconVariants({ color }),
-          className,
-        )}
-      />
-    );
+    return <InfoIcon className={cn('h-6 w-6 shrink-0', className)} />;
   }
 
   return (
-    <Component
-      ref={ref}
-      className={cn(alertIconVariants({ color }), className)}
-      {...props}
-    >
+    <Component ref={ref} className={className} {...props}>
       {children}
     </Component>
   );
@@ -238,15 +222,14 @@ const AlertAfter = React.forwardRef<
 /* Title */
 const AlertTitle = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement> &
-    VariantProps<typeof alertTitleVariants>
+  React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, color, children, ...props }, ref) => {
   const Component = isReactElement(children) ? Slot : 'div';
 
   return (
     <Component
       ref={ref}
-      className={cn('Alert-title', alertTitleVariants({ color }), className)}
+      className={cn('Alert-title font-bold', className)}
       {...props}
     >
       {children}
@@ -274,14 +257,15 @@ const AlertDescription = React.forwardRef<
 
 /* CloseButton */
 const AlertCloseButton = React.forwardRef<
-  React.ElementRef<typeof Button>,
+  React.ComponentRef<typeof Button>,
   React.ComponentPropsWithoutRef<typeof Button>
 >(({ children, ...otherProps }, ref) => {
   const renderCloseIcon = (
     children: React.ReactNode,
   ): React.ReactElement<HTMLElement> => {
     return isReactElement(children) ? (
-      children
+      // biome-ignore lint/complexity/noUselessFragments: otherwise there is a type error
+      <>{children}</>
     ) : (
       <CloseIcon aria-label="Close" />
     );
@@ -291,9 +275,9 @@ const AlertCloseButton = React.forwardRef<
     <Button
       ref={ref}
       after={renderCloseIcon(children)}
-      shape="rounded"
-      size="xs-icon"
-      variant="link"
+      shape="icon"
+      size="sm"
+      variant="ghost"
       {...otherProps}
     />
   );

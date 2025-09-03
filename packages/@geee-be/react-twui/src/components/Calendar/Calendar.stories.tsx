@@ -1,9 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { addDays } from 'date-fns';
 import { Calendar } from './index.js';
 
 const meta = {
   component: Calendar,
+  args: {
+    mode: 'single',
+  },
   argTypes: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof Calendar>;
@@ -17,7 +20,7 @@ export const Default: Story = {
 
 export const WithSelectedDate: Story = {
   args: {
-    selected: new Date(),
+    selected: addDays(new Date(), 2),
   },
 };
 

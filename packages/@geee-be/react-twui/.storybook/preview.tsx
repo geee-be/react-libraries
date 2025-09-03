@@ -1,7 +1,7 @@
-import type { Preview } from '@storybook/react';
-import React, { useEffect } from 'react';
+import type { Preview } from '@storybook/react-vite';
+import { useEffect } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
-import '../src/globals.css';
+import '../css/twui.css';
 
 const preview: Preview = {
   decorators: [

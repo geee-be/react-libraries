@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
 type AsyncProps<T> = {
   error?: (e: unknown) => ReactNode;
@@ -13,6 +13,7 @@ export function Async<T>({ error, fallback, waitFor, render }: AsyncProps<T>) {
   useEffect(() => {
     waitFor()
       .then((data) => {
+        // biome-ignore lint/complexity/noUselessFragments: otherwise there is a type error
         setContent(render ? render(data) : <>{data}</>);
       })
       .catch((e) => {

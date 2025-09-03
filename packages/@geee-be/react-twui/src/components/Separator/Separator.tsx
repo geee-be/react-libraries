@@ -5,7 +5,7 @@ import * as React from 'react';
 import { cn } from '../../helpers/utils';
 
 const Separator = React.forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
+  React.ComponentRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
 >(
   (
@@ -18,7 +18,7 @@ const Separator = React.forwardRef<
       orientation={orientation}
       className={cn(
         'shrink-0 bg-paper-border',
-        orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
+        orientation === 'horizontal' ? 'h-px w-full' : 'h-full w-px',
         className,
       )}
       {...props}

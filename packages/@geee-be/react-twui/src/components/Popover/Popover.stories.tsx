@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Label } from '../Label';
@@ -35,18 +35,22 @@ export const Default: Story = {
             <div className="grid gap-2">
               <div className="grid grid-cols-2 items-center gap-4">
                 <Label htmlFor="width">Width</Label>
+                {/** biome-ignore lint/correctness/useUniqueElementIds: test */}
                 <Input id="width" defaultValue="100%" />
               </div>
               <div className="grid grid-cols-2 items-center gap-4">
                 <Label htmlFor="maxWidth">Max. width</Label>
+                {/** biome-ignore lint/correctness/useUniqueElementIds: test */}
                 <Input id="maxWidth" defaultValue="300px" />
               </div>
               <div className="grid grid-cols-2 items-center gap-4">
                 <Label htmlFor="height">Height</Label>
+                {/** biome-ignore lint/correctness/useUniqueElementIds: test */}
                 <Input id="height" defaultValue="25px" />
               </div>
               <div className="grid grid-cols-2 items-center gap-4">
                 <Label htmlFor="maxHeight">Max. height</Label>
+                {/** biome-ignore lint/correctness/useUniqueElementIds: test */}
                 <Input id="maxHeight" defaultValue="none" />
               </div>
             </div>

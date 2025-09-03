@@ -7,11 +7,11 @@ import {
   isElementWithChildren,
   isReactElement,
 } from '../../helpers/utils.js';
-import { Tooltip } from '../Tooltip/index.js';
 import { RequiredIcon } from '../icons/index.js';
+import { Tooltip } from '../Tooltip/index.js';
 
 /* ---------------------------------- Types --------------------------------- */
-export type LabelElement = React.ElementRef<typeof LabelPrimitive.Root>;
+export type LabelElement = React.ComponentRef<typeof LabelPrimitive.Root>;
 export type LabelProps = React.ComponentPropsWithoutRef<
   typeof LabelPrimitive.Root
 > & {
@@ -46,18 +46,21 @@ const LabelComponent = React.forwardRef<LabelElement, LabelProps>(
     const useAsChild = asChild && isReactElement(children);
 
     const innerContent = useAsChild ? (
-      React.cloneElement(children, {
-        children: (
-          <>
-            {isElementWithChildren(children) && children.props.children}
-            {required && (
-              <span className="text-error">
-                <RequiredIcon size="0.7em" />
-              </span>
-            )}
-          </>
-        ),
-      })
+      React.cloneElement(
+        children as React.ReactElement<{ children?: React.ReactNode }>,
+        {
+          children: (
+            <>
+              {isElementWithChildren(children) && children.props.children}
+              {required && (
+                <span className="text-error">
+                  <RequiredIcon size="0.7em" />
+                </span>
+              )}
+            </>
+          ),
+        },
+      )
     ) : (
       <>
         {children ? <span>{children}</span> : null}

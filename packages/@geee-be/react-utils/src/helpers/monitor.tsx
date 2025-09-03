@@ -1,7 +1,7 @@
 'use client';
 
 import { useRenderCount } from '@uidotdev/usehooks';
-import { useEffect, type FC, type PropsWithChildren } from 'react';
+import { type FC, type PropsWithChildren, useEffect } from 'react';
 
 type Props = PropsWithChildren<{ label: string }>;
 

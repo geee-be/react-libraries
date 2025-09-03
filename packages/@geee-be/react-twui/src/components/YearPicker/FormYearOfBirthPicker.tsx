@@ -3,8 +3,8 @@
 import type { ReactElement, ReactNode } from 'react';
 import { useId } from 'react';
 import {
-  Controller,
   type Control,
+  Controller,
   type FieldPath,
   type FieldValues,
   type Message,
@@ -98,7 +98,6 @@ export const FormYearOfBirthPicker = <
         >
           <YearOfBirthPicker
             id={elId}
-            ref={field.ref}
             aria-describedby={helperText ? `${elId}__describer` : undefined}
             aria-invalid={ariaInvalid}
             aria-labelledby={label ? `${elId}__label` : undefined}
@@ -110,9 +109,9 @@ export const FormYearOfBirthPicker = <
               formState.isSubmitting ||
               formState.disabled
             }
-            name={name}
             {...otherProps}
-            {...(field as any)}
+            {...field}
+            name={field.name ?? name}
           />
         </FormControl>
       )}

@@ -1,0 +1,132 @@
+@utility focus-ring {
+  @apply outline-[oklch(from_var(--color-ring)_l_c_h/var(--ring-opacity))] outline-0 transition-all;
+
+  @variant focus-visible {
+    @apply focus-ring-visible;
+  }
+}
+
+@utility focus-ring-visible {
+  @apply outline-(length:--ring-width) outline-offset-(length:--ring-offset);
+}
+
+@utility focus-ring-color-* {
+  @apply outline-[oklch(from_--value(--color-*)_l_c_h/var(--ring-opacity))];
+}
+
+@utility like-button-text {
+  @layer components {
+    /* font/type */
+    @apply text-sm font-semibold uppercase leading-6;
+  }
+}
+
+@utility like-base-button {
+  @layer components {
+    @apply antialiased relative inline-flex shrink-0 select-none items-center justify-center border border-transparent transition-all duration-300;
+
+    /* size */
+    @apply gap-2 px-4 py-2;
+
+    /* shape */
+    @apply rounded-[var(--control-radius)];
+
+    @variant not-disabled {
+      @apply cursor-pointer hover:scale-[1.03];
+
+      @variant active {
+        @apply scale-[0.98] hover:scale-[0.98];
+      }
+    }
+
+    @variant disabled {
+      @apply opacity-50;
+    }
+
+    @apply focus-ring;
+  }
+}
+
+@utility like-button {
+  @layer components {
+    @apply like-base-button like-button-text;
+
+    @apply shadow-md;
+
+    @apply bg-default text-default-fg;
+
+    @variant not-disabled {
+      @apply hover:shadow-xl active:shadow-sm;
+    }
+  }
+}
+
+@utility like-outline-button {
+  @layer components {
+    @apply like-base-button like-button-text;
+
+    @apply bg-default-muted border-default text-default-muted-fg;
+  }
+}
+
+@utility like-input {
+  @layer components {
+    @apply antialiased inline-flex grow border px-4 py-2 text-sm leading-6 transition-all duration-300;
+
+    /* alignment */
+    @apply items-center justify-start text-left;
+
+    /* font */
+    @apply font-normal;
+
+    /* shape */
+    @apply rounded-[var(--control-radius)];
+
+    /* color */
+    @apply bg-input text-input-fg border-input-border ring-0 ring-input-border;
+
+    &::placeholder,
+    &[data-placeholder] {
+      @apply text-input-fg/50;
+    }
+
+    @variant not-disabled {
+      @apply hover:ring-1;
+    }
+
+    @variant disabled {
+      @apply opacity-50 hover:scale-[1];
+    }
+
+    @media print {
+      @apply text-black border-black/50 bg-transparent;
+      &::placeholder,
+      &[data-placeholder] {
+        @apply text-transparent;
+      }
+    }
+
+    /* no shadow */
+    @apply shadow-none hover:shadow-none focus:shadow-none;
+
+    @apply focus-ring;
+  }
+}
+
+@utility like-paper {
+  @layer components {
+    --color-input: light-dark(hsl(0 0% 100%), hsl(0 0% 10%));
+    --color-foreground: var(--color-paper-fg);
+    @apply bg-paper print:bg-none text-paper-fg print:text-black border border-paper-border print:border-black/50;
+  }
+}
+
+@utility like-card {
+  @layer components {
+    @apply antialiased flex flex-col gap-4 overflow-clip;
+    @apply like-paper;
+
+    /* shape */
+    @apply rounded-xl;
+  }
+}

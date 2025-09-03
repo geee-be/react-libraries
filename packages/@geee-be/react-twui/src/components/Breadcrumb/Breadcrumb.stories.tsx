@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Bean, Home } from 'lucide-react';
 import { WithIcon } from '../WithIcon/index.js';
 import {
@@ -66,7 +66,7 @@ export const Wrapped: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="max-w-[7rem]">
+      <div className="max-w-28">
         <Story />
       </div>
     ),
@@ -97,7 +97,7 @@ export const WrappedWithoutLastItem: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="max-w-[7rem]">
+      <div className="max-w-28">
         <Story />
       </div>
     ),

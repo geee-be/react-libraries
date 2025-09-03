@@ -1,0 +1,43 @@
+@utility light-color-calculations {
+  /* basics */
+  --color-background-fg: oklch(from var(--color-background) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-foreground: var(--color-background-fg);
+  /* primary */
+  --color-primary-fg: oklch(from var(--color-primary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* secondary */
+  --color-secondary-fg: oklch(from var(--color-secondary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* success */
+  --color-success-fg: oklch(from var(--color-success) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* error */
+  --color-error-fg: oklch(from var(--color-error) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* danger */
+  --color-danger-fg: oklch(from var(--color-danger) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* warning */
+  --color-warning-fg: oklch(from var(--color-warning) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* info */
+  --color-info-fg: oklch(from var(--color-info) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  /* gray */
+  --color-gray-fg: oklch(from var(--color-gray) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+}
+
+@utility dark-color-calculations {
+  --foo: 1;
+}
+/*
+:root {
+  @apply light-color-calculations;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @apply dark-color-calculations;
+  }
+}
+
+.dark,  [data-theme="dark"] {
+  @apply dark-color-calculations;
+}
+
+.light,  [data-theme="light"] {
+  @apply light-color-calculations;
+} */

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ShortcutKey } from '../ShortcutKey/index.js';
 import {
   Command,

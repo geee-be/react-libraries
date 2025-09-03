@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react';
+import type { Meta } from '@storybook/react-vite';
 import { subYears } from 'date-fns';
 import type { FC } from 'react';
 import { useEffect } from 'react';
@@ -67,6 +67,7 @@ export const Default: FC = () => {
         control={control}
         name="birthdate"
         label="Date of Birth"
+        mode="single"
         helperText="Please select your date of birth"
         placeholder="Select your birthdate"
         required="Date of birth is required."
@@ -121,6 +122,7 @@ export const WithValidation: FC = () => {
         name="birthdate"
         label="Date of Birth"
         helperText="Must be at least 18 years old"
+        mode="single"
         required="Date of birth is required"
         max={{
           value: subYears(today, 18),
@@ -134,6 +136,7 @@ export const WithValidation: FC = () => {
         label="Appointment Date"
         placeholder="Must be a future date"
         required="Appointment date is required."
+        mode="single"
         min={{ value: today, message: 'Appointment must be in the future.' }}
         dateFormat="PPP"
         showFooter

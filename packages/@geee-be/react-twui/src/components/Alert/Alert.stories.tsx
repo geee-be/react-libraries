@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button/index.js';
 import { Alert } from './index.js';
 
@@ -65,7 +65,7 @@ export const ButtonAfter: Story = {
     variant: 'inline',
     color: 'info',
     after: (
-      <Button size="sm" variant="outline">
+      <Button size="sm" color="gray">
         Save
       </Button>
     ),

@@ -8,7 +8,7 @@ export {
   DrawerHeader,
   DrawerOverlay,
   DrawerPortal,
+  type DrawerProps,
   DrawerTitle,
   DrawerTrigger,
-  type DrawerProps,
 } from './Drawer';

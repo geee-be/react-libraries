@@ -9,17 +9,17 @@ import { tooltipTriggerVariant, tooltipVariant } from './variants.js';
 
 const TOOLTIP_ANIMATION_CLASSES = [
   // transform-origin
-  'origin-[var(--radix-popper-transform-origin)]',
+  'origin-(--radix-popper-transform-origin)',
 
   // state animations
   'data-[side=bottom]:animate-fade-in-down data-[side=top]:animate-fade-in-up data-[side=left]:animate-fade-in-left data-[side=right]:animate-fade-in-right data-[state=closed]:animate-fade-out',
 
   // instant-open
-  'data-[state=instant-open]:!animate-none',
+  'data-[state=instant-open]:animate-none!',
 ];
 
 /* ---------------------------- Tooltip Provider ---------------------------- */
-type TooltipProviderElement = React.ElementRef<
+type TooltipProviderElement = React.ComponentRef<
   typeof TooltipPrimitive.Provider
 >;
 type TooltipProviderProps = React.ComponentPropsWithRef<
@@ -45,7 +45,7 @@ export const TooltipProvider = React.forwardRef<
 );
 
 /* ------------------------------ Tooltip Root ------------------------------ */
-type TooltipRootElement = React.ElementRef<typeof TooltipPrimitive.Root>;
+type TooltipRootElement = React.ComponentRef<typeof TooltipPrimitive.Root>;
 type TooltipRootProps = React.ComponentPropsWithRef<
   typeof TooltipPrimitive.Root
 >;
@@ -62,7 +62,9 @@ const TooltipRoot = React.forwardRef<TooltipRootElement, TooltipRootProps>(
 );
 
 /* ----------------------------- Tooltip Content ---------------------------- */
-type TooltipContentElement = React.ElementRef<typeof TooltipPrimitive.Content>;
+type TooltipContentElement = React.ComponentRef<
+  typeof TooltipPrimitive.Content
+>;
 type TooltipContentProps = Omit<
   React.ComponentPropsWithRef<typeof TooltipPrimitive.Content>,
   'content'

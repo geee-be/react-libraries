@@ -7,7 +7,8 @@
   },
   "extends": [
     "./packages/@geee-be/eslint-config/index.json",
-    "./packages/@geee-be/eslint-config/esm.json"
+    "./packages/@geee-be/eslint-config/esm.json",
+    "plugin:storybook/recommended"
   ],
   "parserOptions": {
     "project": true,

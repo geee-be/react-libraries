@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { DatePicker } from './';
 
@@ -14,12 +14,14 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     className: 'w-64',
+    mode: 'single',
   },
 };
 
 export const WithDefaultDate: Story = {
   args: {
     className: 'w-64',
+    mode: 'single',
     value: new Date('2025-01-15'),
   },
 };
@@ -27,6 +29,7 @@ export const WithDefaultDate: Story = {
 export const WithDateFormat: Story = {
   args: {
     className: 'w-64',
+    mode: 'single',
     dateFormat: 'dd/MM/yyyy',
   },
 };
@@ -34,6 +37,7 @@ export const WithDateFormat: Story = {
 export const Disabled: Story = {
   args: {
     className: 'w-64',
+    mode: 'single',
     disabled: true,
   },
 };
@@ -41,6 +45,7 @@ export const Disabled: Story = {
 export const WithPlaceholder: Story = {
   args: {
     className: 'w-64',
+    mode: 'single',
     placeholder: 'Select a date...',
   },
 };
@@ -56,6 +61,7 @@ export const WithDateRange: Story = {
 export const WithFooter: Story = {
   args: {
     className: 'w-64',
+    mode: 'single',
     showFooter: true,
   },
 };
@@ -67,6 +73,7 @@ export const Controlled: Story = {
       <div className="space-y-4">
         <DatePicker
           {...args}
+          mode="single"
           value={date}
           onValueChange={(newDate) => setDate(newDate)}
         />
@@ -80,5 +87,8 @@ export const Controlled: Story = {
         </button>
       </div>
     );
+  },
+  args: {
+    mode: 'single',
   },
 };

@@ -62,8 +62,6 @@ const blobToImage = (blob: Blob): Promise<HTMLImageElement> => {
 };
 
 const computeScale = (originalSize: Size, imageSpec: ImageSpec): number => {
-  const aspectRatio = originalSize.width / originalSize.height;
-
   if ('aspectRatio' in imageSpec) {
     const maxWidth = imageSpec.maxWidth ?? Number.POSITIVE_INFINITY;
     const maxHeight = imageSpec.maxHeight ?? Number.POSITIVE_INFINITY;
@@ -113,7 +111,9 @@ export const fromValue = (
     if (value.data instanceof ArrayBuffer)
       return new Blob([value.data], { type: value.contentType });
     if (value.data instanceof Buffer)
-      return new Blob([value.data], { type: value.contentType });
+      return new Blob([new Uint8Array(value.data)], {
+        type: value.contentType,
+      });
     if (typeof value.data === 'string')
       return new Blob([Buffer.from(value.data, 'base64')], {
         type: value.contentType,

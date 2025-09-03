@@ -16,26 +16,7 @@ interface InputLikeProps extends PlaceholderSelector {
 
 export namespace Style {
   export const inputLike = (props: InputLikeProps) =>
-    cn(
-      `antialiased ${
-        props?.display ?? 'inline'
-      } grow rounded-lg border px-4 py-2 text-sm leading-6 transition-colors duration-100`,
-      // alignment
-      'items-center justify-start text-left',
-      // font
-      'font-normal',
-      // color
-      inputColorStateNormal({
-        placeholderSelector: props?.placeholderSelector,
-      }),
-      // focus
-      props?.focus !== false &&
-        focusRing({
-          trigger: props.focus === true ? 'focus' : props.focus || 'focus',
-        }),
-      // no shadow
-      'shadow-none hover:shadow-none focus:shadow-none',
-    );
+    cn(`like-input ${props?.display ?? 'inline'}`);
 
   export const inputColorStateNormal = (props?: PlaceholderSelector) =>
     `bg-control print:bg-none text-control-fg print:text-black border-default print:border-black/50 hover:border-default/70 ${

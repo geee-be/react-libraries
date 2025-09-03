@@ -2,9 +2,9 @@ const config = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 
   addons: [
-    '@storybook/addon-essentials',
-    'storybook-dark-mode',
     // '@chromatic-com/storybook',
+    'storybook-dark-mode',
+    '@storybook/addon-docs',
   ],
 
   framework: {

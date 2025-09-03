@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button/Button.js';
 import { Card } from '../Card/Card.js';
 import { CardContent } from '../Card/CardContent.js';
@@ -95,20 +95,20 @@ export const CardButtons: Story = {
     },
     children: (
       <>
-        <CarouselPrevious autoHide layout="overlayed" />
+        <CarouselPrevious autoHide layout="overlaid" />
         <CarouselContent>
           {Array.from({ length: 15 }).map((_, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: index is all we have in this case
             <CarouselItem key={index} className="md:basis-[28%] lg:basis-[18%]">
               <div className="p-1">
-                <Button color="card" className="flex grow w-full">
+                <Button variant="card" className="flex grow w-full">
                   <CardContent>No {index}</CardContent>
                 </Button>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselNext autoHide layout="overlayed" />
+        <CarouselNext autoHide layout="overlaid" />
       </>
     ),
   },

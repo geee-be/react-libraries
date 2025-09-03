@@ -6,7 +6,6 @@ import { buttonVariants } from '../Button/variants';
 
 const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
   <nav
-    role="navigation"
     aria-label="pagination"
     className={cn('mx-auto flex w-full justify-center', className)}
     {...props}
@@ -51,7 +50,9 @@ const PaginationLink = ({
       buttonVariants({
         variant: isActive ? 'outline' : 'ghost',
         size,
+        shape: 'icon',
       }),
+      'min-w-8 h-8',
       className,
     )}
     {...props}

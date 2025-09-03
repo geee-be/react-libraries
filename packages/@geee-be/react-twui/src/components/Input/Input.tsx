@@ -59,7 +59,7 @@ export const Input = forwardRef<InputElement, InputProps>(
     const ariaInvalid = otherProps['aria-invalid'] ?? destructive;
 
     const computedAutoFocus =
-      autoFocus === 'non-touch' ? !isTouchDevice() : autoFocus ?? false;
+      autoFocus === 'non-touch' ? !isTouchDevice() : (autoFocus ?? false);
 
     return (
       <div
@@ -69,13 +69,10 @@ export const Input = forwardRef<InputElement, InputProps>(
           className,
         )}
       >
-        {before ? <div className="inline-flex -m-2 z-[1]">{before}</div> : null}
+        {before ? <div className="inline-flex -m-2 z-1">{before}</div> : null}
         <input
           ref={ref}
-          className={cn(
-            'bg-control px-2 w-full outline-none',
-            Input?.className,
-          )}
+          className={cn('bg-input px-2 w-full outline-none', Input?.className)}
           aria-invalid={ariaInvalid}
           disabled={disabled || readOnly}
           readOnly={readOnly}
@@ -83,7 +80,7 @@ export const Input = forwardRef<InputElement, InputProps>(
           autoFocus={computedAutoFocus}
           {...otherProps}
         />
-        {after ? <div className="inline-flex -m-2 z-[1]">{after}</div> : null}
+        {after ? <div className="inline-flex -m-2 z-1">{after}</div> : null}
       </div>
     );
   },

@@ -5,8 +5,8 @@ import type { ReactElement, ReactNode } from 'react';
 import { useId } from 'react';
 import type { CropperProps } from 'react-advanced-cropper';
 import {
-  Controller,
   type Control,
+  Controller,
   type FieldPath,
   type FieldValues,
   type Message,

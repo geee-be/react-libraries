@@ -1,6 +1,7 @@
 export {
   Command,
   CommandDialog,
+  type CommandDialogProps,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -8,5 +9,4 @@ export {
   CommandList,
   CommandLoading,
   CommandSeparator,
-  type CommandDialogProps,
 } from './Command.js';

@@ -1,5 +1,5 @@
 import { DragHandleDots2Icon } from '@radix-ui/react-icons';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { XIcon } from 'lucide-react';
 import { Button } from '../Button/Button.js';
 import { Input } from './index.js';
@@ -29,7 +29,8 @@ export const Icons: Story = {
     placeholder: 'This is a placeholder',
     before: (
       <Button
-        size="xs-icon"
+        shape="icon"
+        size="sm"
         variant="ghost"
         className="mx-1"
         before={<DragHandleDots2Icon />}
@@ -37,7 +38,8 @@ export const Icons: Story = {
     ),
     after: (
       <Button
-        size="xs-icon"
+        shape="icon"
+        size="sm"
         variant="ghost"
         className="mx-1"
         after={<XIcon />}
@@ -53,7 +55,8 @@ export const TextBefore: Story = {
     before: <div className="pl-4">https://</div>,
     after: (
       <Button
-        size="xs-icon"
+        shape="icon"
+        size="sm"
         variant="ghost"
         className="mx-1"
         after={<XIcon />}

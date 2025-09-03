@@ -35,7 +35,7 @@ const getAspectRatio = (state: CropperState, settings: CoreSettings) => {
 };
 
 export const Cropper = forwardRef<
-  React.ElementRef<typeof BaseCropper>,
+  React.ComponentRef<typeof BaseCropper>,
   React.ComponentPropsWithoutRef<typeof BaseCropper> & {
     onChange?: (cropper: CropperRef) => void;
   }

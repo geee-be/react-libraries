@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@import "../src/components/Cropper/style.css";
+@import "../src/components/Cropper/custom.css";
+@import "../src/components/Cropper/compact.css";
+
+@import "./reset.css";
+@import "./theme.css";
+@import "./calculations.css";
+@import "./like.css";
+@import "./default.css";
+
+@plugin "@tailwindcss/container-queries";
+@plugin "tailwindcss-animate";
+
+@custom-variant focus-visible (&:focus-visible,&:has(input:focus),&[data-focus="true"]);
+@custom-variant not-disabled (&:not(:disabled):not([data-disabled="true"]));
+@custom-variant disabled (&:disabled,&[data-disabled="true"]);
+@custom-variant active (&:active,&[data-active="true"]);
+@custom-variant hover {
+  &:hover,
+  &[data-hover="true"] {
+    @media (hover: hover) {
+      @slot;
+    }
+  }
+}

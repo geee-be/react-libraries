@@ -10,6 +10,8 @@ import { cn } from '../../helpers/utils.js';
 import { Button } from '../Button/index.js';
 import { nextButtonVariants, previousButtonVariants } from './variants.js';
 
+// cspell:ignore embla
+
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
@@ -135,16 +137,15 @@ const Carousel = React.forwardRef<
           canScrollNext,
         }}
       >
-        <div
+        <section
           ref={ref}
           onKeyDownCapture={handleKeyDown}
           className={cn('relative', className)}
-          role="region"
-          aria-roledescription="carousel"
+          aria-label="Carousel"
           {...props}
         >
           {children}
-        </div>
+        </section>
       </CarouselContext.Provider>
     );
   },
@@ -180,9 +181,8 @@ const CarouselItem = React.forwardRef<
   const { orientation } = useCarousel();
 
   return (
-    <div
+    <figure
       ref={ref}
-      role="group"
       aria-roledescription="slide"
       className={cn(
         'min-w-0 shrink-0 grow-0 basis-full',
@@ -203,14 +203,7 @@ const CarouselPrevious = React.forwardRef<
     }
 >(
   (
-    {
-      className,
-      autoHide,
-      layout,
-      variant = 'outline',
-      size = 'xs-icon',
-      ...props
-    },
+    { className, autoHide, layout, variant = 'outline', size = 'md', ...props },
     ref,
   ) => {
     const { orientation, scrollPrev, canScrollPrev } = useCarousel();
@@ -219,7 +212,8 @@ const CarouselPrevious = React.forwardRef<
       <Button
         ref={ref}
         type="button"
-        variant={variant}
+        variant="outline"
+        shape="icon"
         size={size}
         className={cn(
           previousButtonVariants({ orientation, layout }),
@@ -230,7 +224,7 @@ const CarouselPrevious = React.forwardRef<
         onClick={scrollPrev}
         {...props}
       >
-        {layout === 'overlayed' ? (
+        {layout === 'overlaid' ? (
           <ChevronLeft className="h-6 w-6" />
         ) : (
           <ArrowLeft className="h-4 w-4" />
@@ -250,14 +244,7 @@ const CarouselNext = React.forwardRef<
     }
 >(
   (
-    {
-      className,
-      autoHide,
-      layout,
-      variant = 'outline',
-      size = 'icon',
-      ...props
-    },
+    { className, autoHide, layout, variant = 'outline', size = 'md', ...props },
     ref,
   ) => {
     const { orientation, scrollNext, canScrollNext } = useCarousel();
@@ -266,7 +253,8 @@ const CarouselNext = React.forwardRef<
       <Button
         ref={ref}
         type="button"
-        variant={variant}
+        variant="outline"
+        shape="icon"
         size={size}
         className={cn(
           nextButtonVariants({ orientation, layout }),
@@ -277,7 +265,7 @@ const CarouselNext = React.forwardRef<
         onClick={scrollNext}
         {...props}
       >
-        {layout === 'overlayed' ? (
+        {layout === 'overlaid' ? (
           <ChevronRight className="h-6 w-6" />
         ) : (
           <ArrowRight className="h-4 w-4" />

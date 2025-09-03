@@ -1,5 +1,5 @@
 import { SearchIcon } from '@iconicicons/react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button/Button.js';
 import { Input } from '../Input/Input.js';
 import { Select } from '../Select/Select.js';
@@ -54,7 +54,7 @@ export const IconButton: Story = {
     children: (
       <>
         <Input className="join-item" />
-        <Button className="join-item" isIconOnly before={<SearchIcon />} />
+        <Button className="join-item" shape="icon" before={<SearchIcon />} />
       </>
     ),
     shape: 'pill',

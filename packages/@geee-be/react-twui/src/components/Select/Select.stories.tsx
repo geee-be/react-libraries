@@ -1,5 +1,5 @@
-import { useArgs } from '@storybook/preview-api';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
 import type { SelectGroupProps } from './Select.js';
 import { Select } from './Select.js';
 
@@ -49,6 +49,38 @@ const items: SelectGroupProps[] = [
       {
         key: 'four',
         label: 'Four',
+      },
+      {
+        key: 'five',
+        label: 'Five',
+      },
+      {
+        key: 'six',
+        label: 'Six',
+      },
+      {
+        key: 'seven',
+        label: 'Seven',
+      },
+      {
+        key: 'eight',
+        label: 'Eight',
+      },
+      {
+        key: 'nine',
+        label: 'Nine',
+      },
+      {
+        key: 'ten',
+        label: 'Ten',
+      },
+      {
+        key: 'eleven',
+        label: 'Eleven',
+      },
+      {
+        key: 'twelve',
+        label: 'Twelve',
       },
     ],
   },

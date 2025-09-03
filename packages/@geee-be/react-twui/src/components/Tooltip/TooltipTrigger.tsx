@@ -5,7 +5,7 @@ import { cn, isReactElement } from '../../helpers/utils.js';
 import { InfoIcon } from '../icons/index.js';
 
 const TooltipTrigger = React.forwardRef<
-  React.ElementRef<typeof PrimitiveTrigger>,
+  React.ComponentRef<typeof PrimitiveTrigger>,
   React.ComponentPropsWithoutRef<typeof PrimitiveTrigger>
 >((props, ref) => {
   const {
@@ -27,10 +27,11 @@ const TooltipTrigger = React.forwardRef<
       {children ? (
         children
       ) : (
+        // biome-ignore lint/a11y/noStaticElementInteractions: its handled in logic
         <span
           className={cn(
             onClick ? 'cursor-pointer' : 'cursor-default',
-            'inline-flex items-center justify-center rounded-full transition-colors duration-100 focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-control-focus data-[state=instant-open]:!transition-none',
+            'inline-flex items-center justify-center rounded-full transition-colors duration-100 focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-control-focus data-[state=instant-open]:transition-none!',
             className,
           )}
           onClick={onClick}

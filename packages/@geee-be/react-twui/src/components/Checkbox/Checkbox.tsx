@@ -8,7 +8,7 @@ import { Label, type LabelProps } from '../Label';
 import type { LabelHelperProps } from '../types';
 
 /* ---------------------------------- Types --------------------------------- */
-export type CheckboxElement = React.ElementRef<typeof CheckboxPrimitive.Root>;
+export type CheckboxElement = React.ComponentRef<typeof CheckboxPrimitive.Root>;
 export type CheckboxElementProps = React.ComponentPropsWithoutRef<
   typeof CheckboxPrimitive.Root
 > &
@@ -133,7 +133,7 @@ export const Checkbox = React.forwardRef<CheckboxElement, CheckboxElementProps>(
     );
 
     const renderLabel =
-      label ?? description ?? tooltip ?? helperText ? (
+      (label ?? description ?? tooltip ?? helperText) ? (
         <div className="inline-flex flex-col">
           <Label
             className={cn(isInGroup && 'font-normal')}
