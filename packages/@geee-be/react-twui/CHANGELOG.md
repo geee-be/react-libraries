@@ -1,5 +1,16 @@
 # @geee-be/react-twui
 
+## 2.0.0
+
+### Major Changes
+
+- 1cdc182: Upgrad to TailwindCSS v4
+
+### Patch Changes
+
+- Updated dependencies [1cdc182]
+  - @geee-be/react-utils@1.3.1
+
 ## 1.7.3
 
 ### Patch Changes
