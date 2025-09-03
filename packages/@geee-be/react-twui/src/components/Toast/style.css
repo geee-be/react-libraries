@@ -1,3 +1,5 @@
+@reference "../../../css/twui.css";
+
 :root {
   --toastify-color-light: hsl(var(--color-paper));
   --toastify-color-dark: hsl(var(--color-paper));
