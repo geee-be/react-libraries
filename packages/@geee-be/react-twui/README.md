@@ -11,11 +11,19 @@ A comprehensive React UI component library built with Tailwind CSS v4 and Radix 
 - 🎨 **Modern Design System** - Built with Tailwind CSS v4 and semantic color tokens
 - ♿ **Accessibility First** - WCAG compliant with proper ARIA support using Radix UI
 - 🎯 **TypeScript Native** - Full type safety with comprehensive TypeScript definitions
-- 🌙 **Dark Mode Ready** - Built-in dark mode support with CSS custom properties
+- 🌙 **Dark Mode Ready** - Built-in dark mode support
 - 📦 **Tree Shakeable** - Optimized bundle size with ES modules
 - 🔧 **Highly Customizable** - Easy theming with CSS custom properties
 - 📱 **Responsive** - Mobile-first design with flexible layouts
 - ⚡ **Performance Focused** - Minimal re-renders and optimized components
+- 🔨 **Tailwind CSS v4 Ready** - Fully compatible with the latest Tailwind CSS v4 features
+
+## 🆕 Recent Improvements (v2.0+)
+
+- **Tailwind CSS v4 Compatibility** - Fully updated for Tailwind CSS v4 with proper `@theme` and `@variant` usage
+- **Enhanced Dark Mode** - Improved dark mode implementation using `@variant dark` directive
+- **Better Build Process** - Resolved build issues with CSS module references using `@reference` directive
+- **Improved Type Safety** - Enhanced TypeScript definitions and better component prop typing
 
 ## 📋 Installation
 
@@ -35,7 +43,7 @@ npm install react react-dom tailwindcss
 
 **Required versions:**
 - React >= 18.0.0
-- Tailwind CSS >= 4.0.0 (this library is built for Tailwind CSS v4)
+- Tailwind CSS >= 4.1.0 (this library is built for Tailwind CSS v4)
 
 ## 🚀 Quick Start
 
@@ -46,6 +54,21 @@ Add to your CSS file:
 ```css
 @import 'tailwindcss';
 @import '@geee-be/react-twui/css/twui.css';
+```
+
+Or if you need to reference Tailwind utilities in your own CSS modules:
+
+```css
+@reference '@geee-be/react-twui/css/twui.css';
+@import 'tailwindcss';
+@import '@geee-be/react-twui/css/twui.css';
+
+@source '../../node_modules/@geee-be/react-twui/dist';
+
+/* Your custom styles can now use Tailwind utilities */
+.my-component {
+  @apply rounded-lg bg-primary text-primary-fg;
+}
 ```
 
 ### 2. Basic Usage
@@ -125,39 +148,154 @@ function App() {
 
 ## 🎨 Theming
 
-Customize the design system using CSS custom properties:
+The component library uses a modern theming system built on CSS custom properties with separate light and dark variants.
+
+### Basic Theme Structure
 
 ```css
 @theme {
-  /* Background and foreground */
-  --color-background: light-dark(hsl(0 0% 92%), hsl(0 0% 10%));
-  --color-foreground: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
+  /* Light mode colors (default) */
+  --color-background: hsl(0 0% 92%);
+  --color-foreground: hsl(0 0% 10%);
 
   /* Primary color */
   --color-primary: #ec740c;
   --color-primary-fg: oklch(from var(--color-primary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
+  --color-primary-muted: oklch(from var(--color-primary) l c h / 0.05);
 
   /* Secondary color */
   --color-secondary: #5722ff;
   --color-secondary-fg: oklch(from var(--color-secondary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
 
   /* Status colors */
-  --color-info: light-dark(#1485ff, #0a71df);
-  --color-warning: light-dark(#ffc233, #e7a60c);
-  --color-success: light-dark(#6fd626, #55a919);
+  --color-info: #1485ff;
+  --color-warning: #ffc233;
+  --color-success: #6fd626;
   --color-error: #f40909;
   --color-danger: #f40909;
 
   /* Input controls */
-  --color-input: light-dark(hsl(0 0% 98%), hsl(0 0% 15%));
-  --color-input-fg: light-dark(hsl(0 0% 10%), hsl(0 0% 92%));
-  --color-input-border: light-dark(hsl(0 0% 50%), hsl(0 0% 70%));
+  --color-input: hsl(0 0% 98%);
+  --color-input-fg: hsl(0 0% 10%);
+  --color-input-border: hsl(0 0% 50%);
 
   /* Paper/Card surfaces */
-  --color-paper: light-dark(hsl(255, 0%, 97%), hsl(255, 0%, 15%));
-  --color-paper-fg: light-dark(hsl(255 0% 20%), hsl(255 0% 87.5%));
+  --color-paper: hsl(255, 0%, 97%);
+  --color-paper-fg: hsl(255 0% 20%);
+}
+
+@variant dark {
+  @theme {
+    /* Dark mode color overrides */
+    --color-background: hsl(0 0% 10%);
+    --color-foreground: hsl(0 0% 92%);
+
+    /* Input controls */
+    --color-input: hsl(0 0% 15%);
+    --color-input-fg: hsl(0 0% 92%);
+    --color-input-border: hsl(0 0% 70%);
+
+    /* Paper/Card surfaces */
+    --color-paper: hsl(255, 0%, 15%);
+    --color-paper-fg: hsl(255 0% 87.5%);
+
+    /* Status color variants for dark mode */
+    --color-info: #0a71df;
+    --color-warning: #e7a60c;
+    --color-success: #55a919;
+
+    /* Muted colors have higher opacity in dark mode */
+    --color-primary-muted: oklch(from var(--color-primary) l c h / 0.15);
+    --color-secondary-muted: oklch(from var(--color-secondary) l c h / 0.15);
+  }
 }
 ```
+
+### Dark Mode Implementation
+
+Dark mode is implemented using the `@variant dark` directive in Tailwind CSS v4. To enable dark mode in your application:
+
+1. **Class-based dark mode** (recommended):
+```tsx
+// Toggle dark mode by adding/removing 'dark' class
+document.documentElement.classList.toggle('dark');
+
+// Or use a state management solution
+function ThemeProvider({ children }) {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDark);
+  }, [isDark]);
+
+  return (
+    <ThemeContext.Provider value={{ isDark, setIsDark }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+```
+
+2. **System preference based**:
+```css
+/* Configure in your tailwind.config.js */
+module.exports = {
+  darkMode: 'class', // or 'media' for system preference
+  // ... rest of config
+}
+```
+
+### Custom Color Schemes
+
+You can override any color in your CSS:
+
+```css
+@theme {
+  /* Override primary color */
+  --color-primary: #10b981;
+
+  /* Custom brand colors */
+  --color-brand: #6366f1;
+  --color-brand-fg: white;
+  --color-brand-muted: oklch(from var(--color-brand) l c h / 0.05);
+}
+
+@variant dark {
+  @theme {
+    --color-brand-muted: oklch(from var(--color-brand) l c h / 0.15);
+  }
+}
+```
+
+## 🎨 CSS Architecture
+
+### File Structure
+The CSS is organized into several files for modularity:
+
+- **`twui.css`** - Main entry point that imports all other styles
+- **`theme.css`** - Color system and design tokens
+- **`reset.css`** - CSS resets and base styles
+- **`calculations.css`** - Computed values and utility classes
+- **`default.css`** - Default color scheme utilities
+- **`like.css`** - Additional utility classes
+
+### Troubleshooting CSS Issues
+
+If you encounter build errors about unknown utility classes:
+
+1. **Ensure proper imports**: Make sure you're importing `@geee-be/react-twui/css/twui.css`
+2. **Check Tailwind config**: Verify your project is using Tailwind CSS v4.1+
+3. **CSS Module references**: If using `@apply` in your own CSS files, add `@reference` directive:
+
+```css
+@reference '@geee-be/react-twui/css/twui.css';
+
+.my-style {
+  @apply rounded-lg bg-primary;
+}
+```
+
+4. **Build configuration**: Ensure your build tool processes CSS imports correctly
 
 ### Component Variants
 

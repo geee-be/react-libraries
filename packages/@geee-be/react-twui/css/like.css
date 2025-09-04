@@ -115,7 +115,10 @@
 
 @utility like-paper {
   @layer components {
-    --color-input: light-dark(hsl(0 0% 100%), hsl(0 0% 10%));
+    --color-input: hsl(0 0% 100%);
+    @variant dark {
+      --color-input: hsl(0 0% 15%);
+    }
     --color-foreground: var(--color-paper-fg);
     @apply bg-paper print:bg-none text-paper-fg print:text-black border border-paper-border print:border-black/50;
   }
