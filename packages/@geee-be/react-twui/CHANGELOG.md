@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 2.0.7
+
+### Patch Changes
+
+- 063d7eb: refactor: update card border radius variables for consistency
+- 560e96f: Improved dropdown style
+
 ## 2.0.6
 
 ### Patch Changes
