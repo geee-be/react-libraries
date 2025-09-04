@@ -126,7 +126,7 @@
 
 @utility like-card {
   @layer components {
-    @apply antialiased flex flex-col gap-4 overflow-clip;
+    @apply antialiased flex flex-col gap-0 overflow-clip;
     @apply like-paper;
 
     /* shape */
