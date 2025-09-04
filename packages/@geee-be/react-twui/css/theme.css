@@ -149,6 +149,10 @@
     --color-paper-nested: hsl(255, 0%, 10% / 0.35);
     --color-paper-fg: hsl(255 0% 87.5%);
     --color-paper-border: hsl(255 0% 60% / 0.5);
+    /* menu */
+    --color-menu: hsl(255, 0%, 15%);
+    --color-menu-fg: hsl(255 0% 87.5%);
+    --color-menu-border: hsl(255 0% 60% / 0.5);
     /* skeleton */
     --color-skeleton: hsl(255 0% 30%);
     /* primary muted */
