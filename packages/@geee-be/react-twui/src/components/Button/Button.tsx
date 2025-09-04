@@ -112,7 +112,9 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
               renderIcon(
                 children.props.children as React.ReactElement<HTMLElement>,
               )}
-            {isElementWithChildren(children) && children.props.children}
+            {isElementWithChildren(children) &&
+              !isIcon &&
+              children.props.children}
             {after ? renderIcon(after) : null}
           </>
         ),
@@ -123,7 +125,7 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
         {React.isValidElement(children) &&
           isIcon &&
           renderIcon(children as React.ReactElement<HTMLElement>)}
-        {children}
+        {!isIcon && children}
         {after ? renderIcon(after) : null}
       </>
     );
