@@ -1,6 +1,7 @@
 @layer theme {
   :root {
-    --control-radius: 0.5rem;
+    --card-radius: var(--radius-xl);
+    --control-radius: var(--radius-lg);
     --ring-opacity: 50%;
     --ring-width: 5px;
     --ring-offset: 0px;
