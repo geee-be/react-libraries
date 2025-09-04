@@ -45,6 +45,11 @@
   --color-paper-nested: hsl(255, 0%, 90% / 0.35);
   --color-paper-fg: hsl(255 0% 20%);
   --color-paper-border: hsl(255 0% 40% / 0.5);
+  /* menu */
+  --color-menu: hsl(255, 0%, 97%);
+  --color-menu-hover: oklch(from var(--color-primary) l c h / 0.15);
+  --color-menu-fg: hsl(255 0% 20%);
+  --color-menu-border: hsl(255 0% 40% / 0.5);
   /* skeleton */
   --color-skeleton: hsl(255 0% 70%);
   /* ring */
