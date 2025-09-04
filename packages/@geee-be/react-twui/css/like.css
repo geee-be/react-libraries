@@ -23,7 +23,7 @@
 
 @utility like-base-button {
   @layer components {
-    @apply antialiased relative inline-flex shrink-0 select-none items-center justify-center border border-transparent transition-all duration-300;
+    @apply antialiased relative inline-flex flex-row shrink-0 select-none items-center justify-center border border-transparent transition-all duration-300;
 
     /* size */
     @apply gap-2 px-4 py-2;
