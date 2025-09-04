@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.6
+
+### Patch Changes
+
+- b6bbdde: fix: dropdown menu style
+
 ## 2.0.5
 
 ### Patch Changes
