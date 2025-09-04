@@ -8,13 +8,6 @@ const config = {
     './.storybook/preview.{js,ts,jsx,tsx,mdx}',
   ],
   tailwindFunctions: ['clsx', 'cn', 'cva'],
-  plugins: [
-    // twui({
-    //   darkMode: 'data-theme',
-    // }),
-    // require('@tailwindcss/container-queries'),
-    // require('tailwindcss-animate'),
-  ],
   theme: {
     extend: {
       colors: {},

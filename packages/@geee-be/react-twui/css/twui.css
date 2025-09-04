@@ -7,7 +7,7 @@
 @import "./default.css";
 
 @plugin "@tailwindcss/container-queries";
-@plugin "tailwindcss-animate";
+@plugin "tw-animate-css";
 
 @custom-variant focus-visible (&:focus-visible,&:has(input:focus),&[data-focus="true"]);
 @custom-variant not-disabled (&:not(:disabled):not([data-disabled="true"]));
