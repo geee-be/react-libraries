@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.4
+
+### Patch Changes
+
+- dbd9fc6: fix: adjust button size variants for xs and sm
+
 ## 2.0.3
 
 ### Patch Changes
