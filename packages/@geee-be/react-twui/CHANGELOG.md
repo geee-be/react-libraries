@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 2.0.8
+
+### Patch Changes
+
+- b8d7c08: menu specific colors
+- 563c6e7: fix: update like-card shape to use dynamic border radius variable
+
 ## 2.0.7
 
 ### Patch Changes
