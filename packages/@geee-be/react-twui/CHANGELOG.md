@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.5
+
+### Patch Changes
+
+- 4ece335: remove light-dark()
+
 ## 2.0.4
 
 ### Patch Changes
