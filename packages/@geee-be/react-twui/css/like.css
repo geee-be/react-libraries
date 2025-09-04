@@ -130,6 +130,6 @@
     @apply like-paper;
 
     /* shape */
-    @apply rounded-xl;
+    @apply rounded-(--card-radius);
   }
 }
