@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.3
+
+### Patch Changes
+
+- 631fe95: fix: adjust layout for like-base-button utility
+
 ## 2.0.2
 
 ### Patch Changes
