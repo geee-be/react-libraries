@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.2
+
+### Patch Changes
+
+- 0da1b0a: Fix double content in icon button
+
 ## 2.0.1
 
 ### Patch Changes
