@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.9
+
+### Patch Changes
+
+- 1076221: missed dark menu colors
+
 ## 2.0.8
 
 ### Patch Changes
