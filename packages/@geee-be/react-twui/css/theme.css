@@ -5,28 +5,6 @@
     --ring-opacity: 50%;
     --ring-width: 5px;
     --ring-offset: 0px;
-    --color-ring-base: #ec740c;
-
-    --color-primary-fg-base: oklch(from var(--color-primary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
-
-    --color-secondary-base: #5722ff;
-    --color-secondary-fg-base: oklch(
-      from var(--color-secondary-base) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h
-    );
-
-    --color-secondary-fg-base: oklch(from var(--color-secondary) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
-
-    --color-error-fg-base: oklch(from var(--color-error) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
-
-    --color-danger-fg-base: oklch(from var(--color-danger) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
-
-    --color-warning-fg-base: oklch(from var(--color-warning) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
-
-    --color-info-fg-base: oklch(from var(--color-info) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
-
-    --color-gray-fg-base: oklch(from var(--color-gray) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
-
-    --color-default-fg-base: oklch(from var(--color-default) calc(clamp(-0.5, ((0.7 - l) * 1000), 0.5) + 0.5) 0 h);
   }
 }
 
