@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.10
+
+### Patch Changes
+
+- 72b6cee: replace animation lib
+
 ## 2.0.9
 
 ### Patch Changes
