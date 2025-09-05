@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.15
+
+### Patch Changes
+
+- 3642f0b: compound card
+
 ## 2.0.14
 
 ### Patch Changes
