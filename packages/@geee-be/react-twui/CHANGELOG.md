@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 2.0.13
+
+### Patch Changes
+
+- 5b1b298: Add missing Tailwind CSS import to join component styles
+- 854cf66: theme fixes
+
 ## 2.0.12
 
 ### Patch Changes
