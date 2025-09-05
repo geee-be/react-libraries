@@ -52,7 +52,7 @@ export const Buttons: Story = {
         <button type="button" className="like-outline-button" data-hover={true}>
           Hover
         </button>
-        <button type="button" className="like-outline- button" disabled={true}>
+        <button type="button" className="like-outline-button" disabled={true}>
           Disabled
         </button>
 

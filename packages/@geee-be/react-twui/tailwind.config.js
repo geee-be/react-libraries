@@ -8,11 +8,6 @@ const config = {
     './.storybook/preview.{js,ts,jsx,tsx,mdx}',
   ],
   tailwindFunctions: ['clsx', 'cn', 'cva'],
-  theme: {
-    extend: {
-      colors: {},
-    },
-  },
 };
 
 export default config;
