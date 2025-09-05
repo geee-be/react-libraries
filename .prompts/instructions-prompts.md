@@ -12,6 +12,7 @@ These instruction files help Copilot understand the project structure, patterns,
 2. **`.copilot-workspace.md`** - Detailed workspace development guide
 3. **`packages/@geee-be/react-twui/.copilot-instructions.md`** - UI component library guide
 4. **`packages/@geee-be/react-utils/.copilot-instructions.md`** - React utilities guide
+5. **`.prompts/compound-component-conversion.md`** - Guide for converting components to compound pattern
 
 ---
 
@@ -286,11 +287,12 @@ Before finalizing updates:
 
 ## I. Example Update Scenarios
 
-### New Component Added
+### New Development Pattern
 1. Update component list in react-twui instructions
 2. Add usage example if it follows new patterns
 3. Document any new dependencies or patterns
 4. Update workspace guide if new build steps required
+5. **For compound components**: Follow the conversion guide in `.prompts/compound-component-conversion.md`
 
 ### Build Configuration Change
 1. Update build sections in relevant package instructions

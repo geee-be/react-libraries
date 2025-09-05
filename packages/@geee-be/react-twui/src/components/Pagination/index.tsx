@@ -4,16 +4,19 @@ import { cn } from '../../helpers/utils';
 import type { ButtonProps } from '../Button';
 import { buttonVariants } from '../Button/variants';
 
-const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
+const PaginationComponent = ({
+  className,
+  ...props
+}: React.ComponentProps<'nav'>) => (
   <nav
     aria-label="pagination"
     className={cn('mx-auto flex w-full justify-center', className)}
     {...props}
   />
 );
-Pagination.displayName = 'Pagination';
+PaginationComponent.displayName = 'Pagination';
 
-const PaginationContent = React.forwardRef<
+const PaginationContentComponent = React.forwardRef<
   HTMLUListElement,
   React.ComponentProps<'ul'>
 >(({ className, ...props }, ref) => (
@@ -23,22 +26,22 @@ const PaginationContent = React.forwardRef<
     {...props}
   />
 ));
-PaginationContent.displayName = 'PaginationContent';
+PaginationContentComponent.displayName = 'PaginationContent';
 
-const PaginationItem = React.forwardRef<
+const PaginationItemComponent = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<'li'>
 >(({ className, ...props }, ref) => (
   <li ref={ref} className={cn('', className)} {...props} />
 ));
-PaginationItem.displayName = 'PaginationItem';
+PaginationItemComponent.displayName = 'PaginationItem';
 
 type PaginationLinkProps = {
   isActive?: boolean;
 } & Pick<ButtonProps, 'size'> &
   React.ComponentProps<'a'>;
 
-const PaginationLink = ({
+const PaginationLinkComponent = ({
   className,
   isActive,
   size = 'sm',
@@ -58,13 +61,13 @@ const PaginationLink = ({
     {...props}
   />
 );
-PaginationLink.displayName = 'PaginationLink';
+PaginationLinkComponent.displayName = 'PaginationLink';
 
-const PaginationPrevious = ({
+const PaginationPreviousComponent = ({
   className,
   ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
+}: React.ComponentProps<typeof PaginationLinkComponent>) => (
+  <PaginationLinkComponent
     aria-label="Go to previous page"
     size="sm"
     className={cn('gap-1 pl-2.5', className)}
@@ -72,15 +75,15 @@ const PaginationPrevious = ({
   >
     <ChevronLeft className="h-4 w-4" />
     <span>Previous</span>
-  </PaginationLink>
+  </PaginationLinkComponent>
 );
-PaginationPrevious.displayName = 'PaginationPrevious';
+PaginationPreviousComponent.displayName = 'PaginationPrevious';
 
-const PaginationNext = ({
+const PaginationNextComponent = ({
   className,
   ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
+}: React.ComponentProps<typeof PaginationLinkComponent>) => (
+  <PaginationLinkComponent
     aria-label="Go to next page"
     size="sm"
     className={cn('gap-1 pr-2.5', className)}
@@ -88,11 +91,11 @@ const PaginationNext = ({
   >
     <span>Next</span>
     <ChevronRight className="h-4 w-4" />
-  </PaginationLink>
+  </PaginationLinkComponent>
 );
-PaginationNext.displayName = 'PaginationNext';
+PaginationNextComponent.displayName = 'PaginationNext';
 
-const PaginationEllipsis = ({
+const PaginationEllipsisComponent = ({
   className,
   ...props
 }: React.ComponentProps<'span'>) => (
@@ -105,14 +108,35 @@ const PaginationEllipsis = ({
     <span className="sr-only">More pages</span>
   </span>
 );
-PaginationEllipsis.displayName = 'PaginationEllipsis';
+PaginationEllipsisComponent.displayName = 'PaginationEllipsis';
 
+type PaginationCompound = typeof PaginationComponent & {
+  Content: typeof PaginationContentComponent;
+  Ellipsis: typeof PaginationEllipsisComponent;
+  Item: typeof PaginationItemComponent;
+  Link: typeof PaginationLinkComponent;
+  Next: typeof PaginationNextComponent;
+  Previous: typeof PaginationPreviousComponent;
+};
+
+export const Pagination: PaginationCompound = Object.assign(
+  PaginationComponent,
+  {
+    Content: PaginationContentComponent,
+    Ellipsis: PaginationEllipsisComponent,
+    Item: PaginationItemComponent,
+    Link: PaginationLinkComponent,
+    Next: PaginationNextComponent,
+    Previous: PaginationPreviousComponent,
+  },
+);
+
+// Export original form components for backward compatibility and flexibility
 export {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
+  PaginationContentComponent as PaginationContent,
+  PaginationEllipsisComponent as PaginationEllipsis,
+  PaginationItemComponent as PaginationItem,
+  PaginationLinkComponent as PaginationLink,
+  PaginationNextComponent as PaginationNext,
+  PaginationPreviousComponent as PaginationPrevious,
 };

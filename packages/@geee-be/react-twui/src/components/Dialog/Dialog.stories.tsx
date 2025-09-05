@@ -3,16 +3,7 @@ import { useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Label } from '../Label';
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from './Dialog';
+import { Dialog } from './index.js';
 
 const meta = {
   component: Dialog,
@@ -28,33 +19,33 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <DialogTrigger asChild>
+        <Dialog.Trigger asChild>
           <Button variant="solid" color="primary">
             Open Dialog
           </Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Dialog Title</DialogTitle>
-            <DialogDescription>
+        </Dialog.Trigger>
+        <Dialog.Content>
+          <Dialog.Header>
+            <Dialog.Title>Dialog Title</Dialog.Title>
+            <Dialog.Description>
               This is a simple dialog example with a title and description.
-            </DialogDescription>
-          </DialogHeader>
+            </Dialog.Description>
+          </Dialog.Header>
           <div className="py-4">
             <p className="text-sm">
               This is the main content area of the dialog. You can put any
               content here.
             </p>
           </div>
-          <DialogFooter>
-            <DialogClose asChild>
+          <Dialog.Footer>
+            <Dialog.Close asChild>
               <Button variant="outline">Cancel</Button>
-            </DialogClose>
+            </Dialog.Close>
             <Button variant="solid" color="primary">
               Confirm
             </Button>
-          </DialogFooter>
-        </DialogContent>
+          </Dialog.Footer>
+        </Dialog.Content>
       </>
     ),
   },
@@ -64,18 +55,18 @@ export const WithForm: Story = {
   args: {
     children: (
       <>
-        <DialogTrigger asChild>
+        <Dialog.Trigger asChild>
           <Button variant="solid" color="info">
             Edit Profile
           </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Edit Profile</DialogTitle>
-            <DialogDescription>
+        </Dialog.Trigger>
+        <Dialog.Content className="sm:max-w-[425px]">
+          <Dialog.Header>
+            <Dialog.Title>Edit Profile</Dialog.Title>
+            <Dialog.Description>
               Make changes to your profile here. Click save when you're done.
-            </DialogDescription>
-          </DialogHeader>
+            </Dialog.Description>
+          </Dialog.Header>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="name" className="text-right">
@@ -107,15 +98,15 @@ export const WithForm: Story = {
               />
             </div>
           </div>
-          <DialogFooter>
-            <DialogClose asChild>
+          <Dialog.Footer>
+            <Dialog.Close asChild>
               <Button variant="outline">Cancel</Button>
-            </DialogClose>
+            </Dialog.Close>
             <Button variant="solid" color="primary">
               Save Changes
             </Button>
-          </DialogFooter>
-        </DialogContent>
+          </Dialog.Footer>
+        </Dialog.Content>
       </>
     ),
   },
@@ -125,28 +116,28 @@ export const Confirmation: Story = {
   args: {
     children: (
       <>
-        <DialogTrigger asChild>
+        <Dialog.Trigger asChild>
           <Button variant="solid" color="error">
             Delete Account
           </Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
-            <DialogDescription>
+        </Dialog.Trigger>
+        <Dialog.Content>
+          <Dialog.Header>
+            <Dialog.Title>Are you absolutely sure?</Dialog.Title>
+            <Dialog.Description>
               This action cannot be undone. This will permanently delete your
               account and remove your data from our servers.
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter>
-            <DialogClose asChild>
+            </Dialog.Description>
+          </Dialog.Header>
+          <Dialog.Footer>
+            <Dialog.Close asChild>
               <Button variant="outline">Cancel</Button>
-            </DialogClose>
+            </Dialog.Close>
             <Button variant="solid" color="error">
               Delete Account
             </Button>
-          </DialogFooter>
-        </DialogContent>
+          </Dialog.Footer>
+        </Dialog.Content>
       </>
     ),
   },
@@ -156,24 +147,24 @@ export const NoHeader: Story = {
   args: {
     children: (
       <>
-        <DialogTrigger asChild>
+        <Dialog.Trigger asChild>
           <Button variant="outline" color="secondary">
             Simple Dialog
           </Button>
-        </DialogTrigger>
-        <DialogContent>
+        </Dialog.Trigger>
+        <Dialog.Content>
           <div className="py-4">
             <p className="text-center">
               This is a simple dialog without a header. Just some content and
               action buttons.
             </p>
           </div>
-          <DialogFooter>
-            <DialogClose asChild>
+          <Dialog.Footer>
+            <Dialog.Close asChild>
               <Button variant="outline">Close</Button>
-            </DialogClose>
-          </DialogFooter>
-        </DialogContent>
+            </Dialog.Close>
+          </Dialog.Footer>
+        </Dialog.Content>
       </>
     ),
   },
@@ -183,18 +174,18 @@ export const LongContent: Story = {
   args: {
     children: (
       <>
-        <DialogTrigger asChild>
+        <Dialog.Trigger asChild>
           <Button variant="solid" color="warning">
             Terms & Conditions
           </Button>
-        </DialogTrigger>
-        <DialogContent className="max-h-[80vh]">
-          <DialogHeader>
-            <DialogTitle>Terms and Conditions</DialogTitle>
-            <DialogDescription>
+        </Dialog.Trigger>
+        <Dialog.Content className="max-h-[80vh]">
+          <Dialog.Header>
+            <Dialog.Title>Terms and Conditions</Dialog.Title>
+            <Dialog.Description>
               Please read our terms and conditions carefully.
-            </DialogDescription>
-          </DialogHeader>
+            </Dialog.Description>
+          </Dialog.Header>
           <div className="py-4 overflow-y-auto">
             <div className="space-y-4 text-sm">
               {/* cspell:disable */}
@@ -235,15 +226,15 @@ export const LongContent: Story = {
               {/* cspell:enable */}
             </div>
           </div>
-          <DialogFooter>
-            <DialogClose asChild>
+          <Dialog.Footer>
+            <Dialog.Close asChild>
               <Button variant="outline">Decline</Button>
-            </DialogClose>
+            </Dialog.Close>
             <Button variant="solid" color="success">
               Accept
             </Button>
-          </DialogFooter>
-        </DialogContent>
+          </Dialog.Footer>
+        </Dialog.Content>
       </>
     ),
   },
@@ -255,25 +246,25 @@ export const Controlled: Story = {
 
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
+        <Dialog.Trigger asChild>
           <Button variant="solid" color="primary">
             Controlled Dialog
           </Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Controlled Dialog</DialogTitle>
-            <DialogDescription>
+        </Dialog.Trigger>
+        <Dialog.Content>
+          <Dialog.Header>
+            <Dialog.Title>Controlled Dialog</Dialog.Title>
+            <Dialog.Description>
               This dialog's open state is controlled by React state.
-            </DialogDescription>
-          </DialogHeader>
+            </Dialog.Description>
+          </Dialog.Header>
           <div className="py-4">
             <p className="text-sm">
               The dialog is currently{' '}
               <span className="font-semibold">{open ? 'open' : 'closed'}</span>.
             </p>
           </div>
-          <DialogFooter>
+          <Dialog.Footer>
             <Button variant="outline" onClick={() => setOpen(false)}>
               Close Programmatically
             </Button>
@@ -284,8 +275,8 @@ export const Controlled: Story = {
             >
               Confirm & Close
             </Button>
-          </DialogFooter>
-        </DialogContent>
+          </Dialog.Footer>
+        </Dialog.Content>
       </Dialog>
     );
   },
@@ -295,38 +286,38 @@ export const CustomStyling: Story = {
   args: {
     children: (
       <>
-        <DialogTrigger asChild>
+        <Dialog.Trigger asChild>
           <Button variant="solid" color="secondary">
             Custom Styled Dialog
           </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-md border-secondary/70 bg-gradient-to-br from-primary/5 to-secondary/5">
-          <DialogHeader>
-            <DialogTitle className="text-primary">Custom Styling</DialogTitle>
-            <DialogDescription className="text-secondary">
+        </Dialog.Trigger>
+        <Dialog.Content className="sm:max-w-md border-secondary/70 bg-gradient-to-br from-primary/5 to-secondary/5">
+          <Dialog.Header>
+            <Dialog.Title className="text-primary">Custom Styling</Dialog.Title>
+            <Dialog.Description className="text-secondary">
               This dialog has custom styling applied to demonstrate
               customization options.
-            </DialogDescription>
-          </DialogHeader>
+            </Dialog.Description>
+          </Dialog.Header>
           <div className="py-4">
             <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
               <p className="text-sm">
                 You can customize the appearance of dialogs by applying custom
-                CSS classes to the DialogContent and other components.
+                CSS classes to the Dialog.Content and other components.
               </p>
             </div>
           </div>
-          <DialogFooter className="gap-2">
-            <DialogClose asChild>
+          <Dialog.Footer className="gap-2">
+            <Dialog.Close asChild>
               <Button variant="outline" color="secondary">
                 Close
               </Button>
-            </DialogClose>
+            </Dialog.Close>
             <Button variant="solid" color="primary">
               Continue
             </Button>
-          </DialogFooter>
-        </DialogContent>
+          </Dialog.Footer>
+        </Dialog.Content>
       </>
     ),
   },

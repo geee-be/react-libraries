@@ -18,6 +18,7 @@ This monorepo contains the following packages:
 
 #### 🎨 @geee-be/react-twui
 - **Modern UI Components**: Built with Tailwind CSS v4 and Radix UI primitives
+- **Compound Component API**: Intuitive component relationships with `Component.SubComponent` pattern
 - **Accessibility First**: WCAG compliant components with proper ARIA support
 - **Themeable**: CSS custom properties for easy customization
 - **TypeScript**: Full type safety and IntelliSense support
@@ -51,8 +52,8 @@ pnpm add @geee-be/react-twui @geee-be/react-utils
 ### Basic Usage
 
 ```tsx
-// Using react-twui components
-import { Button, Card } from '@geee-be/react-twui';
+// Using react-twui components with compound pattern
+import { Button, Card, Dialog } from '@geee-be/react-twui';
 
 function App() {
   return (
@@ -61,7 +62,16 @@ function App() {
         <Card.Title>Welcome</Card.Title>
       </Card.Header>
       <Card.Content>
-        <Button variant="outline">Get Started</Button>
+        <Dialog>
+          <Dialog.Trigger asChild>
+            <Button variant="outline">Get Started</Button>
+          </Dialog.Trigger>
+          <Dialog.Content>
+            <Dialog.Header>
+              <Dialog.Title>Ready to begin?</Dialog.Title>
+            </Dialog.Header>
+          </Dialog.Content>
+        </Dialog>
       </Card.Content>
     </Card>
   );

@@ -17,9 +17,13 @@ A comprehensive React UI component library built with Tailwind CSS v4 and Radix 
 - 📱 **Responsive** - Mobile-first design with flexible layouts
 - ⚡ **Performance Focused** - Minimal re-renders and optimized components
 - 🔨 **Tailwind CSS v4 Ready** - Fully compatible with the latest Tailwind CSS v4 features
+- 🧩 **Compound Components** - Intuitive API with compound export pattern
 
 ## 🆕 Recent Improvements (v2.0+)
 
+- **Compound Export Pattern** - New intuitive API using compound components (e.g., `Dialog.Trigger`, `Card.Header`)
+- **Enhanced Developer Experience** - Better IntelliSense and auto-completion with compound components
+- **Backward Compatibility** - All existing imports continue to work alongside new compound pattern
 - **Tailwind CSS v4 Compatibility** - Fully updated for Tailwind CSS v4 with proper `@theme` and `@variant` usage
 - **Enhanced Dark Mode** - Improved dark mode implementation using `@variant dark` directive
 - **Better Build Process** - Resolved build issues with CSS module references using `@reference` directive
@@ -91,6 +95,66 @@ function App() {
   );
 }
 ```
+
+## 🧩 Compound Component Pattern
+
+This library features an intuitive compound component API that makes complex components easier to use and understand. Instead of importing many individual components, you can access sub-components through the main component.
+
+### Modern Compound API (Recommended)
+
+```tsx
+import { Dialog, Button } from '@geee-be/react-twui';
+
+function MyDialog() {
+  return (
+    <Dialog>
+      <Dialog.Trigger asChild>
+        <Button>Open Dialog</Button>
+      </Dialog.Trigger>
+      <Dialog.Content>
+        <Dialog.Header>
+          <Dialog.Title>Confirm Action</Dialog.Title>
+          <Dialog.Description>
+            Are you sure you want to continue?
+          </Dialog.Description>
+        </Dialog.Header>
+        <Dialog.Footer>
+          <Dialog.Close asChild>
+            <Button variant="outline">Cancel</Button>
+          </Dialog.Close>
+          <Button>Continue</Button>
+        </Dialog.Footer>
+      </Dialog.Content>
+    </Dialog>
+  );
+}
+```
+
+### Benefits of Compound Components
+
+- **🎯 Intuitive API**: Clear relationship between components with `Component.SubComponent`
+- **🧠 Better IntelliSense**: IDE auto-suggests available sub-components
+- **📦 Cleaner Imports**: Import one component instead of many individual ones
+- **🔗 Clear Hierarchy**: Visual connection between related components
+- **🛡️ Namespace Protection**: Reduces naming conflicts
+
+### Components with Compound API
+
+The following components support the compound pattern:
+
+- **Dialog**: `Dialog.Trigger`, `Dialog.Content`, `Dialog.Header`, `Dialog.Title`, `Dialog.Description`, `Dialog.Footer`, `Dialog.Close`
+- **Sheet**: `Sheet.Trigger`, `Sheet.Content`, `Sheet.Header`, `Sheet.Title`, `Sheet.Description`, `Sheet.Footer`, `Sheet.Close`
+- **Drawer**: `Drawer.Trigger`, `Drawer.Content`, `Drawer.Header`, `Drawer.Title`, `Drawer.Description`, `Drawer.Footer`, `Drawer.Close`, `Drawer.Handle`
+- **DropdownMenu**: `DropdownMenu.Trigger`, `DropdownMenu.Content`, `DropdownMenu.Item`, `DropdownMenu.Group`, `DropdownMenu.Label`, `DropdownMenu.Separator`, etc.
+- **Card**: `Card.Header`, `Card.Content`, `Card.Footer`
+- **Carousel**: `Carousel.Content`, `Carousel.Item`, `Carousel.Previous`, `Carousel.Next`
+- **Breadcrumb**: `Breadcrumb.List`, `Breadcrumb.Item`, `Breadcrumb.Link`, `Breadcrumb.Page`, `Breadcrumb.Separator`, `Breadcrumb.Ellipsis`
+- **Pagination**: `Pagination.Content`, `Pagination.Item`, `Pagination.Link`, `Pagination.Previous`, `Pagination.Next`, `Pagination.Ellipsis`
+- **Popover**: `Popover.Trigger`, `Popover.Content`, `Popover.Arrow`, `Popover.Close`
+- **Tooltip**: `Tooltip.Content`
+- **ScrollArea**: `ScrollArea.Bar`
+- **Collapsible**: `Collapsible.Trigger`, `Collapsible.Content`
+- **Command**: `Command.Input`, `Command.List`, `Command.Group`, `Command.Item`, `Command.Separator`, `Command.Empty`, `Command.Loading`
 
 ## 🧩 Components
 

@@ -3,12 +3,13 @@ import { ChevronRight, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 import { cn } from '../../helpers/utils';
 
-const Breadcrumb = React.forwardRef<
-  HTMLElement,
-  React.ComponentPropsWithoutRef<'nav'> & {
-    separator?: React.ReactNode;
-  }
->(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />);
+export type BreadcrumbProps = React.ComponentPropsWithoutRef<'nav'> & {
+  separator?: React.ReactNode;
+};
+
+const Breadcrumb = React.forwardRef<HTMLElement, BreadcrumbProps>(
+  ({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />,
+);
 Breadcrumb.displayName = 'Breadcrumb';
 
 const BreadcrumbList = React.forwardRef<

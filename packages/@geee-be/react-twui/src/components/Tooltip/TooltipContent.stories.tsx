@@ -1,11 +1,11 @@
 import { Portal, Provider, Root, Trigger } from '@radix-ui/react-tooltip';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TooltipContent } from './Tooltip.js';
+import { Tooltip } from './index.js';
 
 const meta = {
-  component: TooltipContent,
+  component: Tooltip.Content,
   argTypes: {},
-} satisfies Meta<typeof TooltipContent>;
+} satisfies Meta<typeof Tooltip.Content>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

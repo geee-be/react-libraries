@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Alert } from '../Alert/index.js';
 import { Input } from '../Input/Input.js';
-import { Card, CardContent, CardFooter, CardHeader } from './index.js';
+import { Card } from './index.js';
 
 const meta = {
   component: Card,
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: <CardContent>Hello Alert!</CardContent>,
+    children: <Card.Content>Hello Alert!</Card.Content>,
     color: 'none',
     variant: 'rounded',
   },
@@ -28,13 +28,13 @@ export const HeaderFooter: Story = {
     ...Default.args,
     children: (
       <>
-        <CardHeader color="success">Header Here</CardHeader>
-        <CardContent>
+        <Card.Header color="success">Header Here</Card.Header>
+        <Card.Content>
           <div>Hello Content!</div>
           <Alert color="warning">Hello Alert!</Alert>
           <Input placeholder="Type something..." />
-        </CardContent>
-        <CardFooter>Footer Here</CardFooter>
+        </Card.Content>
+        <Card.Footer>Footer Here</Card.Footer>
       </>
     ),
   },
@@ -44,24 +44,24 @@ export const Nested: Story = {
   args: {
     ...Default.args,
     children: (
-      <CardContent gutters="collapse-none">
+      <Card.Content gutters="collapse-none">
         <p>Level 1</p>
         <Card>
-          <CardContent gutters="collapse-none">
+          <Card.Content gutters="collapse-none">
             <p>Level 2</p>
             <Card>
-              <CardContent gutters="collapse-none">
+              <Card.Content gutters="collapse-none">
                 <p>Level 3</p>
                 <Card>
-                  <CardContent gutters="collapse-none">
+                  <Card.Content gutters="collapse-none">
                     <p>Level 4</p>
-                  </CardContent>
+                  </Card.Content>
                 </Card>
-              </CardContent>
+              </Card.Content>
             </Card>
-          </CardContent>
+          </Card.Content>
         </Card>
-      </CardContent>
+      </Card.Content>
     ),
   },
 };

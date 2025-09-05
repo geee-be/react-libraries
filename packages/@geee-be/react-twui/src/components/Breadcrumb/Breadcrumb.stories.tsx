@@ -1,14 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Bean, Home } from 'lucide-react';
 import { WithIcon } from '../WithIcon/index.js';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from './index.js';
+import { Breadcrumb } from './index.js';
 
 const meta = {
   component: Breadcrumb,
@@ -21,23 +14,23 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: (
-      <BreadcrumbList>
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/">
+      <Breadcrumb.List>
+        <Breadcrumb.Item>
+          <Breadcrumb.Link href="/">
             <WithIcon iconBefore={<Home />}>Home</WithIcon>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/components">Components</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>
+          </Breadcrumb.Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Separator />
+        <Breadcrumb.Item>
+          <Breadcrumb.Link href="/components">Components</Breadcrumb.Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Separator />
+        <Breadcrumb.Item>
+          <Breadcrumb.Page>
             <WithIcon iconBefore={<Bean />}>Breadcrumb</WithIcon>
-          </BreadcrumbPage>
-        </BreadcrumbItem>
-      </BreadcrumbList>
+          </Breadcrumb.Page>
+        </Breadcrumb.Item>
+      </Breadcrumb.List>
     ),
   },
 };
@@ -45,23 +38,23 @@ export const Default: Story = {
 export const Wrapped: Story = {
   args: {
     children: (
-      <BreadcrumbList className="text-center">
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/">
+      <Breadcrumb.List className="text-center">
+        <Breadcrumb.Item>
+          <Breadcrumb.Link href="/">
             <WithIcon iconBefore={<Home />}>Many words in this crumb</WithIcon>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/components">Multi word crumb</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>
+          </Breadcrumb.Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Separator />
+        <Breadcrumb.Item>
+          <Breadcrumb.Link href="/components">Multi word crumb</Breadcrumb.Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Separator />
+        <Breadcrumb.Item>
+          <Breadcrumb.Page>
             <WithIcon iconBefore={<Bean />}>Many words in this crumb</WithIcon>
-          </BreadcrumbPage>
-        </BreadcrumbItem>
-      </BreadcrumbList>
+          </Breadcrumb.Page>
+        </Breadcrumb.Item>
+      </Breadcrumb.List>
     ),
   },
   decorators: [
@@ -76,23 +69,23 @@ export const Wrapped: Story = {
 export const WrappedWithoutLastItem: Story = {
   args: {
     children: (
-      <BreadcrumbList className="text-center">
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/">
+      <Breadcrumb.List className="text-center">
+        <Breadcrumb.Item>
+          <Breadcrumb.Link href="/">
             <WithIcon iconBefore={<Home />}>Many words in this crumb</WithIcon>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/components">Multi word crumb</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>
+          </Breadcrumb.Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Separator />
+        <Breadcrumb.Item>
+          <Breadcrumb.Link href="/components">Multi word crumb</Breadcrumb.Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Separator />
+        <Breadcrumb.Item>
+          <Breadcrumb.Page>
             <WithIcon iconBefore={<Bean />}>Many words in this crumb</WithIcon>
-          </BreadcrumbPage>
-        </BreadcrumbItem>
-      </BreadcrumbList>
+          </Breadcrumb.Page>
+        </Breadcrumb.Item>
+      </Breadcrumb.List>
     ),
   },
   decorators: [

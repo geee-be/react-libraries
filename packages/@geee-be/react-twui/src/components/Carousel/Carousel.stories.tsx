@@ -1,14 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button/Button.js';
-import { Card } from '../Card/Card.js';
-import { CardContent } from '../Card/CardContent.js';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from './index.js';
+import { Card } from '../Card/index.js';
+import { Carousel } from './index.js';
 
 const meta = {
   component: Carousel,
@@ -32,22 +25,22 @@ export const Default: Story = {
     },
     children: (
       <>
-        <CarouselPrevious />
-        <CarouselContent>
+        <Carousel.Previous />
+        <Carousel.Content>
           {Array.from({ length: 5 }).map((_, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: index is all we have in this case
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <Carousel.Item key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <Card.Content className="flex aspect-square items-center justify-center p-6">
                     <span className="text-3xl font-semibold">{index + 1}</span>
-                  </CardContent>
+                  </Card.Content>
                 </Card>
               </div>
-            </CarouselItem>
+            </Carousel.Item>
           ))}
-        </CarouselContent>
-        <CarouselNext />
+        </Carousel.Content>
+        <Carousel.Next />
       </>
     ),
   },
@@ -70,18 +63,18 @@ export const Buttons: Story = {
     },
     children: (
       <>
-        <CarouselPrevious />
-        <CarouselContent>
+        <Carousel.Previous />
+        <Carousel.Content>
           {Array.from({ length: 5 }).map((_, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: index is all we have in this case
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <Carousel.Item key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Button>No {index}</Button>
               </div>
-            </CarouselItem>
+            </Carousel.Item>
           ))}
-        </CarouselContent>
-        <CarouselNext />
+        </Carousel.Content>
+        <Carousel.Next />
       </>
     ),
   },
@@ -95,20 +88,23 @@ export const CardButtons: Story = {
     },
     children: (
       <>
-        <CarouselPrevious autoHide layout="overlaid" />
-        <CarouselContent>
+        <Carousel.Previous autoHide layout="overlaid" />
+        <Carousel.Content>
           {Array.from({ length: 15 }).map((_, index) => (
-            // biome-ignore lint/suspicious/noArrayIndexKey: index is all we have in this case
-            <CarouselItem key={index} className="md:basis-[28%] lg:basis-[18%]">
+            <Carousel.Item
+              // biome-ignore lint/suspicious/noArrayIndexKey: index is all we have in this case
+              key={index}
+              className="md:basis-[28%] lg:basis-[18%]"
+            >
               <div className="p-1">
                 <Button variant="card" className="flex grow w-full">
-                  <CardContent>No {index}</CardContent>
+                  <Card.Content>No {index}</Card.Content>
                 </Button>
               </div>
-            </CarouselItem>
+            </Carousel.Item>
           ))}
-        </CarouselContent>
-        <CarouselNext autoHide layout="overlaid" />
+        </Carousel.Content>
+        <Carousel.Next autoHide layout="overlaid" />
       </>
     ),
   },

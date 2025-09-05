@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Label } from '../Label';
-import { Popover, PopoverContent, PopoverTrigger } from './Popover';
+import { Popover } from './index.js';
 
 const meta = {
   component: Popover,
@@ -19,12 +19,12 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <PopoverTrigger asChild>
+        <Popover.Trigger asChild>
           <Button variant="solid" color="info">
             Open popover
           </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-80">
+        </Popover.Trigger>
+        <Popover.Content className="w-80">
           <div className="grid gap-4">
             <div className="space-y-2">
               <h4 className="font-medium leading-none">Dimensions</h4>
@@ -55,7 +55,7 @@ export const Default: Story = {
               </div>
             </div>
           </div>
-        </PopoverContent>
+        </Popover.Content>
       </>
     ),
   },
