@@ -1,6 +1,5 @@
 ---
-"@geee-be/react-utils": patch
-"@geee-be/react-twui": patch
+"@geee-be/react-twui": minor
 ---
 
 More compound components
