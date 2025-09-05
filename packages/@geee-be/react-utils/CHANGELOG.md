@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.3.2
+
+### Patch Changes
+
+- 3e252a0: Metadata update
+
 ## 1.3.1
 
 ### Patch Changes
