@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.11
+
+### Patch Changes
+
+- 2942a3f: tweak packages
+
 ## 2.0.10
 
 ### Patch Changes
