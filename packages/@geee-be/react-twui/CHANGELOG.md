@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.0.12
+
+### Patch Changes
+
+- 13f2f57: fix dialog animation
+
 ## 2.0.11
 
 ### Patch Changes
