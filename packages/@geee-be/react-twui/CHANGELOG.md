@@ -1,5 +1,16 @@
 # @geee-be/react-twui
 
+## 2.1.0
+
+### Minor Changes
+
+- 097cb9b: More compound components
+
+### Patch Changes
+
+- Updated dependencies [3e252a0]
+  - @geee-be/react-utils@1.3.2
+
 ## 2.0.15
 
 ### Patch Changes
