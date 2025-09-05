@@ -1,7 +1,6 @@
 import type { VariantProps } from 'cva';
 import type { FC, PropsWithChildren } from 'react';
 import { cn } from '../../helpers/utils.js';
-import './join.css';
 import { joinVariants } from './variants.js';
 
 export type JoinElement = HTMLDivElement;

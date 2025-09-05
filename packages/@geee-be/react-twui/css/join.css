@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 .join {
   @apply inline-flex items-stretch;
   & .join-item:where(:focus, :focus-visible, :focus-within) {

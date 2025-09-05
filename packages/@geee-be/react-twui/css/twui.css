@@ -5,6 +5,7 @@
 @import "./calculations.css";
 @import "./like.css";
 @import "./default.css";
+@import "./join.css";
 @import "./tw-animate.css";
 
 @plugin "@tailwindcss/container-queries";
