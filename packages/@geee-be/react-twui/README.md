@@ -12,7 +12,7 @@ A comprehensive React UI component library built with Tailwind CSS v4 and Radix 
 - ♿ **Accessibility First** - WCAG compliant with proper ARIA support using Radix UI
 - 🎯 **TypeScript Native** - Full type safety with comprehensive TypeScript definitions
 - 🌙 **Dark Mode Ready** - Built-in dark mode support
-- 📦 **Tree Shakeable** - Optimized bundle size with ES modules
+- 📦 **Tree Shakeable** - Optimized bundle size with ES modules and modern tooling
 - 🔧 **Highly Customizable** - Easy theming with CSS custom properties
 - 📱 **Responsive** - Mobile-first design with flexible layouts
 - ⚡ **Performance Focused** - Minimal re-renders and optimized components
@@ -26,7 +26,7 @@ A comprehensive React UI component library built with Tailwind CSS v4 and Radix 
 - **Backward Compatibility** - All existing imports continue to work alongside new compound pattern
 - **Tailwind CSS v4 Compatibility** - Fully updated for Tailwind CSS v4 with proper `@theme` and `@variant` usage
 - **Enhanced Dark Mode** - Improved dark mode implementation using `@variant dark` directive
-- **Better Build Process** - Resolved build issues with CSS module references using `@reference` directive
+- **Enhanced Build Process** - Modern ESM-first build process with optimized tree shaking and bundling
 - **Improved Type Safety** - Enhanced TypeScript definitions and better component prop typing
 
 ## 📋 Installation

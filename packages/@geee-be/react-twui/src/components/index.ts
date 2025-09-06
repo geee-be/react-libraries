@@ -3,7 +3,7 @@ export * from './Alert/index.js';
 export * from './AspectRatio/index.js';
 export * from './Async/index.js';
 export * from './Avatar/index.js';
-export { default as Breadcrumb } from './Breadcrumb/index.js';
+export * from './Breadcrumb/index.js';
 export * from './Button/index.js';
 export * from './Calendar/index.js';
 export * from './Card/index.js';

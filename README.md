@@ -178,10 +178,10 @@ react-libraries/
 
 ### Build System
 
-- **react-twui**: Dual ESM/CJS builds using `tsup`
+- **react-twui**: ESM-only builds using `tsup` for modern module support
 - **react-utils**: ESM build using TypeScript compiler
 - **TypeScript**: Strict mode enabled across all packages
-- **Tree Shaking**: Optimized for minimal bundle impact
+- **Tree Shaking**: Optimized for minimal bundle impact with native ES modules
 
 ### Shared Tooling
 

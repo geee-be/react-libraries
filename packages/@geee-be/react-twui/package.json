@@ -22,31 +22,20 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "types": "./dist/cjs/index.d.cts",
-        "default": "./dist/cjs/index.cjs"
-      }
+      "import": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts"
     }
   },
-  "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
-  "types": "./dist/cjs/index.d.cts",
+  "types": "./dist/esm/index.d.ts",
   "files": [
     "dist",
     "css",
     "README.md"
   ],
   "scripts": {
-    "build": "concurrently \"npm run build:cjs\" \"npm run build:esm\"",
-    "build:cjs": "tsup --format cjs --external react",
-    "build:esm": "tsup --format esm --external react",
-    "build:watch": "concurrently \"npm:build:watch:*\"",
-    "build:watch:cjs": "npm run build:cjs -- --watch",
-    "build:watch:esm": "npm run build:esm -- --watch",
+    "build": "tsup --format esm --external react && tsc -p tsconfig-esm.json",
+    "build:watch": "npm run build -- --watch",
     "clean": "rimraf .turbo node_modules dist",
     "dev": "npm run build:watch",
     "lint": "npm run lint:biome && npm run lint:types && npm run lint:unused-exports",

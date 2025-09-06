@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Bean, Home } from 'lucide-react';
 import { WithIcon } from '../WithIcon/index.js';
-import Breadcrumb from './index.js';
+import { Breadcrumb } from './index.js';
 
 const meta = {
   component: Breadcrumb,
