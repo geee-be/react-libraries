@@ -1,5 +1,16 @@
 # @geee-be/react-twui
 
+## 2.2.0
+
+### Minor Changes
+
+- aac0e91: Upgrade packages
+
+### Patch Changes
+
+- Updated dependencies [aac0e91]
+  - @geee-be/react-utils@1.4.0
+
 ## 2.1.0
 
 ### Minor Changes
