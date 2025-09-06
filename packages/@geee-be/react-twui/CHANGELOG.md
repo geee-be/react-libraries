@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.3
+
+### Patch Changes
+
+- 11cc6ec: don't bundle
+
 ## 2.2.2
 
 ### Patch Changes
