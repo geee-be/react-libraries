@@ -1,6 +1,6 @@
 {
   "name": "@geee-be/react-utils",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "A collection of powerful, type-safe React hooks and utility functions. Includes state management, SSR-compatible hooks, device detection, and browser API wrappers.",
   "keywords": [
     "react",

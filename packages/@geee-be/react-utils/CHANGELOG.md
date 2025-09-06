@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.4.0
+
+### Minor Changes
+
+- aac0e91: Upgrade packages
+
 ## 1.3.2
 
 ### Patch Changes
