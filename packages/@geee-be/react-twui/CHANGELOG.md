@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.1
+
+### Patch Changes
+
+- 2cbfcb1: fix compound exports
+
 ## 2.2.0
 
 ### Minor Changes
