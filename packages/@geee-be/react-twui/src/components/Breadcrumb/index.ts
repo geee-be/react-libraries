@@ -28,12 +28,4 @@ const Breadcrumb: BreadcrumbCompound = Object.assign(BreadcrumbComponent, {
   Separator: BreadcrumbSeparatorComponent,
 });
 
-export {
-  Breadcrumb,
-  BreadcrumbEllipsisComponent as BreadcrumbEllipsis,
-  BreadcrumbItemComponent as BreadcrumbItem,
-  BreadcrumbLinkComponent as BreadcrumbLink,
-  BreadcrumbListComponent as BreadcrumbList,
-  BreadcrumbPageComponent as BreadcrumbPage,
-  BreadcrumbSeparatorComponent as BreadcrumbSeparator,
-};
+export default Breadcrumb;
