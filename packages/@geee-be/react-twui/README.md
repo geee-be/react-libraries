@@ -164,7 +164,7 @@ The following components support the compound pattern:
 - **Separator** - Visual dividers and spacers
 - **Skeleton** - Loading placeholders
 - **Join** - Component for joining elements with visual separators
-- **ScrollArea** - Custom scrollable areas with styled scrollbars
+- **ScrollArea** - Custom scrollable areas with styled scroll bars
 
 ### Navigation
 - **Breadcrumb** - Navigation breadcrumbs

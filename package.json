@@ -17,15 +17,15 @@
     "start:dev": "pnpm --stream --parallel -r start:dev"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.2",
-    "@changesets/cli": "2.29.5",
-    "@swc/cli": "^0.1.65",
-    "@swc/core": "^1.12.6",
-    "@types/node": "^20.19.1",
-    "chokidar": "^3.6.0",
-    "esbuild": "^0.17.19",
-    "rimraf": "^5.0.10",
-    "ts-unused-exports": "^9.0.5",
-    "typescript": "^5.8.3"
+    "@biomejs/biome": "2.2.3",
+    "@changesets/cli": "2.29.6",
+    "@swc/cli": "^0.7.8",
+    "@swc/core": "^1.13.5",
+    "@types/node": "^24.3.1",
+    "chokidar": "^4.0.3",
+    "esbuild": "^0.25.9",
+    "rimraf": "^6.0.1",
+    "ts-unused-exports": "^11.0.1",
+    "typescript": "^5.9.2"
   }
 }
