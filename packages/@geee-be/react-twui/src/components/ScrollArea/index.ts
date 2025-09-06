@@ -4,15 +4,13 @@ import {
 } from './ScrollArea.js';
 
 type ScrollAreaCompound = typeof ScrollAreaComponent & {
+  Root: typeof ScrollAreaComponent;
   Bar: typeof ScrollBarComponent;
 };
 
-export const ScrollArea: ScrollAreaCompound = Object.assign(
-  ScrollAreaComponent,
-  {
-    Bar: ScrollBarComponent,
-  },
-);
+const ScrollArea: ScrollAreaCompound = Object.assign(ScrollAreaComponent, {
+  Root: ScrollAreaComponent,
+  Bar: ScrollBarComponent,
+});
 
-// Export original form components for backward compatibility and flexibility
-export { ScrollBarComponent as ScrollBar };
+export { ScrollArea, ScrollBarComponent as ScrollBar };

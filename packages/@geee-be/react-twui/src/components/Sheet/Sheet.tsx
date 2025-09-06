@@ -9,8 +9,6 @@ import { cn } from '../../helpers/utils';
 
 const Sheet = SheetPrimitive.Root;
 
-const SheetPrimitiveContent = SheetPrimitive.Content;
-
 const SheetTrigger = SheetPrimitive.Trigger;
 
 const SheetClose = SheetPrimitive.Close;
@@ -141,7 +139,6 @@ export {
   SheetHeader,
   SheetOverlay,
   SheetPortal,
-  SheetPrimitiveContent,
   SheetTitle,
   SheetTrigger,
 };

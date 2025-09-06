@@ -3,7 +3,7 @@ import { ChevronRight, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 import { cn } from '../../helpers/utils';
 
-export type BreadcrumbProps = React.ComponentPropsWithoutRef<'nav'> & {
+type BreadcrumbProps = React.ComponentPropsWithoutRef<'nav'> & {
   separator?: React.ReactNode;
 };
 

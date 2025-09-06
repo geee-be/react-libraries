@@ -29,6 +29,8 @@ Update instruction files when:
 - Package structure changes
 - Development workflow changes
 - New coding standards are adopted
+- **Compound component patterns are implemented or updated**
+- **API changes affect component usage patterns**
 
 ### Content Requirements
 - **Accuracy**: Ensure all technical details match current implementation
@@ -106,6 +108,7 @@ Each package instruction file should follow this structure:
 
 **Focus Areas:**
 - Component architecture and composition patterns
+- **Compound component API implementation and usage**
 - Styling system (Tailwind CSS, CSS custom properties)
 - Accessibility implementation with Radix UI
 - Variant management systems using CVA
@@ -114,6 +117,7 @@ Each package instruction file should follow this structure:
 - Animation and interaction patterns
 - Form integration examples
 - shadcn/ui compatibility and attribution
+- **Backward compatibility with both compound and individual import patterns**
 
 **Required Sections:**
 - Component Architecture
@@ -130,7 +134,7 @@ Each package instruction file should follow this structure:
 // Component usage with variants
 <Button variant="outline" size="lg">Click me</Button>
 
-// Compound component patterns
+// RECOMMENDED: Compound component patterns (17 components support this)
 <Card>
   <Card.Header>
     <Card.Title>Title</Card.Title>
@@ -138,11 +142,36 @@ Each package instruction file should follow this structure:
   <Card.Content>Content</Card.Content>
 </Card>
 
+<Dialog>
+  <Dialog.Trigger asChild>
+    <Button>Open</Button>
+  </Dialog.Trigger>
+  <Dialog.Content>
+    <Dialog.Header>
+      <Dialog.Title>Dialog Title</Dialog.Title>
+    </Dialog.Header>
+  </Dialog.Content>
+</Dialog>
+
+// LEGACY: Individual imports (still supported for backward compatibility)
+import { Card, CardHeader, CardTitle, CardContent } from '@geee-be/react-twui';
+
+<Card>
+  <CardHeader>
+    <CardTitle>Title</CardTitle>
+  </CardHeader>
+  <CardContent>Content</CardContent>
+</Card>
+
 // Theme customization
 :root {
   --primary: 220 100% 50%;
   --primary-fg: 0 0% 100%;
 }
+
+// All compound components: Dialog, Sheet, Drawer, DropdownMenu, Card, Avatar,
+// Breadcrumb, Carousel, ScrollArea, Sidebar, Pagination, Popover, Tooltip,
+// Collapsible, Command, InputOtp, Label
 ```
 
 ### Utility Libraries (react-utils style)
@@ -218,12 +247,14 @@ const [message, postMessage] = useBroadcastChannel('channel');
 ### React TWUI Package
 - Tailwind CSS v4 features and changes
 - New component additions and updates
+- **Compound component pattern implementation (17 components completed)**
 - Radix UI integration patterns
 - CSS custom property usage
 - Component variant patterns with CVA
 - Storybook story conventions
 - shadcn/ui compatibility notes
 - Accessibility compliance updates
+- **Backward compatibility with both compound and individual import patterns**
 
 ### React Utils Package
 - New hooks and utilities
@@ -293,6 +324,8 @@ Before finalizing updates:
 3. Document any new dependencies or patterns
 4. Update workspace guide if new build steps required
 5. **For compound components**: Follow the conversion guide in `.prompts/compound-component-conversion.md`
+6. **Update documentation to show both compound and individual usage patterns**
+7. **Ensure backward compatibility examples are included**
 
 ### Build Configuration Change
 1. Update build sections in relevant package instructions

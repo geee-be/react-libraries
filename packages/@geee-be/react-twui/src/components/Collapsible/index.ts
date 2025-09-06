@@ -5,20 +5,19 @@ import {
 } from './Collapsible';
 
 type CollapsibleCompound = typeof CollapsibleComponent & {
+  Root: typeof CollapsibleComponent;
   Content: typeof CollapsibleContentComponent;
   Trigger: typeof CollapsibleTriggerComponent;
 };
 
-export const Collapsible: CollapsibleCompound = Object.assign(
-  CollapsibleComponent,
-  {
-    Content: CollapsibleContentComponent,
-    Trigger: CollapsibleTriggerComponent,
-  },
-);
+const Collapsible: CollapsibleCompound = Object.assign(CollapsibleComponent, {
+  Root: CollapsibleComponent,
+  Content: CollapsibleContentComponent,
+  Trigger: CollapsibleTriggerComponent,
+});
 
-// Export original form components for backward compatibility and flexibility
 export {
+  Collapsible,
   CollapsibleContentComponent as CollapsibleContent,
   CollapsibleTriggerComponent as CollapsibleTrigger,
 };

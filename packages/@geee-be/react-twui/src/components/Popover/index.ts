@@ -7,21 +7,23 @@ import {
 } from './Popover';
 
 type PopoverCompound = typeof PopoverComponent & {
+  Root: typeof PopoverComponent;
   Arrow: typeof PopoverArrowComponent;
   Close: typeof PopoverCloseComponent;
   Content: typeof PopoverContentComponent;
   Trigger: typeof PopoverTriggerComponent;
 };
 
-export const Popover: PopoverCompound = Object.assign(PopoverComponent, {
+const Popover: PopoverCompound = Object.assign(PopoverComponent, {
+  Root: PopoverComponent,
   Arrow: PopoverArrowComponent,
   Close: PopoverCloseComponent,
   Content: PopoverContentComponent,
   Trigger: PopoverTriggerComponent,
 });
 
-// Export original form components for backward compatibility and flexibility
 export {
+  Popover,
   PopoverArrowComponent as PopoverArrow,
   PopoverCloseComponent as PopoverClose,
   PopoverContentComponent as PopoverContent,

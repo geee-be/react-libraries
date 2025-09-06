@@ -1,5 +1,3 @@
-export type { CommandDialogProps } from './Command.js';
-
 import {
   Command as CommandComponent,
   CommandDialog as CommandDialogComponent,
@@ -13,6 +11,7 @@ import {
 } from './Command.js';
 
 type CommandCompound = typeof CommandComponent & {
+  Root: typeof CommandComponent;
   Dialog: typeof CommandDialogComponent;
   Empty: typeof CommandEmptyComponent;
   Group: typeof CommandGroupComponent;
@@ -23,7 +22,8 @@ type CommandCompound = typeof CommandComponent & {
   Separator: typeof CommandSeparatorComponent;
 };
 
-export const Command: CommandCompound = Object.assign(CommandComponent, {
+const Command: CommandCompound = Object.assign(CommandComponent, {
+  Root: CommandComponent,
   Dialog: CommandDialogComponent,
   Empty: CommandEmptyComponent,
   Group: CommandGroupComponent,
@@ -34,8 +34,8 @@ export const Command: CommandCompound = Object.assign(CommandComponent, {
   Separator: CommandSeparatorComponent,
 });
 
-// Export original form components for backward compatibility and flexibility
 export {
+  Command,
   CommandDialogComponent as CommandDialog,
   CommandEmptyComponent as CommandEmpty,
   CommandGroupComponent as CommandGroup,
@@ -45,3 +45,5 @@ export {
   CommandLoadingComponent as CommandLoading,
   CommandSeparatorComponent as CommandSeparator,
 };
+
+export type { CommandDialogProps } from './Command.js';

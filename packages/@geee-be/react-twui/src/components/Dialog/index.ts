@@ -11,7 +11,9 @@ import {
   DialogTrigger as DialogTriggerComponent,
 } from './Dialog.js';
 
+// Define the compound type
 type DialogCompound = typeof DialogComponent & {
+  Root: typeof DialogComponent;
   Close: typeof DialogCloseComponent;
   Content: typeof DialogContentComponent;
   Description: typeof DialogDescriptionComponent;
@@ -23,7 +25,9 @@ type DialogCompound = typeof DialogComponent & {
   Trigger: typeof DialogTriggerComponent;
 };
 
-export const Dialog: DialogCompound = Object.assign(DialogComponent, {
+// Create compound component with sub-components attached
+const Dialog: DialogCompound = Object.assign(DialogComponent, {
+  Root: DialogComponent,
   Close: DialogCloseComponent,
   Content: DialogContentComponent,
   Description: DialogDescriptionComponent,
@@ -35,8 +39,9 @@ export const Dialog: DialogCompound = Object.assign(DialogComponent, {
   Trigger: DialogTriggerComponent,
 });
 
-// Export original form components for backward compatibility and flexibility
+// Export individual components for backward compatibility
 export {
+  Dialog,
   DialogCloseComponent as DialogClose,
   DialogContentComponent as DialogContent,
   DialogDescriptionComponent as DialogDescription,

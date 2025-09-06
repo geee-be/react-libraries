@@ -163,6 +163,7 @@ function App() {
 
 **Focus Areas:**
 - Component showcase with visual examples
+- **Compound component API and usage patterns**
 - Tailwind CSS integration and setup
 - Theme customization and CSS variables
 - Accessibility features and ARIA compliance
@@ -171,9 +172,68 @@ function App() {
 - Performance and bundle size
 - Storybook documentation link
 - **Credits and attribution to shadcn/ui and Radix UI**
+- **Backward compatibility with both compound and individual imports**
 
 **Key Sections:**
 ```markdown
+## Compound Component Pattern
+
+This library features an intuitive compound component API that makes complex components easier to use:
+
+```tsx
+// RECOMMENDED: Modern compound API
+import { Dialog, Card, Avatar } from '@geee-be/react-twui';
+
+<Card>
+  <Card.Header>
+    <Card.Title>User Profile</Card.Title>
+  </Card.Header>
+  <Card.Content>
+    <Avatar>
+      <Avatar.Image src="/profile.jpg" />
+      <Avatar.Fallback>JD</Avatar.Fallback>
+    </Avatar>
+  </Card.Content>
+</Card>
+
+<Dialog>
+  <Dialog.Trigger asChild>
+    <Button>Open Dialog</Button>
+  </Dialog.Trigger>
+  <Dialog.Content>
+    <Dialog.Header>
+      <Dialog.Title>Confirm Action</Dialog.Title>
+    </Dialog.Header>
+    <Dialog.Footer>
+      <Dialog.Close asChild>
+        <Button variant="outline">Cancel</Button>
+      </Dialog.Close>
+    </Dialog.Footer>
+  </Dialog.Content>
+</Dialog>
+
+// LEGACY: Original form (still supported for backward compatibility)
+import { Card, CardHeader, CardTitle, Avatar, AvatarImage, AvatarFallback } from '@geee-be/react-twui';
+
+<Card>
+  <CardHeader>
+    <CardTitle>User Profile</CardTitle>
+  </CardHeader>
+</Card>
+```
+
+### Components with Compound API
+
+17 components support the compound pattern:
+- **Dialog**: `Dialog.Trigger`, `Dialog.Content`, `Dialog.Header`, etc.
+- **Sheet**: `Sheet.Trigger`, `Sheet.Content`, `Sheet.Header`, etc.
+- **Drawer**: `Drawer.Trigger`, `Drawer.Content`, `Drawer.Header`, etc.
+- **DropdownMenu**: `DropdownMenu.Trigger`, `DropdownMenu.Content`, `DropdownMenu.Item`, etc.
+- **Card**: `Card.Header`, `Card.Content`, `Card.Footer`
+- **Avatar**: `Avatar.Image`, `Avatar.Fallback`
+- **Sidebar**: `Sidebar.Content`, `Sidebar.Menu`, `Sidebar.MenuItem`, etc.
+- **And 10 more components...**
+
 ## Tailwind CSS Setup
 
 This library requires Tailwind CSS v4. Add to your CSS:
@@ -200,7 +260,24 @@ Customize the design system using CSS custom properties:
 [Component example with variants]
 
 ### Card
-[Component example with composition]
+[Component example with compound composition]
+
+## Migration Guide
+
+All existing code continues to work unchanged. New projects can use the compound API for better developer experience:
+
+```tsx
+// OLD: Individual imports (still works)
+import { Dialog, DialogTrigger, DialogContent } from '@geee-be/react-twui';
+
+// NEW: Compound API (recommended)
+import { Dialog } from '@geee-be/react-twui';
+
+<Dialog>
+  <Dialog.Trigger>Open</Dialog.Trigger>
+  <Dialog.Content>Content</Dialog.Content>
+</Dialog>
+```
 
 ## Credits
 

@@ -7,12 +7,13 @@ import {
   SheetHeader as SheetHeaderComponent,
   SheetOverlay as SheetOverlayComponent,
   SheetPortal as SheetPortalComponent,
-  SheetPrimitiveContent as SheetPrimitiveContentComponent,
   SheetTitle as SheetTitleComponent,
   SheetTrigger as SheetTriggerComponent,
-} from './Sheet';
+} from './Sheet.js';
 
+// Define the compound type
 type SheetCompound = typeof SheetComponent & {
+  Root: typeof SheetComponent;
   Close: typeof SheetCloseComponent;
   Content: typeof SheetContentComponent;
   Description: typeof SheetDescriptionComponent;
@@ -20,12 +21,13 @@ type SheetCompound = typeof SheetComponent & {
   Header: typeof SheetHeaderComponent;
   Overlay: typeof SheetOverlayComponent;
   Portal: typeof SheetPortalComponent;
-  PrimitiveContent: typeof SheetPrimitiveContentComponent;
   Title: typeof SheetTitleComponent;
   Trigger: typeof SheetTriggerComponent;
 };
 
-export const Sheet: SheetCompound = Object.assign(SheetComponent, {
+// Create compound component with sub-components attached
+const Sheet: SheetCompound = Object.assign(SheetComponent, {
+  Root: SheetComponent,
   Close: SheetCloseComponent,
   Content: SheetContentComponent,
   Description: SheetDescriptionComponent,
@@ -33,13 +35,13 @@ export const Sheet: SheetCompound = Object.assign(SheetComponent, {
   Header: SheetHeaderComponent,
   Overlay: SheetOverlayComponent,
   Portal: SheetPortalComponent,
-  PrimitiveContent: SheetPrimitiveContentComponent,
   Title: SheetTitleComponent,
   Trigger: SheetTriggerComponent,
 });
 
-// Export original form components for backward compatibility and flexibility
+// Export individual components for backward compatibility
 export {
+  Sheet,
   SheetCloseComponent as SheetClose,
   SheetContentComponent as SheetContent,
   SheetDescriptionComponent as SheetDescription,
@@ -47,7 +49,6 @@ export {
   SheetHeaderComponent as SheetHeader,
   SheetOverlayComponent as SheetOverlay,
   SheetPortalComponent as SheetPortal,
-  SheetPrimitiveContentComponent as SheetPrimitiveContent,
   SheetTitleComponent as SheetTitle,
   SheetTriggerComponent as SheetTrigger,
 };

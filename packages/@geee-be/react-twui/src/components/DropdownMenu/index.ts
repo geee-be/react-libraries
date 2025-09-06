@@ -17,6 +17,7 @@ import {
 } from './DropdownMenu';
 
 type DropdownMenuCompound = typeof DropdownMenuComponent & {
+  Root: typeof DropdownMenuComponent;
   CheckboxItem: typeof DropdownMenuCheckboxItemComponent;
   Content: typeof DropdownMenuContentComponent;
   Group: typeof DropdownMenuGroupComponent;
@@ -33,9 +34,10 @@ type DropdownMenuCompound = typeof DropdownMenuComponent & {
   Trigger: typeof DropdownMenuTriggerComponent;
 };
 
-export const DropdownMenu: DropdownMenuCompound = Object.assign(
+const DropdownMenu: DropdownMenuCompound = Object.assign(
   DropdownMenuComponent,
   {
+    Root: DropdownMenuComponent,
     CheckboxItem: DropdownMenuCheckboxItemComponent,
     Content: DropdownMenuContentComponent,
     Group: DropdownMenuGroupComponent,
@@ -53,8 +55,8 @@ export const DropdownMenu: DropdownMenuCompound = Object.assign(
   },
 );
 
-// Export original form components for backward compatibility and flexibility
 export {
+  DropdownMenu,
   DropdownMenuCheckboxItemComponent as DropdownMenuCheckboxItem,
   DropdownMenuContentComponent as DropdownMenuContent,
   DropdownMenuGroupComponent as DropdownMenuGroup,

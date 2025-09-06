@@ -1,5 +1,3 @@
-export type { DrawerProps } from './Drawer';
-
 import {
   DrawerClose as DrawerCloseComponent,
   Drawer as DrawerComponent,
@@ -15,6 +13,7 @@ import {
 } from './Drawer';
 
 type DrawerCompound = typeof DrawerComponent & {
+  Root: typeof DrawerComponent;
   Close: typeof DrawerCloseComponent;
   Content: typeof DrawerContentComponent;
   Description: typeof DrawerDescriptionComponent;
@@ -27,7 +26,8 @@ type DrawerCompound = typeof DrawerComponent & {
   Trigger: typeof DrawerTriggerComponent;
 };
 
-export const Drawer: DrawerCompound = Object.assign(DrawerComponent, {
+const Drawer: DrawerCompound = Object.assign(DrawerComponent, {
+  Root: DrawerComponent,
   Close: DrawerCloseComponent,
   Content: DrawerContentComponent,
   Description: DrawerDescriptionComponent,
@@ -40,8 +40,8 @@ export const Drawer: DrawerCompound = Object.assign(DrawerComponent, {
   Trigger: DrawerTriggerComponent,
 });
 
-// Export original form components for backward compatibility and flexibility
 export {
+  Drawer,
   DrawerCloseComponent as DrawerClose,
   DrawerContentComponent as DrawerContent,
   DrawerDescriptionComponent as DrawerDescription,
@@ -53,3 +53,5 @@ export {
   DrawerTitleComponent as DrawerTitle,
   DrawerTriggerComponent as DrawerTrigger,
 };
+
+export type { DrawerProps } from './Drawer';

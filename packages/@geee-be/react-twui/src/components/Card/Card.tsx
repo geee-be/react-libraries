@@ -4,7 +4,7 @@ import * as React from 'react';
 import { cn } from '../../helpers/utils.js';
 import { cardVariants } from './variants.js';
 
-export type CardProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> &
+type CardProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> &
   VariantProps<typeof cardVariants>;
 
 /* ------------------------------- Components ------------------------------- */

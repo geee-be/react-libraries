@@ -18,11 +18,12 @@ This monorepo contains the following packages:
 
 #### 🎨 @geee-be/react-twui
 - **Modern UI Components**: Built with Tailwind CSS v4 and Radix UI primitives
-- **Compound Component API**: Intuitive component relationships with `Component.SubComponent` pattern
+- **Compound Component API**: Intuitive component relationships with `Component.SubComponent` pattern (17+ compound components)
 - **Accessibility First**: WCAG compliant components with proper ARIA support
 - **Themeable**: CSS custom properties for easy customization
 - **TypeScript**: Full type safety and IntelliSense support
 - **Tree Shakeable**: Optimized for minimal bundle size
+- **Backward Compatible**: Supports both compound and individual import patterns
 
 #### 🪝 @geee-be/react-utils
 - **Custom Hooks**: Enhanced state management and utility hooks
@@ -52,16 +53,28 @@ pnpm add @geee-be/react-twui @geee-be/react-utils
 ### Basic Usage
 
 ```tsx
-// Using react-twui components with compound pattern
-import { Button, Card, Dialog } from '@geee-be/react-twui';
+// Using react-twui components with compound pattern (recommended)
+import { Button, Card, Dialog, Avatar, Sidebar } from '@geee-be/react-twui';
 
 function App() {
   return (
     <Card>
       <Card.Header>
         <Card.Title>Welcome</Card.Title>
+        <Card.Description>Modern UI component library</Card.Description>
       </Card.Header>
       <Card.Content>
+        <div className="flex items-center space-x-4 mb-4">
+          <Avatar>
+            <Avatar.Image src="/profile.jpg" alt="Profile" />
+            <Avatar.Fallback>JD</Avatar.Fallback>
+          </Avatar>
+          <div>
+            <h3 className="font-semibold">John Doe</h3>
+            <p className="text-sm text-muted-fg">Software Engineer</p>
+          </div>
+        </div>
+
         <Dialog>
           <Dialog.Trigger asChild>
             <Button variant="outline">Get Started</Button>
@@ -69,10 +82,32 @@ function App() {
           <Dialog.Content>
             <Dialog.Header>
               <Dialog.Title>Ready to begin?</Dialog.Title>
+              <Dialog.Description>
+                Choose your preferred way to explore the components.
+              </Dialog.Description>
             </Dialog.Header>
+            <Dialog.Footer>
+              <Dialog.Close asChild>
+                <Button variant="outline">Browse Components</Button>
+              </Dialog.Close>
+              <Button>Start Building</Button>
+            </Dialog.Footer>
           </Dialog.Content>
         </Dialog>
       </Card.Content>
+    </Card>
+  );
+}
+
+// Backward compatible usage (existing code works unchanged)
+import { Card, CardHeader, CardTitle, Button } from '@geee-be/react-twui';
+
+function LegacyApp() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Legacy Pattern</CardTitle>
+      </CardHeader>
     </Card>
   );
 }
