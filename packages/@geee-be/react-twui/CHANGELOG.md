@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.2
+
+### Patch Changes
+
+- 42a6425: trying to get compound components to work
+
 ## 2.2.1
 
 ### Patch Changes

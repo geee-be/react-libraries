@@ -1,6 +1,6 @@
 {
   "name": "@geee-be/react-twui",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "A comprehensive React UI component library built with Tailwind CSS v4 and Radix UI primitives. Features an intuitive compound component API, full TypeScript support, and accessibility-first design.",
   "keywords": [
     "react",
