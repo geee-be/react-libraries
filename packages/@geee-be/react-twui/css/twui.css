@@ -7,6 +7,10 @@
 @import "./default.css";
 @import "./join.css";
 @import "./tw-animate.css";
+@import "./cropper/compact.css";
+@import "./cropper/custom.css";
+@import "./cropper/style.css";
+@import "./toast/style.css";
 
 @plugin "@tailwindcss/container-queries";
 /* @plugin "tw-animate-css"; */

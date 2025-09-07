@@ -1,12 +1,10 @@
-@reference "../../../css/twui.css";
-
 :root {
-  --toastify-color-light: hsl(var(--color-paper));
-  --toastify-color-dark: hsl(var(--color-paper));
-  --toastify-color-info: hsl(var(--color-info));
-  --toastify-color-success: hsl(var(--color-success));
-  --toastify-color-warning: hsl(var(--color-warning));
-  --toastify-color-error: hsl(var(--color-error));
+  --toastify-color-light: var(--color-paper);
+  --toastify-color-dark: var(--color-paper);
+  --toastify-color-info: var(--color-info);
+  --toastify-color-success: var(--color-success);
+  --toastify-color-warning: var(--color-warning);
+  --toastify-color-error: var(--color-error);
   --toastify-color-transparent: rgba(255, 255, 255, 0.7);
   --toastify-icon-color-info: var(--toastify-color-info);
   --toastify-icon-color-success: var(--toastify-color-success);
