@@ -7,6 +7,7 @@ import {
   SheetHeader as SheetHeaderComponent,
   SheetOverlay as SheetOverlayComponent,
   SheetPortal as SheetPortalComponent,
+  SheetPrimitiveContent as SheetPrimitiveContentComponent,
   SheetTitle as SheetTitleComponent,
   SheetTrigger as SheetTriggerComponent,
 } from './Sheet.js';
@@ -49,6 +50,7 @@ export {
   SheetHeaderComponent as SheetHeader,
   SheetOverlayComponent as SheetOverlay,
   SheetPortalComponent as SheetPortal,
+  SheetPrimitiveContentComponent as SheetPrimitiveContent,
   SheetTitleComponent as SheetTitle,
   SheetTriggerComponent as SheetTrigger,
 };
