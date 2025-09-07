@@ -1,3 +1,5 @@
+'use client';
+
 import { createRipple } from '@geee-be/react-utils';
 import { Slot } from '@radix-ui/react-slot';
 import type { VariantProps } from 'cva';
