@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.6
+
+### Patch Changes
+
+- 7cd0a04: feat: add SheetPrimitiveContent to Sheet component exports
+
 ## 2.2.5
 
 ### Patch Changes
