@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.5
+
+### Patch Changes
+
+- 89f4a73: use client
+
 ## 2.2.4
 
 ### Patch Changes
