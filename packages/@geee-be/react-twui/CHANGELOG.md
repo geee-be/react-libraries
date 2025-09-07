@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.4
+
+### Patch Changes
+
+- 76d4813: Change how CSS is referenced
+
 ## 2.2.3
 
 ### Patch Changes
