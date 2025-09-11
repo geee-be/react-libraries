@@ -85,7 +85,6 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
     const years = Array.from({ length: 10 }, (_, i) => decade + i).filter(
       (y) => y <= max && y >= min,
     );
-    console.log(min, max, years);
 
     const fireOnChange = (selectedYear?: number) => {
       if (!onChange || !inputRef.current) return;
