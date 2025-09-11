@@ -15,6 +15,31 @@ export const Default: Story = {
   },
 };
 
+export const Future: Story = {
+  args: {
+    className: 'w-64',
+    min: new Date().getFullYear(),
+    max: new Date().getFullYear() + 3,
+  },
+};
+
+export const FutureLonger: Story = {
+  args: {
+    className: 'w-64',
+    min: new Date().getFullYear(),
+    max: new Date().getFullYear() + 10,
+  },
+};
+
+export const FuturePlusOne: Story = {
+  args: {
+    className: 'w-64',
+    min: new Date().getFullYear(),
+    max: new Date().getFullYear() + 5,
+    value: new Date().getFullYear() + 1,
+  },
+};
+
 export const Year1983: Story = {
   args: {
     className: 'w-64',

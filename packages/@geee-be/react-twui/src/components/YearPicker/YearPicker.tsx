@@ -23,6 +23,8 @@ type YearPickerElement = Omit<HTMLInputElement, 'onChange' | 'value'> & {
   value?: number;
 };
 
+const decadeOf = (year: number) => Math.floor(year / 10) * 10;
+
 export type YearPickerProps = Omit<
   InputHTMLAttributes<YearPickerElement>,
   'type' | 'autoFocus' | 'min' | 'max'
@@ -52,7 +54,7 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
   ) => {
     const currentYear = new Date().getFullYear();
     const min = props.min ?? 1900;
-    const max = Math.min(currentYear, props.max ?? currentYear);
+    const max = props.max ?? currentYear;
 
     const buttonRef = useRef<HTMLButtonElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -73,18 +75,17 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
     );
     const [year, setYear] = useState<number | undefined>(value);
     const [inputYear, setInputYear] = useState(value?.toString() ?? '');
-    const [decade, setDecade] = useState(
-      Math.floor((value ?? currentYear - 10) / 10) * 10,
-    );
+    const [decade, setDecade] = useState(decadeOf(value ?? currentYear));
 
     useEffect(() => {
       if (!year) return;
-      setDecade(Math.floor(year / 10) * 10);
+      setDecade(decadeOf(year));
     }, [year]);
 
     const years = Array.from({ length: 10 }, (_, i) => decade + i).filter(
-      (y) => y <= currentYear,
+      (y) => y <= max && y >= min,
     );
+    console.log(min, max, years);
 
     const fireOnChange = (selectedYear?: number) => {
       if (!onChange || !inputRef.current) return;
@@ -136,7 +137,7 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
 
     const handleDecadeChange = (change: number) => {
       const newDecade = decade + change * 10;
-      if (newDecade >= min && newDecade < max) {
+      if (newDecade >= decadeOf(min) && newDecade <= decadeOf(max)) {
         setDecade(newDecade);
       }
     };
@@ -173,7 +174,7 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
               shape="icon"
               size="sm"
               onClick={() => handleDecadeChange(-1)}
-              disabled={decade <= 1900}
+              disabled={decade <= decadeOf(min)}
               before={<ChevronLeftIcon />}
             />
             <div className="font-semibold">{decade}s</div>
@@ -182,7 +183,7 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
               shape="icon"
               size="sm"
               onClick={() => handleDecadeChange(1)}
-              disabled={decade >= Math.floor(currentYear / 10) * 10}
+              disabled={decade >= decadeOf(max)}
               after={<ChevronRightIcon />}
             />
           </div>
@@ -223,5 +224,3 @@ export const YearPicker = forwardRef<YearPickerElement, YearPickerProps>(
     );
   },
 );
-
-YearPicker.displayName = 'YearPicker';
