@@ -4,8 +4,8 @@ export const buttonVariants = cva({
   variants: {
     size: {
       xs: 'gap-2 px-2 py-0',
-      sm: 'gap-2 px-3 py-1',
-      md: 'gap-2 px-4 py-2',
+      sm: 'gap-3 px-3 py-1',
+      md: 'gap-4 px-4 py-2',
     },
     shape: {
       rounded: '',
@@ -70,7 +70,7 @@ export const iconVariants = cva({
       true: 'text-current',
     },
     size: {
-      xs: 'h-5 w-5',
+      xs: 'h-4 w-4',
       sm: 'h-5 w-5',
       md: 'h-6 w-6',
     },

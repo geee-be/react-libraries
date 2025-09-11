@@ -18,7 +18,7 @@ const meta = {
     },
     size: {
       control: 'select',
-      options: ['sm', 'md'],
+      options: ['xs', 'sm', 'md'],
       defaultValue: { summary: 'md' },
     },
     color: {
