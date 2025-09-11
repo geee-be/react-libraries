@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.8
+
+### Patch Changes
+
+- b27aa45: Add min/max validation handling in FormYearPicker component
+
 ## 2.2.7
 
 ### Patch Changes
