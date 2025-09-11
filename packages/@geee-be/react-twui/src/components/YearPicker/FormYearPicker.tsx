@@ -109,6 +109,20 @@ export const FormYearPicker = <
               formState.isSubmitting ||
               formState.disabled
             }
+            min={
+              typeof min === 'number'
+                ? min
+                : typeof min === 'object' && typeof min.value === 'number'
+                  ? min?.value
+                  : undefined
+            }
+            max={
+              typeof max === 'number'
+                ? max
+                : typeof max === 'object' && typeof max.value === 'number'
+                  ? max?.value
+                  : undefined
+            }
             {...otherProps}
             {...field}
             name={field.name ?? name}
