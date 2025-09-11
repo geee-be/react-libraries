@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 2.2.7
+
+### Patch Changes
+
+- 342ff1c: year picker: support for future
+- 709889d: tweaks to button layout
+
 ## 2.2.6
 
 ### Patch Changes
