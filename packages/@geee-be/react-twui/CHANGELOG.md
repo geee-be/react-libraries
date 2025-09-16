@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 2.2.9
+
+### Patch Changes
+
+- 9d09a54: Update Async component to allow waitFor prop as a Promise or function returning a Promise
+- 7d73efa: Add FormSkeleton component
+
 ## 2.2.8
 
 ### Patch Changes
