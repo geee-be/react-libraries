@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.10
+
+### Patch Changes
+
+- 2e242d9: Refactor Async component to accept waitFor prop as a function and add storybook examples
+
 ## 2.2.9
 
 ### Patch Changes
