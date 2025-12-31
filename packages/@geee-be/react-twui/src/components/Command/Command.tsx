@@ -168,7 +168,7 @@ const CommandItem = forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-pointer leading-none select-none items-center rounded-lg mx-1 px-4 py-2 text-sm h-[45px] pl-6 outline-none data-[disabled=true]:pointer-events-none',
+      'relative flex cursor-pointer leading-none select-none items-center rounded-lg mx-1 px-4 py-2 text-sm min-h-[45px] pl-6 outline-none data-[disabled=true]:pointer-events-none',
       // colors
       'text-input-fg data-[disabled=true]:text-input-fg/50 aria-selected:bg-input-fg/10 aria-selected:text-input-fg',
       className,

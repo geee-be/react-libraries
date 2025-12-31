@@ -145,7 +145,7 @@ const SelectItem = forwardRef<
   return (
     <BaseSelect.Item
       className={cn(
-        'cursor-pointer leading-none text-sm rounded-lg flex items-center h-[45px] pr-[35px] pl-6 relative select-none data-disabled:pointer-events-none data-highlighted:outline-none',
+        'cursor-pointer leading-none text-sm rounded-lg flex items-center min-h-[45px] pr-[35px] pl-6 relative select-none data-disabled:pointer-events-none data-highlighted:outline-none',
         // colors
         'text-control-fg data-[disabled]:text-control-fg/50 data-[highlighted]:bg-control-fg/10 data-[highlighted]:text-control-fg',
         className,
