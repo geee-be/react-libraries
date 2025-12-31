@@ -16,6 +16,9 @@
     "ui-library",
     "frontend"
   ],
+  "repository": {
+    "url": "https://github.com/geee-be/react-libraries"
+  },
   "license": "MIT",
   "author": "",
   "sideEffects": false,

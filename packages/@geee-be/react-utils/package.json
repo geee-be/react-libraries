@@ -15,6 +15,9 @@
     "frontend",
     "react-hooks"
   ],
+  "repository": {
+    "url": "https://github.com/geee-be/react-libraries"
+  },
   "license": "MIT",
   "author": "Greg Bacchus",
   "type": "module",
