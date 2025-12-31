@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.11
+
+### Patch Changes
+
+- f4ec41d: Update Command and Select components to use min-h for height consistency
+
 ## 2.2.10
 
 ### Patch Changes
