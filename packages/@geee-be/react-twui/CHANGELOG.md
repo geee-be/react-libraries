@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.2.12
+
+### Patch Changes
+
+- 5782b3c: Overflow for combobox button
+
 ## 2.2.11
 
 ### Patch Changes
