@@ -33,7 +33,7 @@ const ComboboxTriggerButton = forwardRef<
       {...props}
       disabled={disabled}
       className={cn(
-        'justify-between',
+        'justify-between overflow-x-auto',
         disabled && [Style.inputColorStateDisabled(), 'opacity-100'],
         className,
       )}
