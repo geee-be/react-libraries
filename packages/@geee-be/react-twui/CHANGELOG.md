@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 2.2.13
+
+### Patch Changes
+
+- 4d7d9b3: consistent variants
+- 9f14e86: change build target to esnext
+
 ## 2.2.12
 
 ### Patch Changes
