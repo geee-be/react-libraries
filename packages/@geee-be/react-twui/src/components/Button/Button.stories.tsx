@@ -79,6 +79,14 @@ export const IconAfter: Story = {
   },
 };
 
+export const Wide: Story = {
+  args: {
+    ...Default.args,
+    after: <UserIcon />,
+    className: 'w-full',
+  },
+};
+
 export const Disable: Story = {
   render: () => {
     const [busy, setBusy] = useState(false);

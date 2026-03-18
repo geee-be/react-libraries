@@ -17,7 +17,7 @@
 @utility like-button-text {
   @layer components {
     /* font/type */
-    @apply text-sm font-semibold uppercase leading-6;
+    @apply text-sm font-semibold leading-6 [text-transform:var(--button-text-transform)];
   }
 }
 

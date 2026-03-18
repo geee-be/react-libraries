@@ -3,9 +3,9 @@ import { cva } from 'cva';
 export const buttonVariants = cva({
   variants: {
     size: {
-      xs: 'gap-2 px-2 py-0',
-      sm: 'gap-3 px-3 py-1',
-      md: 'gap-4 px-4 py-2',
+      xs: 'gap-1 px-2 py-0',
+      sm: 'gap-2 px-3 py-1',
+      md: 'gap-2 px-4 py-2',
     },
     shape: {
       rounded: '',
