@@ -15,6 +15,7 @@
   ],
   "settings": {
     "editor.codeActionsOnSave": {
+      "source.organizeImports.biome": "explicit",
       "source.organizeImports": "never",
       "source.fixAll.eslint": "never"
     },
