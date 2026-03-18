@@ -24,7 +24,7 @@ const preview: Preview = {
   ],
   parameters: {
     backgrounds: {
-      disable: true,
+      disabled: true,
     },
     docs: {
       source: {
