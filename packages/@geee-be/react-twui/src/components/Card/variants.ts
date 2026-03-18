@@ -52,10 +52,15 @@ export const cardFooterVariants = cva({
   base: 'text-start border-t border-t-paper-border print:border-t-paper-black/50',
   variants: {
     gutters: {
+      uneven: 'px-4 py-2 md:px-6 md:py-4',
+      normal: 'p-4 md:p-6',
+      /** DEPRECATED: use `normal` */
       'collapse-none': 'p-4 md:p-6',
       'collapse-x': 'py-4 md:py-6 px-0',
       'collapse-y': 'px-4 md:px-6 py-0',
+      /** DEPRECATED: use `none` */
       collapse: 'p-0',
+      none: 'p-0',
     },
   },
   defaultVariants: {
@@ -67,10 +72,15 @@ export const cardHeaderVariants = cva({
   base: 'text-start font-medium border-b border-b-paper-border print:border-b-paper-black/50',
   variants: {
     gutters: {
+      uneven: 'px-4 py-2 md:px-6 md:py-4',
+      normal: 'p-4 md:p-6',
+      /** DEPRECATED: use `normal` */
       'collapse-none': 'p-4 md:p-6',
       'collapse-x': 'py-4 md:py-6 px-0',
       'collapse-y': 'px-4 md:px-6 py-0',
+      /** DEPRECATED: use `none` */
       collapse: 'p-0',
+      none: 'p-0',
     },
     color: {
       none: '',
