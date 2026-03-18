@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.5.0
+
+### Minor Changes
+
+- adbcc7e: Remove forwardRef()
+
 ## 1.4.0
 
 ### Minor Changes

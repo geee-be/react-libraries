@@ -1,5 +1,17 @@
 # @geee-be/react-twui
 
+## 2.3.0
+
+### Minor Changes
+
+- adbcc7e: Remove forwardRef()
+
+### Patch Changes
+
+- 8777fb2: Don't force button to uppercase
+- Updated dependencies [adbcc7e]
+  - @geee-be/react-utils@1.5.0
+
 ## 2.2.13
 
 ### Patch Changes
