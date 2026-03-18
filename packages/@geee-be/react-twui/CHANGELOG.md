@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.3.1
+
+### Patch Changes
+
+- 9ee7ab0: Decrease button icon size
+
 ## 2.3.0
 
 ### Minor Changes
