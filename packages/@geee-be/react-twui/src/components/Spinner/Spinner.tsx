@@ -1,5 +1,4 @@
 import type { VariantProps } from 'cva';
-import { type FC, forwardRef } from 'react';
 import { cn } from '../../helpers/utils';
 import { spinnerVariants } from './variants';
 
@@ -7,9 +6,11 @@ export type SpinnerProps = React.ButtonHTMLAttributes<HTMLDivElement> &
   VariantProps<typeof spinnerVariants>;
 export type SpinnerElement = HTMLDivElement;
 
-export const Spinner: FC<SpinnerProps> = forwardRef<
-  SpinnerElement,
-  SpinnerProps
->(({ className, color, size }, ref) => (
+export const Spinner = ({
+  ref,
+  className,
+  color,
+  size,
+}: SpinnerProps & { ref?: React.Ref<SpinnerElement> }) => (
   <div ref={ref} className={cn(spinnerVariants({ color, size }), className)} />
-));
+);

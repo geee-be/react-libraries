@@ -29,97 +29,97 @@ export type LabelProps = React.ComponentPropsWithoutRef<
 };
 
 /* -------------------------------- Component ------------------------------- */
-const LabelComponent = React.forwardRef<LabelElement, LabelProps>(
-  (
-    {
-      asChild = false,
-      children,
-      className,
-      description,
-      disabled,
-      required = false,
-      tooltip,
-      ...otherProps
-    },
-    ref,
-  ) => {
-    const useAsChild = asChild && isReactElement(children);
+const LabelComponent = ({
+  ref,
+  asChild = false,
+  children,
+  className,
+  description,
+  disabled,
+  required = false,
+  tooltip,
+  ...otherProps
+}: LabelProps & { ref?: React.Ref<LabelElement> }) => {
+  const useAsChild = asChild && isReactElement(children);
 
-    const innerContent = useAsChild ? (
-      React.cloneElement(
-        children as React.ReactElement<{ children?: React.ReactNode }>,
-        {
-          children: (
-            <>
-              {isElementWithChildren(children) && children.props.children}
-              {required && (
-                <span className="text-error">
-                  <RequiredIcon size="0.7em" />
-                </span>
-              )}
-            </>
-          ),
-        },
-      )
-    ) : (
-      <>
-        {children ? <span>{children}</span> : null}
-
-        {description ? (
-          <span
-            className={cn(
-              'font-normal text-paper-fg/70 print:text-black',
-              disabled && 'text-paper-fg/50',
+  const innerContent = useAsChild ? (
+    React.cloneElement(
+      children as React.ReactElement<{ children?: React.ReactNode }>,
+      {
+        children: (
+          <>
+            {isElementWithChildren(children) && children.props.children}
+            {required && (
+              <span className="text-error">
+                <RequiredIcon size="0.7em" />
+              </span>
             )}
-          >
-            {' '}
-            {description}
-          </span>
-        ) : null}
+          </>
+        ),
+      },
+    )
+  ) : (
+    <>
+      {children ? <span>{children}</span> : null}
 
-        {required ? (
-          <span className="text-error ml-1 inline-block">
-            <RequiredIcon size="0.7em" />
-          </span>
-        ) : null}
-      </>
-    );
-
-    if (!children && !tooltip && !description) {
-      return null;
-    }
-
-    return (
-      <div className="inline-flex items-center gap-1 antialiased">
-        <LabelPrimitive.Root
-          data-component="Label"
-          ref={ref}
-          asChild={useAsChild}
+      {description ? (
+        <span
           className={cn(
-            'Label-root inline cursor-pointer items-center gap-1 text-sm font-medium leading-6 print:text-black',
-            disabled && 'pointer-events-none text-paper-fg/50',
-            className,
+            'font-normal text-paper-fg/70 print:text-black',
+            disabled && 'text-paper-fg/50',
           )}
-          {...otherProps}
         >
-          {innerContent}
-        </LabelPrimitive.Root>
+          {' '}
+          {description}
+        </span>
+      ) : null}
 
-        {tooltip ? (
-          <Tooltip content={tooltip} side="right" className="inline-flex" />
-        ) : null}
-      </div>
-    );
-  },
-);
+      {required ? (
+        <span className="text-error ml-1 inline-block">
+          <RequiredIcon size="0.7em" />
+        </span>
+      ) : null}
+    </>
+  );
 
-const HelperText = React.forwardRef<
-  HTMLSpanElement,
-  React.HTMLAttributes<HTMLSpanElement> & {
-    error?: boolean;
-    disabled?: boolean;
+  if (!children && !tooltip && !description) {
+    return null;
   }
->(({ children, error, disabled, className, ...otherProps }, ref) => {
+
+  return (
+    <div className="inline-flex items-center gap-1 antialiased">
+      <LabelPrimitive.Root
+        data-component="Label"
+        ref={ref}
+        asChild={useAsChild}
+        className={cn(
+          'Label-root inline cursor-pointer items-center gap-1 text-sm font-medium leading-6 print:text-black',
+          disabled && 'pointer-events-none text-paper-fg/50',
+          className,
+        )}
+        {...otherProps}
+      >
+        {innerContent}
+      </LabelPrimitive.Root>
+
+      {tooltip ? (
+        <Tooltip content={tooltip} side="right" className="inline-flex" />
+      ) : null}
+    </div>
+  );
+};
+
+const HelperText = ({
+  ref,
+  children,
+  error,
+  disabled,
+  className,
+  ...otherProps
+}: React.HTMLAttributes<HTMLSpanElement> & {
+  error?: boolean;
+  disabled?: boolean;
+} & { ref?: React.Ref<HTMLSpanElement> }) => {
   const HelperTextComponent =
     children && isReactElement(children) ? Slot : 'span';
   const ariaInvalid = otherProps['aria-invalid'];
@@ -140,7 +140,7 @@ const HelperText = React.forwardRef<
       {children}
     </HelperTextComponent>
   ) : null;
-});
+};
 
 LabelComponent.displayName = 'Label';
 HelperText.displayName = 'HelperText';

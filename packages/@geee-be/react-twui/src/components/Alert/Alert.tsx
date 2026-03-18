@@ -79,103 +79,100 @@ export type AlertProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> &
   } & (ClosableProps | NotClosableProps);
 
 /* ------------------------------- Components ------------------------------- */
-export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
-  (
-    {
-      after,
-      before,
-      className,
-      closable,
-      color = 'default',
-      variant = 'inline',
-      children,
-      title,
-      onClose,
-      ...otherProps
+export const Alert = ({
+  ref,
+  after,
+  before,
+  className,
+  closable,
+  color = 'default',
+  variant = 'inline',
+  children,
+  title,
+  onClose,
+  ...otherProps
+}: AlertProps & { ref?: React.Ref<HTMLDivElement> }) => {
+  const [visible, setVisible] = React.useState(true);
+
+  /**
+   * Handle the close event.
+   * @param event - The event object
+   */
+  const handleClose = React.useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      // Do not close if the event is prevented by the onClose callback
+      if (!event.defaultPrevented) {
+        setVisible(false);
+      }
+
+      if (onClose) {
+        onClose(event);
+      }
     },
-    ref,
-  ) => {
-    const [visible, setVisible] = React.useState(true);
+    [onClose],
+  );
 
-    /**
-     * Handle the close event.
-     * @param event - The event object
-     */
-    const handleClose = React.useCallback(
-      (event: React.MouseEvent<HTMLButtonElement>) => {
-        // Do not close if the event is prevented by the onClose callback
-        if (!event.defaultPrevented) {
-          setVisible(false);
-        }
+  if (!visible) {
+    return null;
+  }
 
-        if (onClose) {
-          onClose(event);
-        }
-      },
-      [onClose],
-    );
+  return (
+    <AlertRoot
+      ref={ref}
+      className={cn(alertVariants({ variant, color }), className)}
+      {...otherProps}
+    >
+      <AlertBefore className={cn(variant === 'inline' && 'pl-1')} color={color}>
+        {before}
+      </AlertBefore>
 
-    if (!visible) {
-      return null;
-    }
-
-    return (
-      <AlertRoot
-        ref={ref}
-        className={cn(alertVariants({ variant, color }), className)}
-        {...otherProps}
+      <div
+        className={cn(
+          'flex grow flex-col',
+          variant === 'expanded' && 'items-start gap-3 px-2',
+          variant === 'inline' && 'items-center px-2 sm:flex-row sm:gap-2',
+          variant === 'inline' && closable && 'mr-1',
+        )}
       >
-        <AlertBefore
-          className={cn(variant === 'inline' && 'pl-1')}
-          color={color}
-        >
-          {before}
-        </AlertBefore>
-
         <div
           className={cn(
-            'flex grow flex-col',
-            variant === 'expanded' && 'items-start gap-3 px-2',
-            variant === 'inline' && 'items-center px-2 sm:flex-row sm:gap-2',
-            variant === 'inline' && closable && 'mr-1',
+            'flex grow flex-col items-start',
+            variant === 'expanded' && 'w-full',
+            variant === 'inline' && 'sm:flex-row sm:items-center sm:gap-2',
           )}
         >
-          <div
-            className={cn(
-              'flex grow flex-col items-start',
-              variant === 'expanded' && 'w-full',
-              variant === 'inline' && 'sm:flex-row sm:items-center sm:gap-2',
-            )}
-          >
-            {title && <AlertTitle color={color}>{title}</AlertTitle>}
-            {children && <AlertDescription>{children}</AlertDescription>}
-          </div>
-
-          {after && (
-            <div
-              className={cn(variant === 'inline' && 'mt-3 sm:ml-auto sm:mt-0')}
-            >
-              <AlertAfter>{after}</AlertAfter>
-            </div>
-          )}
+          {title && <AlertTitle color={color}>{title}</AlertTitle>}
+          {children && <AlertDescription>{children}</AlertDescription>}
         </div>
 
-        {closable && (
-          <AlertCloseButton
-            className={cn(variant === 'inline' && 'mr-1', 'text-inherit')}
-            onClick={handleClose}
-          />
+        {after && (
+          <div
+            className={cn(variant === 'inline' && 'mt-3 sm:ml-auto sm:mt-0')}
+          >
+            <AlertAfter>{after}</AlertAfter>
+          </div>
         )}
-      </AlertRoot>
-    );
-  },
-);
+      </div>
+
+      {closable && (
+        <AlertCloseButton
+          className={cn(variant === 'inline' && 'mr-1', 'text-inherit')}
+          onClick={handleClose}
+        />
+      )}
+    </AlertRoot>
+  );
+};
 
 /* Root */
-const AlertRoot = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...otherProps }, ref) => {
+const AlertRoot = ({
+  ref,
+  className,
+  children,
+  ...otherProps
+}: React.HTMLAttributes<HTMLDivElement> & {
+  ref?: React.Ref<HTMLDivElement>;
+}) => {
   return (
     <div
       data-component="Alert"
@@ -187,13 +184,16 @@ const AlertRoot = React.forwardRef<
       {children}
     </div>
   );
-});
+};
 
 /* Before */
-const AlertBefore = React.forwardRef<
-  HTMLElement,
-  React.HTMLAttributes<HTMLElement>
->(({ className, color, children, ...props }, ref) => {
+const AlertBefore = ({
+  ref,
+  className,
+  color,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLElement> & { ref?: React.Ref<HTMLElement> }) => {
   const Component = isReactElement(children) ? Slot : 'span';
 
   if (!children) {
@@ -205,13 +205,15 @@ const AlertBefore = React.forwardRef<
       {children}
     </Component>
   );
-});
+};
 
 /* After */
-const AlertAfter = React.forwardRef<
-  HTMLElement,
-  React.HTMLAttributes<HTMLElement>
->(({ className, children, ...props }, ref) => {
+const AlertAfter = ({
+  ref,
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLElement> & { ref?: React.Ref<HTMLElement> }) => {
   const Component = isReactElement(children) ? Slot : 'span';
 
   return (
@@ -219,13 +221,18 @@ const AlertAfter = React.forwardRef<
       {children}
     </Component>
   );
-});
+};
 
 /* Title */
-const AlertTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, color, children, ...props }, ref) => {
+const AlertTitle = ({
+  ref,
+  className,
+  color,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement> & {
+  ref?: React.Ref<HTMLParagraphElement>;
+}) => {
   const Component = isReactElement(children) ? Slot : 'div';
 
   return (
@@ -237,13 +244,17 @@ const AlertTitle = React.forwardRef<
       {children}
     </Component>
   );
-});
+};
 
 /* Description */
-const AlertDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, children, ...props }, ref) => {
+const AlertDescription = ({
+  ref,
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement> & {
+  ref?: React.Ref<HTMLParagraphElement>;
+}) => {
   const Component = isReactElement(children) ? Slot : 'div';
 
   return (
@@ -255,13 +266,16 @@ const AlertDescription = React.forwardRef<
       {children}
     </Component>
   );
-});
+};
 
 /* CloseButton */
-const AlertCloseButton = React.forwardRef<
-  React.ComponentRef<typeof Button>,
-  React.ComponentPropsWithoutRef<typeof Button>
->(({ children, ...otherProps }, ref) => {
+const AlertCloseButton = ({
+  ref,
+  children,
+  ...otherProps
+}: React.ComponentPropsWithoutRef<typeof Button> & {
+  ref?: React.Ref<React.ComponentRef<typeof Button>>;
+}) => {
   const renderCloseIcon = (
     children: React.ReactNode,
   ): React.ReactElement<HTMLElement> => {
@@ -283,7 +297,7 @@ const AlertCloseButton = React.forwardRef<
       {...otherProps}
     />
   );
-});
+};
 
 Alert.displayName = 'Alert';
 AlertRoot.displayName = 'AlertRoot';

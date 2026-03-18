@@ -1,5 +1,4 @@
 import type { InputHTMLAttributes } from 'react';
-import { forwardRef } from 'react';
 import { cn } from '../../helpers/utils.js';
 import { inputVariants } from './variants.js';
 
@@ -41,49 +40,45 @@ function isTouchDevice() {
 }
 
 /* -------------------------------- Component ------------------------------- */
-export const Input = forwardRef<InputElement, InputProps>(
-  (
-    {
-      after,
-      autoFocus,
-      before,
-      className,
-      destructive,
-      disabled,
-      readOnly,
-      InputProps: Input,
-      ...otherProps
-    },
-    ref,
-  ) => {
-    const ariaInvalid = otherProps['aria-invalid'] ?? destructive;
+export const Input = ({
+  ref,
+  after,
+  autoFocus,
+  before,
+  className,
+  destructive,
+  disabled,
+  readOnly,
+  InputProps: Input,
+  ...otherProps
+}: InputProps & { ref?: React.Ref<InputElement> }) => {
+  const ariaInvalid = otherProps['aria-invalid'] ?? destructive;
 
-    const computedAutoFocus =
-      autoFocus === 'non-touch' ? !isTouchDevice() : (autoFocus ?? false);
+  const computedAutoFocus =
+    autoFocus === 'non-touch' ? !isTouchDevice() : (autoFocus ?? false);
 
-    return (
-      <div
-        className={cn(
-          inputVariants({ ariaInvalid: !!ariaInvalid, disabled }),
-          'px-2 inline-flex flex-row items-center',
-          className,
-        )}
-      >
-        {before ? <div className="inline-flex -m-2 z-1">{before}</div> : null}
-        <input
-          ref={ref}
-          className={cn('px-2 w-full outline-none', Input?.className)}
-          aria-invalid={ariaInvalid}
-          disabled={disabled || readOnly}
-          readOnly={readOnly}
-          // biome-ignore lint/a11y/noAutofocus: there is logic to handle touch devices
-          autoFocus={computedAutoFocus}
-          {...otherProps}
-        />
-        {after ? <div className="inline-flex -m-2 z-1">{after}</div> : null}
-      </div>
-    );
-  },
-);
+  return (
+    <div
+      className={cn(
+        inputVariants({ ariaInvalid: !!ariaInvalid, disabled }),
+        'px-2 inline-flex flex-row items-center',
+        className,
+      )}
+    >
+      {before ? <div className="inline-flex -m-2 z-1">{before}</div> : null}
+      <input
+        ref={ref}
+        className={cn('px-2 w-full outline-none', Input?.className)}
+        aria-invalid={ariaInvalid}
+        disabled={disabled || readOnly}
+        readOnly={readOnly}
+        // biome-ignore lint/a11y/noAutofocus: there is logic to handle touch devices
+        autoFocus={computedAutoFocus}
+        {...otherProps}
+      />
+      {after ? <div className="inline-flex -m-2 z-1">{after}</div> : null}
+    </div>
+  );
+};
 
 Input.displayName = 'Input';

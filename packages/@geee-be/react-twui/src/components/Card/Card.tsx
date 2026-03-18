@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import type { VariantProps } from 'cva';
-import * as React from 'react';
+import type * as React from 'react';
 import { cn } from '../../helpers/utils.js';
 import { cardVariants } from './variants.js';
 
@@ -8,25 +8,34 @@ type CardProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> &
   VariantProps<typeof cardVariants>;
 
 /* ------------------------------- Components ------------------------------- */
-export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, color, variant = 'rounded', children, ...otherProps }, ref) => {
-    return (
-      <CardRoot
-        ref={ref}
-        className={cn(cardVariants({ variant, color }), className)}
-        {...otherProps}
-      >
-        {children}
-      </CardRoot>
-    );
-  },
-);
+export const Card = ({
+  ref,
+  className,
+  color,
+  variant = 'rounded',
+  children,
+  ...otherProps
+}: CardProps & { ref?: React.Ref<HTMLDivElement> }) => {
+  return (
+    <CardRoot
+      ref={ref}
+      className={cn(cardVariants({ variant, color }), className)}
+      {...otherProps}
+    >
+      {children}
+    </CardRoot>
+  );
+};
 
 /* Root */
-const CardRoot = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...otherProps }, ref) => {
+const CardRoot = ({
+  ref,
+  className,
+  children,
+  ...otherProps
+}: React.HTMLAttributes<HTMLDivElement> & {
+  ref?: React.Ref<HTMLDivElement>;
+}) => {
   return (
     <section
       data-component="Card"
@@ -40,7 +49,7 @@ const CardRoot = React.forwardRef<
       {children}
     </section>
   );
-});
+};
 
 Card.displayName = 'Card';
 CardRoot.displayName = 'CardRoot';

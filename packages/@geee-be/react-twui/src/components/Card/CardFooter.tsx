@@ -1,16 +1,20 @@
 import { Slot } from '@radix-ui/react-slot';
 import type { VariantProps } from 'cva';
-import * as React from 'react';
+import type * as React from 'react';
 import { cn } from '../../helpers/utils.js';
 import { cardFooterVariants } from './variants.js';
 
-export const CardFooter = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> &
-    VariantProps<typeof cardFooterVariants> & {
-      asChild?: boolean;
-    }
->(({ asChild, className, children, gutters, ...props }, ref) => {
+export const CardFooter = ({
+  ref,
+  asChild,
+  className,
+  children,
+  gutters,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof cardFooterVariants> & {
+    asChild?: boolean;
+  } & { ref?: React.Ref<HTMLDivElement> }) => {
   const Component = asChild ? Slot : 'div';
 
   return (
@@ -23,6 +27,6 @@ export const CardFooter = React.forwardRef<
       </Component>
     </div>
   );
-});
+};
 
 CardFooter.displayName = 'CardFooter';

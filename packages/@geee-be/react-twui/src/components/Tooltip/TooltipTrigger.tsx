@@ -1,13 +1,15 @@
 import { TooltipTrigger as PrimitiveTrigger } from '@radix-ui/react-tooltip';
-import * as React from 'react';
+import type * as React from 'react';
 
 import { cn, isReactElement } from '../../helpers/utils.js';
 import { InfoIcon } from '../icons/index.js';
 
-const TooltipTrigger = React.forwardRef<
-  React.ComponentRef<typeof PrimitiveTrigger>,
-  React.ComponentPropsWithoutRef<typeof PrimitiveTrigger>
->((props, ref) => {
+const TooltipTrigger = ({
+  ref,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof PrimitiveTrigger> & {
+  ref?: React.Ref<React.ComponentRef<typeof PrimitiveTrigger>>;
+}) => {
   const {
     children,
     asChild = children ? isReactElement(children) : children === undefined,
@@ -51,7 +53,7 @@ const TooltipTrigger = React.forwardRef<
       )}
     </PrimitiveTrigger>
   );
-});
+};
 
 TooltipTrigger.displayName = PrimitiveTrigger.displayName;
 

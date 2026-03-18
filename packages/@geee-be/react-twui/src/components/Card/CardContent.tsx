@@ -1,17 +1,22 @@
 import { Slot } from '@radix-ui/react-slot';
 import type { VariantProps } from 'cva';
-import * as React from 'react';
+import type * as React from 'react';
 import { cn } from '../../helpers/utils.js';
 import { cardContentVariants } from './variants.js';
 
 /* Content */
-export const CardContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> &
-    VariantProps<typeof cardContentVariants> & {
-      asChild?: boolean;
-    }
->(({ asChild, className, children, gap, gutters, ...props }, ref) => {
+export const CardContent = ({
+  ref,
+  asChild,
+  className,
+  children,
+  gap,
+  gutters,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof cardContentVariants> & {
+    asChild?: boolean;
+  } & { ref?: React.Ref<HTMLDivElement> }) => {
   const Component = asChild ? Slot : 'div';
 
   return (
@@ -25,6 +30,6 @@ export const CardContent = React.forwardRef<
       </Component>
     </div>
   );
-});
+};
 
 CardContent.displayName = 'CardContent';

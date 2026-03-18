@@ -1,6 +1,6 @@
 'use client';
 
-import { type ChangeEvent, forwardRef, type InputHTMLAttributes } from 'react';
+import type { ChangeEvent, InputHTMLAttributes } from 'react';
 import { YearPicker } from './YearPicker';
 
 type YearOfBirthPickerElement = Omit<HTMLInputElement, 'onChange' | 'value'> & {
@@ -18,10 +18,14 @@ export type YearOfBirthPickerProps = Omit<
   value?: number;
 };
 
-export const YearOfBirthPicker = forwardRef<
-  YearOfBirthPickerElement,
-  YearOfBirthPickerProps
->(({ className, destructive, disabled, onChange, ...props }, ref) => (
+export const YearOfBirthPicker = ({
+  ref,
+  className,
+  destructive,
+  disabled,
+  onChange,
+  ...props
+}: YearOfBirthPickerProps & { ref?: React.Ref<YearOfBirthPickerElement> }) => (
   <YearPicker
     ref={ref}
     {...props}
@@ -29,6 +33,6 @@ export const YearOfBirthPicker = forwardRef<
     inputPlaceholder="Enter year"
     placeholder="Select birth year"
   />
-));
+);
 
 YearOfBirthPicker.displayName = 'YearOfBirthPicker';

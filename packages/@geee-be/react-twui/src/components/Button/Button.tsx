@@ -46,118 +46,114 @@ const iconOnlyPadding = {
   xs: 'p-6px',
 };
 
-export const Button = React.forwardRef<ButtonElement, ButtonProps>(
-  (
-    {
-      after,
-      asChild = false,
-      before,
-      children,
-      className,
-      destructive = false,
-      disabled = false,
-      shape = 'rounded',
-      size = 'md',
-      color = 'default',
-      variant = 'solid',
-      ...otherProps
-    },
-    ref,
-  ) => {
-    const useAsChild = asChild && isReactElement(children);
-    const Component = useAsChild ? Slot : 'button';
+export const Button = ({
+  ref,
+  after,
+  asChild = false,
+  before,
+  children,
+  className,
+  destructive = false,
+  disabled = false,
+  shape = 'rounded',
+  size = 'md',
+  color = 'default',
+  variant = 'solid',
+  ...otherProps
+}: ButtonProps & { ref?: React.Ref<ButtonElement> }) => {
+  const useAsChild = asChild && isReactElement(children);
+  const Component = useAsChild ? Slot : 'button';
 
-    // Determine if the button is icon-only.
-    const isIcon = React.useMemo(() => {
-      return (
-        (before && !after && !children && size) ??
-        (after && !before && !children && size) ??
-        shape === 'icon'
-      );
-    }, [before, after, children, size, shape]);
-
-    // Determine if the button is a 'link', 'outline', 'tertiary', or 'transparent' variant.
-    const isVariantLinkOutlineTertiaryTransparent = React.useMemo(
-      () => ['link', 'outline', 'tertiary', 'transparent'].includes(variant),
-      [variant],
-    );
-
-    // Render an icon with size, variant, and destructive properties applied.
-    const renderIcon = (
-      icon: React.ReactElement<HTMLElement>,
-    ): React.ReactNode => {
-      const Component = React.isValidElement(icon) ? Slot : 'span';
-
-      const isNonDestructiveIconOnly =
-        variant &&
-        isVariantLinkOutlineTertiaryTransparent &&
-        isIcon &&
-        !destructive;
-
-      const iconClasses = cn(
-        iconVariants({ size, destructive }),
-        isNonDestructiveIconOnly && 'group-hover:opacity-70',
-        destructive && 'opacity-100',
-        icon.props?.className,
-      );
-
-      return <Component className={iconClasses}>{icon}</Component>;
-    };
-
-    const innerContent = useAsChild ? (
-      React.cloneElement(children, {
-        children: (
-          <>
-            {before ? renderIcon(before) : null}
-            {isElementWithChildren(children) &&
-              isIcon &&
-              renderIcon(
-                children.props.children as React.ReactElement<HTMLElement>,
-              )}
-            {isElementWithChildren(children) &&
-              !isIcon &&
-              children.props.children}
-            {after ? renderIcon(after) : null}
-          </>
-        ),
-      } as Record<string, unknown>)
-    ) : (
-      <>
-        {before ? renderIcon(before) : null}
-        {React.isValidElement(children) &&
-          isIcon &&
-          renderIcon(children as React.ReactElement<HTMLElement>)}
-        {!isIcon && children}
-        {after ? renderIcon(after) : null}
-      </>
-    );
-
+  // Determine if the button is icon-only.
+  const isIcon = React.useMemo(() => {
     return (
-      <Component
-        // data-component="Button"
-        ref={ref}
-        className={cn(
-          'Button-root',
-          buttonVariants({ size, color, variant, shape, destructive }),
-          variant === 'link' && children && 'focus-visible:outline-0',
-          isIcon && iconOnlyPadding[size],
-          className,
-        )}
-        disabled={disabled}
-        {...otherProps}
-        onClick={(e) => {
-          if (!['link', 'input'].includes(variant)) {
-            createRipple(e);
-          }
-          otherProps.onClick?.(
-            e as React.MouseEvent<HTMLButtonElement, MouseEvent>,
-          );
-        }}
-      >
-        {innerContent}
-      </Component>
+      (before && !after && !children && size) ??
+      (after && !before && !children && size) ??
+      shape === 'icon'
     );
-  },
-);
+  }, [before, after, children, size, shape]);
+
+  // Determine if the button is a 'link', 'outline', 'tertiary', or 'transparent' variant.
+  const isVariantLinkOutlineTertiaryTransparent = React.useMemo(
+    () => ['link', 'outline', 'tertiary', 'transparent'].includes(variant),
+    [variant],
+  );
+
+  // Render an icon with size, variant, and destructive properties applied.
+  const renderIcon = (
+    icon: React.ReactElement<HTMLElement>,
+  ): React.ReactNode => {
+    const Component = React.isValidElement(icon) ? Slot : 'span';
+
+    const isNonDestructiveIconOnly =
+      variant &&
+      isVariantLinkOutlineTertiaryTransparent &&
+      isIcon &&
+      !destructive;
+
+    const iconClasses = cn(
+      iconVariants({ size, destructive }),
+      isNonDestructiveIconOnly && 'group-hover:opacity-70',
+      destructive && 'opacity-100',
+      icon.props?.className,
+    );
+
+    return <Component className={iconClasses}>{icon}</Component>;
+  };
+
+  const innerContent = useAsChild ? (
+    React.cloneElement(children, {
+      children: (
+        <>
+          {before ? renderIcon(before) : null}
+          {isElementWithChildren(children) &&
+            isIcon &&
+            renderIcon(
+              children.props.children as React.ReactElement<HTMLElement>,
+            )}
+          {isElementWithChildren(children) &&
+            !isIcon &&
+            children.props.children}
+          {after ? renderIcon(after) : null}
+        </>
+      ),
+    } as Record<string, unknown>)
+  ) : (
+    <>
+      {before ? renderIcon(before) : null}
+      {React.isValidElement(children) &&
+        isIcon &&
+        renderIcon(children as React.ReactElement<HTMLElement>)}
+      {!isIcon && children}
+      {after ? renderIcon(after) : null}
+    </>
+  );
+
+  return (
+    <Component
+      // data-component="Button"
+      ref={ref}
+      className={cn(
+        'Button-root',
+        buttonVariants({ size, color, variant, shape, destructive }),
+        variant === 'link' && children && 'focus-visible:outline-0',
+        isIcon && iconOnlyPadding[size],
+        className,
+      )}
+      disabled={disabled}
+      {...otherProps}
+      onClick={(e) => {
+        if (!['link', 'input'].includes(variant)) {
+          createRipple(e);
+        }
+        otherProps.onClick?.(
+          e as React.MouseEvent<HTMLButtonElement, MouseEvent>,
+        );
+      }}
+    >
+      {innerContent}
+    </Component>
+  );
+};
 
 Button.displayName = 'Button';

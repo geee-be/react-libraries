@@ -8,7 +8,7 @@
 
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
 
     "strict": true,
     "noUncheckedIndexedAccess": true,

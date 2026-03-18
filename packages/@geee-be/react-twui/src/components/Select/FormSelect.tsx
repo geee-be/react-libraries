@@ -113,6 +113,4 @@ export const FormSelect = <T extends FieldValues, Field extends FieldPath<T>>({
   );
 };
 
-// export const FormSelect = forwardRef(FormSelectRefRender);
-
 FormSelect.displayName = 'FormSelect';

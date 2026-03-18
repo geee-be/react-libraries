@@ -72,14 +72,12 @@ export const WithForm: Story = {
               <Label htmlFor="name" className="text-right">
                 Name
               </Label>
-              {/** biome-ignore lint/correctness/useUniqueElementIds: story example */}
               <Input id="name" defaultValue="John Doe" className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="username" className="text-right">
                 Username
               </Label>
-              {/** biome-ignore lint/correctness/useUniqueElementIds: story example */}
               <Input
                 id="username"
                 defaultValue="@john.doe"
@@ -90,7 +88,6 @@ export const WithForm: Story = {
               <Label htmlFor="email" className="text-right">
                 Email
               </Label>
-              {/** biome-ignore lint/correctness/useUniqueElementIds: story example */}
               <Input
                 id="email"
                 defaultValue="john@example.com"

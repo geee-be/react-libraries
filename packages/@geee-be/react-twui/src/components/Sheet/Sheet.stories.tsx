@@ -40,14 +40,12 @@ export const SheetDemo: Story = {
               <Label htmlFor="name" className="text-right">
                 Name
               </Label>
-              {/** biome-ignore lint/correctness/useUniqueElementIds: storybook only */}
               <Input id="name" value="Pedro Foo Bar" className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="username" className="text-right">
                 Username
               </Label>
-              {/** biome-ignore lint/correctness/useUniqueElementIds: storybook only */}
               <Input
                 id="username"
                 value="@pedro-foo-bar"

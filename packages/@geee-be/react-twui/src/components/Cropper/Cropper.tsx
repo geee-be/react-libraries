@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useState } from 'react';
+import { useState } from 'react';
 import {
   Cropper as BaseCropper,
   type CoreSettings,
@@ -31,12 +31,14 @@ const getAspectRatio = (state: CropperState, settings: CoreSettings) => {
       };
 };
 
-export const Cropper = forwardRef<
-  React.ComponentRef<typeof BaseCropper>,
-  React.ComponentPropsWithoutRef<typeof BaseCropper> & {
-    onChange?: (cropper: CropperRef) => void;
-  }
->(({ className, onChange, ...props }, ref) => (
+export const Cropper = ({
+  ref,
+  className,
+  onChange,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof BaseCropper> & {
+  onChange?: (cropper: CropperRef) => void;
+} & { ref?: React.Ref<React.ComponentRef<typeof BaseCropper>> }) => (
   <BaseCropper
     {...props}
     ref={ref}
@@ -61,7 +63,7 @@ export const Cropper = forwardRef<
     }}
     backgroundWrapperComponent={BackgroundWrapperWithNotifications}
   />
-));
+);
 
 const BackgroundWrapperWithNotifications = ({
   cropper,

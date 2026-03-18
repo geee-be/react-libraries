@@ -75,6 +75,4 @@ export const FormCheckbox = <
   );
 };
 
-// export const FormCheckbox = forwardRef(FormCheckboxRefRender);
-
 FormCheckbox.displayName = 'FormCheckbox';

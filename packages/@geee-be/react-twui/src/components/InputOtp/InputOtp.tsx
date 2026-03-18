@@ -12,40 +12,51 @@ export type InputOtpProps = React.ComponentPropsWithoutRef<typeof OTPInput> & {
 };
 
 /* -------------------------------- Component ------------------------------- */
-const InputOtp = React.forwardRef<InputOtpElement, InputOtpProps>(
-  ({ className, containerClassName, disableAutoComplete, ...props }, ref) => (
-    <OTPInput
-      ref={ref}
-      containerClassName={cn(
-        'flex items-center has-disabled:opacity-50 w-fit',
-        containerClassName,
-      )}
-      className={cn('disabled:cursor-not-allowed', className)}
-      data-1p-ignore={disableAutoComplete}
-      autoComplete={disableAutoComplete ? 'off' : 'one-time-code'}
-      spellCheck={false}
-      {...props}
-    />
-  ),
+const InputOtp = ({
+  ref,
+  className,
+  containerClassName,
+  disableAutoComplete,
+  ...props
+}: InputOtpProps & { ref?: React.Ref<InputOtpElement> }) => (
+  <OTPInput
+    ref={ref}
+    containerClassName={cn(
+      'flex items-center has-disabled:opacity-50 w-fit',
+      containerClassName,
+    )}
+    className={cn('disabled:cursor-not-allowed', className)}
+    data-1p-ignore={disableAutoComplete}
+    autoComplete={disableAutoComplete ? 'off' : 'one-time-code'}
+    spellCheck={false}
+    {...props}
+  />
 );
 InputOtp.displayName = 'InputOTP';
 
-const InputOtpGroup = React.forwardRef<
-  React.ComponentRef<'div'>,
-  React.ComponentPropsWithoutRef<'div'>
->(({ className, ...props }, ref) => (
+const InputOtpGroup = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<'div'> & {
+  ref?: React.Ref<React.ComponentRef<'div'>>;
+}) => (
   <div
     ref={ref}
     className={cn('flex items-center gap-1', className)}
     {...props}
   />
-));
+);
 InputOtpGroup.displayName = 'InputOtpGroup';
 
-const InputOtpSlot = React.forwardRef<
-  React.ComponentRef<'div'>,
-  React.ComponentPropsWithoutRef<'div'> & { index: number }
->(({ index, className, ...props }, ref) => {
+const InputOtpSlot = ({
+  ref,
+  index,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<'div'> & { index: number } & {
+  ref?: React.Ref<React.ComponentRef<'div'>>;
+}) => {
   const inputOTPContext = React.useContext(OTPInputContext);
   const slot = inputOTPContext.slots[index] ?? {
     char: null,
@@ -72,17 +83,19 @@ const InputOtpSlot = React.forwardRef<
       )}
     </div>
   );
-});
+};
 InputOtpSlot.displayName = 'InputOtpSlot';
 
-const InputOtpSeparator = React.forwardRef<
-  React.ComponentRef<'div'>,
-  React.ComponentPropsWithoutRef<'div'>
->(({ ...props }, ref) => (
+const InputOtpSeparator = ({
+  ref,
+  ...props
+}: React.ComponentPropsWithoutRef<'div'> & {
+  ref?: React.Ref<React.ComponentRef<'div'>>;
+}) => (
   <div ref={ref} aria-hidden="true" {...props}>
     <Dot className="text-default" />
   </div>
-));
+);
 InputOtpSeparator.displayName = 'InputOtpSeparator';
 
 export { InputOtp, InputOtpGroup, InputOtpSeparator, InputOtpSlot };
