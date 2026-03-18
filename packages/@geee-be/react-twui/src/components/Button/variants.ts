@@ -70,9 +70,9 @@ export const iconVariants = cva({
       true: 'text-current',
     },
     size: {
-      xs: 'h-4 w-4',
-      sm: 'h-5 w-5',
-      md: 'h-6 w-6',
+      xs: 'h-[1em] w-[1em]',
+      sm: 'h-[1.1em] w-[1.1em]',
+      md: 'h-[1.25em] w-[1.25em]',
     },
   },
   defaultVariants: {

@@ -1,5 +1,6 @@
-import { UserIcon } from '@iconicicons/react';
+import { SendIcon, UserIcon } from '@iconicicons/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { SendHorizontalIcon } from 'lucide-react';
 import { useState } from 'react';
 import { Spinner } from '../Spinner/Spinner.js';
 import { Button } from './index.js';
@@ -75,7 +76,7 @@ export const SpinnerBefore: Story = {
 export const IconAfter: Story = {
   args: {
     ...Default.args,
-    after: <UserIcon />,
+    after: <SendHorizontalIcon />,
   },
 };
 
