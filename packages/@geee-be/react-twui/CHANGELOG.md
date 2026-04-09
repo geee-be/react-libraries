@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.3.2
+
+### Patch Changes
+
+- 028da3f: Fixing toast colors
+
 ## 2.3.1
 
 ### Patch Changes
