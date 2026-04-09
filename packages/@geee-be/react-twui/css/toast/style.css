@@ -33,17 +33,17 @@
   --toastify-toast-bd-radius: 6px;
   --toastify-font-family: sans-serif;
   --toastify-z-index: 9999;
-  --toastify-text-color-light: hsl(var(--color-paper-fg));
-  --toastify-text-color-dark: hsl(var(--color-paper-fg));
+  --toastify-text-color-light: var(--color-paper-fg);
+  --toastify-text-color-dark: var(--color-paper-fg);
   --toastify-text-color-info: #fff;
   --toastify-text-color-success: #fff;
   --toastify-text-color-warning: #fff;
   --toastify-text-color-error: #fff;
-  --toastify-spinner-color: hsl(var(--color-paper-fg));
+  --toastify-spinner-color: var(--color-paper-fg);
   --toastify-spinner-color-empty-area: color-mix(
     in hsl,
-    hsl(var(--color-paper-fg)),
-    hsl(var(--color-paper)) 70%
+    var(--color-paper-fg),
+    hsl(from var(--color-paper) h s l / 70%)
   );
   --toastify-color-progress-light: linear-gradient(
     to right,
