@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.3.3
+
+### Patch Changes
+
+- 0456d20: CommandDialog trigger
+
 ## 2.3.2
 
 ### Patch Changes
