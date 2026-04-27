@@ -36,12 +36,14 @@ Command.displayName = CommandPrimitive.displayName;
 
 export interface CommandDialogProps extends DialogProps {
   shouldFilter?: boolean;
+  trigger?: ReactNode;
   value?: string;
   onValueChange?: (value: string | undefined) => void;
 }
 
 const CommandDialog = ({
   children,
+  trigger,
   shouldFilter,
   value,
   onValueChange,
@@ -49,6 +51,7 @@ const CommandDialog = ({
 }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
+      {trigger ? <Dialog.Trigger asChild>{trigger}</Dialog.Trigger> : null}
       <DialogContent
         className="overflow-hidden p-0 shadow-lg"
         aria-description="Command dialog"
