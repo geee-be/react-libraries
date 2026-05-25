@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.3.5
+
+### Patch Changes
+
+- 84c5b60: TextArea
+
 ## 2.3.4
 
 ### Patch Changes
