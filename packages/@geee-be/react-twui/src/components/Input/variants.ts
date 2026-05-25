@@ -12,3 +12,18 @@ export const inputVariants = cva({
     },
   },
 });
+
+export const textareaVariants = cva({
+  base: [
+    Style.inputLike({ focus: 'has-[textarea:focus]' }),
+    Style.focusRing({ trigger: 'has-[textarea:focus]' }),
+  ],
+  variants: {
+    ariaInvalid: {
+      true: Style.inputColorStateError(),
+    },
+    disabled: {
+      true: Style.inputColorStateDisabled(),
+    },
+  },
+});

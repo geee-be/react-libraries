@@ -11,7 +11,8 @@ interface InputLikeProps extends PlaceholderSelector {
     | 'focus'
     | 'focus-within'
     | 'focus-visible'
-    | 'has-[input:focus]';
+    | 'has-[input:focus]'
+    | 'has-[textarea:focus]';
 }
 
 export namespace Style {
@@ -39,7 +40,12 @@ export namespace Style {
     trigger = 'focus',
     type = 'outline',
   }: {
-    trigger?: 'focus' | 'focus-within' | 'focus-visible' | 'has-[input:focus]';
+    trigger?:
+      | 'focus'
+      | 'focus-within'
+      | 'focus-visible'
+      | 'has-[input:focus]'
+      | 'has-[textarea:focus]';
     type?: 'outline' | 'ring';
   }) =>
     cn(
@@ -54,7 +60,10 @@ export namespace Style {
         'outline-control-focus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
       type === 'outline' &&
         trigger === 'has-[input:focus]' &&
-        'outline-control-focus has-[input:focus]:outline has-[input:focus]:outline-2 has-[input:focus]:outline-offset-2',
+        'outline-control-focus has-[input:focus]:outline has-[input:focus]:outline-5',
+      type === 'outline' &&
+        trigger === 'has-[textarea:focus]' &&
+        'outline-control-focus has-[textarea:focus]:outline has-[textarea:focus]:outline-5',
       type === 'ring' &&
         trigger === 'focus' &&
         'outline-control-focus focus:outline focus:outline-2 focus:outline-offset-2',
@@ -66,7 +75,10 @@ export namespace Style {
         'outline-control-focus focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
       type === 'ring' &&
         trigger === 'has-[input:focus]' &&
-        'outline-control-focus has-[input:focus]:outline has-[input:focus]:outline-2 has-[input:focus]:outline-offset-2',
+        'outline-control-focus has-[input:focus]:outline has-[input:focus]:outline-5',
+      type === 'ring' &&
+        trigger === 'has-[textarea:focus]' &&
+        'outline-control-focus has-[textarea:focus]:outline has-[textarea:focus]:outline-5',
     );
 
   export const overlay = () => 'fixed inset-0 bg-black/50 dark:bg-black/80';
