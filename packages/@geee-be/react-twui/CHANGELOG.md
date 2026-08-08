@@ -1,5 +1,15 @@
 # @geee-be/react-twui
 
+## 2.3.6
+
+### Patch Changes
+
+- 8fe2a9d: Change z-index on popover to put is above dialog
+- 2864b36: Increase z-index of DropdownMenuSubContent
+- a103ee6: pnpm version
+- Updated dependencies [a103ee6]
+  - @geee-be/react-utils@1.5.1
+
 ## 2.3.5
 
 ### Patch Changes
