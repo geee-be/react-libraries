@@ -77,7 +77,7 @@
       "statusBar.background": "#378cf3",
       "statusBar.foreground": "#e7e7e7",
       "statusBarItem.hoverBackground": "#67a8f6",
-      "statusBarItem.remoteBackground": "#378cf3",
+      "statusBarItem.remoteBackground": "#fbc3dc",
       "statusBarItem.remoteForeground": "#e7e7e7",
       "tab.activeBorder": "#67a8f6",
       "titleBar.activeBackground": "#378cf3",
@@ -85,7 +85,14 @@
       "titleBar.inactiveBackground": "#378cf399",
       "titleBar.inactiveForeground": "#e7e7e799",
       "sash.hoverBorder": "#67a8f6",
-      "commandCenter.border": "#e7e7e799"
+      "commandCenter.border": "#e7e7e799",
+      "activityBarTop.activeBackground": "#67a8f6",
+      "activityBarTop.background": "#67a8f6",
+      "activityBarTop.foreground": "#15202b",
+      "activityBarTop.inactiveForeground": "#15202b99",
+      "commandCenter.foreground": "#e7e7e7",
+      "statusBar.debuggingBackground": "#378cf3",
+      "statusBar.debuggingForeground": "#e7e7e7"
     },
     "biome.lsp.trace.server": "verbose"
   }
