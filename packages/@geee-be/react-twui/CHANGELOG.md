@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.3.7
+
+### Patch Changes
+
+- b13c567: Scrollbar offset
+
 ## 2.3.6
 
 ### Patch Changes
