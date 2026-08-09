@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.3.8
+
+### Patch Changes
+
+- 89332ca: Revert
+
 ## 2.3.7
 
 ### Patch Changes
