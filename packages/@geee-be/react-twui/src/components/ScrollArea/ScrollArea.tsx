@@ -10,11 +10,9 @@ const ScrollArea = ({
   className,
   children,
   viewportClassName,
-  scrollBarOffset,
   ...props
 }: React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root> & {
   viewportClassName?: string;
-  scrollBarOffset?: number | string;
 } & {
   ref?: React.Ref<React.ComponentRef<typeof ScrollAreaPrimitive.Root>>;
 }) => (
@@ -29,7 +27,7 @@ const ScrollArea = ({
     >
       {children}
     </ScrollAreaPrimitive.Viewport>
-    <ScrollBar offset={scrollBarOffset} />
+    <ScrollBar />
     <ScrollAreaPrimitive.Corner />
   </ScrollAreaPrimitive.Root>
 );
@@ -40,55 +38,35 @@ const ScrollBar = ({
   className,
   thumbClassName,
   orientation = 'vertical',
-  offset,
   ...props
 }: React.ComponentPropsWithoutRef<
   typeof ScrollAreaPrimitive.ScrollAreaScrollbar
-> & {
-  thumbClassName?: string;
-  offset?: number | string;
-} & {
+> & { thumbClassName?: string } & {
   ref?: React.Ref<
     React.ComponentRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
   >;
-}) => {
-  const offsetValue =
-    offset !== undefined
-      ? typeof offset === 'number'
-        ? `${offset}px`
-        : offset
-      : undefined;
-  const offsetStyle = offsetValue
-    ? {
-        [orientation === 'vertical' ? 'marginRight' : 'marginBottom']:
-          `-${offsetValue}`,
-      }
-    : undefined;
-
-  return (
-    <ScrollAreaPrimitive.ScrollAreaScrollbar
-      ref={ref}
-      orientation={orientation}
+}) => (
+  <ScrollAreaPrimitive.ScrollAreaScrollbar
+    ref={ref}
+    orientation={orientation}
+    className={cn(
+      'flex touch-none select-none transition-colors',
+      orientation === 'vertical' &&
+        'h-full w-3 border-l border-l-transparent p-px',
+      orientation === 'horizontal' &&
+        'h-3 flex-col border-t border-t-transparent p-px',
+      className,
+    )}
+    {...props}
+  >
+    <ScrollAreaPrimitive.ScrollAreaThumb
       className={cn(
-        'flex touch-none select-none transition-colors',
-        orientation === 'vertical' &&
-          'h-full w-3 border-l border-l-transparent p-px',
-        orientation === 'horizontal' &&
-          'h-3 flex-col border-t border-t-transparent p-px',
-        className,
+        'relative flex-1 rounded-full bg-default-muted',
+        thumbClassName,
       )}
-      style={offsetStyle}
-      {...props}
-    >
-      <ScrollAreaPrimitive.ScrollAreaThumb
-        className={cn(
-          'relative flex-1 rounded-full bg-default-muted',
-          thumbClassName,
-        )}
-      />
-    </ScrollAreaPrimitive.ScrollAreaScrollbar>
-  );
-};
+    />
+  </ScrollAreaPrimitive.ScrollAreaScrollbar>
+);
 ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName;
 
 export { ScrollArea, ScrollBar };
