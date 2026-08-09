@@ -1,5 +1,11 @@
 # @geee-be/react-utils
 
+## 1.5.1
+
+### Patch Changes
+
+- a103ee6: pnpm version
+
 ## 1.5.0
 
 ### Minor Changes
