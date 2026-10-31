@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.3.9
+
+### Patch Changes
+
+- be4eb76: Fix Dialog and Sheet sharing one Radix Root: each compound now has its own root wrapper, so Dialog.Content no longer resolves to Sheet.Content (and vice versa)
+
 ## 2.3.8
 
 ### Patch Changes
