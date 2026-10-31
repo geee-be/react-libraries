@@ -1,3 +1,5 @@
+'use client';
+
 import { Tooltip as TooltipComponent } from './Tooltip.js';
 
 // Tooltip is already compound in the source file

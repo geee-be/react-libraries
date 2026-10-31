@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Command as CommandComponent,
   CommandDialog as CommandDialogComponent,

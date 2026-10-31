@@ -1,3 +1,5 @@
+'use client';
+
 import { Card as CardComponent } from './Card.js';
 import { CardContent as CardContentComponent } from './CardContent';
 import { CardFooter as CardFooterComponent } from './CardFooter';

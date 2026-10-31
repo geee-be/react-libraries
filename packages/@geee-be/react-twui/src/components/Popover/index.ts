@@ -1,3 +1,5 @@
+'use client';
+
 import {
   PopoverArrow as PopoverArrowComponent,
   PopoverClose as PopoverCloseComponent,

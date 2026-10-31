@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Carousel as CarouselComponent,
   CarouselContent as CarouselContentComponent,

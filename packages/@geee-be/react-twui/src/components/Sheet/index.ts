@@ -1,3 +1,5 @@
+'use client';
+
 import {
   SheetClose as SheetCloseComponent,
   Sheet as SheetComponent,

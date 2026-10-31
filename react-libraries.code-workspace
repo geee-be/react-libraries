@@ -68,7 +68,7 @@
     "typescript.preferences.quoteStyle": "single",
     "workbench.colorCustomizations": {
       "activityBar.activeBackground": "#67a8f6",
-      "activityBar.activeBorder": "#02fd51",
+      "activityBar.activeBorder": "#15202b",
       "activityBar.background": "#67a8f6",
       "activityBar.foreground": "#15202b",
       "activityBar.inactiveForeground": "#15202b99",
@@ -92,7 +92,9 @@
       "activityBarTop.inactiveForeground": "#15202b99",
       "commandCenter.foreground": "#e7e7e7",
       "statusBar.debuggingBackground": "#378cf3",
-      "statusBar.debuggingForeground": "#e7e7e7"
+      "statusBar.debuggingForeground": "#e7e7e7",
+      "activityBarTop.activeBorder": "#15202b",
+      "statusBar.inactiveBackground": "#378cf3"
     },
     "biome.lsp.trace.server": "verbose"
   }

@@ -1,3 +1,5 @@
+'use client';
+
 export type { FormInputOtpElement, FormInputOtpProps } from './FormInputOtp.js';
 export { FormInputOtp } from './FormInputOtp.js';
 export type { InputOtpElement, InputOtpProps } from './InputOtp.js';

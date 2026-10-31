@@ -1,3 +1,5 @@
+'use client';
+
 import {
   DrawerClose as DrawerCloseComponent,
   Drawer as DrawerComponent,

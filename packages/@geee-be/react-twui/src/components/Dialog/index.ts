@@ -1,3 +1,5 @@
+'use client';
+
 import {
   DialogClose as DialogCloseComponent,
   Dialog as DialogComponent,

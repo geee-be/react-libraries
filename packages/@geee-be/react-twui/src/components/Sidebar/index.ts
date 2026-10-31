@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Sidebar as SidebarComponent,
   SidebarContent as SidebarContentComponent,

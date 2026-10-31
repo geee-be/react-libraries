@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Avatar as AvatarComponent,
   AvatarFallback as AvatarFallbackComponent,

@@ -1,4 +1,4 @@
-import { SendIcon, UserIcon } from '@iconicicons/react';
+import { UserIcon } from '@iconicicons/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SendHorizontalIcon } from 'lucide-react';
 import { useState } from 'react';

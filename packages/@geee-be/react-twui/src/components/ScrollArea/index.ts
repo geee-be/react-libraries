@@ -1,3 +1,5 @@
+'use client';
+
 import {
   ScrollArea as ScrollAreaComponent,
   ScrollBar as ScrollBarComponent,

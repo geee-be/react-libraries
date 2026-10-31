@@ -1,3 +1,5 @@
+'use client';
+
 import { Label as LabelComponent } from './Label.js';
 
 // Label is already compound in the source file with Label.Helper

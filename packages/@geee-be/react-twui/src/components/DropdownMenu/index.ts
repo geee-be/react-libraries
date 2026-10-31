@@ -1,3 +1,5 @@
+'use client';
+
 import {
   DropdownMenuCheckboxItem as DropdownMenuCheckboxItemComponent,
   DropdownMenu as DropdownMenuComponent,

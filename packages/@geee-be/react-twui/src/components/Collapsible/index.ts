@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Collapsible as CollapsibleComponent,
   CollapsibleContent as CollapsibleContentComponent,
