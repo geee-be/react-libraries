@@ -7,7 +7,11 @@ import type * as React from 'react';
 import { Style } from '../../helpers/style';
 import { cn } from '../../helpers/utils';
 
-const Sheet = SheetPrimitive.Root;
+// Own wrapper: compound sub-components are attached to this function, so it must not be
+// the shared Radix Root itself (which Dialog and Sheet would otherwise both mutate).
+const Sheet = (props: React.ComponentProps<typeof SheetPrimitive.Root>) => (
+  <SheetPrimitive.Root {...props} />
+);
 
 const SheetPrimitiveContent = SheetPrimitive.Content;
 

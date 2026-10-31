@@ -5,7 +5,11 @@ import { Check, ChevronRight, Circle } from 'lucide-react';
 import type * as React from 'react';
 import { cn } from '../../helpers/utils';
 
-const DropdownMenu = DropdownMenuPrimitive.Root;
+// Own wrapper: compound sub-components are attached to this function, so it must not be
+// the shared Radix Root itself (which Dialog and Sheet would otherwise both mutate).
+const DropdownMenu = (
+  props: React.ComponentProps<typeof DropdownMenuPrimitive.Root>,
+) => <DropdownMenuPrimitive.Root {...props} />;
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
