@@ -1,5 +1,12 @@
 # @geee-be/react-twui
 
+## 2.3.8
+
+### Patch Changes
+
+- 89332ca: Revert
+- 8bbdeea: Add 'use client' to compound component index files so sub-components (e.g. Dialog.Content) work when imported from React Server Components
+
 ## 2.3.7
 
 ### Patch Changes
