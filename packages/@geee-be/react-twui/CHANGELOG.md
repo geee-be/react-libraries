@@ -1,5 +1,11 @@
 # @geee-be/react-twui
 
+## 2.3.10
+
+### Patch Changes
+
+- f0c6c2e: Restore compound Card components in React Server Components while keeping client-side Card usage working.
+
 ## 2.3.9
 
 ### Patch Changes
